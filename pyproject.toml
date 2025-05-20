@@ -7,7 +7,12 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.12.8"
 dynamic = ["version"]
-dependencies = []
+dependencies = [
+    "anyio>=4.9.0",
+    "litellm>=1.70.0",
+    "pydantic>=2.11.4",
+    "tenacity>=9.1.2",
+]
 license = "MIT"
 
 [dependency-groups]
@@ -60,3 +65,12 @@ max-string-length = 50
 [tool.pytest.ini_options]
 addopts = "-s --tb=native -v --durations=10"
 norecursedirs = ["build", "dist"]
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ty.terminal]
+output-format = "concise"
+
+[tool.ty.rules]
+missing-argument = "ignore"
+# buggy with nonlocal
+unresolved-reference = "ignore"
