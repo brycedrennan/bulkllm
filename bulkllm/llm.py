@@ -200,7 +200,7 @@ def _completion(*args, **kwargs):
         prompt_tokens = usage.get("prompt_tokens", 0)
         completion_tokens = usage.get("completion_tokens", 0)
 
-        ctx.record_usage(
+        ctx.record_usage_sync(
             prompt_tokens,
             completion_tokens,
             cached_hit=cached_hit,

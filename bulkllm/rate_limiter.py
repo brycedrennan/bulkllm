@@ -105,7 +105,7 @@ class RateLimitContext:
         exc_val: BaseException | None,
         exc_tb: types.TracebackType | None,
     ) -> bool | None:
-        return await self._exit_common(exc_type, exc_val, is_async=True)
+        return await self._exit_async(exc_type, exc_val)
 
     # ------------------------- sync context methods ------------------------ #
     def __enter__(self):
@@ -117,44 +117,73 @@ class RateLimitContext:
         exc_val: BaseException | None,
         exc_tb: types.TracebackType | None,
     ) -> bool | None:
-        return self._exit_common(exc_type, exc_val, is_async=False)
+        return self._exit_sync(exc_type, exc_val)
 
     # ------------------------------ helpers -------------------------------- #
-    async def _exit_common(
+    def _exit_common(
         self,
         exc_type: type[BaseException] | None,
         exc_val: BaseException | None,
-        is_async: bool,
+        *,
+        is_cancellation: bool,
     ) -> bool | None:
         """
-        Shared exit logic; runs in async or sync branch depending on *is_async*.
+        Synchronous helper that contains *all* logic shared by the async and
+        sync exit paths.  It never blocks, so it can be called from either
+        wrapper without `await`.
         """
         if self._usage_recorded:
-            # Usage already persisted- nothing to clean up
+            # Usage already persisted—nothing to clean up.
             return None
-
-        # Determine if exit is due to cancellation (only meaningful for async)
-        is_cancellation = is_async and exc_type is not None and issubclass(exc_type, anyio.get_cancelled_exc_class())
 
         log_level = logging.DEBUG if is_cancellation else logging.WARNING
         msg = f"Usage not recorded for request {self.request_id}. Cancelling pending request."
         if exc_type:
             msg += f" {'Cancellation' if is_cancellation else 'Exception'} occurred during context."
-        logger.log(log_level, msg, exc_info=exc_val if exc_type and not is_cancellation else None)
+        logger.log(
+            log_level,
+            msg,
+            exc_info=exc_val if exc_type and not is_cancellation else None,
+        )
 
-        # Cancel pending reservation
-        if is_async:
-            await self._limiter._cancel_pending(self.request_id)
-        else:
-            self._limiter._cancel_pending_sync(self.request_id)
-
-        # If there was NO exception, exiting without usage is an error
+        # If there was *no* exception, exiting without usage is an error.
         if exc_type is None:
             msg = f"Usage must be recorded for request {self.request_id} on successful exit."
             raise RuntimeError(msg)
 
-        # Propagate original exception/cancellation (return None)
+        # Propagate original exception / cancellation (return None).
         return None
+
+    def _exit_sync(
+        self,
+        exc_type: type[BaseException] | None,
+        exc_val: BaseException | None,
+    ) -> bool | None:
+        """
+        Sync wrapper used by `__exit__`.
+        Cancels the pending reservation synchronously, then delegates shared work.
+        """
+        # Cancel pending reservation
+        self._limiter._cancel_pending_sync(self.request_id)
+        return self._exit_common(
+            exc_type,
+            exc_val,
+            is_cancellation=False,  # cancellation doesn`t exist in sync path
+        )
+
+    async def _exit_async(
+        self,
+        exc_type: type[BaseException] | None,
+        exc_val: BaseException | None,
+    ) -> bool | None:
+        """
+        Async wrapper used by `__aexit__`.
+        Cancels the pending reservation asynchronously, then delegates shared work.
+        """
+        is_cancellation = exc_type is not None and issubclass(exc_type, anyio.get_cancelled_exc_class())
+        # Cancel pending reservation
+        await self._limiter._cancel_pending(self.request_id)
+        return self._exit_common(exc_type, exc_val, is_cancellation=is_cancellation)
 
 
 class ModelRateLimit(BaseModel):

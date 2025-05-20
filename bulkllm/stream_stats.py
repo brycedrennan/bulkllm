@@ -1,7 +1,7 @@
 import math
 import random
 
-from pydantic import BaseModel, Field, computed_field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
 
 RESERVOIR_K = 10_000
 
@@ -33,9 +33,7 @@ class UsageStat(BaseModel):
     # new - data-kind lock-in ----------------------------------------
     is_discrete: bool | None = Field(default=None, exclude=False)
 
-    class Config:
-        arbitrary_types_allowed = True
-        extra = "ignore"
+    model_config = ConfigDict(arbitrary_types_allowed=True, extra="ignore")
 
     # ----------------------------------------------------------------
     # public API

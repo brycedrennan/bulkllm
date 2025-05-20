@@ -21,19 +21,14 @@ from __future__ import annotations
 import contextvars
 import logging
 from collections import defaultdict
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
 
-from pydantic import BaseModel, Field, model_serializer, model_validator
+from pydantic import BaseModel, ConfigDict, Field, model_serializer, model_validator
 
 from bulkllm.stream_stats import UsageStat
 
 logger = logging.getLogger(__name__)
-
-
-# ---------------------------------------------------------------------------
-# Pydantic models - flat schema
-# ---------------------------------------------------------------------------
 
 
 class UsageRecord(BaseModel):
@@ -65,7 +60,7 @@ class UsageRecord(BaseModel):
     # ---- metadata ----
     model: str
     is_cached_hit: bool = False
-    ts_completed: datetime = Field(default_factory=datetime.utcnow)
+    ts_completed: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
     # ---- validation extras ----
     is_valid: bool = True
@@ -157,9 +152,7 @@ class UsageAggregate(BaseModel):
     # one bucket per numeric UsageRecord field ------------------------
     stats: dict[str, UsageStat] = Field(default_factory=lambda: defaultdict(UsageStat))
 
-    class Config:
-        arbitrary_types_allowed = True
-        extra = "forbid"
+    model_config = ConfigDict(arbitrary_types_allowed=True, extra="forbid")
 
     # -----------------------------------------------------------------
     def add(self, rec: UsageRecord) -> None:  # ← single source of truth
