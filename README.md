@@ -7,9 +7,10 @@
  - `make help` see available commands
  - `make af` format code
  - `make lint` run linter
- - `make typecheck` run type checker
- - `make test` run tests
- - `make check` run all checks (format, lint, typecheck, test)
+- `make typecheck` run type checker
+- `make test` run tests
+- `make coverage` run tests with coverage report
+- `make check` run all checks (format, lint, typecheck, test)
  - `make checku` run all checks with unsafe autoformatting
 
 ### Code Conventions

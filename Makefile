@@ -30,6 +30,10 @@ test:  ## Run the tests.
 	@uv run -- pytest
 	@echo -e "✅ The tests pass! ✨ 🍰 ✨"
 
+coverage:  ## Run the tests and report coverage.
+	@uv run -- coverage run -m pytest
+	@uv run -- coverage report -m
+
 check: af lint typecheck test ## Run all checks.
 
 checku: afu lint typecheck test ## Run all checks with unsafe autoformatting.
