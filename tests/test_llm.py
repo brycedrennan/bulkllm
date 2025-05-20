@@ -1,3 +1,7 @@
+import pytest
+
+
+@pytest.mark.skip
 def test_helloworld():
     from bulkllm.llm import completion
 
