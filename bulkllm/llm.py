@@ -191,7 +191,11 @@ def _completion(*args, **kwargs):
 
     with rate_limiter().reserve_capacity_sync(model_name, input_tokens, output_tokens) as ctx:
         start_ms = time.monotonic()
-        response = litellm.completion(*args, **kwargs)
+        try:
+            response = litellm.completion(*args, **kwargs)
+        except Exception as e:
+            logger.error(f"Failed to complete request for model '{model_name}': {e}")
+            raise e
 
         duration_ms = (time.monotonic() - start_ms) * 1000
 
