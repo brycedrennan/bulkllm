@@ -1,3 +1,4 @@
+import anyio
 import pytest
 
 from bulkllm.rate_limiter import ModelRateLimit, RateLimiter
@@ -40,3 +41,38 @@ def test_get_rate_limit_for_model_with_regex():
     rl.add_rate_limit(pattern_limit)
     assert rl.get_rate_limit_for_model("foo-bar") is pattern_limit
     assert rl.get_rate_limit_for_model("other") is rl.default_rate_limit
+
+
+@pytest.mark.asyncio
+async def test_async_context_concurrent_usage():
+    """Two workers should be able to hold separate contexts concurrently."""
+    limit = ModelRateLimit(model_names=["m"], rpm=2)
+
+    started1 = anyio.Event()
+    started2 = anyio.Event()
+    proceed = anyio.Event()
+
+    async def worker(started: anyio.Event) -> None:
+        # Each call to reserve_capacity should yield its own RateLimitContext.
+        async with await limit.reserve_capacity(1, 1) as ctx:
+            started.set()  # signal that we entered the context
+            await proceed.wait()  # hold the context so both run together
+            await ctx.record_usage(1, 1)
+
+    async with anyio.create_task_group() as tg:
+        tg.start_soon(worker, started1)
+        tg.start_soon(worker, started2)
+
+        # Wait until both workers have acquired capacity
+        await started1.wait()
+        await started2.wait()
+
+        # At this point both contexts should be active simultaneously.
+        assert len(limit._pending_requests) == 2
+
+        proceed.set()
+
+    # After all workers finish, the state should reflect two completed requests.
+    assert not limit._pending_requests
+    assert len(limit._completed_requests) == 2
+    assert limit.current_requests_in_window == 2
