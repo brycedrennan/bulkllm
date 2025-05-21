@@ -195,7 +195,7 @@ def _completion(*args, **kwargs):
             response = litellm.completion(*args, **kwargs)
         except Exception as e:
             logger.error(f"Failed to complete request for model '{model_name}': {e}")
-            raise e
+            raise
 
         duration_ms = (time.monotonic() - start_ms) * 1000
 
