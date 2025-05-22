@@ -677,7 +677,10 @@ def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
         if slug in model_lookup:
             found_configs.extend(model_lookup[slug])
         elif slug in model_group_lookup:
-            found_configs.extend(model_group_lookup[slug])
+            val = model_group_lookup[slug]
+            if callable(val):
+                val = val()
+            found_configs.extend(val)
         else:
             msg = f"Unknown model config: {slug}"
             raise ValueError(msg)
