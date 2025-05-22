@@ -1,4 +1,23 @@
-# bulkllm 
+# bulkllm
+
+## Enhancements over vanilla LiteLLM
+
+bulkllm builds on top of `litellm` and adds a few extras:
+
+- **Automatic model registration.**  The package knows how to fetch the list of
+  models from OpenAI, Anthropic, Gemini and OpenRouter and registers them with
+  LiteLLM.  Results are cached on disk so they can be reused offline.
+- **Centralised rate limiting.**  A `RateLimiter` implementation enforces RPM,
+  TPM, input and output token limits per model (or regex group) and works with
+  both async and sync code.
+- **Retry‑aware completion wrappers.**  Thin wrappers around
+  `litellm.completion`/`acompletion` integrate Tenacity retries, rate limiting
+  and usage tracking.
+- **Usage tracking with statistics.**  Per‑model usage is tracked in memory with
+  histograms, percentiles and cost calculations via the `UsageTracker` and
+  `UsageStat` helpers.
+- **Predefined LLM configurations.**  A large catalogue of model presets with
+  cost information and convenient selection helpers is included.
 
 ## Development
 
