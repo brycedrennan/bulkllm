@@ -38,4 +38,4 @@ def get_gemini_models() -> dict[str, Any]:
 @cache
 def register_gemini_models_with_litellm() -> None:
     """Fetch and register Gemini models with LiteLLM."""
-    bulkllm_register_models(get_gemini_models())
+    bulkllm_register_models(get_gemini_models(), source="gemini")
