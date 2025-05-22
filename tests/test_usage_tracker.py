@@ -1,6 +1,8 @@
 from types import SimpleNamespace
 from typing import Any, cast
 
+import pytest
+
 from bulkllm.usage_tracker import (
     GLOBAL_TRACKER,
     UsageTracker,
@@ -11,6 +13,11 @@ from bulkllm.usage_tracker import (
 
 class Dummy(SimpleNamespace):
     pass
+
+
+@pytest.fixture(autouse=True)
+def _clear_global_tracker() -> None:
+    GLOBAL_TRACKER._aggregates.clear()
 
 
 def test_convert_usage_no_details():
@@ -40,7 +47,6 @@ def test_convert_usage_with_details():
 
 
 def test_usage_tracker_aggregate():
-    GLOBAL_TRACKER._aggregates.clear()
     tracker = UsageTracker("t")
     with tracker:
         track_usage(
@@ -57,3 +63,41 @@ def test_usage_tracker_aggregate():
     assert stats.stats["input_text_tokens"].total == 1
     assert stats.stats["output_text_tokens"].total == 2
     assert stats.stats["tokens_total"].total == 3
+
+
+def test_usage_tracker_snapshot() -> None:
+    tracker = UsageTracker("snap")
+    with tracker:
+        track_usage(
+            "a",
+            input_text_tokens=1,
+            input_tokens_total=1,
+            output_text_tokens=2,
+            output_tokens_total=2,
+            tokens_total=3,
+        )
+        track_usage(
+            "a",
+            input_text_tokens=3,
+            input_tokens_total=3,
+            output_text_tokens=4,
+            output_tokens_total=4,
+            tokens_total=7,
+        )
+        track_usage(
+            "b",
+            input_text_tokens=5,
+            input_tokens_total=5,
+            output_text_tokens=6,
+            output_tokens_total=6,
+            tokens_total=11,
+        )
+    snap = tracker.snapshot()
+    assert snap["a"]["request_count"]["total"] == 2
+    assert snap["a"]["input_text_tokens"]["total"] == 4
+    assert snap["a"]["output_text_tokens"]["total"] == 6
+    assert snap["a"]["tokens_total"]["total"] == 10
+    assert snap["b"]["request_count"]["total"] == 1
+    assert snap["b"]["input_text_tokens"]["total"] == 5
+    assert snap["b"]["output_text_tokens"]["total"] == 6
+    assert snap["b"]["tokens_total"]["total"] == 11
