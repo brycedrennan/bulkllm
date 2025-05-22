@@ -51,7 +51,7 @@ def write_cache(models: dict[str, Any]) -> None:
         with open(cache_file, "w") as f:
             json.dump(cache_data, f)
     except Exception as e:  # noqa
-        print(f"Error writing cache: {e}")
+        logger.warning("Error writing cache: %s", e)
 
 
 @cache
@@ -97,9 +97,15 @@ def register_openrouter_models_with_litellm():
     failed_to_register = model_names_for_registration - litellm_model_names_post_registration
     successfully_registered = litellm_model_names_post_registration - litellm_model_names_pre_registration
 
-    print(f"Registered {len(successfully_registered)} models successfully")
-    print(f"Failed to register {len(failed_to_register)} models")
-    print(f"Failed to register models: {failed_to_register}")
+    logger.info(
+        "Registered %s models successfully",
+        len(successfully_registered),
+    )
+    logger.info(
+        "Failed to register %s models",
+        len(failed_to_register),
+    )
+    logger.info("Failed to register models: %s", failed_to_register)
 
 
 def convert_openrouter_to_litellm(openrouter_model: dict[str, Any]) -> dict[str, Any] | None:
@@ -107,7 +113,10 @@ def convert_openrouter_to_litellm(openrouter_model: dict[str, Any]) -> dict[str,
 
     model_id = openrouter_model.get("id")
     if not model_id:
-        print(f"Skipping model due to missing id: {openrouter_model.get('name', 'Unknown')}")
+        logger.warning(
+            "Skipping model due to missing id: %s",
+            openrouter_model.get("name", "Unknown"),
+        )
         return None
 
     litellm_model_name = f"openrouter/{model_id}"
