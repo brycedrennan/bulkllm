@@ -36,36 +36,27 @@ def patch_LLMCachingHandler():
         LLMCachingHandler._convert_cached_result_to_model_response = wrapped_method  # type: ignore
 
 
+_SCRUB_ALLOW_ATTRS = {
+    "metadata.user_api_key_hash",
+    "metadata.user_api_key_alias",
+    "metadata.user_api_key_team_id",
+    "metadata.user_api_key_org_id",
+    "metadata.user_api_key_user_id",
+    "metadata.user_api_key_team_alias",
+    "metadata.user_api_key_user_email",
+    "metadata.user_api_key_end_user_id",
+}
+
+_SCRUB_ALLOW_PREFIXES = ("LLM_COMPLETIONS", "LLM_PROMPTS")
+
+
 def _scrubbing_callback(m):
-    """Allow certain metadata fields to bypass log scrubbing."""
-    if m.path == ("attributes", "metadata.user_api_key_hash"):
+    if len(m.path) == 2 and m.path[0] == "attributes" and m.path[1] in _SCRUB_ALLOW_ATTRS:
+        """Allow certain metadata fields to bypass log scrubbing."""
         return m.value
 
-    if m.path == ("attributes", "metadata.user_api_key_alias"):
+    if len(m.path) > 1 and any(prefix in m.path[1] for prefix in _SCRUB_ALLOW_PREFIXES):
         return m.value
-
-    if m.path == ("attributes", "metadata.user_api_key_team_id"):
-        return m.value
-
-    if m.path == ("attributes", "metadata.user_api_key_org_id"):
-        return m.value
-
-    if m.path == ("attributes", "metadata.user_api_key_user_id"):
-        return m.value
-
-    if m.path == ("attributes", "metadata.user_api_key_team_alias"):
-        return m.value
-
-    if m.path == ("attributes", "metadata.user_api_key_user_email"):
-        return m.value
-
-    if m.path == ("attributes", "metadata.user_api_key_end_user_id"):
-        return m.value
-    if len(m.path) > 1:
-        if "LLM_COMPLETIONS" in m.path[1]:
-            return m.value
-        if "LLM_PROMPTS" in m.path[1]:
-            return m.value
 
 
 @functools.lru_cache
