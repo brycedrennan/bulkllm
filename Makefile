@@ -20,15 +20,12 @@ autoformat-unsafe:  ## Run the autoformatter without --fix-only.
 
 lint:  ## Run the code linter.
 	@uv run -- ruff check .
-	@echo -e "✅ No linting errors - well done! ✨ 🍰 ✨"
 
 typecheck: ## Run the type checker.
 	@uv run -- ty check
-	@echo -e "✅ No type errors - well done! ✨ 🍰 ✨"
 
 test:  ## Run the tests.
 	@uv run -- pytest
-	@echo -e "✅ The tests pass! ✨ 🍰 ✨"
 
 coverage:  ## Run the tests and report coverage.
 	@uv run -- coverage run -m pytest
@@ -43,7 +40,7 @@ publish:  ## Build and upload the package to PyPI.
 	@rm -rf dist
 	@uv run -- python -m build
 	@uv run -- twine upload dist/* --repository pypi -u __token__
-	@echo "\n\033[0;32m✅ 📦 Package published successfully to pypi! ✨ 🍰 ✨\033[0m\n"
+	@echo -e "\n\033[0;32m✅ 📦 Package published successfully to pypi! ✨ 🍰 ✨\033[0m\n"
 
 install-uv:  # Install uv if not already installed
 	@if ! uv --help >/dev/null 2>&1; then \
