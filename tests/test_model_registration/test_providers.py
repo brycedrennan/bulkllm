@@ -1,8 +1,17 @@
+import pytest
 import requests
 
+from bulkllm.model_registration import utils
 from bulkllm.model_registration.anthropic import get_anthropic_models
 from bulkllm.model_registration.gemini import get_gemini_models
 from bulkllm.model_registration.openai import get_openai_models
+
+
+@pytest.fixture(autouse=True)
+def _set_user_cache_dir(monkeypatch, tmp_path):
+    cache_dir = tmp_path / "providers"
+    monkeypatch.setattr(utils, "USER_CACHE_DIR", cache_dir)
+    return cache_dir
 
 
 class DummyResponse:

@@ -1,5 +1,6 @@
 import json
 import logging
+from importlib import resources
 from pathlib import Path
 from typing import Any
 
@@ -13,22 +14,39 @@ ADDED_MODELS: list[tuple[str, str | None]] = []
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
+# Directory under the user's home directory for provider cache files
+USER_CACHE_DIR = Path.home() / ".cache" / "bulkllm" / "providers"
+
 
 def get_data_file(provider: str) -> Path:
-    """Return path to the cached JSON for a provider."""
+    """Return path to the cached JSON for a provider inside the package."""
+
     return DATA_DIR / f"{provider}.json"
+
+
+def get_user_cache_file(provider: str) -> Path:
+    """Return path to the user-level cached JSON for a provider."""
+
+    return USER_CACHE_DIR / f"{provider}.json"
 
 
 def load_cached_provider_data(provider: str) -> dict[str, Any]:
     """Load cached raw API response for ``provider``."""
-    path = get_data_file(provider)
-    with open(path) as f:
+
+    user_path = get_user_cache_file(provider)
+    if user_path.exists():
+        with open(user_path) as f:
+            return json.load(f)
+
+    resource = resources.files("bulkllm.model_registration.data").joinpath(f"{provider}.json")
+    with resources.as_file(resource) as path, open(path) as f:
         return json.load(f)
 
 
 def save_cached_provider_data(provider: str, data: dict[str, Any]) -> None:
     """Write raw API response for ``provider`` to cache."""
-    path = get_data_file(provider)
+
+    path = get_user_cache_file(provider)
     path.parent.mkdir(parents=True, exist_ok=True)
     logger.info(f"Saving cached provider data for {provider} to {path}")
     with open(path, "w") as f:
