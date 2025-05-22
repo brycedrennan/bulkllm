@@ -1,14 +1,13 @@
 import logging
 from functools import cache
 
-import litellm
-
 from bulkllm.model_registration.anthropic import (
     register_anthropic_models_with_litellm,
 )
 from bulkllm.model_registration.gemini import register_gemini_models_with_litellm
 from bulkllm.model_registration.openai import register_openai_models_with_litellm
 from bulkllm.model_registration.openrouter import register_openrouter_models_with_litellm
+from bulkllm.model_registration.utils import bulkllm_register_models
 
 logger = logging.getLogger(__name__)
 
@@ -58,17 +57,6 @@ manual_model_registrations = {
 }
 
 
-def manual_registration():
-    for model_name in manual_model_registrations:
-        try:
-            model_info = litellm.get_model_info(model_name)
-        except Exception:  # noqa
-            model_info = None
-        if model_info:
-            logger.warning(f"Model {model_name} already registered")
-    litellm.register_model(manual_model_registrations)
-
-
 @cache
 def register_models():
     logger.info("Registering models with LiteLLM")
@@ -76,4 +64,4 @@ def register_models():
     register_openai_models_with_litellm()
     register_anthropic_models_with_litellm()
     register_gemini_models_with_litellm()
-    manual_registration()
+    bulkllm_register_models(manual_model_registrations)

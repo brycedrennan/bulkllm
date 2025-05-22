@@ -8,6 +8,8 @@ from typing import Any
 import litellm
 import requests
 
+from bulkllm.model_registration.utils import bulkllm_register_models
+
 logger = logging.getLogger(__name__)
 
 
@@ -87,7 +89,7 @@ def register_openrouter_models_with_litellm():
     litellm_model_names_pre_registration = set(litellm.model_cost.keys())
     litellm_models = get_openrouter_models()
     model_names_for_registration = set(litellm_models.keys())
-    litellm.register_model(litellm_models)
+    bulkllm_register_models(litellm_models)
 
     litellm_model_names_post_registration = set(litellm.model_cost.keys())
 

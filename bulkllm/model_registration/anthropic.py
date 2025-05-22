@@ -3,8 +3,9 @@ import os
 from functools import cache
 from typing import Any
 
-import litellm
 import requests
+
+from bulkllm.model_registration.utils import bulkllm_register_models
 
 logger = logging.getLogger(__name__)
 
@@ -40,4 +41,4 @@ def get_anthropic_models() -> dict[str, Any]:
 @cache
 def register_anthropic_models_with_litellm() -> None:
     """Fetch and register Anthropic models with LiteLLM."""
-    litellm.register_model(get_anthropic_models())
+    bulkllm_register_models(get_anthropic_models())

@@ -3,8 +3,9 @@ import os
 from functools import cache
 from typing import Any
 
-import litellm
 import requests
+
+from bulkllm.model_registration.utils import bulkllm_register_models
 
 logger = logging.getLogger(__name__)
 
@@ -37,4 +38,4 @@ def get_gemini_models() -> dict[str, Any]:
 @cache
 def register_gemini_models_with_litellm() -> None:
     """Fetch and register Gemini models with LiteLLM."""
-    litellm.register_model(get_gemini_models())
+    bulkllm_register_models(get_gemini_models())

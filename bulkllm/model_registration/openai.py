@@ -3,8 +3,9 @@ import os
 from functools import cache
 from typing import Any
 
-import litellm
 import requests
+
+from bulkllm.model_registration.utils import bulkllm_register_models
 
 logger = logging.getLogger(__name__)
 
@@ -36,4 +37,4 @@ def get_openai_models() -> dict[str, Any]:
 @cache
 def register_openai_models_with_litellm() -> None:
     """Fetch and register OpenAI models with LiteLLM."""
-    litellm.register_model(get_openai_models())
+    bulkllm_register_models(get_openai_models())
