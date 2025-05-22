@@ -24,6 +24,7 @@ logger = logging.getLogger(__name__)
 class CiBaseModel(BaseModel):
     @staticmethod
     def _md5(*parts: Iterable[str]) -> str:
+        """Return an MD5 hex digest for the joined string parts."""
         parts = [str(part) for part in parts]
         return _hashlib.md5("|".join(parts).encode()).hexdigest()
 
@@ -60,6 +61,7 @@ class LLMConfig(CiBaseModel):
 
     @model_validator(mode="after")
     def _populate_token_defaults(self):
+        """Infer reasonable token defaults from LiteLLM if missing."""
         if self.max_tokens is None:
             import litellm
 

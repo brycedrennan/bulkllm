@@ -58,6 +58,7 @@ class Request:
 
     @property
     def total_tokens(self) -> int:
+        """Return combined input and output tokens."""
         return self.input_tokens + self.output_tokens
 
 
@@ -72,6 +73,7 @@ class RateLimitContext:
     """
 
     def __init__(self, limiter: "ModelRateLimit", request_id: str):
+        """Store the owning limiter and pending request id."""
         self._limiter = limiter
         self.request_id = request_id
         self._usage_recorded = False
@@ -97,6 +99,7 @@ class RateLimitContext:
 
     # ------------------------ async context methods ------------------------ #
     async def __aenter__(self):
+        """Enter async context."""
         return self
 
     async def __aexit__(
@@ -105,10 +108,12 @@ class RateLimitContext:
         exc_val: BaseException | None,
         exc_tb: types.TracebackType | None,
     ) -> bool | None:
+        """Exit async context, cancelling if necessary."""
         return await self._exit_async(exc_type, exc_val)
 
     # ------------------------- sync context methods ------------------------ #
     def __enter__(self):
+        """Enter sync context."""
         return self
 
     def __exit__(
@@ -117,6 +122,7 @@ class RateLimitContext:
         exc_val: BaseException | None,
         exc_tb: types.TracebackType | None,
     ) -> bool | None:
+        """Exit sync context, cancelling if needed."""
         return self._exit_sync(exc_type, exc_val)
 
     # ------------------------------ helpers -------------------------------- #
@@ -215,10 +221,12 @@ class ModelRateLimit(BaseModel):
     # --------------------------- convenience props ------------------------- #
     @property
     def current_requests_in_window(self) -> int:
+        """Return number of requests currently counted in the window."""
         return len(self._pending_requests) + len(self._completed_requests)
 
     @property
     def remaining_requests_per_minute(self) -> float | int:
+        """Requests remaining before hitting the RPM limit."""
         return float("inf") if self.rpm <= 0 else max(0, self.rpm - self.current_requests_in_window)
 
     @property
@@ -239,26 +247,32 @@ class ModelRateLimit(BaseModel):
 
     @property
     def remaining_total_tokens_per_minute(self) -> float | int:
+        """Tokens remaining before hitting the TPM limit."""
         return float("inf") if self.tpm <= 0 else max(0, self.tpm - self.current_total_tokens_in_window)
 
     @property
     def current_input_tokens_in_window(self) -> int:
+        """Return input tokens counted in the current window."""
         return self._pending_input_tokens + self._completed_input_tokens
 
     @property
     def remaining_input_tokens_per_minute(self) -> float | int:
+        """Input tokens remaining before hitting the ITPM limit."""
         return float("inf") if self.itpm <= 0 else max(0, self.itpm - self.current_input_tokens_in_window)
 
     @property
     def current_output_tokens_in_window(self) -> int:
+        """Return output tokens counted in the current window."""
         return self._pending_output_tokens + self._completed_output_tokens
 
     @property
     def remaining_output_tokens_per_minute(self) -> float | int:
+        """Output tokens remaining before hitting the OTPM limit."""
         return float("inf") if self.otpm <= 0 else max(0, self.otpm - self.current_output_tokens_in_window)
 
     # ----------------------------- diagnostics ----------------------------- #
     def print_current_status(self) -> None:
+        """Print the current rate-limit utilisation."""
         print(f"Current window: {self.window_seconds}s")
         if self.rpm:
             print(f"Requests: {self.current_requests_in_window} / {self.rpm}")
@@ -303,6 +317,7 @@ class ModelRateLimit(BaseModel):
         return self.has_capacity(desired_input_tokens, desired_output_tokens)
 
     def has_capacity(self, desired_input_tokens: int, desired_output_tokens: int) -> bool:
+        """Return True if the request would not exceed any limits."""
         logger.debug(
             f"Checking if can make request for {self.model_names} with estimated tokens: {desired_input_tokens}, {desired_output_tokens}"
         )
@@ -391,10 +406,12 @@ class ModelRateLimit(BaseModel):
 
     # ---------- async variants ---------- #
     async def acquire(self, in_tok: int, out_tok: int) -> str | None:
+        """Attempt to acquire capacity asynchronously."""
         async with self._lock:
             return self._try_acquire(in_tok, out_tok)
 
     async def acquire_blocking(self, in_tok: int, out_tok: int) -> str:
+        """Keep trying :meth:`acquire` until successful."""
         while True:
             req_id = await self.acquire(in_tok, out_tok)
             if req_id:
@@ -402,15 +419,18 @@ class ModelRateLimit(BaseModel):
             await anyio.sleep(0.1)
 
     async def reserve_capacity(self, est_in: int, est_out: int) -> RateLimitContext:
+        """Acquire capacity and return a context manager."""
         req_id = await self.acquire_blocking(est_in, est_out)
         return RateLimitContext(self, req_id)
 
     # ---------- sync variants ----------- #
     def acquire_sync(self, in_tok: int, out_tok: int) -> str | None:
+        """Attempt to acquire capacity synchronously."""
         with self._thread_lock:
             return self._try_acquire(in_tok, out_tok)
 
     def acquire_blocking_sync(self, in_tok: int, out_tok: int) -> str:
+        """Blocking version of :meth:`acquire_sync`."""
         while True:
             req_id = self.acquire_sync(in_tok, out_tok)
             if req_id:
@@ -418,12 +438,14 @@ class ModelRateLimit(BaseModel):
             time.sleep(0.1)
 
     def reserve_capacity_sync(self, est_in: int, est_out: int) -> RateLimitContext:
+        """Blocking wrapper returning a :class:`RateLimitContext`."""
         req_id = self.acquire_blocking_sync(est_in, est_out)
         return RateLimitContext(self, req_id)
 
     # ----------------------- record / cancel helpers ----------------------- #
     # Internal implementation shared by sync & async
     def _record_actual_usage_internal(self, request_id: str, in_tok: int, out_tok: int, cached_hit: bool) -> None:
+        """Update token counts once the request finishes."""
         if request_id in self._pending_requests:
             req = self._pending_requests.pop(request_id)
             self._pending_input_tokens -= req.input_tokens
@@ -455,6 +477,7 @@ class ModelRateLimit(BaseModel):
     async def record_actual_usage(
         self, request_id: str, input_tokens: int, output_tokens: int, cached_hit: bool = False
     ) -> None:
+        """Record actual usage asynchronously."""
         async with self._lock:
             self._record_actual_usage_internal(request_id, input_tokens, output_tokens, cached_hit)
 
@@ -462,11 +485,13 @@ class ModelRateLimit(BaseModel):
     def record_actual_usage_sync(
         self, request_id: str, input_tokens: int, output_tokens: int, cached_hit: bool = False
     ) -> None:
+        """Record actual usage synchronously."""
         with self._thread_lock:
             self._record_actual_usage_internal(request_id, input_tokens, output_tokens, cached_hit)
 
     # ------------------------ cancel helpers (shared) ---------------------- #
     def _cancel_pending_internal(self, request_id: str) -> None:
+        """Remove a pending request without recording usage."""
         if request_id in self._pending_requests:
             req = self._pending_requests.pop(request_id)
             self._pending_input_tokens -= req.input_tokens
@@ -478,10 +503,12 @@ class ModelRateLimit(BaseModel):
             logger.warning("Attempted to cancel request %s, but it was not found.", request_id)
 
     async def _cancel_pending(self, request_id: str) -> None:
+        """Async wrapper around :meth:`_cancel_pending_internal`."""
         async with self._lock:
             self._cancel_pending_internal(request_id)
 
     def _cancel_pending_sync(self, request_id: str) -> None:
+        """Sync wrapper around :meth:`_cancel_pending_internal`."""
         with self._thread_lock:
             self._cancel_pending_internal(request_id)
 
@@ -490,6 +517,7 @@ class RateLimiter:
     """Manages rate limits for all models, routing to the appropriate ModelRateLimit."""
 
     def __init__(self, rate_limits: list[ModelRateLimit] | None = None):
+        """Initialise lookup tables and load default rate limits."""
         self.model_limit_lookup: dict[str, ModelRateLimit] = {}
 
         # Store regex patterns for model matching
@@ -508,6 +536,7 @@ class RateLimiter:
             self.add_rate_limit(rate_limit)
 
     def add_rate_limit(self, rate_limit: ModelRateLimit):
+        """Register a :class:`ModelRateLimit` with this limiter."""
         if not rate_limit or not rate_limit.model_names:
             return
 
@@ -543,6 +572,7 @@ class RateLimiter:
         return rate_limit.reserve_capacity_sync(input_tokens, output_tokens)
 
     def has_capacity(self, model_name: str, desired_input_tokens: int, desired_output_tokens: int) -> bool:
+        """Check capacity for a particular model."""
         rate_limit = self.get_rate_limit_for_model(model_name)
         return rate_limit.has_capacity(desired_input_tokens, desired_output_tokens)
 

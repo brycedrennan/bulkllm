@@ -530,6 +530,7 @@ default_models = [
 
 
 def create_model_configs(system_prompt: str | None = "You are a helpful AI assistant."):
+    """Return deep copies of default models with a custom system prompt."""
     new_configs = []
     for llm_config in default_models:
         new_config = llm_config.model_copy()
@@ -659,6 +660,7 @@ def cheap_model_configs():
 
 
 def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
+    """Expand slugs or groups into concrete model configurations."""
     if not model_slugs:
         return cheap_model_configs()
 
