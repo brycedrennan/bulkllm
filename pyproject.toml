@@ -17,6 +17,9 @@ dependencies = [
 ]
 license = "MIT"
 
+[project.scripts]
+bulkllm = "bulkllm.cli:app"
+
 [dependency-groups]
 dev = [
     "ty",
