@@ -14,6 +14,36 @@ from bulkllm.model_registration.utils import (
 logger = logging.getLogger(__name__)
 
 
+def convert_anthropic_to_litellm(anthropic_model: dict[str, Any]) -> dict[str, Any] | None:
+    """Convert an Anthropic model dict to LiteLLM format."""
+    model_id = anthropic_model.get("id")
+    if not model_id:
+        logger.warning("Skipping model due to missing id: %s", anthropic_model)
+        return None
+
+    litellm_model_name = f"anthropic/{model_id}"
+
+    context_length = anthropic_model.get("context_window") or anthropic_model.get("context_length")
+    max_tokens = anthropic_model.get("max_tokens") or anthropic_model.get("max_output_tokens")
+
+    model_info = {
+        "litellm_provider": "anthropic",
+        "mode": "chat",
+    }
+    if context_length is not None:
+        model_info["max_input_tokens"] = context_length
+    if max_tokens is not None:
+        model_info["max_tokens"] = max_tokens
+        model_info.setdefault("max_output_tokens", max_tokens)
+
+    for extra_field in ["deprecation_date", "display_name", "created_at"]:
+        value = anthropic_model.get(extra_field)
+        if value is not None:
+            model_info[extra_field] = value
+
+    return {"model_name": litellm_model_name, "model_info": model_info}
+
+
 @cache
 def get_anthropic_models(*, use_cached: bool = True) -> dict[str, Any]:
     """Return models from the Anthropic list endpoint or cached data."""
@@ -40,12 +70,9 @@ def get_anthropic_models(*, use_cached: bool = True) -> dict[str, Any]:
             return {}
     models: dict[str, Any] = {}
     for item in data.get("data", []):
-        model_id = item.get("id")
-        if model_id:
-            models[f"anthropic/{model_id}"] = {
-                "litellm_provider": "anthropic",
-                "mode": "chat",
-            }
+        converted = convert_anthropic_to_litellm(item)
+        if converted:
+            models[converted["model_name"]] = converted["model_info"]
     return models
 
 

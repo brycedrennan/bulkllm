@@ -14,6 +14,28 @@ from bulkllm.model_registration.utils import (
 logger = logging.getLogger(__name__)
 
 
+def convert_openai_to_litellm(openai_model: dict[str, Any]) -> dict[str, Any] | None:
+    """Convert an OpenAI model dict to LiteLLM format."""
+    model_id = openai_model.get("id")
+    if not model_id:
+        logger.warning("Skipping model due to missing id: %s", openai_model)
+        return None
+
+    litellm_model_name = f"openai/{model_id}"
+
+    model_info = {
+        "litellm_provider": "openai",
+        "mode": "chat",
+    }
+
+    for field in ["object", "created", "owned_by", "root", "parent"]:
+        value = openai_model.get(field)
+        if value is not None:
+            model_info[field] = value
+
+    return {"model_name": litellm_model_name, "model_info": model_info}
+
+
 @cache
 def get_openai_models(*, use_cached: bool = True) -> dict[str, Any]:
     """Return models from the OpenAI list endpoint or cached data."""
@@ -36,12 +58,9 @@ def get_openai_models(*, use_cached: bool = True) -> dict[str, Any]:
             return {}
     models: dict[str, Any] = {}
     for item in data.get("data", []):
-        model_id = item.get("id")
-        if model_id:
-            models[f"openai/{model_id}"] = {
-                "litellm_provider": "openai",
-                "mode": "chat",
-            }
+        converted = convert_openai_to_litellm(item)
+        if converted:
+            models[converted["model_name"]] = converted["model_info"]
     return models
 
 

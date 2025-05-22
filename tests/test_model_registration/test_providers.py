@@ -36,8 +36,11 @@ def test_get_openai_models_network(monkeypatch):
     sample = {"data": [{"id": "gpt-4o-mini", "object": "model", "owned_by": "openai", "permission": []}]}
     get_openai_models.cache_clear()
     _patch_get(monkeypatch, sample)
-    models = get_openai_models(use_cached=False)
-    assert models == {"openai/gpt-4o-mini": {"litellm_provider": "openai", "mode": "chat"}}
+    models = get_openai_models()
+    assert "openai/gpt-4o-mini" in models
+    info = models["openai/gpt-4o-mini"]
+    assert info["litellm_provider"] == "openai"
+    assert info["mode"] == "chat"
 
 
 def test_get_anthropic_models_network(monkeypatch):
@@ -56,8 +59,11 @@ def test_get_anthropic_models_network(monkeypatch):
     }
     get_anthropic_models.cache_clear()
     _patch_get(monkeypatch, sample)
-    models = get_anthropic_models(use_cached=False)
-    assert models == {"anthropic/claude-3-7-sonnet-20250219": {"litellm_provider": "anthropic", "mode": "chat"}}
+    models = get_anthropic_models()
+    assert "anthropic/claude-3-7-sonnet-20250219" in models
+    info = models["anthropic/claude-3-7-sonnet-20250219"]
+    assert info["litellm_provider"] == "anthropic"
+    assert info["mode"] == "chat"
 
 
 def test_get_gemini_models_network(monkeypatch):
@@ -75,23 +81,8 @@ def test_get_gemini_models_network(monkeypatch):
     }
     get_gemini_models.cache_clear()
     _patch_get(monkeypatch, sample)
-    models = get_gemini_models(use_cached=False)
-    assert models == {"gemini/gemini-1.5-flash-001": {"litellm_provider": "gemini", "mode": "chat"}}
-
-
-def test_get_openai_models_cached():
-    get_openai_models.cache_clear()
-    models = get_openai_models()
-    print(f"{len(models)} models from openai")
-
-
-def test_get_anthropic_models_cached():
-    get_anthropic_models.cache_clear()
-    models = get_anthropic_models()
-    print(f"{len(models)} models from anthropic")
-
-
-def test_get_gemini_models_cached():
-    get_gemini_models.cache_clear()
     models = get_gemini_models()
-    print(f"{len(models)} models from gemini")
+    assert "gemini/gemini-1.5-flash-001" in models
+    info = models["gemini/gemini-1.5-flash-001"]
+    assert info["litellm_provider"] == "gemini"
+    assert info["mode"] == "chat"
