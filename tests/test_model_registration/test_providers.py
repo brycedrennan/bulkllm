@@ -23,15 +23,15 @@ def _patch_get(monkeypatch, data):
     monkeypatch.setattr(requests, "get", fake_get)
 
 
-def test_get_openai_models(monkeypatch):
+def test_get_openai_models_network(monkeypatch):
     sample = {"data": [{"id": "gpt-4o-mini", "object": "model", "owned_by": "openai", "permission": []}]}
     get_openai_models.cache_clear()
     _patch_get(monkeypatch, sample)
-    models = get_openai_models()
+    models = get_openai_models(use_cached=False)
     assert models == {"openai/gpt-4o-mini": {"litellm_provider": "openai", "mode": "chat"}}
 
 
-def test_get_anthropic_models(monkeypatch):
+def test_get_anthropic_models_network(monkeypatch):
     sample = {
         "data": [
             {
@@ -47,11 +47,11 @@ def test_get_anthropic_models(monkeypatch):
     }
     get_anthropic_models.cache_clear()
     _patch_get(monkeypatch, sample)
-    models = get_anthropic_models()
+    models = get_anthropic_models(use_cached=False)
     assert models == {"anthropic/claude-3-7-sonnet-20250219": {"litellm_provider": "anthropic", "mode": "chat"}}
 
 
-def test_get_gemini_models(monkeypatch):
+def test_get_gemini_models_network(monkeypatch):
     sample = {
         "models": [
             {
@@ -66,5 +66,23 @@ def test_get_gemini_models(monkeypatch):
     }
     get_gemini_models.cache_clear()
     _patch_get(monkeypatch, sample)
+    models = get_gemini_models(use_cached=False)
+    assert models == {"gemini/gemini-1.5-flash-001": {"litellm_provider": "gemini", "mode": "chat"}}
+
+
+def test_get_openai_models_cached():
+    get_openai_models.cache_clear()
+    models = get_openai_models()
+    assert models == {"openai/gpt-4o-mini": {"litellm_provider": "openai", "mode": "chat"}}
+
+
+def test_get_anthropic_models_cached():
+    get_anthropic_models.cache_clear()
+    models = get_anthropic_models()
+    assert models == {"anthropic/claude-3-7-sonnet-20250219": {"litellm_provider": "anthropic", "mode": "chat"}}
+
+
+def test_get_gemini_models_cached():
+    get_gemini_models.cache_clear()
     models = get_gemini_models()
     assert models == {"gemini/gemini-1.5-flash-001": {"litellm_provider": "gemini", "mode": "chat"}}
