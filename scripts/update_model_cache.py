@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
 
-CACHE_MAX_AGE = timedelta(hours=1)
+CACHE_MAX_AGE = timedelta(hours=0)
 
 
 def needs_update(path: Path) -> bool:

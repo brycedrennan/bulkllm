@@ -30,6 +30,7 @@ def save_cached_provider_data(provider: str, data: dict[str, Any]) -> None:
     """Write raw API response for ``provider`` to cache."""
     path = get_data_file(provider)
     path.parent.mkdir(parents=True, exist_ok=True)
+    logger.info(f"Saving cached provider data for {provider} to {path}")
     with open(path, "w") as f:
         json.dump(data, f)
 
