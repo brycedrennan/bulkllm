@@ -1,3 +1,6 @@
+import contextlib
+import time
+
 import anyio
 import pytest
 
@@ -76,3 +79,38 @@ async def test_async_context_concurrent_usage():
     assert not limit._pending_requests
     assert len(limit._completed_requests) == 2
     assert limit.current_requests_in_window == 2
+
+
+@pytest.mark.asyncio
+async def test_await_capacity_blocks_until_release() -> None:
+    """``await_capacity`` should wait for other pending requests to release."""
+    limit = ModelRateLimit(model_names=["m"], rpm=1)
+
+    acquired = anyio.Event()
+    release = anyio.Event()
+    timings: dict[str, float] = {}
+
+    async def holder() -> None:
+        ctx = await limit.reserve_capacity(1, 1)
+        acquired.set()
+        await release.wait()
+
+        exc_cls = anyio.get_cancelled_exc_class()
+        with contextlib.suppress(exc_cls):
+            await ctx.__aexit__(exc_cls, exc_cls(), None)
+
+    async def waiter() -> None:
+        await acquired.wait()
+        start = time.monotonic()
+        await limit.await_capacity(1, 1)
+        timings["elapsed"] = time.monotonic() - start
+
+    async with anyio.create_task_group() as tg:
+        tg.start_soon(holder)
+        tg.start_soon(waiter)
+
+        await acquired.wait()
+        await anyio.sleep(0.3)
+        release.set()
+
+    assert timings["elapsed"] >= 0.3
