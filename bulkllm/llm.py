@@ -37,6 +37,7 @@ def patch_LLMCachingHandler():
 
 
 def _scrubbing_callback(m):
+    """Allow certain metadata fields to bypass log scrubbing."""
     if m.path == ("attributes", "metadata.user_api_key_hash"):
         return m.value
 
@@ -69,6 +70,7 @@ def _scrubbing_callback(m):
 
 @functools.lru_cache
 def initialize_litellm(enable_logfire=False):
+    """Initialise LiteLLM and optional Logfire instrumentation."""
     patch_LLMCachingHandler()
     if enable_logfire:
         import logfire  # type: ignore
@@ -97,6 +99,7 @@ def rate_limiter() -> RateLimiter:
 
 
 def _estimate_tokens(bound_args):
+    """Estimate input and output token counts from bound args."""
     model_name = bound_args.get("model")
     if model_name is None:
         msg = "Model name must be supplied as first positional arg or 'model' kwarg."

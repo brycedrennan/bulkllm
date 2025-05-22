@@ -68,6 +68,7 @@ class UsageRecord(BaseModel):
 
     @model_serializer(mode="wrap")
     def _strip_null_and_zero(self, handler):
+        """Omit ``None`` and zero values when serialising."""
         original: dict = handler(self)  # let Pydantic build the dict
         filtered: dict = {}
 
@@ -85,10 +86,12 @@ class UsageRecord(BaseModel):
 
     @model_validator(mode="after")
     def _validate_totals(self) -> UsageRecord:
+        """Ensure all derived totals match their component sums."""
         errors: list[str] = []
 
         # Helper for consistency checks
         def _check(sum_components: int, expected: int, label: str) -> None:
+            """Append a formatted error if totals don't match."""
             if expected == 0:
                 return  # provider omitted detailed breakdown
             if sum_components != expected:
@@ -156,6 +159,7 @@ class UsageAggregate(BaseModel):
 
     # -----------------------------------------------------------------
     def add(self, rec: UsageRecord) -> None:  # ← single source of truth
+        """Incorporate a new usage record into the aggregates."""
         self.request_count.add(1)
         if not rec.is_valid:
             self.invalid_count.add(1)
@@ -166,6 +170,7 @@ class UsageAggregate(BaseModel):
 
     # -----------------------------------------------------------------
     def snapshot(self) -> dict[str, Any]:
+        """Return a JSON-serialisable snapshot of the aggregates."""
         dump = {
             "model": self.model,
             "request_count": self.request_count.model_dump(mode="json"),
@@ -186,35 +191,43 @@ class UsageTracker:
     __slots__ = ("_aggregates", "_token", "name")
 
     def __init__(self, name: str | None = None) -> None:
+        """Initialise an empty tracker with an optional name."""
         self.name = name or "Unnamed"
         self._aggregates: dict[str, UsageAggregate] = {}
         self._token: contextvars.Token | None = None
 
     # ------------------------------------------------------------- context mgr
     async def __aenter__(self) -> UsageTracker:
+        """Enter the tracker context asynchronously."""
         return self._enter()
 
     async def __aexit__(self, exc_type, exc, tb) -> None:  # noqa: D401
+        """Exit the async context."""
         self._exit()
 
     def __enter__(self) -> UsageTracker:  # type: ignore[override]
+        """Enter the tracker context."""
         return self._enter()
 
     def __exit__(self, exc_type, exc, tb) -> None:  # type: ignore[override]
+        """Exit the tracker context."""
         self._exit()
 
     def _enter(self) -> UsageTracker:
+        """Push this tracker onto the context variable stack."""
         current = _usage_stack_var.get()
         self._token = _usage_stack_var.set((*current, self))
         return self
 
     def _exit(self) -> None:
+        """Pop this tracker from the context variable stack."""
         if self._token is not None:
             _usage_stack_var.reset(self._token)
             self._token = None
 
     # ------------------------------------------------------------- internals
     def _add_record(self, record: UsageRecord) -> None:
+        """Internal helper to add a record to the correct aggregate."""
         agg = self._aggregates.setdefault(record.model, UsageAggregate(model=record.model))
         agg.add(record)
 
@@ -224,6 +237,7 @@ class UsageTracker:
         return {m: agg.snapshot() for m, agg in self._aggregates.items()}
 
     def aggregate_stats(self) -> dict[str, UsageAggregate]:
+        """Return access to the internal aggregates mapping."""
         return self._aggregates
 
 

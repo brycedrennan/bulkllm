@@ -39,6 +39,7 @@ class UsageStat(BaseModel):
     # public API
     # ----------------------------------------------------------------
     def add(self, value: int | float | bool | None) -> None:
+        """Add a value to the running statistics."""
         if value is None:
             return
         if isinstance(value, bool):
@@ -90,6 +91,7 @@ class UsageStat(BaseModel):
     # helpers for percentile / histogram
     # ----------------------------------------------------------------
     def _sorted_sample(self) -> list[int | float]:
+        """Return the reservoir as a sorted list of values."""
         if not self.reservoir:
             return []
         sample: list[int | float] = []
@@ -98,6 +100,7 @@ class UsageStat(BaseModel):
         return sorted(sample)
 
     def _percentile(self, pct: float, data: list[int | float]) -> float:
+        """Return the percentile of *data* using linear interpolation."""
         if not data:
             return 0.0
         idx = round(pct * (len(data) - 1))
@@ -105,6 +108,7 @@ class UsageStat(BaseModel):
 
     # ---------- adaptive bin rules for continuous data --------------
     def _auto_bins(self, data: list[float], max_bins: int) -> int:
+        """Choose a bin count based on data size and spread."""
         n = len(data)
         if n < 2:
             return 1
@@ -126,6 +130,7 @@ class UsageStat(BaseModel):
 
     # ---------- unified histogram construction ----------------------
     def _histogram(self, max_bins: int, data: list[int | float]) -> list[tuple[int | float, int | float, int]]:
+        """Build a histogram from *data* with at most *max_bins* buckets."""
         if not data or self.min is None or self.max is None or max_bins <= 0:
             return []
 
@@ -175,26 +180,32 @@ class UsageStat(BaseModel):
     # ------------------------------------------------------------------
     @computed_field(return_type=float)
     def mean(self) -> float:
+        """Return the arithmetic mean of all values seen."""
         return self.total / self.count if self.count else 0.0
 
     @computed_field(return_type=float)
     def p1(self) -> float:
+        """Return the 1st percentile of the sample."""
         return self._percentile(0.01, self._sorted_sample())
 
     @computed_field(return_type=float)
     def p5(self) -> float:
+        """Return the 5th percentile of the sample."""
         return self._percentile(0.05, self._sorted_sample())
 
     @computed_field(return_type=float)
     def p50(self) -> float:
+        """Return the median of the sample."""
         return self._percentile(0.50, self._sorted_sample())
 
     @computed_field(return_type=float)
     def p95(self) -> float:
+        """Return the 95th percentile of the sample."""
         return self._percentile(0.95, self._sorted_sample())
 
     @computed_field(return_type=float)
     def p99(self) -> float:
+        """Return the 99th percentile of the sample."""
         return self._percentile(0.99, self._sorted_sample())
 
     @computed_field(return_type=list[tuple[float, float, int]])

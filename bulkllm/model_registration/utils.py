@@ -7,6 +7,7 @@ logger = logging.getLogger(__name__)
 
 
 def bulkllm_register_models(model_cost_map: dict[str, Any], warn_existing: bool = True):
+    """Register multiple models with LiteLLM, warning if already present."""
     for model_name in model_cost_map:
         if warn_existing:
             try:

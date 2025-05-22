@@ -59,6 +59,7 @@ manual_model_registrations = {
 
 @cache
 def register_models():
+    """Register built-in and manual models with LiteLLM."""
     logger.info("Registering models with LiteLLM")
     register_openrouter_models_with_litellm()
     register_openai_models_with_litellm()

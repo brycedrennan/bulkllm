@@ -86,6 +86,7 @@ def get_openrouter_models():
 
 @cache
 def register_openrouter_models_with_litellm():
+    """Register models retrieved from OpenRouter."""
     litellm_model_names_pre_registration = set(litellm.model_cost.keys())
     litellm_models = get_openrouter_models()
     model_names_for_registration = set(litellm_models.keys())
