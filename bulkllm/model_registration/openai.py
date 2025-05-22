@@ -37,4 +37,4 @@ def get_openai_models() -> dict[str, Any]:
 @cache
 def register_openai_models_with_litellm() -> None:
     """Fetch and register OpenAI models with LiteLLM."""
-    bulkllm_register_models(get_openai_models())
+    bulkllm_register_models(get_openai_models(), source="openai")

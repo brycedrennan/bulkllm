@@ -65,4 +65,4 @@ def register_models():
     register_openai_models_with_litellm()
     register_anthropic_models_with_litellm()
     register_gemini_models_with_litellm()
-    bulkllm_register_models(manual_model_registrations)
+    bulkllm_register_models(manual_model_registrations, source="manual")

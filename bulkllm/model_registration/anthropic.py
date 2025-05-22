@@ -41,4 +41,4 @@ def get_anthropic_models() -> dict[str, Any]:
 @cache
 def register_anthropic_models_with_litellm() -> None:
     """Fetch and register Anthropic models with LiteLLM."""
-    bulkllm_register_models(get_anthropic_models())
+    bulkllm_register_models(get_anthropic_models(), source="anthropic")

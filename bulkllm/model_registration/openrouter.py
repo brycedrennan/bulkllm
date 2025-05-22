@@ -90,7 +90,7 @@ def register_openrouter_models_with_litellm():
     litellm_model_names_pre_registration = set(litellm.model_cost.keys())
     litellm_models = get_openrouter_models()
     model_names_for_registration = set(litellm_models.keys())
-    bulkllm_register_models(litellm_models)
+    bulkllm_register_models(litellm_models, source="openrouter")
 
     litellm_model_names_post_registration = set(litellm.model_cost.keys())
 
