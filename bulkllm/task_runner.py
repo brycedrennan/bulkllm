@@ -24,11 +24,11 @@ class LLMTask:
 class LLMTaskRunner:
     """Simple scheduler that runs tasks with per-model queues."""
 
-    def __init__(self, rate_limiter: RateLimiter | None = None, *, max_workers_per_model: int = 4) -> None:
+    def __init__(self, rate_limiter: RateLimiter | None = None, *, max_workers: int = 4) -> None:
         self._queues: dict[str, asyncio.Queue[LLMTask]] = defaultdict(asyncio.Queue)
-        self._sems: dict[str, asyncio.Semaphore] = defaultdict(lambda: asyncio.Semaphore(max_workers_per_model))
+        self._sem = asyncio.Semaphore(max_workers)
         self._rate_limiter = rate_limiter or RateLimiter()
-        self._max_workers = max_workers_per_model
+        self._max_workers = max_workers
 
     def add_tasks(self, tasks: list[LLMTask]) -> None:
         """Add a batch of tasks to their model-specific queues."""
@@ -37,26 +37,19 @@ class LLMTaskRunner:
 
     async def _model_worker(self, model_name: str) -> None:
         queue = self._queues[model_name]
-        sem = self._sems[model_name]
         while True:
             task = await queue.get()
-            if not self._rate_limiter.has_capacity(
+            await self._rate_limiter.await_capacity(
                 model_name=task.model_name,
-                desired_input_tokens=task.estimate_in,
-                desired_output_tokens=task.estimate_out,
-            ):
-                queue.put_nowait(task)
-                queue.task_done()
-                await asyncio.sleep(0.1)
-                if queue.empty() and sem._value == self._max_workers:
-                    break
-                continue
-            async with sem:
+                input_tokens=task.estimate_in,
+                output_tokens=task.estimate_out,
+            )
+            async with self._sem:
                 try:
                     await task.fn()
                 finally:
                     queue.task_done()
-            if queue.empty() and sem._value == self._max_workers:
+            if queue.empty():
                 break
 
     async def run(self) -> None:
