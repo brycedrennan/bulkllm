@@ -21,16 +21,19 @@ bulkllm builds on top of `litellm` and adds a few extras:
 
 ## Development
 
+Always run `make checku` before committing.
+
 ### Quick Commands
  - `make init` create the environment and install dependencies
  - `make help` see available commands
- - `make af` format code
+ - `make autoformat` format code
+ - `make autoformat-unsafe` format code - including 'unsafe' fixes
  - `make lint` run linter
-- `make typecheck` run type checker
-- `make test` run tests
-- `make coverage` run tests with coverage report
-- `make check` run all checks (format, lint, typecheck, test)
- - `make checku` run all checks with unsafe autoformatting
+ - `make typecheck` run type checker
+ - `make test` run tests
+ - `make coverage` run tests with coverage report
+ - `make check` run all checks (format, lint, typecheck, test)
+ - `make checku` run all checks  (format-unsafe, lint, typecheck, test)
 
 ### Code Conventions
 
