@@ -168,7 +168,7 @@ class UsageAggregate(BaseModel):
             if not r.is_valid:
                 self.invalid_count.add(1)
 
-            for field_name, value in rec.__dict__.items():
+            for field_name, value in r.__dict__.items():
                 if isinstance(value, int | float | bool) and field_name != "model":
                     self.stats[field_name].add(value)
 
