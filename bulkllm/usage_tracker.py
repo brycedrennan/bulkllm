@@ -158,15 +158,19 @@ class UsageAggregate(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True, extra="forbid")
 
     # -----------------------------------------------------------------
-    def add(self, rec: UsageRecord) -> None:  # ← single source of truth
+    def add(self, rec: UsageRecord | list[UsageRecord]) -> None:  # ← single source of truth
         """Incorporate a new usage record into the aggregates."""
-        self.request_count.add(1)
-        if not rec.is_valid:
-            self.invalid_count.add(1)
+        if isinstance(rec, UsageRecord):
+            rec = [rec]
 
-        for field_name, value in rec.__dict__.items():
-            if isinstance(value, int | float | bool) and field_name != "model":
-                self.stats[field_name].add(value)
+        for r in rec:
+            self.request_count.add(1)
+            if not r.is_valid:
+                self.invalid_count.add(1)
+
+            for field_name, value in rec.__dict__.items():
+                if isinstance(value, int | float | bool) and field_name != "model":
+                    self.stats[field_name].add(value)
 
     # -----------------------------------------------------------------
     def snapshot(self) -> dict[str, Any]:
