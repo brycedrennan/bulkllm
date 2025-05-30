@@ -66,8 +66,9 @@ def bulkllm_register_models(
             model_info = None
         if model_info:
             if warn_existing:
-                logger.warning(f"Model '{model_name}' already registered")
+                logger.debug(f"Model '{model_name}' already registered")
         else:
+            logger.info(f"Registering model '{model_name}' from {source}")
             entry = (model_name, source)
             if entry not in ADDED_MODELS:
                 ADDED_MODELS.append(entry)
