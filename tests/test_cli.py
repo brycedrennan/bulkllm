@@ -1,6 +1,12 @@
+import datetime
+
 from typer.testing import CliRunner
 
-from bulkllm.cli import app
+from bulkllm.schema import LLMConfig
+
+LLMConfig.model_rebuild(_types_namespace={"datetime": datetime})
+
+from bulkllm.cli import app  # noqa: E402
 
 
 def test_list_models(monkeypatch):
@@ -59,3 +65,39 @@ def test_list_missing_rate_limits(monkeypatch):
     lines = result.output.splitlines()
     assert "unlimited/model" in lines
     assert "limited/model" not in lines
+
+
+def test_list_missing_model_configs(monkeypatch):
+    from types import SimpleNamespace
+
+    import litellm
+
+    monkeypatch.setattr(litellm, "model_cost", {})
+
+    def fake_register_models() -> None:
+        litellm.model_cost["configured/model"] = {
+            "litellm_provider": "openai",
+            "mode": "chat",
+        }
+        litellm.model_cost["unconfigured/model"] = {
+            "litellm_provider": "openai",
+            "mode": "chat",
+        }
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr(
+        "bulkllm.model_registration.main.register_models",
+        fake_register_models,
+    )
+    monkeypatch.setattr(
+        "bulkllm.cli.create_model_configs",
+        lambda: [SimpleNamespace(litellm_model_name="configured/model")],
+    )
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["list-missing-model-configs"])
+
+    assert result.exit_code == 0
+    lines = result.output.splitlines()
+    assert "unconfigured/model" in lines
+    assert "configured/model" not in lines
