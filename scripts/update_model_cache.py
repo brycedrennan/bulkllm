@@ -34,7 +34,7 @@ def fetch(url: str, *, headers: dict[str, str] | None = None, params: dict[str, 
 
 def write_json(path: Path, data: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data))
+    path.write_text(json.dumps(data, indent=2))
     typer.echo(f"Updated {path}")
 
 

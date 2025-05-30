@@ -107,3 +107,5 @@ ENV/
 .ruff_cache
 
 **/_version.py
+
+private

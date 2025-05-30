@@ -1,0 +1,129 @@
+[
+  {
+    "name": "codex-mini-latest",
+    "slug": "codex-mini-latest",
+    "display_name": "codex-mini-latest",
+    "current_snapshot": "codex-mini-latest",
+    "tagline": "Fast reasoning model optimized for the Codex CLI",
+    "description": "codex-mini-latest is a fine-tuned version of o4-mini specifically\nfor use in Codex CLI. For direct use in the API, we recommend starting \nwith gpt-4.1.\n",
+    "type": "chat",
+    "snapshots": [
+      "codex-mini-latest"
+    ],
+    "compare_prices": [
+      "o4-mini",
+      "gpt-4.1"
+    ],
+    "rate_limits": {
+      "tier_1": {
+        "rpm": 1000.0,
+        "tpm": 100000.0,
+        "batch_queue_limit": 1000000.0
+      },
+      "tier_2": {
+        "rpm": 2000.0,
+        "tpm": 200000.0,
+        "batch_queue_limit": 2000000.0
+      },
+      "tier_3": {
+        "rpm": 5000.0,
+        "tpm": 4000000.0,
+        "batch_queue_limit": 40000000.0
+      },
+      "tier_4": {
+        "rpm": 10000.0,
+        "tpm": 10000000.0,
+        "batch_queue_limit": 1000000000.0
+      },
+      "tier_5": {
+        "rpm": 30000.0,
+        "tpm": 150000000.0,
+        "batch_queue_limit": 15000000000.0
+      }
+    }
+  },
+  {
+    "name": "o3",
+    "slug": "o3",
+    "current_snapshot": "o3-2025-04-16",
+    "tagline": "Our most powerful reasoning model",
+    "description": "o3 is a well-rounded and powerful model across domains. It sets a new standard for math, science, coding, and visual reasoning tasks. It also excels at technical writing and instruction-following. Use it to think through multi-step problems that involve analysis across text, code, and images. \n\nLearn more about how to use our reasoning models in our [reasoning](/docs/guides/reasoning?api-mode=responses) guide.\n",
+    "type": "reasoning",
+    "snapshots": [
+      "o3-2025-04-16"
+    ],
+    "compare_prices": [
+      "o1",
+      "o4-mini"
+    ],
+    "rate_limits": {
+      "tier_1": {
+        "rpm": 500,
+        "tpm": 30000.0,
+        "batch_queue_limit": 90000.0
+      },
+      "tier_2": {
+        "rpm": 5000.0,
+        "tpm": 450000.0,
+        "batch_queue_limit": 1350000.0
+      },
+      "tier_3": {
+        "rpm": 5000.0,
+        "tpm": 800000.0,
+        "batch_queue_limit": 50000000.0
+      },
+      "tier_4": {
+        "rpm": 10000.0,
+        "tpm": 2000000.0,
+        "batch_queue_limit": 200000000.0
+      },
+      "tier_5": {
+        "rpm": 10000.0,
+        "tpm": 30000000.0,
+        "batch_queue_limit": 5000000000.0
+      }
+    }
+  },
+  {
+    "name": "o4-mini",
+    "slug": "o4-mini",
+    "current_snapshot": "o4-mini-2025-04-16",
+    "tagline": "Faster, more affordable reasoning model",
+    "description": "o4-mini is our latest small o-series model. It's optimized for fast, effective reasoning with exceptionally efficient performance in coding and visual tasks. \n\nLearn more about how to use our reasoning models in our [reasoning](/docs/guides/reasoning?api-mode=responses) guide.\n",
+    "type": "reasoning",
+    "snapshots": [
+      "o4-mini-2025-04-16"
+    ],
+    "compare_prices": [
+      "o3",
+      "o3-mini"
+    ],
+    "rate_limits": {
+      "tier_1": {
+        "rpm": 1000.0,
+        "tpm": 100000.0,
+        "batch_queue_limit": 1000000.0
+      },
+      "tier_2": {
+        "rpm": 2000.0,
+        "tpm": 200000.0,
+        "batch_queue_limit": 2000000.0
+      },
+      "tier_3": {
+        "rpm": 5000.0,
+        "tpm": 4000000.0,
+        "batch_queue_limit": 40000000.0
+      },
+      "tier_4": {
+        "rpm": 10000.0,
+        "tpm": 10000000.0,
+        "batch_queue_limit": 1000000000.0
+      },
+      "tier_5": {
+        "rpm": 30000.0,
+        "tpm": 150000000.0,
+        "batch_queue_limit": 15000000000.0
+      }
+    }
+  }
+]
