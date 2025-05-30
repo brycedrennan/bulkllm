@@ -21,6 +21,18 @@ def list_models() -> None:
         typer.echo(model)
 
 
+@app.command("list-missing-configs")
+def list_missing_configs() -> None:
+    """List models without a corresponding ``LLMConfig`` entry."""
+    register_models()
+    from bulkllm.llm_configs import create_model_configs
+
+    config_models = {cfg.litellm_model_name for cfg in create_model_configs()}
+    for model in sorted(litellm.model_cost):
+        if model not in config_models:
+            typer.echo(model)
+
+
 def main() -> None:  # pragma: no cover - CLI entry point
     app()
 
