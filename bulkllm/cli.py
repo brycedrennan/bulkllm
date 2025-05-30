@@ -3,6 +3,7 @@ from __future__ import annotations
 import litellm
 import typer
 
+from bulkllm.llm_configs import create_model_configs
 from bulkllm.model_registration.main import register_models
 from bulkllm.rate_limiter import RateLimiter
 
@@ -29,6 +30,16 @@ def list_missing_rate_limits() -> None:
     limiter = RateLimiter()
     for model in sorted(litellm.model_cost):
         if limiter.get_rate_limit_for_model(model) is limiter.default_rate_limit:
+            typer.echo(model)
+
+
+@app.command("list-missing-model-configs")
+def list_missing_model_configs() -> None:
+    """List models without a corresponding LLMConfig."""
+    register_models()
+    known = {cfg.litellm_model_name for cfg in create_model_configs()}
+    for model in sorted(litellm.model_cost):
+        if model not in known:
             typer.echo(model)
 
 
