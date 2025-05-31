@@ -101,3 +101,35 @@ def test_list_missing_model_configs(monkeypatch):
     lines = result.output.splitlines()
     assert "unconfigured/model" in lines
     assert "configured/model" not in lines
+
+
+def test_list_unique_models(monkeypatch):
+    import litellm
+
+    monkeypatch.setattr(litellm, "model_cost", {})
+
+    def fake_register_models() -> None:
+        litellm.model_cost["anthropic/claude-3"] = {
+            "litellm_provider": "anthropic",
+            "mode": "chat",
+        }
+        litellm.model_cost["openrouter/anthropic/claude-3"] = {
+            "litellm_provider": "openrouter",
+            "mode": "chat",
+        }
+        litellm.model_cost["bedrock/anthropic.claude-3"] = {
+            "litellm_provider": "bedrock",
+            "mode": "chat",
+        }
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["list-unique-models"])
+
+    assert result.exit_code == 0
+    lines = result.output.splitlines()
+    assert lines.count("anthropic/claude-3") == 1
+    assert "openrouter/anthropic/claude-3" not in lines
+    assert "bedrock/anthropic.claude-3" not in lines
