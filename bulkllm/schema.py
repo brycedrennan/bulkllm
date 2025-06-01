@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import datetime
 import hashlib as _hashlib
 import logging
+from collections.abc import Iterable
 from typing import (
-    TYPE_CHECKING,
     Any,
     Literal,
 )
@@ -13,10 +14,6 @@ from pydantic import (
     computed_field,
     model_validator,
 )
-
-if TYPE_CHECKING:
-    import datetime
-    from collections.abc import Iterable
 
 logger = logging.getLogger(__name__)
 

@@ -28,6 +28,8 @@ def convert_gemini_to_litellm(gemini_model: dict[str, Any]) -> dict[str, Any] | 
         "litellm_provider": "gemini",
         "mode": "chat",
     }
+    if "embedding" in name:
+        model_info["mode"] = "embedding"
 
     token_limit = gemini_model.get("tokenLimit")
     if token_limit is not None:

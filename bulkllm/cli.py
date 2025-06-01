@@ -1,24 +1,12 @@
 from __future__ import annotations
 
+from huggingface_hub import model_info
 import litellm
 import typer
 
 from bulkllm.llm_configs import create_model_configs
 from bulkllm.model_registration.main import register_models
 from bulkllm.rate_limiter import RateLimiter
-
-
-def _canonical_model_name(name: str) -> str:
-    """Return canonical name for ``name`` dropping provider wrappers."""
-    if name.startswith("openrouter/"):
-        parts = name.split("/", 2)
-        if len(parts) == 3 and parts[1] in {"anthropic", "openai", "gemini"}:
-            return f"{parts[1]}/{parts[2]}"
-    if name.startswith("bedrock/"):
-        after = name[len("bedrock/") :]
-        if after.startswith("anthropic."):
-            return "anthropic/" + after[len("anthropic.") :]
-    return name
 
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
@@ -33,7 +21,8 @@ def main_callback() -> None:
 def list_models() -> None:
     """List all models registered with LiteLLM."""
     register_models()
-    for model in sorted(litellm.model_cost):
+    for model, model_info in sorted(litellm.model_cost.items()):
+        
         typer.echo(model)
 
 
@@ -42,11 +31,15 @@ def list_unique_models() -> None:
     """List unique models, collapsing provider duplicates."""
     register_models()
     unique: set[str] = set()
-    for model in sorted(litellm.model_cost):
-        canonical = _canonical_model_name(model)
+    for model, model_info in litellm.model_cost.items():
+        canonical = _canonical_model_name(model, model_info)
+        if canonical is None:
+            continue
         unique.add(canonical)
     for name in sorted(unique):
         typer.echo(name)
+
+    print(f"Total unique models: {len(unique)}")
 
 
 @app.command("list-missing-rate-limits")
