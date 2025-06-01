@@ -4,7 +4,8 @@ from bulkllm.model_registration.main import register_models
 
 primary_providers = {"openai", "anthropic", "gemini", "xai", "qwen", "deepseek", "mistral"}
 
-def _canonical_model_name(name: str, model_info) -> str:
+
+def _canonical_model_name(name: str, model_info) -> str | None:
     """Return canonical name for ``name`` dropping provider wrappers."""
     name = name.replace("/x-ai/", "/xai/")
     if name.startswith("x-ai/"):
@@ -13,7 +14,6 @@ def _canonical_model_name(name: str, model_info) -> str:
     if model_info.get("mode") in ("image_generation", "embedding"):
         return None
 
-    
     provider = model_info.get("litellm_provider")
     if provider == "text-completion-openai":
         return None
@@ -25,18 +25,19 @@ def _canonical_model_name(name: str, model_info) -> str:
             return name
         if "/" not in name:
             return f"{provider}/{name}"
-        raise ValueError(f"Invalid model name: {name}")
-        
+        msg = f"Invalid model name: {name}"
+        raise ValueError(msg)
+
     for p in primary_providers:
         if p in name:
             return None
-    
+
     if name.startswith("openrouter/"):
         name = name[len("openrouter/") :]
         return name
     if name.startswith("bedrock/"):
         after = name[len("bedrock/") :]
-        if not 'nova' in after:
+        if "nova" not in after:
             return None
         return after
 
@@ -52,9 +53,7 @@ def canonical_models():
             continue
         unique.add(canonical)
 
-
-    
-    return sorted(list(unique))
+    return sorted(unique)
 
 
 def model_modes():
@@ -62,8 +61,8 @@ def model_modes():
     modes: set[str] = set()
     for model, model_info in litellm.model_cost.items():
         modes.add(str(model_info.get("mode")))
-    
-    return sorted(list(modes))
+
+    return sorted(modes)
 
 
 def model_providers():
@@ -71,8 +70,9 @@ def model_providers():
     providers: set[str] = set()
     for model, model_info in litellm.model_cost.items():
         providers.add(str(model_info.get("litellm_provider")))
-    
-    return sorted(list(providers))
+
+    return sorted(providers)
+
 
 def text_models():
     register_models()
@@ -86,7 +86,7 @@ def text_models():
             if "/" not in model:
                 model = f"{model_info.get('litellm_provider')}/{model}"
             models[model] = model_info
-    
+
     return models
 
 
@@ -99,7 +99,7 @@ def _primary_provider_model_names():
             if model_name in model_names:
                 print(f"ERROR: Duplicate model name: {model_name}")
             model_names.add(model_name)
-    return sorted(list(model_names))
+    return sorted(model_names)
 
 
 if __name__ == "__main__":

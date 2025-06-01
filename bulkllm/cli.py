@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-from huggingface_hub import model_info
 import litellm
 import typer
 
 from bulkllm.llm_configs import create_model_configs
+from bulkllm.model_registration.canonical import _canonical_model_name
 from bulkllm.model_registration.main import register_models
 from bulkllm.rate_limiter import RateLimiter
-
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
@@ -22,7 +21,6 @@ def list_models() -> None:
     """List all models registered with LiteLLM."""
     register_models()
     for model, model_info in sorted(litellm.model_cost.items()):
-        
         typer.echo(model)
 
 
