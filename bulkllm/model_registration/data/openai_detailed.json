@@ -100,7 +100,7 @@
       "current_snapshot": "codex-mini-latest",
       "tagline": "Fast reasoning model optimized for the Codex CLI",
       "description": "codex-mini-latest is a fine-tuned version of o4-mini specifically\nfor use in Codex CLI. For direct use in the API, we recommend starting \nwith gpt-4.1.\n",
-      "type": "chat",
+      "type": "other",
       "snapshots": [
         "codex-mini-latest"
       ],
@@ -142,7 +142,7 @@
       "current_snapshot": "computer-use-preview-2025-03-11",
       "tagline": "Specialized model for computer use tool",
       "description": "The computer-use-preview model is a specialized model for the computer use \ntool. It is trained to understand and execute computer tasks.\nSee the [computer use guide](/docs/guides/tools-computer-use) for more\ninformation. This model is only usable in the \n[Responses API](/docs/api-reference/responses).\n",
-      "type": "reasoning",
+      "type": "other",
       "snapshots": [
         "computer-use-preview-2025-03-11"
       ],
@@ -426,7 +426,6 @@
       "type": "chat",
       "snapshots": [
         "gpt-4-0125-preview",
-        "gpt-4-1106-preview",
         "gpt-4-1106-vision-preview"
       ],
       "compare_prices": [
@@ -524,6 +523,13 @@
         "gpt-4o-mini",
         "gpt-4.1"
       ],
+      "supported_tools": [
+        "function_calling",
+        "web_search",
+        "file_search",
+        "code_interpreter",
+        "mcp"
+      ],
       "rate_limits": [
         {
           "name": "Standard",
@@ -609,6 +615,13 @@
         "gpt-4.1-mini",
         "gpt-4o-mini"
       ],
+      "supported_tools": [
+        "function_calling",
+        "file_search",
+        "image_generation",
+        "code_interpreter",
+        "mcp"
+      ],
       "rate_limits": [
         {
           "name": "Standard",
@@ -693,6 +706,14 @@
       "compare_prices": [
         "gpt-4o",
         "o3-mini"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "web_search",
+        "file_search",
+        "image_generation",
+        "code_interpreter",
+        "mcp"
       ],
       "rate_limits": [
         {
@@ -855,11 +876,18 @@
       "display_name": "GPT-4o Audio",
       "current_snapshot": "gpt-4o-audio-preview-2024-12-17",
       "tagline": "GPT-4o models capable of audio inputs and outputs",
-      "description": "This is a preview release of the GPT-4o Audio models. These models accept audio inputs and outputs, and can be used in the Chat Completions REST API.\n",
+      "description": "This is a preview release of the GPT-4o Audio models. These models accept \naudio inputs and outputs, and can be used in the Chat Completions REST API.\n",
       "type": "chat",
       "snapshots": [
+        "gpt-4o-audio-preview-2025-06-03",
         "gpt-4o-audio-preview-2024-12-17",
         "gpt-4o-audio-preview-2024-10-01"
+      ],
+      "supported_tools": [
+        "web_search",
+        "file_search",
+        "code_interpreter",
+        "mcp"
       ],
       "rate_limits": {
         "tier_1": {
@@ -899,6 +927,12 @@
       "type": "chat",
       "snapshots": [
         "gpt-4o-mini-audio-preview-2024-12-17"
+      ],
+      "supported_tools": [
+        "web_search",
+        "file_search",
+        "code_interpreter",
+        "mcp"
       ],
       "rate_limits": {
         "free": {
@@ -941,7 +975,8 @@
       "current_snapshot": "gpt-4o-mini-realtime-preview-2024-12-17",
       "tagline": "Smaller realtime model for text and audio inputs and outputs",
       "description": "This is a preview release of the GPT-4o-mini Realtime model, capable of responding to audio and text inputs in realtime over WebRTC or a WebSocket interface.\n",
-      "type": "chat",
+      "type": "other",
+      "playground_url": "/playground/realtime",
       "snapshots": [
         "gpt-4o-mini-realtime-preview-2024-12-17"
       ],
@@ -976,7 +1011,7 @@
       "current_snapshot": "gpt-4o-mini-search-preview-2025-03-11",
       "tagline": "Fast, affordable small model for web search",
       "description": "GPT-4o mini Search Preview is a specialized model trained to understand and execute [web search](/docs/guides/tools-web-search?api-mode=chat) queries with the Chat Completions API. In addition to token fees, web search queries have a fee per tool call. Learn more in the [pricing](/docs/pricing) page.\n",
-      "type": "chat",
+      "type": "other",
       "snapshots": [
         "gpt-4o-mini-search-preview-2025-03-11"
       ],
@@ -1117,6 +1152,14 @@
         "translation",
         "extract_tags"
       ],
+      "supported_tools": [
+        "function_calling",
+        "web_search",
+        "file_search",
+        "image_generation",
+        "code_interpreter",
+        "mcp"
+      ],
       "rate_limits": {
         "free": {
           "rpm": 3,
@@ -1158,8 +1201,10 @@
       "current_snapshot": "gpt-4o-realtime-preview-2024-12-17",
       "tagline": "Model capable of realtime text and audio inputs and outputs",
       "description": "This is a preview release of the GPT-4o Realtime model, capable of responding to audio and text inputs in realtime over WebRTC or a WebSocket interface.\n",
-      "type": "chat",
+      "type": "other",
+      "playground_url": "/playground/realtime",
       "snapshots": [
+        "gpt-4o-realtime-preview-2025-06-03",
         "gpt-4o-realtime-preview-2024-12-17",
         "gpt-4o-realtime-preview-2024-10-01"
       ],
@@ -1194,7 +1239,7 @@
       "current_snapshot": "gpt-4o-search-preview-2025-03-11",
       "tagline": "GPT model for web search in Chat Completions",
       "description": "GPT-4o Search Preview is a specialized model trained to understand and execute [web search](/docs/guides/tools-web-search?api-mode=chat) queries with the Chat Completions API. In addition to token fees, web search queries have a fee per tool call. Learn more in the [pricing](/docs/pricing) page.\n",
-      "type": "chat",
+      "type": "other",
       "snapshots": [
         "gpt-4o-search-preview-2025-03-11"
       ],
@@ -1291,6 +1336,14 @@
         "clothing_recommendation",
         "recipe_generation"
       ],
+      "supported_tools": [
+        "function_calling",
+        "web_search",
+        "file_search",
+        "image_generation",
+        "code_interpreter",
+        "mcp"
+      ],
       "rate_limits": {
         "tier_1": {
           "rpm": 500,
@@ -1330,6 +1383,7 @@
       "snapshots": [
         "gpt-image-1"
       ],
+      "playground_url": "/playground/images",
       "rate_limits": {
         "tier_1": {
           "tpm": 100000.0,
@@ -1369,6 +1423,11 @@
       ],
       "point_to": "o3-mini",
       "deprecated": true,
+      "supported_tools": [
+        "file_search",
+        "code_interpreter",
+        "mcp"
+      ],
       "rate_limits": {
         "tier_1": {
           "rpm": 500,
@@ -1452,6 +1511,11 @@
         "o1",
         "o3-mini"
       ],
+      "supported_tools": [
+        "function_calling",
+        "file_search",
+        "mcp"
+      ],
       "rate_limits": {
         "tier_1": {
           "rpm": 500,
@@ -1496,6 +1560,11 @@
       ],
       "grouped_models": [
         "o1-preview"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "file_search",
+        "mcp"
       ],
       "rate_limits": {
         "tier_1": {
@@ -1545,6 +1614,13 @@
         "text_to_sql",
         "graph_entity_extraction"
       ],
+      "supported_tools": [
+        "function_calling",
+        "file_search",
+        "code_interpreter",
+        "mcp",
+        "image_generation"
+      ],
       "rate_limits": {
         "tier_1": {
           "rpm": 1000.0,
@@ -1587,6 +1663,13 @@
         "o1",
         "o4-mini"
       ],
+      "supported_tools": [
+        "function_calling",
+        "file_search",
+        "image_generation",
+        "code_interpreter",
+        "mcp"
+      ],
       "rate_limits": {
         "tier_1": {
           "rpm": 500,
@@ -1628,6 +1711,12 @@
       "compare_prices": [
         "o3",
         "o3-mini"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "file_search",
+        "code_interpreter",
+        "mcp"
       ],
       "rate_limits": {
         "tier_1": {
@@ -2473,50 +2562,15 @@
       }
     },
     {
-      "name": "gpt-4-0125-preview",
-      "slug": "gpt-4-0125-preview",
-      "performance": 2,
-      "latency": 3,
-      "modalities": {
-        "input": [
-          "text"
-        ],
-        "output": [
-          "text"
-        ]
-      },
-      "context_window": 128000.0,
-      "max_output_tokens": 4096,
-      "knowledge_cutoff": 1701388800000.0,
-      "supported_features": [
-        "fine_tuning",
-        "streaming"
-      ],
-      "supported_endpoints": [
-        "chat_completions",
-        "responses",
-        "assistants"
-      ],
-      "reasoning_tokens": false,
-      "price_data": {
-        "main": {
-          "input": 10,
-          "output": 30
-        },
-        "batch": {
-          "input": 5,
-          "output": 15
-        }
-      }
-    },
-    {
       "name": "gpt-4-1106-vision-preview",
       "slug": "gpt-4-1106-vision-preview",
       "performance": 2,
       "latency": 3,
+      "deprecated": true,
       "modalities": {
         "input": [
-          "text"
+          "text",
+          "image"
         ],
         "output": [
           "text"
@@ -2944,6 +2998,43 @@
       }
     },
     {
+      "name": "gpt-4o-audio-preview-2025-06-03",
+      "slug": "gpt-4o-audio-preview-2025-06-03",
+      "performance": 3,
+      "latency": 3,
+      "modalities": {
+        "input": [
+          "text",
+          "audio"
+        ],
+        "output": [
+          "text",
+          "audio"
+        ]
+      },
+      "context_window": 128000.0,
+      "max_output_tokens": 16384,
+      "knowledge_cutoff": 1696118400000.0,
+      "supported_features": [
+        "streaming",
+        "function_calling"
+      ],
+      "supported_endpoints": [
+        "chat_completions"
+      ],
+      "reasoning_tokens": false,
+      "price_data": {
+        "main": {
+          "input": 10,
+          "output": 30
+        },
+        "batch": {
+          "input": 5,
+          "output": 15
+        }
+      }
+    },
+    {
       "name": "gpt-4o-mini-2024-07-18",
       "slug": "gpt-4o-mini-2024-07-18",
       "performance": 2,
@@ -3096,10 +3187,6 @@
       "context_window": 16000.0,
       "max_output_tokens": 2000.0,
       "knowledge_cutoff": 1717200000000.0,
-      "supported_features": [
-        "streaming",
-        "agents"
-      ],
       "supported_endpoints": [
         "transcription",
         "realtime"
@@ -3120,10 +3207,6 @@
           "audio"
         ]
       },
-      "supported_features": [
-        "streaming",
-        "agents"
-      ],
       "supported_endpoints": [
         "speech_generation"
       ],
@@ -3169,6 +3252,43 @@
     {
       "name": "gpt-4o-realtime-preview-2024-12-17",
       "slug": "gpt-4o-realtime-preview-2024-12-17",
+      "performance": 3,
+      "latency": 4,
+      "modalities": {
+        "input": [
+          "text",
+          "audio"
+        ],
+        "output": [
+          "text",
+          "audio"
+        ]
+      },
+      "context_window": 128000.0,
+      "max_output_tokens": 4096,
+      "knowledge_cutoff": 1696118400000.0,
+      "supported_features": [
+        "function_calling",
+        "prompt_caching"
+      ],
+      "supported_endpoints": [
+        "realtime"
+      ],
+      "reasoning_tokens": false,
+      "price_data": {
+        "main": {
+          "input": 10,
+          "output": 30
+        },
+        "batch": {
+          "input": 5,
+          "output": 15
+        }
+      }
+    },
+    {
+      "name": "gpt-4o-realtime-preview-2025-06-03",
+      "slug": "gpt-4o-realtime-preview-2025-06-03",
       "performance": 3,
       "latency": 4,
       "modalities": {
@@ -3256,10 +3376,6 @@
       "context_window": 16000.0,
       "max_output_tokens": 2000.0,
       "knowledge_cutoff": 1717200000000.0,
-      "supported_features": [
-        "streaming",
-        "agents"
-      ],
       "supported_endpoints": [
         "transcription",
         "realtime"
@@ -3356,7 +3472,6 @@
       ],
       "supported_endpoints": [
         "chat_completions",
-        "responses",
         "assistants"
       ],
       "reasoning_tokens": true,
@@ -3915,6 +4030,15 @@
       },
       "snapshots": [
         {
+          "name": "gpt-4o-audio-preview-2025-06-03",
+          "values": {
+            "main": {
+              "input": 2.5,
+              "output": 10
+            }
+          }
+        },
+        {
           "name": "gpt-4o-audio-preview-2024-12-17",
           "values": {
             "main": {
@@ -3945,6 +4069,16 @@
         }
       },
       "snapshots": [
+        {
+          "name": "gpt-4o-realtime-preview-2025-06-03",
+          "values": {
+            "main": {
+              "input": 5,
+              "cached_input": 2.5,
+              "output": 20
+            }
+          }
+        },
         {
           "name": "gpt-4o-realtime-preview-2024-12-17",
           "values": {

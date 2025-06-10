@@ -685,7 +685,8 @@
       "outputTokenLimit": 1,
       "supportedGenerationMethods": [
         "embedContent",
-        "countTextTokens"
+        "countTextTokens",
+        "countTokens"
       ]
     },
     {
