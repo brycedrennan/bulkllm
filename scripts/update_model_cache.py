@@ -3,11 +3,18 @@ from __future__ import annotations
 import json
 import os
 from datetime import UTC, datetime, timedelta
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 import requests
 import typer
 
+from bulkllm.model_registration import (
+    anthropic as anthropic_mod,
+    gemini as gemini_mod,
+    mistral as mistral_mod,
+    openai as openai_mod,
+    openrouter as openrouter_mod,
+)
 from bulkllm.model_registration.utils import get_data_file
 
 if TYPE_CHECKING:
@@ -17,56 +24,6 @@ app = typer.Typer(add_completion=False, no_args_is_help=True)
 
 
 CACHE_MAX_AGE = timedelta(hours=0)
-
-
-def sort_openai_data(data: dict[str, Any]) -> dict[str, Any]:
-    """Return ``data`` with models sorted by creation time when available."""
-    models = data.get("data", [])
-    data["data"] = sorted(models, key=lambda m: m.get("created", 0))
-    return data
-
-
-def sort_xai_data(data: dict[str, Any]) -> dict[str, Any]:
-    """Return ``data`` with models sorted by creation time."""
-    return sort_openai_data(data)
-
-
-def sort_anthropic_data(data: dict[str, Any]) -> dict[str, Any]:
-    """Return ``data`` with models sorted by creation time when available."""
-    models = data.get("data", [])
-    data["data"] = sorted(models, key=lambda m: m.get("created_at", ""))
-    return data
-
-
-def sort_gemini_data(data: dict[str, Any]) -> dict[str, Any]:
-    """Return ``data`` with models sorted by name."""
-    models = data.get("models", [])
-    data["models"] = sorted(models, key=lambda m: m.get("name", ""))
-    return data
-
-
-def sort_openrouter_data(data: dict[str, Any]) -> dict[str, Any]:
-    """Return ``data`` with models sorted by creation time."""
-    models = data.get("data", [])
-    data["data"] = sorted(models, key=lambda m: m.get("created", 0))
-    return data
-
-
-def sort_mistral_data(data: dict[str, Any]) -> dict[str, Any]:
-    """Return ``data`` with models sorted by creation time."""
-    models = data.get("data", [])
-    data["data"] = sorted(models, key=lambda m: m.get("created", 0))
-    return data
-
-
-SORTERS: dict[str, callable[[dict[str, Any]], dict[str, Any]]] = {
-    "openai": sort_openai_data,
-    "xai": sort_xai_data,
-    "anthropic": sort_anthropic_data,
-    "gemini": sort_gemini_data,
-    "openrouter": sort_openrouter_data,
-    "mistral": sort_mistral_data,
-}
 
 
 def needs_update(path: Path) -> bool:
@@ -83,11 +40,7 @@ def fetch(url: str, *, headers: dict[str, str] | None = None, params: dict[str, 
 
 
 def write_json(path: Path, data: dict) -> None:
-    """Write ``data`` to ``path`` after applying provider-specific sorting."""
-    provider = path.stem
-    sorter = SORTERS.get(provider)
-    if sorter:
-        data = sorter(data)
+    """Write ``data`` to ``path``."""
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2))
     typer.echo(f"Updated {path}")
@@ -99,11 +52,7 @@ def main(force: bool = False) -> None:
     # OpenAI
     openai_path = get_data_file("openai")
     if force or needs_update(openai_path):
-        headers = {}
-        api_key = os.getenv("OPENAI_API_KEY", "")
-        if api_key:
-            headers["Authorization"] = f"Bearer {api_key}"
-        data = fetch("https://api.openai.com/v1/models", headers=headers)
+        data = openai_mod.fetch_openai_data()
         write_json(openai_path, data)
 
     # XAI
@@ -121,36 +70,25 @@ def main(force: bool = False) -> None:
     # Anthropic
     anthropic_path = get_data_file("anthropic")
     if force or needs_update(anthropic_path):
-        headers = {
-            "x-api-key": os.getenv("ANTHROPIC_API_KEY", ""),
-            "anthropic-version": "2023-06-01",
-            "Content-Type": "application/json",
-        }
-        data = fetch("https://api.anthropic.com/v1/models", headers=headers)
+        data = anthropic_mod.fetch_anthropic_data()
         write_json(anthropic_path, data)
 
     # Gemini
     gemini_path = get_data_file("gemini")
     if force or needs_update(gemini_path):
-        api_key = os.getenv("GEMINI_API_KEY", "")
-        params = {"key": api_key} if api_key else None
-        data = fetch("https://generativelanguage.googleapis.com/v1beta/models", params=params)
+        data = gemini_mod.fetch_gemini_data()
         write_json(gemini_path, data)
 
     # OpenRouter
     openrouter_path = get_data_file("openrouter")
     if force or needs_update(openrouter_path):
-        data = fetch("https://openrouter.ai/api/v1/models")
+        data = openrouter_mod.fetch_openrouter_data()
         write_json(openrouter_path, data)
 
     # Mistral
     mistral_path = get_data_file("mistral")
     if force or needs_update(mistral_path):
-        headers = {}
-        api_key = os.getenv("MISTRAL_API_KEY", "")
-        if api_key:
-            headers["Authorization"] = f"Bearer {api_key}"
-        data = fetch("https://api.mistral.ai/v1/models", headers=headers)
+        data = mistral_mod.fetch_mistral_data()
         write_json(mistral_path, data)
 
 

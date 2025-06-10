@@ -41,6 +41,21 @@ def convert_mistral_to_litellm(mistral_model: dict[str, Any]) -> dict[str, Any] 
     return {"model_name": litellm_model_name, "model_info": model_info}
 
 
+def fetch_mistral_data() -> dict[str, Any]:
+    """Fetch raw model data from Mistral and cache it."""
+
+    url = "https://api.mistral.ai/v1/models"
+    api_key = os.getenv("MISTRAL_API_KEY", "")
+    headers = {"Authorization": f"Bearer {api_key}"} if api_key else {}
+
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+    data = resp.json()
+    data["data"] = sorted(data.get("data", []), key=lambda m: m.get("created", 0))
+    save_cached_provider_data("mistral", data)
+    return data
+
+
 @cache
 def get_mistral_models(*, use_cached: bool = True) -> dict[str, Any]:
     """Return models from the Mistral list endpoint or cached data."""
@@ -50,14 +65,8 @@ def get_mistral_models(*, use_cached: bool = True) -> dict[str, Any]:
         except FileNotFoundError:
             use_cached = False
     if not use_cached:
-        url = "https://api.mistral.ai/v1/models"
-        api_key = os.getenv("MISTRAL_API_KEY", "")
-        headers = {"Authorization": f"Bearer {api_key}"} if api_key else {}
         try:
-            resp = requests.get(url, headers=headers)
-            resp.raise_for_status()
-            data = resp.json()
-            save_cached_provider_data("mistral", data)
+            data = fetch_mistral_data()
         except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
             logger.warning("Failed to fetch Mistral models: %s", exc)
             return {}

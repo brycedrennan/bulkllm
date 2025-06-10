@@ -58,6 +58,18 @@ def write_cache(models: dict[str, Any]) -> None:
         logger.warning("Error writing cache: %s", e)
 
 
+def fetch_openrouter_data() -> dict[str, Any]:
+    """Fetch raw model data from OpenRouter and cache it."""
+
+    url = "https://openrouter.ai/api/v1/models"
+    resp = requests.get(url)
+    resp.raise_for_status()
+    data = resp.json()
+    data["data"] = sorted(data.get("data", []), key=lambda m: m.get("created", 0))
+    save_cached_provider_data("openrouter", data)
+    return data
+
+
 @cache
 def get_openrouter_models(*, use_cached: bool = True) -> dict[str, Any]:
     if use_cached:
@@ -69,13 +81,8 @@ def get_openrouter_models(*, use_cached: bool = True) -> dict[str, Any]:
         cached_models = read_cache()
         if cached_models is not None:
             return cached_models
-
-        url = "https://openrouter.ai/api/v1/models"
         try:
-            response = requests.get(url)
-            response.raise_for_status()  # Raise an exception for bad status codes
-            models_data = response.json()
-            save_cached_provider_data("openrouter", models_data)
+            models_data = fetch_openrouter_data()
         except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
             logger.warning("Failed to fetch OpenRouter models (offline mode?): %s", exc)
             return {}
