@@ -73,8 +73,20 @@ def test_fetch_mistral_data(monkeypatch):
     sample = {"data": [{"id": "b", "created": 2}, {"id": "a", "created": 1}]}
     _patch_get(monkeypatch, sample)
     monkeypatch.setattr(mistral, "save_cached_provider_data", lambda p, d: None)
+    monkeypatch.setattr(mistral, "load_cached_provider_data", lambda p: (_ for _ in ()).throw(FileNotFoundError()))
     data = mistral.fetch_mistral_data()
     assert [m["id"] for m in data["data"]] == ["a", "b"]
+
+
+def test_fetch_mistral_data_uses_cached_created(monkeypatch):
+    sample = {"data": [{"id": "b", "created": 3}, {"id": "a", "created": 2}]}
+    cached = {"data": [{"id": "a", "created": 1}, {"id": "b", "created": 2}]}
+    _patch_get(monkeypatch, sample)
+    monkeypatch.setattr(mistral, "save_cached_provider_data", lambda p, d: None)
+    monkeypatch.setattr(mistral, "load_cached_provider_data", lambda p: cached)
+    data = mistral.fetch_mistral_data()
+    assert [m["id"] for m in data["data"]] == ["a", "b"]
+    assert [m["created"] for m in data["data"]] == [1, 2]
 
 
 def test_update_script_uses_helpers(monkeypatch, tmp_path):

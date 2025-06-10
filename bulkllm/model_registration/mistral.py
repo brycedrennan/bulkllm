@@ -51,6 +51,23 @@ def fetch_mistral_data() -> dict[str, Any]:
     resp = requests.get(url, headers=headers)
     resp.raise_for_status()
     data = resp.json()
+
+    try:
+        cached = load_cached_provider_data("mistral")
+    except FileNotFoundError:
+        cached = None
+
+    if cached:
+        cached_created = {
+            m.get("id"): m.get("created")
+            for m in cached.get("data", [])
+            if m.get("id") and m.get("created") is not None
+        }
+        for model in data.get("data", []):
+            cid = model.get("id")
+            if cid in cached_created:
+                model["created"] = cached_created[cid]
+
     data["data"] = sorted(data.get("data", []), key=lambda m: m.get("created", 0))
     save_cached_provider_data("mistral", data)
     return data
