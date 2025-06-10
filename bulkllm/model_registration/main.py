@@ -5,6 +5,7 @@ from bulkllm.model_registration.anthropic import (
     register_anthropic_models_with_litellm,
 )
 from bulkllm.model_registration.gemini import register_gemini_models_with_litellm
+from bulkllm.model_registration.mistral import register_mistral_models_with_litellm
 from bulkllm.model_registration.openai import register_openai_models_with_litellm
 from bulkllm.model_registration.openrouter import register_openrouter_models_with_litellm
 from bulkllm.model_registration.utils import bulkllm_register_models
@@ -65,4 +66,5 @@ def register_models():
     register_openai_models_with_litellm()
     register_anthropic_models_with_litellm()
     register_gemini_models_with_litellm()
+    register_mistral_models_with_litellm()
     bulkllm_register_models(manual_model_registrations, source="manual")
