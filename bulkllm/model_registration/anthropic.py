@@ -44,6 +44,25 @@ def convert_anthropic_to_litellm(anthropic_model: dict[str, Any]) -> dict[str, A
     return {"model_name": litellm_model_name, "model_info": model_info}
 
 
+def fetch_anthropic_data() -> dict[str, Any]:
+    """Fetch raw model data from Anthropic and cache it."""
+
+    url = "https://api.anthropic.com/v1/models"
+    api_key = os.getenv("ANTHROPIC_API_KEY", "")
+    headers = {
+        "x-api-key": api_key,
+        "anthropic-version": "2023-06-01",
+        "Content-Type": "application/json",
+    }
+
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+    data = resp.json()
+    data["data"] = sorted(data.get("data", []), key=lambda m: m.get("created_at", ""))
+    save_cached_provider_data("anthropic", data)
+    return data
+
+
 @cache
 def get_anthropic_models(*, use_cached: bool = True) -> dict[str, Any]:
     """Return models from the Anthropic list endpoint or cached data."""
@@ -53,18 +72,8 @@ def get_anthropic_models(*, use_cached: bool = True) -> dict[str, Any]:
         except FileNotFoundError:
             use_cached = False
     if not use_cached:
-        url = "https://api.anthropic.com/v1/models"
-        api_key = os.getenv("ANTHROPIC_API_KEY", "")
-        headers = {
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-            "Content-Type": "application/json",
-        }
         try:
-            resp = requests.get(url, headers=headers)
-            resp.raise_for_status()
-            data = resp.json()
-            save_cached_provider_data("anthropic", data)
+            data = fetch_anthropic_data()
         except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
             logger.warning("Failed to fetch Anthropic models: %s", exc)
             return {}

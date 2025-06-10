@@ -50,6 +50,21 @@ def convert_gemini_to_litellm(gemini_model: dict[str, Any]) -> dict[str, Any] | 
     return {"model_name": litellm_model_name, "model_info": model_info}
 
 
+def fetch_gemini_data() -> dict[str, Any]:
+    """Fetch raw model data from Google Gemini and cache it."""
+
+    api_key = os.getenv("GEMINI_API_KEY", "")
+    url = "https://generativelanguage.googleapis.com/v1beta/models"
+    params = {"key": api_key} if api_key else None
+
+    resp = requests.get(url, params=params)
+    resp.raise_for_status()
+    data = resp.json()
+    data["models"] = sorted(data.get("models", []), key=lambda m: m.get("name", ""))
+    save_cached_provider_data("gemini", data)
+    return data
+
+
 @cache
 def get_gemini_models(*, use_cached: bool = True) -> dict[str, Any]:
     """Return models from the Google Gemini list endpoint or cached data."""
@@ -59,14 +74,8 @@ def get_gemini_models(*, use_cached: bool = True) -> dict[str, Any]:
         except FileNotFoundError:
             use_cached = False
     if not use_cached:
-        api_key = os.getenv("GEMINI_API_KEY", "")
-        url = "https://generativelanguage.googleapis.com/v1beta/models"
-        params = {"key": api_key} if api_key else None
         try:
-            resp = requests.get(url, params=params)
-            resp.raise_for_status()
-            data = resp.json()
-            save_cached_provider_data("gemini", data)
+            data = fetch_gemini_data()
         except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
             logger.warning("Failed to fetch Gemini models: %s", exc)
             return {}
