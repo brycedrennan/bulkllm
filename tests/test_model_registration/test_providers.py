@@ -4,6 +4,7 @@ import requests
 from bulkllm.model_registration import utils
 from bulkllm.model_registration.anthropic import get_anthropic_models
 from bulkllm.model_registration.gemini import get_gemini_models
+from bulkllm.model_registration.mistral import get_mistral_models
 from bulkllm.model_registration.openai import get_openai_models
 
 
@@ -85,4 +86,25 @@ def test_get_gemini_models_network(monkeypatch):
     assert "gemini/gemini-1.5-flash-001" in models
     info = models["gemini/gemini-1.5-flash-001"]
     assert info["litellm_provider"] == "gemini"
+    assert info["mode"] == "chat"
+
+
+def test_get_mistral_models_network(monkeypatch):
+    sample = {
+        "object": "list",
+        "data": [
+            {
+                "id": "mistral-small",
+                "object": "model",
+                "created": 0,
+                "owned_by": "mistralai",
+            }
+        ],
+    }
+    get_mistral_models.cache_clear()
+    _patch_get(monkeypatch, sample)
+    models = get_mistral_models()
+    assert "mistral/mistral-small" in models
+    info = models["mistral/mistral-small"]
+    assert info["litellm_provider"] == "mistral"
     assert info["mode"] == "chat"

@@ -52,3 +52,11 @@ def test_sort_xai(tmp_path):
     um.write_json(path, data)
     saved = json.loads(path.read_text())
     assert [m["id"] for m in saved["data"]] == ["a", "b"]
+
+
+def test_sort_mistral(tmp_path):
+    data = {"data": [{"id": "b", "created": 2}, {"id": "a", "created": 1}]}
+    path = tmp_path / "mistral.json"
+    um.write_json(path, data)
+    saved = json.loads(path.read_text())
+    assert [m["id"] for m in saved["data"]] == ["a", "b"]

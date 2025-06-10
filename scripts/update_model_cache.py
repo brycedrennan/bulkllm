@@ -52,12 +52,20 @@ def sort_openrouter_data(data: dict[str, Any]) -> dict[str, Any]:
     return data
 
 
+def sort_mistral_data(data: dict[str, Any]) -> dict[str, Any]:
+    """Return ``data`` with models sorted by creation time."""
+    models = data.get("data", [])
+    data["data"] = sorted(models, key=lambda m: m.get("created", 0))
+    return data
+
+
 SORTERS: dict[str, callable[[dict[str, Any]], dict[str, Any]]] = {
     "openai": sort_openai_data,
     "xai": sort_xai_data,
     "anthropic": sort_anthropic_data,
     "gemini": sort_gemini_data,
     "openrouter": sort_openrouter_data,
+    "mistral": sort_mistral_data,
 }
 
 
@@ -134,6 +142,16 @@ def main(force: bool = False) -> None:
     if force or needs_update(openrouter_path):
         data = fetch("https://openrouter.ai/api/v1/models")
         write_json(openrouter_path, data)
+
+    # Mistral
+    mistral_path = get_data_file("mistral")
+    if force or needs_update(mistral_path):
+        headers = {}
+        api_key = os.getenv("MISTRAL_API_KEY", "")
+        if api_key:
+            headers["Authorization"] = f"Bearer {api_key}"
+        data = fetch("https://api.mistral.ai/v1/models", headers=headers)
+        write_json(mistral_path, data)
 
 
 if __name__ == "__main__":  # pragma: no cover - manual script

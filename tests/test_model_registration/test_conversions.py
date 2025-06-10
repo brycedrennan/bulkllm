@@ -1,5 +1,6 @@
 from bulkllm.model_registration.anthropic import convert_anthropic_to_litellm
 from bulkllm.model_registration.gemini import convert_gemini_to_litellm
+from bulkllm.model_registration.mistral import convert_mistral_to_litellm
 from bulkllm.model_registration.openai import convert_openai_to_litellm
 
 
@@ -57,5 +58,24 @@ def test_convert_gemini():
             "max_input_tokens": 2048,
             "max_output_tokens": 4096,
             "supports_prompt_caching": True,
+        },
+    }
+
+
+def test_convert_mistral():
+    sample = {
+        "id": "mistral-small",
+        "max_context_length": 8192,
+        "capabilities": {"function_calling": True, "vision": True},
+    }
+    result = convert_mistral_to_litellm(sample)
+    assert result == {
+        "model_name": "mistral/mistral-small",
+        "model_info": {
+            "litellm_provider": "mistral",
+            "mode": "chat",
+            "max_input_tokens": 8192,
+            "supports_function_calling": True,
+            "supports_vision": True,
         },
     }
