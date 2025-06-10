@@ -26,6 +26,11 @@ def sort_openai_data(data: dict[str, Any]) -> dict[str, Any]:
     return data
 
 
+def sort_xai_data(data: dict[str, Any]) -> dict[str, Any]:
+    """Return ``data`` with models sorted by creation time."""
+    return sort_openai_data(data)
+
+
 def sort_anthropic_data(data: dict[str, Any]) -> dict[str, Any]:
     """Return ``data`` with models sorted by creation time when available."""
     models = data.get("data", [])
@@ -49,6 +54,7 @@ def sort_openrouter_data(data: dict[str, Any]) -> dict[str, Any]:
 
 SORTERS: dict[str, callable[[dict[str, Any]], dict[str, Any]]] = {
     "openai": sort_openai_data,
+    "xai": sort_xai_data,
     "anthropic": sort_anthropic_data,
     "gemini": sort_gemini_data,
     "openrouter": sort_openrouter_data,
@@ -91,6 +97,16 @@ def main(force: bool = False) -> None:
             headers["Authorization"] = f"Bearer {api_key}"
         data = fetch("https://api.openai.com/v1/models", headers=headers)
         write_json(openai_path, data)
+
+    # XAI
+    xai_path = get_data_file("xai")
+    if force or needs_update(xai_path):
+        headers = {}
+        api_key = os.getenv("XAI_API_KEY", "")
+        if api_key:
+            headers["Authorization"] = f"Bearer {api_key}"
+        data = fetch("https://api.x.ai/v1/models", headers=headers)
+        write_json(xai_path, data)
 
     # Anthropic
     anthropic_path = get_data_file("anthropic")
