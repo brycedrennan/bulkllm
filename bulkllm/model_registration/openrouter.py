@@ -65,7 +65,7 @@ def fetch_openrouter_data() -> dict[str, Any]:
     resp = requests.get(url)
     resp.raise_for_status()
     data = resp.json()
-    data["data"] = sorted(data.get("data", []), key=lambda m: m.get("created", 0))
+    data["data"] = sorted(data.get("data", []), key=lambda m: (m.get("created", 0), m.get("id")))
     save_cached_provider_data("openrouter", data)
     return data
 
