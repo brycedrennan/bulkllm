@@ -1650,6 +1650,54 @@
       }
     },
     {
+      "name": "o3-pro",
+      "slug": "o3-pro",
+      "current_snapshot": "o3-pro-2025-06-10",
+      "tagline": "Version of o3 with more compute for better responses",
+      "description": "The o-series of models are trained with reinforcement learning to think \nbefore they answer and perform complex reasoning. The o3-pro model uses more \ncompute to think harder and provide consistently better answers.\n\no3-pro is available in the [Responses API only](/docs/api-reference/responses)\nto enable support for multi-turn model interactions before responding to API \nrequests, and other advanced API features in the future. Since o3-pro is designed \nto tackle tough problems, some requests may take several minutes to finish. \nTo avoid timeouts, try using [background mode](/docs/guides/background).\n",
+      "type": "reasoning",
+      "snapshots": [
+        "o3-pro-2025-06-10"
+      ],
+      "compare_prices": [
+        "o3",
+        "o3-mini"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "file_search",
+        "image_generation",
+        "mcp"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 500,
+          "tpm": 30000.0,
+          "batch_queue_limit": 90000.0
+        },
+        "tier_2": {
+          "rpm": 5000.0,
+          "tpm": 450000.0,
+          "batch_queue_limit": 1350000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 800000.0,
+          "batch_queue_limit": 50000000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 200000000.0
+        },
+        "tier_5": {
+          "rpm": 10000.0,
+          "tpm": 30000000.0,
+          "batch_queue_limit": 5000000000.0
+        }
+      }
+    },
+    {
       "name": "o3",
       "slug": "o3",
       "current_snapshot": "o3-2025-04-16",
@@ -3641,6 +3689,44 @@
       "reasoning_tokens": true
     },
     {
+      "name": "o3-pro-2025-06-10",
+      "slug": "o3-pro-2025-06-10",
+      "performance": 5,
+      "latency": 1,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 200000.0,
+      "max_output_tokens": 100000.0,
+      "knowledge_cutoff": 1717200000000.0,
+      "supported_features": [
+        "structured_outputs",
+        "function_calling",
+        "image_input"
+      ],
+      "supported_endpoints": [
+        "responses",
+        "batch"
+      ],
+      "reasoning_tokens": true,
+      "price_data": {
+        "main": {
+          "input": 20,
+          "output": 80
+        },
+        "batch": {
+          "input": 10,
+          "output": 40
+        }
+      }
+    },
+    {
       "name": "o4-mini-2025-04-16",
       "slug": "o4-mini-2025-04-16",
       "performance": 4,
@@ -4254,18 +4340,48 @@
       ]
     },
     {
+      "name": "o3-pro",
+      "current_snapshot": "o3-pro-2025-06-10",
+      "description": "Advanced reasoning model",
+      "values": {
+        "main": {
+          "input": 20,
+          "output": 80
+        },
+        "batch": {
+          "input": 10,
+          "output": 40
+        }
+      },
+      "snapshots": [
+        {
+          "name": "o3-pro-2025-06-10",
+          "values": {
+            "main": {
+              "input": 20,
+              "output": 80
+            },
+            "batch": {
+              "input": 10,
+              "output": 40
+            }
+          }
+        }
+      ]
+    },
+    {
       "name": "o3",
       "current_snapshot": "o3-2025-04-16",
       "description": "Our most powerful reasoning model",
       "values": {
         "main": {
-          "input": 10,
-          "cached_input": 2.5,
-          "output": 40
+          "input": 2,
+          "cached_input": 0.5,
+          "output": 8
         },
         "batch": {
-          "input": 5,
-          "output": 20
+          "input": 1,
+          "output": 4
         }
       },
       "snapshots": [
@@ -4273,13 +4389,13 @@
           "name": "o3-2025-04-16",
           "values": {
             "main": {
-              "input": 10,
-              "cached_input": 2.5,
-              "output": 40
+              "input": 2,
+              "cached_input": 0.5,
+              "output": 8
             },
             "batch": {
-              "input": 5,
-              "output": 20
+              "input": 1,
+              "output": 4
             }
           }
         }

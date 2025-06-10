@@ -30,13 +30,14 @@ def get_user_cache_file(provider: str) -> Path:
     return USER_CACHE_DIR / f"{provider}.json"
 
 
-def load_cached_provider_data(provider: str) -> dict[str, Any]:
+def load_cached_provider_data(provider: str, *, use_user_cache: bool = True) -> dict[str, Any]:
     """Load cached raw API response for ``provider``."""
 
-    user_path = get_user_cache_file(provider)
-    if user_path.exists():
-        with open(user_path) as f:
-            return json.load(f)
+    if use_user_cache:
+        user_path = get_user_cache_file(provider)
+        if user_path.exists():
+            with open(user_path) as f:
+                return json.load(f)
 
     resource = resources.files("bulkllm.model_registration.data").joinpath(f"{provider}.json")
     with resources.as_file(resource) as path, open(path) as f:

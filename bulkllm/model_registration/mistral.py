@@ -53,7 +53,7 @@ def fetch_mistral_data() -> dict[str, Any]:
     data = resp.json()
 
     try:
-        cached = load_cached_provider_data("mistral")
+        cached = load_cached_provider_data("mistral", use_user_cache=False)
     except FileNotFoundError:
         cached = None
 
@@ -63,6 +63,7 @@ def fetch_mistral_data() -> dict[str, Any]:
             for m in cached.get("data", [])
             if m.get("id") and m.get("created") is not None
         }
+
         for model in data.get("data", []):
             cid = model.get("id")
             if cid in cached_created:
