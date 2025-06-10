@@ -9,6 +9,7 @@ from bulkllm.model_registration.mistral import register_mistral_models_with_lite
 from bulkllm.model_registration.openai import register_openai_models_with_litellm
 from bulkllm.model_registration.openrouter import register_openrouter_models_with_litellm
 from bulkllm.model_registration.utils import bulkllm_register_models
+from bulkllm.model_registration.xai import register_xai_models_with_litellm
 
 logger = logging.getLogger(__name__)
 
@@ -67,4 +68,5 @@ def register_models():
     register_anthropic_models_with_litellm()
     register_gemini_models_with_litellm()
     register_mistral_models_with_litellm()
+    register_xai_models_with_litellm()
     bulkllm_register_models(manual_model_registrations, source="manual")
