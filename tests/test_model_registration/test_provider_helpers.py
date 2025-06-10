@@ -56,11 +56,17 @@ def test_fetch_gemini_data(monkeypatch):
 
 
 def test_fetch_openrouter_data(monkeypatch):
-    sample = {"data": [{"id": "b", "created": 2}, {"id": "a", "created": 1}]}
+    sample = {
+        "data": [
+            {"id": "b", "created": 1},
+            {"id": "a", "created": 1},
+            {"id": "c", "created": 2},
+        ]
+    }
     _patch_get(monkeypatch, sample)
     monkeypatch.setattr(openrouter, "save_cached_provider_data", lambda p, d: None)
     data = openrouter.fetch_openrouter_data()
-    assert [m["id"] for m in data["data"]] == ["a", "b"]
+    assert [m["id"] for m in data["data"]] == ["a", "b", "c"]
 
 
 def test_fetch_mistral_data(monkeypatch):
