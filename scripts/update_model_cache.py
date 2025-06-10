@@ -105,7 +105,9 @@ def main(force: bool = False) -> None:
         api_key = os.getenv("XAI_API_KEY", "")
         if api_key:
             headers["Authorization"] = f"Bearer {api_key}"
-        data = fetch("https://api.x.ai/v1/models", headers=headers)
+        else:
+            typer.echo("XAI_API_KEY is not set, skipping update")
+        data = fetch("https://api.x.ai/v1/language-models", headers=headers)
         write_json(xai_path, data)
 
     # Anthropic
