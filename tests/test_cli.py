@@ -133,3 +133,39 @@ def test_list_unique_models(monkeypatch):
     assert lines.count("anthropic/claude-3") == 1
     assert "openrouter/anthropic/claude-3" not in lines
     assert "bedrock/anthropic.claude-3" not in lines
+
+
+def test_list_canonical_models(monkeypatch):
+    monkeypatch.setattr(
+        "bulkllm.cli.openai.get_openai_models",
+        lambda: {"openai/gpt": {"litellm_provider": "openai", "mode": "chat"}},
+    )
+    monkeypatch.setattr(
+        "bulkllm.cli.anthropic.get_anthropic_models",
+        lambda: {"anthropic/claude": {"litellm_provider": "anthropic", "mode": "chat"}},
+    )
+    monkeypatch.setattr(
+        "bulkllm.cli.gemini.get_gemini_models",
+        lambda: {"gemini/flash": {"litellm_provider": "gemini", "mode": "chat"}},
+    )
+    monkeypatch.setattr(
+        "bulkllm.cli.mistral.get_mistral_models",
+        lambda: {"mistral/small": {"litellm_provider": "mistral", "mode": "chat"}},
+    )
+    monkeypatch.setattr(
+        "bulkllm.cli.openrouter.get_openrouter_models",
+        lambda: {"openrouter/google/gamma": {"litellm_provider": "openrouter", "mode": "chat"}},
+    )
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["list-canonical-models"])
+
+    assert result.exit_code == 0
+    lines = result.output.splitlines()
+    assert "openai/gpt" in lines
+    assert "anthropic/claude" in lines
+    assert "gemini/flash" in lines
+    assert "mistral/small" in lines
+    # openrouter canonicalisation drops the prefix
+    assert "google/gamma" in lines
+    assert "openrouter/google/gamma" not in lines

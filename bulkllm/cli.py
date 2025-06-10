@@ -4,6 +4,13 @@ import litellm
 import typer
 
 from bulkllm.llm_configs import create_model_configs
+from bulkllm.model_registration import (
+    anthropic,
+    gemini,
+    mistral,
+    openai,
+    openrouter,
+)
 from bulkllm.model_registration.canonical import _canonical_model_name
 from bulkllm.model_registration.main import register_models
 from bulkllm.rate_limiter import RateLimiter
@@ -38,6 +45,30 @@ def list_unique_models() -> None:
         typer.echo(name)
 
     print(f"Total unique models: {len(unique)}")
+
+
+@app.command("list-canonical-models")
+def list_canonical_models() -> None:
+    """List canonical models from direct provider scrapes."""
+    models = {}
+    providers = [
+        openai.get_openai_models,
+        anthropic.get_anthropic_models,
+        gemini.get_gemini_models,
+        mistral.get_mistral_models,
+        openrouter.get_openrouter_models,
+    ]
+    for get_models in providers:
+        models.update(get_models())
+
+    unique: set[str] = set()
+    for model, model_info in models.items():
+        canonical = _canonical_model_name(model, model_info)
+        if canonical is None:
+            continue
+        unique.add(canonical)
+    for name in sorted(unique):
+        typer.echo(name)
 
 
 @app.command("list-missing-rate-limits")
