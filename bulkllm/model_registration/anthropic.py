@@ -14,6 +14,28 @@ from bulkllm.model_registration.utils import (
 logger = logging.getLogger(__name__)
 
 
+def fetch_anthropic_data() -> dict[str, Any]:
+    """Fetch the raw model list from Anthropic and cache it."""
+    url = "https://api.anthropic.com/v1/models"
+    api_key = os.getenv("ANTHROPIC_API_KEY", "")
+    headers = {
+        "x-api-key": api_key,
+        "anthropic-version": "2023-06-01",
+        "Content-Type": "application/json",
+    }
+    try:
+        resp = requests.get(url, headers=headers)
+        resp.raise_for_status()
+    except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
+        logger.warning("Failed to fetch Anthropic models: %s", exc)
+        return {}
+    else:
+        data = resp.json()
+        data["data"] = sorted(data.get("data", []), key=lambda m: m.get("created_at", ""))
+        save_cached_provider_data("anthropic", data)
+        return data
+
+
 def convert_anthropic_to_litellm(anthropic_model: dict[str, Any]) -> dict[str, Any] | None:
     """Convert an Anthropic model dict to LiteLLM format."""
     model_id = anthropic_model.get("id")
@@ -53,20 +75,8 @@ def get_anthropic_models(*, use_cached: bool = True) -> dict[str, Any]:
         except FileNotFoundError:
             use_cached = False
     if not use_cached:
-        url = "https://api.anthropic.com/v1/models"
-        api_key = os.getenv("ANTHROPIC_API_KEY", "")
-        headers = {
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-            "Content-Type": "application/json",
-        }
-        try:
-            resp = requests.get(url, headers=headers)
-            resp.raise_for_status()
-            data = resp.json()
-            save_cached_provider_data("anthropic", data)
-        except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
-            logger.warning("Failed to fetch Anthropic models: %s", exc)
+        data = fetch_anthropic_data()
+        if not data:
             return {}
     models: dict[str, Any] = {}
     for item in data.get("data", []):

@@ -17,6 +17,22 @@ from bulkllm.model_registration.utils import (
 logger = logging.getLogger(__name__)
 
 
+def fetch_openrouter_data() -> dict[str, Any]:
+    """Fetch the raw model list from OpenRouter and cache it."""
+    url = "https://openrouter.ai/api/v1/models"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+    except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
+        logger.warning("Failed to fetch OpenRouter models (offline mode?): %s", exc)
+        return {}
+    else:
+        data = response.json()
+        data["data"] = sorted(data.get("data", []), key=lambda m: m.get("created", 0))
+        save_cached_provider_data("openrouter", data)
+        return data
+
+
 def get_cache_file_path() -> Path:
     """Returns the path to the cache file."""
     cache_dir = Path.home() / ".cache" / "bulkllm"
@@ -70,14 +86,8 @@ def get_openrouter_models(*, use_cached: bool = True) -> dict[str, Any]:
         if cached_models is not None:
             return cached_models
 
-        url = "https://openrouter.ai/api/v1/models"
-        try:
-            response = requests.get(url)
-            response.raise_for_status()  # Raise an exception for bad status codes
-            models_data = response.json()
-            save_cached_provider_data("openrouter", models_data)
-        except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
-            logger.warning("Failed to fetch OpenRouter models (offline mode?): %s", exc)
+        models_data = fetch_openrouter_data()
+        if not models_data:
             return {}
 
     litellm_models = {}

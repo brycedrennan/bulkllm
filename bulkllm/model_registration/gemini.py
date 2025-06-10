@@ -14,6 +14,24 @@ from bulkllm.model_registration.utils import (
 logger = logging.getLogger(__name__)
 
 
+def fetch_gemini_data() -> dict[str, Any]:
+    """Fetch the raw model list from Google Gemini and cache it."""
+    api_key = os.getenv("GEMINI_API_KEY", "")
+    url = "https://generativelanguage.googleapis.com/v1beta/models"
+    params = {"key": api_key} if api_key else None
+    try:
+        resp = requests.get(url, params=params)
+        resp.raise_for_status()
+    except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
+        logger.warning("Failed to fetch Gemini models: %s", exc)
+        return {}
+    else:
+        data = resp.json()
+        data["models"] = sorted(data.get("models", []), key=lambda m: m.get("name", ""))
+        save_cached_provider_data("gemini", data)
+        return data
+
+
 def convert_gemini_to_litellm(gemini_model: dict[str, Any]) -> dict[str, Any] | None:
     """Convert a Gemini model dict to LiteLLM format."""
     name = gemini_model.get("name")
@@ -59,16 +77,8 @@ def get_gemini_models(*, use_cached: bool = True) -> dict[str, Any]:
         except FileNotFoundError:
             use_cached = False
     if not use_cached:
-        api_key = os.getenv("GEMINI_API_KEY", "")
-        url = "https://generativelanguage.googleapis.com/v1beta/models"
-        params = {"key": api_key} if api_key else None
-        try:
-            resp = requests.get(url, params=params)
-            resp.raise_for_status()
-            data = resp.json()
-            save_cached_provider_data("gemini", data)
-        except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
-            logger.warning("Failed to fetch Gemini models: %s", exc)
+        data = fetch_gemini_data()
+        if not data:
             return {}
     models: dict[str, Any] = {}
     for item in data.get("models", []):

@@ -69,6 +69,24 @@ def _get_detailed_lookup() -> dict[str, dict[str, Any]]:
     return lookup
 
 
+def fetch_openai_data() -> dict[str, Any]:
+    """Fetch the raw model list from OpenAI and cache it."""
+    url = "https://api.openai.com/v1/models"
+    api_key = os.getenv("OPENAI_API_KEY", "")
+    headers = {"Authorization": f"Bearer {api_key}"} if api_key else {}
+    try:
+        resp = requests.get(url, headers=headers)
+        resp.raise_for_status()
+    except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
+        logger.warning("Failed to fetch OpenAI models: %s", exc)
+        return {}
+    else:
+        data = resp.json()
+        data["data"] = sorted(data.get("data", []), key=lambda m: m.get("created", 0))
+        save_cached_provider_data("openai", data)
+        return data
+
+
 def convert_openai_to_litellm(openai_model: dict[str, Any]) -> dict[str, Any] | None:
     """Convert an OpenAI model dict to LiteLLM format."""
     model_id = openai_model.get("id")
@@ -193,16 +211,8 @@ def get_openai_models(*, use_cached: bool = True) -> dict[str, Any]:
         except FileNotFoundError:
             use_cached = False
     if not use_cached:
-        url = "https://api.openai.com/v1/models"
-        api_key = os.getenv("OPENAI_API_KEY", "")
-        headers = {"Authorization": f"Bearer {api_key}"} if api_key else {}
-        try:
-            resp = requests.get(url, headers=headers)
-            resp.raise_for_status()
-            data = resp.json()
-            save_cached_provider_data("openai", data)
-        except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
-            logger.warning("Failed to fetch OpenAI models: %s", exc)
+        data = fetch_openai_data()
+        if not data:
             return {}
     models: dict[str, Any] = {}
     for item in data.get("data", []):
