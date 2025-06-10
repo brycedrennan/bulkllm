@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import os
 from datetime import UTC, datetime, timedelta
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 import requests
 import typer
@@ -17,6 +17,42 @@ app = typer.Typer(add_completion=False, no_args_is_help=True)
 
 
 CACHE_MAX_AGE = timedelta(hours=0)
+
+
+def sort_openai_data(data: dict[str, Any]) -> dict[str, Any]:
+    """Return ``data`` with models sorted by creation time when available."""
+    models = data.get("data", [])
+    data["data"] = sorted(models, key=lambda m: m.get("created", 0))
+    return data
+
+
+def sort_anthropic_data(data: dict[str, Any]) -> dict[str, Any]:
+    """Return ``data`` with models sorted by creation time when available."""
+    models = data.get("data", [])
+    data["data"] = sorted(models, key=lambda m: m.get("created_at", ""))
+    return data
+
+
+def sort_gemini_data(data: dict[str, Any]) -> dict[str, Any]:
+    """Return ``data`` with models sorted by name."""
+    models = data.get("models", [])
+    data["models"] = sorted(models, key=lambda m: m.get("name", ""))
+    return data
+
+
+def sort_openrouter_data(data: dict[str, Any]) -> dict[str, Any]:
+    """Return ``data`` with models sorted by creation time."""
+    models = data.get("data", [])
+    data["data"] = sorted(models, key=lambda m: m.get("created", 0))
+    return data
+
+
+SORTERS: dict[str, callable[[dict[str, Any]], dict[str, Any]]] = {
+    "openai": sort_openai_data,
+    "anthropic": sort_anthropic_data,
+    "gemini": sort_gemini_data,
+    "openrouter": sort_openrouter_data,
+}
 
 
 def needs_update(path: Path) -> bool:
@@ -33,6 +69,11 @@ def fetch(url: str, *, headers: dict[str, str] | None = None, params: dict[str, 
 
 
 def write_json(path: Path, data: dict) -> None:
+    """Write ``data`` to ``path`` after applying provider-specific sorting."""
+    provider = path.stem
+    sorter = SORTERS.get(provider)
+    if sorter:
+        data = sorter(data)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2))
     typer.echo(f"Updated {path}")
