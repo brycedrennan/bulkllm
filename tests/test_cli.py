@@ -136,6 +136,10 @@ def test_list_unique_models(monkeypatch):
 
 
 def test_list_canonical_models(monkeypatch):
+    import litellm
+
+    monkeypatch.setattr(litellm, "model_cost", {})
+
     monkeypatch.setattr(
         "bulkllm.cli.openai.get_openai_models",
         lambda: {"openai/gpt": {"litellm_provider": "openai", "mode": "chat"}},
@@ -154,18 +158,39 @@ def test_list_canonical_models(monkeypatch):
     )
     monkeypatch.setattr(
         "bulkllm.cli.openrouter.get_openrouter_models",
-        lambda: {"openrouter/google/gamma": {"litellm_provider": "openrouter", "mode": "chat"}},
+        lambda: {
+            "openrouter/google/gamma": {
+                "litellm_provider": "openrouter",
+                "mode": "chat",
+            }
+        },
     )
+
+    def fake_register_models() -> None:
+        litellm.model_cost["openai/gpt"] = {"litellm_provider": "openai", "mode": "chat"}
+        litellm.model_cost["anthropic/claude"] = {"litellm_provider": "anthropic", "mode": "chat"}
+        litellm.model_cost["gemini/flash"] = {"litellm_provider": "gemini", "mode": "chat"}
+        litellm.model_cost["mistral/small"] = {"litellm_provider": "mistral", "mode": "chat"}
+        litellm.model_cost["openrouter/google/gamma"] = {
+            "litellm_provider": "openrouter",
+            "mode": "chat",
+        }
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
 
     runner = CliRunner()
     result = runner.invoke(app, ["list-canonical-models"])
 
     assert result.exit_code == 0
-    lines = result.output.splitlines()
-    assert "openai/gpt" in lines
-    assert "anthropic/claude" in lines
-    assert "gemini/flash" in lines
-    assert "mistral/small" in lines
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|") for line in lines[2:]]  # skip header and divider
+    table = {cells[0].strip(): cells[1].strip() for cells in rows}
+
+    assert table["openai/gpt"] == "chat"
+    assert table["anthropic/claude"] == "chat"
+    assert table["gemini/flash"] == "chat"
+    assert table["mistral/small"] == "chat"
     # openrouter canonicalisation drops the prefix
-    assert "google/gamma" in lines
-    assert "openrouter/google/gamma" not in lines
+    assert table["google/gamma"] == "chat"
+    assert "openrouter/google/gamma" not in table
