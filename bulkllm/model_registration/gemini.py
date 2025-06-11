@@ -43,7 +43,10 @@ def convert_gemini_to_litellm(gemini_model: dict[str, Any]) -> dict[str, Any] | 
     if output_limit is not None:
         model_info["max_output_tokens"] = output_limit
 
-    generation_methods = gemini_model.get("supported_generation_methods", [])
+    generation_methods = gemini_model.get("supportedGenerationMethods")
+    if generation_methods is None:
+        generation_methods = gemini_model.get("supported_generation_methods", [])
+
     if "countTokens" in generation_methods:
         model_info["supports_prompt_caching"] = True
 

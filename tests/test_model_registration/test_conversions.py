@@ -62,6 +62,26 @@ def test_convert_gemini():
     }
 
 
+def test_convert_gemini_camel_case():
+    sample = {
+        "name": "models/gemini-2.5-pro-exp-03-25",
+        "inputTokenLimit": 2048,
+        "outputTokenLimit": 4096,
+        "supportedGenerationMethods": ["generateContent", "countTokens"],
+    }
+    result = convert_gemini_to_litellm(sample)
+    assert result == {
+        "model_name": "gemini/gemini-2.5-pro-exp-03-25",
+        "model_info": {
+            "litellm_provider": "gemini",
+            "mode": "chat",
+            "max_input_tokens": 2048,
+            "max_output_tokens": 4096,
+            "supports_prompt_caching": True,
+        },
+    }
+
+
 def test_convert_mistral():
     sample = {
         "id": "mistral-small",
