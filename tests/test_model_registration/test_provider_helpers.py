@@ -73,7 +73,11 @@ def test_fetch_mistral_data(monkeypatch):
     sample = {"data": [{"id": "b", "created": 2}, {"id": "a", "created": 1}]}
     _patch_get(monkeypatch, sample)
     monkeypatch.setattr(mistral, "save_cached_provider_data", lambda p, d: None)
-    monkeypatch.setattr(mistral, "load_cached_provider_data", lambda p: (_ for _ in ()).throw(FileNotFoundError()))
+
+    def _fake(p, use_user_cache=False):
+        return (_ for _ in ()).throw(FileNotFoundError())
+
+    monkeypatch.setattr(mistral, "load_cached_provider_data", _fake)
     data = mistral.fetch_mistral_data()
     assert [m["id"] for m in data["data"]] == ["a", "b"]
 
