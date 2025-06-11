@@ -15,6 +15,19 @@ from bulkllm.model_registration.canonical import _canonical_model_name
 from bulkllm.model_registration.main import register_models
 from bulkllm.rate_limiter import RateLimiter
 
+
+def _tabulate(rows: list[list[str]], headers: list[str]) -> str:
+    """Return a simple table for CLI output."""
+    columns = list(zip(*([headers, *rows]))) if rows else [headers]
+    widths = [max(len(str(c)) for c in col) for col in columns]
+    fmt = " | ".join(f"{{:<{w}}}" for w in widths)
+    divider = "-+-".join("-" * w for w in widths)
+    lines = [fmt.format(*headers), divider]
+    for row in rows:
+        lines.append(fmt.format(*row))
+    return "\n".join(lines)
+
+
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 
 
@@ -50,7 +63,9 @@ def list_unique_models() -> None:
 @app.command("list-canonical-models")
 def list_canonical_models() -> None:
     """List canonical models from direct provider scrapes."""
-    models = {}
+    register_models()
+
+    scraped_models: dict[str, dict] = {}
     providers = [
         openai.get_openai_models,
         anthropic.get_anthropic_models,
@@ -59,16 +74,29 @@ def list_canonical_models() -> None:
         openrouter.get_openrouter_models,
     ]
     for get_models in providers:
-        models.update(get_models())
+        scraped_models.update(get_models())
 
-    unique: set[str] = set()
-    for model, model_info in models.items():
+    canonical_scraped: dict[str, dict] = {}
+    for model, model_info in scraped_models.items():
         canonical = _canonical_model_name(model, model_info)
         if canonical is None:
             continue
-        unique.add(canonical)
-    for name in sorted(unique):
-        typer.echo(name)
+        canonical_scraped.setdefault(canonical, model_info)
+
+    canonical_registered: dict[str, dict] = {}
+    for model, model_info in litellm.model_cost.items():
+        canonical = _canonical_model_name(model, model_info)
+        if canonical is None:
+            continue
+        canonical_registered.setdefault(canonical, model_info)
+
+    rows = []
+    for name in sorted(canonical_scraped):
+        info = canonical_registered.get(name, canonical_scraped[name])
+        rows.append([name, str(info.get("mode", ""))])
+
+    table = _tabulate(rows, headers=["model", "mode"])
+    typer.echo(table)
 
 
 @app.command("list-missing-rate-limits")
