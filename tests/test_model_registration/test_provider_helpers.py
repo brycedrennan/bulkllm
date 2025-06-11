@@ -87,7 +87,7 @@ def test_fetch_mistral_data_uses_cached_created(monkeypatch):
     cached = {"data": [{"id": "a", "created": 1}, {"id": "b", "created": 2}]}
     _patch_get(monkeypatch, sample)
     monkeypatch.setattr(mistral, "save_cached_provider_data", lambda p, d: None)
-    monkeypatch.setattr(mistral, "load_cached_provider_data", lambda p: cached)
+    monkeypatch.setattr(mistral, "load_cached_provider_data", lambda p, use_user_cache=False: cached)
     data = mistral.fetch_mistral_data()
     assert [m["id"] for m in data["data"]] == ["a", "b"]
     assert [m["created"] for m in data["data"]] == [1, 2]
