@@ -9,7 +9,7 @@ from bulkllm.model_registration import (
     gemini,
     mistral,
     openai,
-    openrouter,
+    xai,
 )
 from bulkllm.model_registration.canonical import _canonical_model_name
 from bulkllm.model_registration.main import register_models
@@ -71,7 +71,8 @@ def list_canonical_models() -> None:
         anthropic.get_anthropic_models,
         gemini.get_gemini_models,
         mistral.get_mistral_models,
-        openrouter.get_openrouter_models,
+        xai.get_xai_models,
+        # openrouter.get_openrouter_models,
     ]
     for get_models in providers:
         scraped_models.update(get_models())
