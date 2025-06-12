@@ -62,7 +62,7 @@ def list_unique_models() -> None:
 
 @app.command("list-canonical-models")
 def list_canonical_models() -> None:
-    """List canonical models from direct provider scrapes."""
+    """List canonical chat models with release dates."""
     register_models()
 
     scraped_models: dict[str, dict] = {}
@@ -76,6 +76,9 @@ def list_canonical_models() -> None:
     for get_models in providers:
         scraped_models.update(get_models())
 
+    # Keep only chat models
+    scraped_models = {name: info for name, info in scraped_models.items() if info.get("mode") == "chat"}
+
     canonical_scraped: dict[str, dict] = {}
     for model, model_info in scraped_models.items():
         canonical = _canonical_model_name(model, model_info)
@@ -85,17 +88,33 @@ def list_canonical_models() -> None:
 
     canonical_registered: dict[str, dict] = {}
     for model, model_info in litellm.model_cost.items():
+        if model_info.get("mode") != "chat":
+            continue
         canonical = _canonical_model_name(model, model_info)
         if canonical is None:
             continue
         canonical_registered.setdefault(canonical, model_info)
 
+    # Map canonical model name to release date from LLMConfig
+    release_dates = {}
+    for cfg in create_model_configs():
+        if not cfg.release_date:
+            continue
+        provider = cfg.litellm_model_name.split("/", 1)[0]
+        canonical = _canonical_model_name(
+            cfg.litellm_model_name,
+            {"mode": "chat", "litellm_provider": provider},
+        )
+        if canonical and canonical not in release_dates:
+            release_dates[canonical] = cfg.release_date.isoformat()
+
     rows = []
     for name in sorted(canonical_scraped):
         info = canonical_registered.get(name, canonical_scraped[name])
-        rows.append([name, str(info.get("mode", ""))])
+        release_date = release_dates.get(name, "")
+        rows.append([name, str(info.get("mode", "")), release_date])
 
-    table = _tabulate(rows, headers=["model", "mode"])
+    table = _tabulate(rows, headers=["model", "mode", "release_date"])
     typer.echo(table)
 
 
