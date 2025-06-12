@@ -49,7 +49,7 @@ def canonical_models():
     unique: set[str] = set()
     for model, model_info in text_models().items():
         canonical = _canonical_model_name(model, model_info)
-        if canonical is None:
+        if canonical is None or (canonical.startswith("xai/") and "fast" in canonical):
             continue
         unique.add(canonical)
 

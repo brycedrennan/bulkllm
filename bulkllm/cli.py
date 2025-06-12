@@ -76,6 +76,9 @@ def list_canonical_models() -> None:
     for get_models in providers:
         scraped_models.update(get_models())
 
+    def _is_xai_fast(name: str) -> bool:
+        return name.startswith("xai/") and "fast" in name
+
     # Keep only chat models
     scraped_models = {name: info for name, info in scraped_models.items() if info.get("mode") == "chat"}
 
@@ -88,7 +91,7 @@ def list_canonical_models() -> None:
     canonical_scraped: dict[str, dict] = {}
     for model, model_info in scraped_models.items():
         canonical = _canonical_model_name(model, model_info)
-        if canonical is None or canonical in alias_names:
+        if canonical is None or canonical in alias_names or _is_xai_fast(canonical):
             continue
         canonical_scraped.setdefault(canonical, model_info)
 
@@ -97,7 +100,7 @@ def list_canonical_models() -> None:
         if model_info.get("mode") != "chat":
             continue
         canonical = _canonical_model_name(model, model_info)
-        if canonical is None or canonical in alias_names:
+        if canonical is None or canonical in alias_names or _is_xai_fast(canonical):
             continue
         canonical_registered.setdefault(canonical, model_info)
 
