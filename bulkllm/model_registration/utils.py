@@ -18,6 +18,21 @@ DATA_DIR = Path(__file__).resolve().parent / "data"
 USER_CACHE_DIR = Path.home() / ".cache" / "bulkllm" / "providers"
 
 
+def infer_mode_from_name(name: str) -> str | None:
+    """Return model mode inferred from ``name`` if it contains known keywords."""
+
+    lowered = name.lower()
+    if "tts" in lowered:
+        return "audio_speech"
+    if "moderation" in lowered:
+        return "moderation"
+    if "ocr" in lowered:
+        return "ocr"
+    if "embedding" in lowered or "embed" in lowered:
+        return "embedding"
+    return None
+
+
 def get_data_file(provider: str) -> Path:
     """Return path to the cached JSON for a provider inside the package."""
 

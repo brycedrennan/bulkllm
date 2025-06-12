@@ -7,6 +7,7 @@ import requests
 
 from bulkllm.model_registration.utils import (
     bulkllm_register_models,
+    infer_mode_from_name,
     load_cached_provider_data,
     save_cached_provider_data,
 )
@@ -25,7 +26,7 @@ def convert_mistral_to_litellm(mistral_model: dict[str, Any]) -> dict[str, Any] 
 
     model_info = {
         "litellm_provider": "mistral",
-        "mode": "chat",
+        "mode": infer_mode_from_name(model_id) or "chat",
     }
 
     context = mistral_model.get("max_context_length")

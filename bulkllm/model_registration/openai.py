@@ -9,6 +9,7 @@ import requests
 
 from bulkllm.model_registration.utils import (
     bulkllm_register_models,
+    infer_mode_from_name,
     load_cached_provider_data,
     save_cached_provider_data,
 )
@@ -80,7 +81,7 @@ def convert_openai_to_litellm(openai_model: dict[str, Any]) -> dict[str, Any] | 
 
     model_info = {
         "litellm_provider": "openai",
-        "mode": "chat",
+        "mode": infer_mode_from_name(model_id) or "chat",
     }
 
     for field in ["object", "created", "owned_by", "root", "parent"]:
@@ -96,7 +97,7 @@ def _convert_detailed_to_litellm(slug: str, data: dict[str, Any]) -> dict[str, A
 
     model_info: dict[str, Any] = {
         "litellm_provider": "openai",
-        "mode": "chat",
+        "mode": infer_mode_from_name(slug) or "chat",
     }
 
     modalities = data.get("modalities")
@@ -179,6 +180,10 @@ def _convert_detailed_to_litellm(slug: str, data: dict[str, Any]) -> dict[str, A
             model_info["rpm"] = rpm
         if tpm is not None:
             model_info["tpm"] = tpm
+
+    keyword_mode = infer_mode_from_name(slug)
+    if keyword_mode is not None:
+        model_info["mode"] = keyword_mode
 
     model_info = {k: v for k, v in model_info.items() if v is not None}
     return {"model_name": f"openai/{slug}", "model_info": model_info}

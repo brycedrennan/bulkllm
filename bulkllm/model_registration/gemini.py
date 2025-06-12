@@ -7,6 +7,7 @@ import requests
 
 from bulkllm.model_registration.utils import (
     bulkllm_register_models,
+    infer_mode_from_name,
     load_cached_provider_data,
     save_cached_provider_data,
 )
@@ -26,10 +27,8 @@ def convert_gemini_to_litellm(gemini_model: dict[str, Any]) -> dict[str, Any] | 
 
     model_info = {
         "litellm_provider": "gemini",
-        "mode": "chat",
+        "mode": infer_mode_from_name(name) or "chat",
     }
-    if "embedding" in name:
-        model_info["mode"] = "embedding"
 
     token_limit = gemini_model.get("tokenLimit")
     if token_limit is not None:

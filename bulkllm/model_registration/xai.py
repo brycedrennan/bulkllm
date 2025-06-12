@@ -7,6 +7,7 @@ import requests
 
 from bulkllm.model_registration.utils import (
     bulkllm_register_models,
+    infer_mode_from_name,
     load_cached_provider_data,
     save_cached_provider_data,
 )
@@ -25,7 +26,7 @@ def convert_xai_to_litellm(xai_model: dict[str, Any]) -> dict[str, Any] | None:
 
     model_info = {
         "litellm_provider": "xai",
-        "mode": "chat",
+        "mode": infer_mode_from_name(model_id) or "chat",
     }
 
     input_modalities = xai_model.get("input_modalities") or []
