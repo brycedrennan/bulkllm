@@ -33,7 +33,7 @@ def _get_detailed_lookup() -> dict[str, dict[str, Any]]:
     lookup: dict[str, dict[str, Any]] = {}
 
     for item in data.get("modalities", []):
-        slug = item.get("slug") or item.get("name")
+        slug = item.get("name")
         if slug:
             lookup.setdefault(slug, {})["modalities"] = item
 
@@ -63,7 +63,7 @@ def _get_detailed_lookup() -> dict[str, dict[str, Any]]:
             lookup.setdefault(slug, {})["pricing"] = item
 
     for item in data.get("rate_limits", []):
-        slug = item.get("slug") or item.get("name")
+        slug = item.get("name")
         if slug:
             lookup.setdefault(slug, {})["rate_limits"] = item
 
@@ -247,7 +247,7 @@ def get_openai_aliases() -> set[str]:
     aliases: set[str] = set()
     data = _load_detailed_data()
     for item in data.get("pricing", []):
-        name = item.get("name") or item.get("slug")
+        name = item.get("name")
         if not name:
             continue
         snapshot = item.get("current_snapshot")
