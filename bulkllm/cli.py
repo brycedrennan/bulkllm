@@ -79,10 +79,16 @@ def list_canonical_models() -> None:
     # Keep only chat models
     scraped_models = {name: info for name, info in scraped_models.items() if info.get("mode") == "chat"}
 
+    alias_names = {
+        c
+        for a in openai.get_openai_aliases()
+        if (c := _canonical_model_name(a, {"litellm_provider": "openai", "mode": "chat"}))
+    }
+
     canonical_scraped: dict[str, dict] = {}
     for model, model_info in scraped_models.items():
         canonical = _canonical_model_name(model, model_info)
-        if canonical is None:
+        if canonical is None or canonical in alias_names:
             continue
         canonical_scraped.setdefault(canonical, model_info)
 
@@ -91,7 +97,7 @@ def list_canonical_models() -> None:
         if model_info.get("mode") != "chat":
             continue
         canonical = _canonical_model_name(model, model_info)
-        if canonical is None:
+        if canonical is None or canonical in alias_names:
             continue
         canonical_registered.setdefault(canonical, model_info)
 

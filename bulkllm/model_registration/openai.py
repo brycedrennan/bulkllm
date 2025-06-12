@@ -233,3 +233,20 @@ def get_openai_models(*, use_cached: bool = True) -> dict[str, Any]:
 def register_openai_models_with_litellm() -> None:
     """Fetch and register OpenAI models with LiteLLM."""
     bulkllm_register_models(get_openai_models(), source="openai")
+
+
+@cache
+def get_openai_aliases() -> set[str]:
+    """Return the set of aliased OpenAI model names."""
+
+    aliases: set[str] = set()
+    data = _load_detailed_data()
+    for item in data.get("pricing", []):
+        name = item.get("name") or item.get("slug")
+        if not name:
+            continue
+        snapshot = item.get("current_snapshot")
+        if snapshot and str(snapshot) != name:
+            aliases.add(f"openai/{name}")
+
+    return aliases
