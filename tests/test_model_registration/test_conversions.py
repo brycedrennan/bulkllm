@@ -24,6 +24,26 @@ def test_convert_openai():
     }
 
 
+def test_convert_openai_tts():
+    sample = {
+        "id": "tts-1",
+        "object": "model",
+        "owned_by": "openai",
+        "root": "tts-1",
+    }
+    result = convert_openai_to_litellm(sample)
+    assert result == {
+        "model_name": "openai/tts-1",
+        "model_info": {
+            "litellm_provider": "openai",
+            "mode": "audio_speech",
+            "object": "model",
+            "owned_by": "openai",
+            "root": "tts-1",
+        },
+    }
+
+
 def test_convert_anthropic():
     sample = {
         "id": "claude-3-7-sonnet-20250219",
@@ -99,3 +119,18 @@ def test_convert_mistral():
             "supports_vision": True,
         },
     }
+
+
+def test_keyword_mode_openai_embed():
+    result = convert_openai_to_litellm({"id": "text-embed-foo"})
+    assert result["model_info"]["mode"] == "embedding"
+
+
+def test_keyword_mode_anthropic_moderation():
+    result = convert_anthropic_to_litellm({"id": "guard-moderation"})
+    assert result["model_info"]["mode"] == "moderation"
+
+
+def test_keyword_mode_mistral_ocr():
+    result = convert_mistral_to_litellm({"id": "mistral-ocr-123"})
+    assert result["model_info"]["mode"] == "ocr"

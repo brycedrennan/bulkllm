@@ -7,6 +7,7 @@ import requests
 
 from bulkllm.model_registration.utils import (
     bulkllm_register_models,
+    infer_mode_from_name,
     load_cached_provider_data,
     save_cached_provider_data,
 )
@@ -28,7 +29,7 @@ def convert_anthropic_to_litellm(anthropic_model: dict[str, Any]) -> dict[str, A
 
     model_info = {
         "litellm_provider": "anthropic",
-        "mode": "chat",
+        "mode": infer_mode_from_name(model_id) or "chat",
     }
     if context_length is not None:
         model_info["max_input_tokens"] = context_length
