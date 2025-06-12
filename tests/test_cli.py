@@ -142,7 +142,10 @@ def test_list_canonical_models(monkeypatch):
 
     monkeypatch.setattr(
         "bulkllm.cli.openai.get_openai_models",
-        lambda: {"openai/gpt": {"litellm_provider": "openai", "mode": "chat"}},
+        lambda: {
+            "openai/gpt": {"litellm_provider": "openai", "mode": "chat"},
+            "openai/text": {"litellm_provider": "openai", "mode": "completion"},
+        },
     )
     monkeypatch.setattr(
         "bulkllm.cli.anthropic.get_anthropic_models",
@@ -168,6 +171,10 @@ def test_list_canonical_models(monkeypatch):
 
     def fake_register_models() -> None:
         litellm.model_cost["openai/gpt"] = {"litellm_provider": "openai", "mode": "chat"}
+        litellm.model_cost["openai/text"] = {
+            "litellm_provider": "openai",
+            "mode": "completion",
+        }
         litellm.model_cost["anthropic/claude"] = {"litellm_provider": "anthropic", "mode": "chat"}
         litellm.model_cost["gemini/flash"] = {"litellm_provider": "gemini", "mode": "chat"}
         litellm.model_cost["mistral/small"] = {"litellm_provider": "mistral", "mode": "chat"}
@@ -178,6 +185,56 @@ def test_list_canonical_models(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr(
+        "bulkllm.cli.create_model_configs",
+        lambda: [
+            LLMConfig(
+                slug="gpt",
+                display_name="GPT",
+                company_name="openai",
+                litellm_model_name="openai/gpt",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 1, 1),
+            ),
+            LLMConfig(
+                slug="claude",
+                display_name="Claude",
+                company_name="anthropic",
+                litellm_model_name="anthropic/claude",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 2, 2),
+            ),
+            LLMConfig(
+                slug="flash",
+                display_name="Flash",
+                company_name="gemini",
+                litellm_model_name="gemini/flash",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 3, 3),
+            ),
+            LLMConfig(
+                slug="small",
+                display_name="Small",
+                company_name="mistral",
+                litellm_model_name="mistral/small",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 4, 4),
+            ),
+            LLMConfig(
+                slug="gamma",
+                display_name="Gamma",
+                company_name="google",
+                litellm_model_name="openrouter/google/gamma",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 5, 5),
+            ),
+        ],
+    )
 
     runner = CliRunner()
     result = runner.invoke(app, ["list-canonical-models"])
@@ -185,12 +242,13 @@ def test_list_canonical_models(monkeypatch):
     assert result.exit_code == 0
     lines = [line.strip() for line in result.output.splitlines() if line.strip()]
     rows = [line.split("|") for line in lines[2:]]  # skip header and divider
-    table = {cells[0].strip(): cells[1].strip() for cells in rows}
+    table = {cells[0].strip(): (cells[1].strip(), cells[2].strip()) for cells in rows}
 
-    assert table["openai/gpt"] == "chat"
-    assert table["anthropic/claude"] == "chat"
-    assert table["gemini/flash"] == "chat"
-    assert table["mistral/small"] == "chat"
+    assert table["openai/gpt"] == ("chat", "2025-01-01")
+    assert table["anthropic/claude"] == ("chat", "2025-02-02")
+    assert table["gemini/flash"] == ("chat", "2025-03-03")
+    assert table["mistral/small"] == ("chat", "2025-04-04")
     # openrouter canonicalisation drops the prefix
-    assert table["google/gamma"] == "chat"
+    assert table["google/gamma"] == ("chat", "2025-05-05")
     assert "openrouter/google/gamma" not in table
+    assert "openai/text" not in table
