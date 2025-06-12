@@ -327,3 +327,46 @@ def test_list_canonical_models_drops_aliases(monkeypatch):
 
     assert "openai/base" in table
     assert "openai/alias" not in table
+
+
+def test_list_canonical_models_skips_xai_fast(monkeypatch):
+    import litellm
+
+    monkeypatch.setattr(litellm, "model_cost", {})
+
+    monkeypatch.setattr(
+        "bulkllm.cli.openai.get_openai_models",
+        lambda: {
+            "xai/grok-3-fast": {"litellm_provider": "xai", "mode": "chat"},
+            "xai/grok-3": {"litellm_provider": "xai", "mode": "chat"},
+        },
+    )
+    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.cli.gemini.get_gemini_models", dict)
+    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", dict)
+    monkeypatch.setattr("bulkllm.cli.openrouter.get_openrouter_models", dict)
+    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+
+    def fake_register_models() -> None:
+        litellm.model_cost["xai/grok-3-fast"] = {
+            "litellm_provider": "xai",
+            "mode": "chat",
+        }
+        litellm.model_cost["xai/grok-3"] = {
+            "litellm_provider": "xai",
+            "mode": "chat",
+        }
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.cli.create_model_configs", list)
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["list-canonical-models"])
+
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|")[0].strip() for line in lines[2:]]
+
+    assert "xai/grok-3" in rows
+    assert "xai/grok-3-fast" not in rows
