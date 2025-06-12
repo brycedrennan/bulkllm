@@ -31,6 +31,7 @@ class LLMConfig(CiBaseModel):
     display_name: str
     company_name: str
     litellm_model_name: str
+    llm_family: str
     temperature: float
     max_tokens: int | None = None
     max_completion_tokens: int | None = None

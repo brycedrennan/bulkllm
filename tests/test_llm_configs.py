@@ -29,6 +29,7 @@ def stub_configs(monkeypatch: pytest.MonkeyPatch):
         display_name="Cfg1",
         company_name="ACME",
         litellm_model_name="acme/cfg1",
+        llm_family="cfg1",
         temperature=0.0,
         max_tokens=100,
     )
@@ -37,6 +38,7 @@ def stub_configs(monkeypatch: pytest.MonkeyPatch):
         display_name="Cfg2",
         company_name="ACME",
         litellm_model_name="acme/cfg2",
+        llm_family="cfg2",
         temperature=0.0,
         max_tokens=100,
     )
