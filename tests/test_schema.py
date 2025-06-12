@@ -11,6 +11,7 @@ def test_llmconfig_md5_and_kwargs():
         display_name="S1",
         company_name="ACME",
         litellm_model_name="model-1",
+        llm_family="s1",
         temperature=0.1,
         max_tokens=100,
         system_prompt="hello",
