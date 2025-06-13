@@ -49,6 +49,10 @@ def convert_gemini_to_litellm(gemini_model: dict[str, Any]) -> dict[str, Any] | 
     if "countTokens" in generation_methods:
         model_info["supports_prompt_caching"] = True
 
+    version = gemini_model.get("version")
+    if version is not None:
+        model_info["version"] = version
+
     return {"model_name": litellm_model_name, "model_info": model_info}
 
 
