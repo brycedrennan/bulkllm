@@ -101,3 +101,28 @@ def get_mistral_models(*, use_cached: bool = True) -> dict[str, Any]:
 def register_mistral_models_with_litellm() -> None:
     """Fetch and register Mistral models with LiteLLM."""
     bulkllm_register_models(get_mistral_models(), source="mistral")
+
+
+@cache
+def get_mistral_aliases(*, use_cached: bool = True) -> set[str]:
+    """Return the set of aliased Mistral model names."""
+
+    if use_cached:
+        try:
+            data = load_cached_provider_data("mistral")
+        except FileNotFoundError:
+            use_cached = False
+    if not use_cached:
+        try:
+            data = fetch_mistral_data()
+        except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
+            logger.warning("Failed to fetch Mistral models: %s", exc)
+            return set()
+
+    aliases: set[str] = set()
+    for item in data.get("data", []):
+        for alias in item.get("aliases", []):
+            if alias:
+                aliases.add(f"mistral/{alias}")
+
+    return aliases
