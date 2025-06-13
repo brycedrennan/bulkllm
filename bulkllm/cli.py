@@ -88,6 +88,11 @@ def list_canonical_models() -> None:
         for a in openai.get_openai_aliases()
         if (c := _canonical_model_name(a, {"litellm_provider": "openai", "mode": "chat"}))
     }
+    alias_names |= {
+        c
+        for a in mistral.get_mistral_aliases()
+        if (c := _canonical_model_name(a, {"litellm_provider": "mistral", "mode": "chat"}))
+    }
 
     canonical_scraped: dict[str, dict] = {}
     for model, model_info in scraped_models.items():
