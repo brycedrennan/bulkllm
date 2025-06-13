@@ -102,6 +102,22 @@ def test_convert_gemini_camel_case():
     }
 
 
+def test_convert_gemini_adds_version():
+    sample = {
+        "name": "models/gemini-2.5-pro-exp-03-25",
+        "version": "2.5-exp-03-25",
+    }
+    result = convert_gemini_to_litellm(sample)
+    assert result == {
+        "model_name": "gemini/gemini-2.5-pro-exp-03-25",
+        "model_info": {
+            "litellm_provider": "gemini",
+            "mode": "chat",
+            "version": "2.5-exp-03-25",
+        },
+    }
+
+
 def test_convert_mistral():
     sample = {
         "id": "mistral-small",

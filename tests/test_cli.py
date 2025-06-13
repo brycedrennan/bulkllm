@@ -345,3 +345,59 @@ def test_list_canonical_models_skips_xai_fast(monkeypatch):
 
     assert "xai/grok-3" in rows
     assert "xai/grok-3-fast" not in rows
+
+
+def test_list_canonical_models_dedupes_gemini(monkeypatch):
+    import litellm
+
+    monkeypatch.setattr(litellm, "model_cost", {})
+
+    monkeypatch.setattr("bulkllm.cli.openai.get_openai_models", dict)
+    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", dict)
+    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+    monkeypatch.setattr(
+        "bulkllm.cli.gemini.get_gemini_models",
+        lambda: {
+            "gemini/a": {
+                "litellm_provider": "gemini",
+                "mode": "chat",
+                "version": "1",
+            },
+            "gemini/b": {
+                "litellm_provider": "gemini",
+                "mode": "chat",
+                "version": "1",
+            },
+        },
+    )
+
+    def fake_register_models() -> None:
+        litellm.model_cost.update(
+            {
+                "gemini/a": {
+                    "litellm_provider": "gemini",
+                    "mode": "chat",
+                    "version": "1",
+                },
+                "gemini/b": {
+                    "litellm_provider": "gemini",
+                    "mode": "chat",
+                    "version": "1",
+                },
+            }
+        )
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.cli.create_model_configs", list)
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["list-canonical-models"])
+
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|")[0].strip() for line in lines[2:]]
+
+    assert rows.count("gemini/a") == 1
+    assert "gemini/b" not in rows

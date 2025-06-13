@@ -96,6 +96,22 @@ def list_canonical_models() -> None:
             continue
         canonical_scraped.setdefault(canonical, model_info)
 
+    def _dedupe_gemini_by_version(models: dict[str, dict]) -> dict[str, dict]:
+        seen: set[str] = set()
+        deduped: dict[str, dict] = {}
+        for name in sorted(models):
+            info = models[name]
+            if info.get("litellm_provider") == "gemini":
+                version = info.get("version")
+                if version and version in seen:
+                    continue
+                if version:
+                    seen.add(version)
+            deduped[name] = info
+        return deduped
+
+    canonical_scraped = _dedupe_gemini_by_version(canonical_scraped)
+
     canonical_registered: dict[str, dict] = {}
     for model, model_info in litellm.model_cost.items():
         if model_info.get("mode") != "chat":
