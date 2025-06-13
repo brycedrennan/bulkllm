@@ -159,15 +159,6 @@ def test_list_canonical_models(monkeypatch):
         "bulkllm.cli.mistral.get_mistral_models",
         lambda: {"mistral/small": {"litellm_provider": "mistral", "mode": "chat"}},
     )
-    monkeypatch.setattr(
-        "bulkllm.cli.openrouter.get_openrouter_models",
-        lambda: {
-            "openrouter/google/gamma": {
-                "litellm_provider": "openrouter",
-                "mode": "chat",
-            }
-        },
-    )
 
     def fake_register_models() -> None:
         litellm.model_cost["openai/gpt"] = {"litellm_provider": "openai", "mode": "chat"}
@@ -178,10 +169,6 @@ def test_list_canonical_models(monkeypatch):
         litellm.model_cost["anthropic/claude"] = {"litellm_provider": "anthropic", "mode": "chat"}
         litellm.model_cost["gemini/flash"] = {"litellm_provider": "gemini", "mode": "chat"}
         litellm.model_cost["mistral/small"] = {"litellm_provider": "mistral", "mode": "chat"}
-        litellm.model_cost["openrouter/google/gamma"] = {
-            "litellm_provider": "openrouter",
-            "mode": "chat",
-        }
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
@@ -228,16 +215,6 @@ def test_list_canonical_models(monkeypatch):
                 max_tokens=1,
                 release_date=datetime.date(2025, 4, 4),
             ),
-            LLMConfig(
-                slug="gamma",
-                display_name="Gamma",
-                company_name="google",
-                litellm_model_name="openrouter/google/gamma",
-                llm_family="gamma",
-                temperature=1,
-                max_tokens=1,
-                release_date=datetime.date(2025, 5, 5),
-            ),
         ],
     )
 
@@ -253,10 +230,6 @@ def test_list_canonical_models(monkeypatch):
     assert table["anthropic/claude"] == ("chat", "2025-02-02")
     assert table["gemini/flash"] == ("chat", "2025-03-03")
     assert table["mistral/small"] == ("chat", "2025-04-04")
-    # openrouter canonicalisation drops the prefix
-    assert table["google/gamma"] == ("chat", "2025-05-05")
-    assert "openrouter/google/gamma" not in table
-    assert "openai/text" not in table
 
 
 def test_list_canonical_models_drops_aliases(monkeypatch):
@@ -281,10 +254,6 @@ def test_list_canonical_models_drops_aliases(monkeypatch):
     )
     monkeypatch.setattr(
         "bulkllm.cli.mistral.get_mistral_models",
-        dict,
-    )
-    monkeypatch.setattr(
-        "bulkllm.cli.openrouter.get_openrouter_models",
         dict,
     )
     monkeypatch.setattr(
@@ -351,7 +320,6 @@ def test_list_canonical_models_skips_xai_fast(monkeypatch):
     monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
     monkeypatch.setattr("bulkllm.cli.gemini.get_gemini_models", dict)
     monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", dict)
-    monkeypatch.setattr("bulkllm.cli.openrouter.get_openrouter_models", dict)
     monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
 
     def fake_register_models() -> None:

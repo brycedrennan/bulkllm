@@ -246,12 +246,13 @@ def get_openai_aliases() -> set[str]:
 
     aliases: set[str] = set()
     data = _load_detailed_data()
-    for item in data.get("pricing", []):
-        name = item.get("name")
-        if not name:
-            continue
-        snapshot = item.get("current_snapshot")
-        if snapshot and str(snapshot) != name:
-            aliases.add(f"openai/{name}")
+    for section in ("pricing", "rate_limits"):
+        for item in data.get(section, []):
+            name = item.get("name")
+            if not name:
+                continue
+            snapshot = item.get("current_snapshot")
+            if snapshot and str(snapshot) != name:
+                aliases.add(f"openai/{name}")
 
     return aliases
