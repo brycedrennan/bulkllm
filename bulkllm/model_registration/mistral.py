@@ -119,10 +119,40 @@ def get_mistral_aliases(*, use_cached: bool = True) -> set[str]:
             logger.warning("Failed to fetch Mistral models: %s", exc)
             return set()
 
+    id_map = {m.get("id"): m for m in data.get("data", []) if m.get("id")}
+
     aliases: set[str] = set()
-    for item in data.get("data", []):
-        for alias in item.get("aliases", []):
-            if alias:
-                aliases.add(f"mistral/{alias}")
+    visited: set[str] = set()
+
+    for model_id, item in id_map.items():
+        if model_id in visited:
+            continue
+
+        group = set(item.get("aliases", [])) | {model_id}
+        queue = list(group)
+        while queue:
+            name = queue.pop()
+            if name in visited:
+                continue
+            visited.add(name)
+            other = id_map.get(name)
+            if other:
+                for alias in other.get("aliases", []):
+                    if alias not in group:
+                        group.add(alias)
+                        queue.append(alias)
+
+        canonical = None
+        for name in group:
+            other = id_map.get(name)
+            if other and other.get("name") == name:
+                canonical = name
+                break
+        if canonical is None:
+            canonical = model_id
+
+        for name in group:
+            if name != canonical:
+                aliases.add(f"mistral/{name}")
 
     return aliases

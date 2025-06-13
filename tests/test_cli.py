@@ -376,6 +376,74 @@ def test_list_canonical_models_drops_mistral_aliases(monkeypatch):
     assert "mistral/alias" not in table
 
 
+def test_list_canonical_models_prefers_id_named_model(monkeypatch):
+    import litellm
+
+    from bulkllm.model_registration import mistral
+
+    monkeypatch.setattr(litellm, "model_cost", {})
+
+    data = {
+        "data": [
+            {"id": "base", "name": "base", "aliases": ["alias"]},
+            {"id": "alias", "name": "base", "aliases": ["base"]},
+        ]
+    }
+
+    monkeypatch.setattr(mistral, "load_cached_provider_data", lambda *a, **k: data)
+    mistral.get_mistral_models.cache_clear()
+    mistral.get_mistral_aliases.cache_clear()
+
+    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", mistral.get_mistral_models)
+    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_aliases", mistral.get_mistral_aliases)
+    monkeypatch.setattr("bulkllm.cli.openai.get_openai_models", dict)
+    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.cli.gemini.get_gemini_models", dict)
+    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+
+    def fake_register_models() -> None:
+        litellm.model_cost["mistral/base"] = {"litellm_provider": "mistral", "mode": "chat"}
+        litellm.model_cost["mistral/alias"] = {"litellm_provider": "mistral", "mode": "chat"}
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr(
+        "bulkllm.cli.create_model_configs",
+        lambda: [
+            LLMConfig(
+                slug="base",
+                display_name="Base",
+                company_name="mistral",
+                litellm_model_name="mistral/base",
+                llm_family="base",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 1, 1),
+            ),
+            LLMConfig(
+                slug="alias",
+                display_name="Alias",
+                company_name="mistral",
+                litellm_model_name="mistral/alias",
+                llm_family="alias",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 2, 2),
+            ),
+        ],
+    )
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["list-canonical-models"])
+
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|")[0].strip() for line in lines[2:]]
+
+    assert "mistral/base" in rows
+    assert "mistral/alias" not in rows
+
+
 def test_list_canonical_models_skips_xai_fast(monkeypatch):
     import litellm
 
