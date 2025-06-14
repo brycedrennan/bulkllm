@@ -255,4 +255,22 @@ def get_openai_aliases() -> set[str]:
             if snapshot and str(snapshot) != name:
                 aliases.add(f"openai/{name}")
 
+    # Some legacy models appear in the simple model list but not in the
+    # detailed data. If a versioned variant exists, treat the base name as an
+    # alias. This dedupes entries like ``gpt-3.5-turbo-16k`` which maps to
+    # ``gpt-3.5-turbo-16k-0613``.
+    try:
+        simple = load_cached_provider_data("openai", use_user_cache=False)
+    except (FileNotFoundError, json.JSONDecodeError):  # noqa: PERF203 - best effort
+        simple = {}
+    detailed_slugs = set(_get_detailed_lookup().keys())
+    for item in simple.get("data", []):
+        model_id = item.get("id")
+        if not model_id:
+            continue
+        for slug in detailed_slugs:
+            if slug.startswith(f"{model_id}-"):
+                aliases.add(f"openai/{model_id}")
+                break
+
     return aliases
