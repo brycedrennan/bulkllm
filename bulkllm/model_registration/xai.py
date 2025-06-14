@@ -88,6 +88,33 @@ def get_xai_models(*, use_cached: bool = True) -> dict[str, Any]:
 
 
 @cache
+def get_xai_aliases(*, use_cached: bool = True) -> set[str]:
+    """Return the set of aliased XAI model names."""
+
+    if use_cached:
+        try:
+            data = load_cached_provider_data("xai")
+        except FileNotFoundError:
+            use_cached = False
+    if not use_cached:
+        try:
+            data = fetch_xai_data()
+        except requests.RequestException as exc:  # noqa: PERF203 - broad catch ok here
+            logger.warning("Failed to fetch XAI models: %s", exc)
+            return set()
+
+    aliases: set[str] = set()
+    for item in data.get("models", []):
+        model_id = item.get("id")
+        if not model_id:
+            continue
+        for alias in item.get("aliases", []):
+            if alias != model_id:
+                aliases.add(f"xai/{alias}")
+    return aliases
+
+
+@cache
 def register_xai_models_with_litellm() -> None:
     """Fetch and register XAI models with LiteLLM."""
     bulkllm_register_models(get_xai_models(), source="xai")

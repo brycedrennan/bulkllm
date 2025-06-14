@@ -514,6 +514,72 @@ def test_list_canonical_models_skips_xai_fast(monkeypatch):
     assert "xai/grok-3-fast" not in rows
 
 
+def test_list_canonical_models_drops_xai_aliases(monkeypatch):
+    import litellm
+
+    monkeypatch.setattr(litellm, "model_cost", {})
+
+    monkeypatch.setattr("bulkllm.cli.openai.get_openai_models", dict)
+    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.cli.gemini.get_gemini_models", dict)
+    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", dict)
+    monkeypatch.setattr(
+        "bulkllm.cli.xai.get_xai_models",
+        lambda: {
+            "xai/base": {"litellm_provider": "xai", "mode": "chat"},
+            "xai/alias": {"litellm_provider": "xai", "mode": "chat"},
+        },
+    )
+    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+    monkeypatch.setattr(
+        "bulkllm.cli.xai.get_xai_aliases",
+        lambda: {"xai/alias"},
+    )
+
+    def fake_register_models() -> None:
+        litellm.model_cost["xai/base"] = {"litellm_provider": "xai", "mode": "chat"}
+        litellm.model_cost["xai/alias"] = {"litellm_provider": "xai", "mode": "chat"}
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr(
+        "bulkllm.cli.create_model_configs",
+        lambda: [
+            LLMConfig(
+                slug="base",
+                display_name="Base",
+                company_name="xai",
+                litellm_model_name="xai/base",
+                llm_family="base",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 1, 1),
+            ),
+            LLMConfig(
+                slug="alias",
+                display_name="Alias",
+                company_name="xai",
+                litellm_model_name="xai/alias",
+                llm_family="alias",
+                temperature=1,
+                max_tokens=1,
+                release_date=datetime.date(2025, 2, 2),
+            ),
+        ],
+    )
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["list-canonical-models"])
+
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|") for line in lines[2:]]  # skip header and divider
+    table = {cells[0].strip(): cells[1].strip() for cells in rows}
+
+    assert "xai/base" in table
+    assert "xai/alias" not in table
+
+
 def test_list_canonical_models_dedupes_gemini(monkeypatch):
     import litellm
 
