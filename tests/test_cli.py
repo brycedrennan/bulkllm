@@ -143,21 +143,38 @@ def test_list_canonical_models(monkeypatch):
     monkeypatch.setattr(
         "bulkllm.cli.openai.get_openai_models",
         lambda: {
-            "openai/gpt": {"litellm_provider": "openai", "mode": "chat"},
+            "openai/gpt": {"litellm_provider": "openai", "mode": "chat", "created": 1},
             "openai/text": {"litellm_provider": "openai", "mode": "completion"},
         },
     )
     monkeypatch.setattr(
         "bulkllm.cli.anthropic.get_anthropic_models",
-        lambda: {"anthropic/claude": {"litellm_provider": "anthropic", "mode": "chat"}},
+        lambda: {
+            "anthropic/claude": {
+                "litellm_provider": "anthropic",
+                "mode": "chat",
+                "created_at": "2024-01-02T00:00:00Z",
+            }
+        },
     )
     monkeypatch.setattr(
         "bulkllm.cli.gemini.get_gemini_models",
-        lambda: {"gemini/flash": {"litellm_provider": "gemini", "mode": "chat"}},
+        lambda: {
+            "gemini/flash": {
+                "litellm_provider": "gemini",
+                "mode": "chat",
+            }
+        },
     )
     monkeypatch.setattr(
         "bulkllm.cli.mistral.get_mistral_models",
-        lambda: {"mistral/small": {"litellm_provider": "mistral", "mode": "chat"}},
+        lambda: {
+            "mistral/small": {
+                "litellm_provider": "mistral",
+                "mode": "chat",
+                "created": 3,
+            }
+        },
     )
 
     def fake_register_models() -> None:
@@ -224,12 +241,23 @@ def test_list_canonical_models(monkeypatch):
     assert result.exit_code == 0
     lines = [line.strip() for line in result.output.splitlines() if line.strip()]
     rows = [line.split("|") for line in lines[2:]]  # skip header and divider
-    table = {cells[0].strip(): (cells[1].strip(), cells[2].strip()) for cells in rows}
+    table = {
+        cells[0].strip(): (
+            cells[1].strip(),
+            cells[2].strip(),
+            cells[3].strip(),
+        )
+        for cells in rows
+    }
 
-    assert table["openai/gpt"] == ("chat", "2025-01-01")
-    assert table["anthropic/claude"] == ("chat", "2025-02-02")
-    assert table["gemini/flash"] == ("chat", "2025-03-03")
-    assert table["mistral/small"] == ("chat", "2025-04-04")
+    assert table["openai/gpt"] == ("chat", "2025-01-01", "1970-01-01")
+    assert table["anthropic/claude"] == (
+        "chat",
+        "2025-02-02",
+        "2024-01-02",
+    )
+    assert table["gemini/flash"] == ("chat", "2025-03-03", "")
+    assert table["mistral/small"] == ("chat", "2025-04-04", "1970-01-01")
 
 
 def test_list_canonical_models_drops_aliases(monkeypatch):

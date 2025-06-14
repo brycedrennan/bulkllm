@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import datetime
+
 import litellm
 import typer
 
@@ -139,13 +141,30 @@ def list_canonical_models() -> None:
         if canonical and canonical not in release_dates:
             release_dates[canonical] = cfg.release_date.isoformat()
 
+    created_dates = {}
+    for name, info in canonical_scraped.items():
+        created = info.get("created_at", info.get("created"))
+        if created is None:
+            continue
+        try:
+            if isinstance(created, str):
+                dt = datetime.datetime.fromisoformat(created.replace("Z", "+00:00"))
+            else:
+                dt = datetime.datetime.fromtimestamp(
+                    int(created), tz=datetime.timezone.utc
+                )
+            created_dates[name] = dt.date().isoformat()
+        except (ValueError, OSError, OverflowError):
+            created_dates[name] = str(created)
+
     rows = []
     for name in sorted(canonical_scraped):
         info = canonical_registered.get(name, canonical_scraped[name])
         release_date = release_dates.get(name, "")
-        rows.append([name, str(info.get("mode", "")), release_date])
+        created = created_dates.get(name, "")
+        rows.append([name, str(info.get("mode", "")), release_date, created])
 
-    table = _tabulate(rows, headers=["model", "mode", "release_date"])
+    table = _tabulate(rows, headers=["model", "mode", "release_date", "scraped_date"])
     typer.echo(table)
 
 

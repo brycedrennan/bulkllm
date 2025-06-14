@@ -215,6 +215,9 @@ def convert_openrouter_to_litellm(openrouter_model: dict[str, Any]) -> dict[str,
         # "search_context_cost_per_query": search_context_cost_per_query, # Omit if None
         # "deprecation_date": deprecation_date # Omit if None
     }
+    created = openrouter_model.get("created")
+    if created is not None:
+        model_info["created"] = created
     # Clean None values from model_info
     model_info = {k: v for k, v in model_info.items() if v is not None}
 

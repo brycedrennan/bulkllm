@@ -39,6 +39,10 @@ def convert_mistral_to_litellm(mistral_model: dict[str, Any]) -> dict[str, Any] 
     if caps.get("vision"):
         model_info["supports_vision"] = True
 
+    created = mistral_model.get("created")
+    if created is not None:
+        model_info["created"] = created
+
     return {"model_name": litellm_model_name, "model_info": model_info}
 
 
