@@ -163,7 +163,6 @@ def list_canonical_models() -> None:
         info = canonical_registered.get(name, canonical_scraped[name])
         release_date = release_dates.get(name, "")
         created = created_dates.get(name, "")
-        created = ""
         rows.append([name, str(info.get("mode", "")), release_date, created])
 
     table = _tabulate(rows, headers=["model", "mode", "release_date", "scraped_date"])
