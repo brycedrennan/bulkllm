@@ -150,9 +150,7 @@ def list_canonical_models() -> None:
             if isinstance(created, str):
                 dt = datetime.datetime.fromisoformat(created.replace("Z", "+00:00"))
             else:
-                dt = datetime.datetime.fromtimestamp(
-                    int(created), tz=datetime.timezone.utc
-                )
+                dt = datetime.datetime.fromtimestamp(int(created), tz=datetime.UTC)
             created_dates[name] = dt.date().isoformat()
         except (ValueError, OSError, OverflowError):
             created_dates[name] = str(created)
