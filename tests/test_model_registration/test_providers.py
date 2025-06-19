@@ -82,7 +82,7 @@ def test_get_gemini_models_network(monkeypatch):
     }
     get_gemini_models.cache_clear()
     _patch_get(monkeypatch, sample)
-    models = get_gemini_models()
+    models = get_gemini_models(use_cached=False)
     assert "gemini/gemini-1.5-flash-001" in models
     info = models["gemini/gemini-1.5-flash-001"]
     assert info["litellm_provider"] == "gemini"

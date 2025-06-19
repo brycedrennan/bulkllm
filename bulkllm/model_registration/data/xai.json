@@ -2,7 +2,7 @@
   "models": [
     {
       "id": "grok-2-1212",
-      "fingerprint": "fp_96e016b2bb",
+      "fingerprint": "fp_8b1723550e",
       "created": 1737331200,
       "object": "model",
       "owned_by": "xai",
@@ -49,7 +49,7 @@
     },
     {
       "id": "grok-3",
-      "fingerprint": "fp_d8d6e9f7d0",
+      "fingerprint": "fp_5261b2dee3",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",

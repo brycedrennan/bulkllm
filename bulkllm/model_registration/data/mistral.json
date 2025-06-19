@@ -384,27 +384,6 @@
       "type": "base"
     },
     {
-      "id": "mistral-small-2402",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "completion_fim": false,
-        "function_calling": true,
-        "fine_tuning": true,
-        "vision": false,
-        "classification": false
-      },
-      "name": "mistral-small-2402",
-      "description": "Official mistral-small-2402 Mistral AI model",
-      "max_context_length": 32768,
-      "aliases": [],
-      "deprecation": null,
-      "default_model_temperature": 0.7,
-      "type": "base"
-    },
-    {
       "id": "mistral-small-2409",
       "object": "model",
       "created": 1749572058,
@@ -419,48 +398,6 @@
       },
       "name": "mistral-small-2409",
       "description": "Official mistral-small-2409 Mistral AI model",
-      "max_context_length": 32768,
-      "aliases": [],
-      "deprecation": null,
-      "default_model_temperature": 0.7,
-      "type": "base"
-    },
-    {
-      "id": "mistral-medium-2312",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "completion_fim": false,
-        "function_calling": true,
-        "fine_tuning": false,
-        "vision": false,
-        "classification": false
-      },
-      "name": "mistral-medium-2312",
-      "description": "Official mistral-medium-2312 Mistral AI model",
-      "max_context_length": 32768,
-      "aliases": [],
-      "deprecation": null,
-      "default_model_temperature": 0.7,
-      "type": "base"
-    },
-    {
-      "id": "mistral-large-2402",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "completion_fim": false,
-        "function_calling": true,
-        "fine_tuning": false,
-        "vision": false,
-        "classification": false
-      },
-      "name": "mistral-large-2402",
-      "description": "Official mistral-large-2402 Mistral AI model",
       "max_context_length": 32768,
       "aliases": [],
       "deprecation": null,
@@ -483,7 +420,32 @@
       "name": "mistral-large-2407",
       "description": "Official mistral-large-2407 Mistral AI model",
       "max_context_length": 131072,
-      "aliases": [],
+      "aliases": [
+        "mistral-large-2402"
+      ],
+      "deprecation": null,
+      "default_model_temperature": 0.7,
+      "type": "base"
+    },
+    {
+      "id": "mistral-large-2402",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": true,
+        "vision": false,
+        "classification": false
+      },
+      "name": "mistral-large-2407",
+      "description": "Official mistral-large-2407 Mistral AI model",
+      "max_context_length": 131072,
+      "aliases": [
+        "mistral-large-2407"
+      ],
       "deprecation": null,
       "default_model_temperature": 0.7,
       "type": "base"
@@ -549,13 +511,13 @@
       },
       "name": "pixtral-large-2411",
       "description": "Official pixtral-large-2411 Mistral AI model",
-      "max_context_length": 131072,
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-large-latest",
         "mistral-large-pixtral-2411"
       ],
       "deprecation": null,
-      "default_model_temperature": 0.7,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -573,13 +535,13 @@
       },
       "name": "pixtral-large-2411",
       "description": "Official pixtral-large-2411 Mistral AI model",
-      "max_context_length": 131072,
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-large-2411",
         "mistral-large-pixtral-2411"
       ],
       "deprecation": null,
-      "default_model_temperature": 0.7,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -597,34 +559,13 @@
       },
       "name": "pixtral-large-2411",
       "description": "Official pixtral-large-2411 Mistral AI model",
-      "max_context_length": 131072,
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-large-2411",
         "pixtral-large-latest"
       ],
       "deprecation": null,
-      "default_model_temperature": 0.7,
-      "type": "base"
-    },
-    {
-      "id": "codestral-2405",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "completion_fim": true,
-        "function_calling": true,
-        "fine_tuning": true,
-        "vision": false,
-        "classification": false
-      },
-      "name": "codestral-2405",
-      "description": "Official codestral-2405 Mistral AI model",
-      "max_context_length": 32768,
-      "aliases": [],
-      "deprecation": null,
-      "default_model_temperature": 0.7,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -646,7 +587,8 @@
       "aliases": [
         "codestral-latest",
         "codestral-2412",
-        "codestral-2411-rc5"
+        "codestral-2411-rc5",
+        "codestral-2405"
       ],
       "deprecation": null,
       "default_model_temperature": 0.3,
@@ -671,7 +613,8 @@
       "aliases": [
         "codestral-2501",
         "codestral-2412",
-        "codestral-2411-rc5"
+        "codestral-2411-rc5",
+        "codestral-2405"
       ],
       "deprecation": null,
       "default_model_temperature": 0.3,
@@ -696,7 +639,8 @@
       "aliases": [
         "codestral-2501",
         "codestral-latest",
-        "codestral-2411-rc5"
+        "codestral-2411-rc5",
+        "codestral-2405"
       ],
       "deprecation": null,
       "default_model_temperature": 0.3,
@@ -721,7 +665,34 @@
       "aliases": [
         "codestral-2501",
         "codestral-latest",
-        "codestral-2412"
+        "codestral-2412",
+        "codestral-2405"
+      ],
+      "deprecation": null,
+      "default_model_temperature": 0.3,
+      "type": "base"
+    },
+    {
+      "id": "codestral-2405",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": true,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "codestral-2501",
+      "description": "Official codestral-2501 Mistral AI model",
+      "max_context_length": 262144,
+      "aliases": [
+        "codestral-2501",
+        "codestral-latest",
+        "codestral-2412",
+        "codestral-2411-rc5"
       ],
       "deprecation": null,
       "default_model_temperature": 0.3,
@@ -788,13 +759,13 @@
       },
       "name": "pixtral-12b-2409",
       "description": "Official pixtral-12b-2409 Mistral AI model",
-      "max_context_length": 131072,
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-12b",
         "pixtral-12b-latest"
       ],
       "deprecation": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -812,13 +783,13 @@
       },
       "name": "pixtral-12b-2409",
       "description": "Official pixtral-12b-2409 Mistral AI model",
-      "max_context_length": 131072,
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-12b-2409",
         "pixtral-12b-latest"
       ],
       "deprecation": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -836,13 +807,13 @@
       },
       "name": "pixtral-12b-2409",
       "description": "Official pixtral-12b-2409 Mistral AI model",
-      "max_context_length": 131072,
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-12b-2409",
         "pixtral-12b"
       ],
       "deprecation": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -881,12 +852,13 @@
       },
       "name": "mistral-small-2503",
       "description": "Official mistral-small-2503 Mistral AI model",
-      "max_context_length": 131072,
+      "max_context_length": 32768,
       "aliases": [
-        "mistral-small-latest"
+        "mistral-small-latest",
+        "mistral-small-2402"
       ],
       "deprecation": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -904,12 +876,37 @@
       },
       "name": "mistral-small-2503",
       "description": "Official mistral-small-2503 Mistral AI model",
-      "max_context_length": 131072,
+      "max_context_length": 32768,
       "aliases": [
-        "mistral-small-2503"
+        "mistral-small-2503",
+        "mistral-small-2402"
       ],
       "deprecation": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
+      "type": "base"
+    },
+    {
+      "id": "mistral-small-2402",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": true,
+        "classification": false
+      },
+      "name": "mistral-small-2503",
+      "description": "Official mistral-small-2503 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [
+        "mistral-small-2503",
+        "mistral-small-latest"
+      ],
+      "deprecation": null,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -976,7 +973,8 @@
       "max_context_length": 32768,
       "aliases": [
         "mistral-medium-latest",
-        "mistral-medium"
+        "mistral-medium",
+        "mistral-medium-2312"
       ],
       "deprecation": null,
       "default_model_temperature": null,
@@ -1000,7 +998,8 @@
       "max_context_length": 32768,
       "aliases": [
         "mistral-medium-2505",
-        "mistral-medium"
+        "mistral-medium",
+        "mistral-medium-2312"
       ],
       "deprecation": null,
       "default_model_temperature": null,
@@ -1024,7 +1023,33 @@
       "max_context_length": 32768,
       "aliases": [
         "mistral-medium-2505",
-        "mistral-medium-latest"
+        "mistral-medium-latest",
+        "mistral-medium-2312"
+      ],
+      "deprecation": null,
+      "default_model_temperature": null,
+      "type": "base"
+    },
+    {
+      "id": "mistral-medium-2312",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": true,
+        "classification": false
+      },
+      "name": "mistral-medium-2505",
+      "description": "Official mistral-medium-2505 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [
+        "mistral-medium-2505",
+        "mistral-medium-latest",
+        "mistral-medium"
       ],
       "deprecation": null,
       "default_model_temperature": null,
