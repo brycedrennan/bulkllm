@@ -71,6 +71,16 @@ def list_missing_rate_limits() -> None:
             typer.echo(model)
 
 
+@app.command("missing-rate-limits")
+def missing_rate_limits() -> None:
+    """List config slugs without a configured rate limit."""
+    register_models()
+    limiter = RateLimiter()
+    for cfg in create_model_configs():
+        if limiter.get_rate_limit_for_model(cfg.litellm_model_name) is limiter.default_rate_limit:
+            typer.echo(cfg.slug)
+
+
 @app.command("list-missing-model-configs")
 def list_missing_model_configs() -> None:
     """List models without a corresponding LLMConfig."""
