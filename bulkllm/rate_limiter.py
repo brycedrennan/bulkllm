@@ -499,13 +499,13 @@ class ModelRateLimit(BaseModel):
             self._pending_input_tokens = max(0, self._pending_input_tokens)
             self._pending_output_tokens = max(0, self._pending_output_tokens)
             logger.info("Cancelled pending request %s.", request_id)
-        else:
-            logger.warning("Attempted to cancel request %s, but it was not found.", request_id)
 
     async def _cancel_pending(self, request_id: str) -> None:
         """Async wrapper around :meth:`_cancel_pending_internal`."""
-        async with self._lock:
-            self._cancel_pending_internal(request_id)
+
+        if request_id in self._pending_requests:
+            async with self._lock:
+                self._cancel_pending_internal(request_id)
 
     def _cancel_pending_sync(self, request_id: str) -> None:
         """Sync wrapper around :meth:`_cancel_pending_internal`."""

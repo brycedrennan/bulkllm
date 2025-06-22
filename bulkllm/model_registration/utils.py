@@ -78,7 +78,7 @@ def bulkllm_register_models(
 ) -> None:
     """Register multiple models with LiteLLM, warning if already present."""
     models_to_register = {}
-    for model_name in model_cost_map:
+    for model_name in model_cost_map:  # noqa: PLC0206
         model_info = None
         try:
             model_info = litellm.get_model_info(model_name)

@@ -123,7 +123,7 @@ class UsageRecord(BaseModel):
             errors = list(set(errors))
             self.inconsistencies.extend(errors)
             self.inconsistencies = list(set(self.inconsistencies))
-            logger.warning(
+            logger.debug(
                 "UsageRecord inconsistencies detected for model '%s': %s",
                 self.model,
                 "; ".join(errors),
