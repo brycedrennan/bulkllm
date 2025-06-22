@@ -231,20 +231,28 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
     ModelRateLimit(model_names=["gemini/gemini-2.0-flash"], rpm=2000, tpm=4_000_000),
     ModelRateLimit(
         model_names=[
+            "gemini/gemini-2.5-flash-lite-preview-06-17",
+        ],
+        rpm=4000,
+        tpm=4_000_000,
+    ),
+    ModelRateLimit(
+        model_names=[
+            "gemini/gemini-2.5-flash-preview-04-17",
+            "gemini/gemini-2.5-flash-preview-05-20",
+            "gemini/gemini-2.5-flash",
+        ],
+        rpm=1000,
+        tpm=1_000_000,
+    ),
+    ModelRateLimit(
+        model_names=[
             "gemini/gemini-2.5-pro-preview-03-25",
             "gemini/gemini-2.5-pro-preview-05-06",
             "gemini/gemini-2.5-pro-preview-06-05",
         ],
         rpm=150,
         tpm=2_000_000,
-    ),
-    ModelRateLimit(
-        model_names=[
-            "gemini/gemini-2.5-flash-preview-04-17",
-            "gemini/gemini-2.5-flash-preview-05-20",
-        ],
-        rpm=1000,
-        tpm=1_000_000,
     ),
     # XAI Models
     ModelRateLimit(model_names=["xai/grok-2-1212"], rpm=8 * 60, tpm=90000),
