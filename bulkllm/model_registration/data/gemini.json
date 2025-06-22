@@ -472,7 +472,7 @@
       "version": "2.5-preview-06-17",
       "displayName": "Gemini 2.5 Flash Lite Preview 06-17",
       "description": "Preview release (June 11th, 2025) of Gemini 2.5 Flash Lite",
-      "inputTokenLimit": 65536,
+      "inputTokenLimit": 1048576,
       "outputTokenLimit": 65536,
       "supportedGenerationMethods": [
         "generateContent",

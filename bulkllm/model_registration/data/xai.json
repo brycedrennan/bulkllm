@@ -2,7 +2,7 @@
   "models": [
     {
       "id": "grok-2-1212",
-      "fingerprint": "fp_8b1723550e",
+      "fingerprint": "fp_eb2aa4f6df",
       "created": 1737331200,
       "object": "model",
       "owned_by": "xai",
@@ -49,7 +49,7 @@
     },
     {
       "id": "grok-3",
-      "fingerprint": "fp_5261b2dee3",
+      "fingerprint": "fp_be0739e203",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -72,7 +72,7 @@
     },
     {
       "id": "grok-3-fast",
-      "fingerprint": "fp_e04feb1a54",
+      "fingerprint": "fp_d95dc2d0b2",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -95,7 +95,7 @@
     },
     {
       "id": "grok-3-mini",
-      "fingerprint": "fp_388cc0ea21",
+      "fingerprint": "fp_391c6f91d0",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
