@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-import datetime
 import hashlib as _hashlib
 import logging
 from collections.abc import Iterable
+from datetime import date
 from typing import (
     Any,
     Literal,
@@ -38,7 +38,7 @@ class LLMConfig(CiBaseModel):
     thinking_config: dict | None = None
     system_prompt: str | None = None
     reasoning_effort: Literal["low", "medium", "high"] | None = None
-    release_date: datetime.date | None = None
+    release_date: date | None = None
     is_reasoning: bool = False
 
     @computed_field
