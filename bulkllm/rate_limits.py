@@ -31,6 +31,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         model_names=[
             "openai/gpt-4",
             "openai/gpt-4-0613",
+            "openai/gpt-4-0314",
         ],
         rpm=10000,
         tpm=1000000,
@@ -43,6 +44,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
             "openai/gpt-4-turbo-preview",
             "openai/gpt-4-0125-preview",
             "openai/gpt-4-1106-preview",
+            "openai/gpt-4-1106-vision-preview",
         ],
         rpm=10000,
         tpm=2000000,
@@ -187,6 +189,21 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         rpm=10000,
         tpm=30000000,
     ),
+    # OpenAI o3-pro family
+    ModelRateLimit(
+        model_names=[
+            "openai/o3-pro",
+        ],
+        rpm=10000,
+        tpm=30000000,
+    ),
+    ModelRateLimit(
+        model_names=[
+            "openai/o3-pro-2025-06-10",
+        ],
+        rpm=10000,
+        tpm=30000000,
+    ),
     # OpenAI o4-mini family
     ModelRateLimit(
         model_names=[
@@ -196,11 +213,21 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         rpm=30000,
         tpm=150000000,
     ),
+    ModelRateLimit(
+        model_names=["openai/codex-mini-latest"],
+        rpm=30000,
+        tpm=150000000,
+    ),
     # Anthropic Models
-    ModelRateLimit(model_names=["anthropic/claude-3-7-sonnet-20250219"], rpm=4000, itpm=200_000, otpm=80_000),
+    ModelRateLimit(model_names=["anthropic/claude-3-haiku-20240307"], rpm=4000, itpm=400_000, otpm=80_000),
+    ModelRateLimit(model_names=["anthropic/claude-3-sonnet-20240229"], rpm=4000, itpm=400_000, otpm=80_000),
+    ModelRateLimit(model_names=["anthropic/claude-3-opus-20240229"], rpm=4000, itpm=400_000, otpm=80_000),
     ModelRateLimit(model_names=["anthropic/claude-3-5-sonnet-20241022"], rpm=4000, itpm=400_000, otpm=80_000),
     ModelRateLimit(model_names=["anthropic/claude-3-5-sonnet-20240620"], rpm=4000, itpm=400_000, otpm=80_000),
     ModelRateLimit(model_names=["anthropic/claude-3-5-haiku-20241022"], rpm=4000, itpm=400_000, otpm=80_000),
+    ModelRateLimit(model_names=["anthropic/claude-3-7-sonnet-20250219"], rpm=4000, itpm=200_000, otpm=80_000),
+    ModelRateLimit(model_names=["anthropic/claude-opus-4-20250514"], rpm=4000, itpm=200_000, otpm=80_000),
+    ModelRateLimit(model_names=["anthropic/claude-sonnet-4-20250514"], rpm=4000, itpm=200_000, otpm=80_000),
     # OpenRouter Models - use regex to match all models
     ModelRateLimit(
         model_names=["^openrouter/.*$"],
@@ -256,6 +283,18 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
     ),
     # XAI Models
     ModelRateLimit(model_names=["xai/grok-2-1212"], rpm=8 * 60, tpm=90000),
-    ModelRateLimit(model_names=["xai/grok-3-beta"], rpm=5 * 60),
-    ModelRateLimit(model_names=["xai/grok-3-mini-beta"], rpm=5 * 60),
+    ModelRateLimit(
+        model_names=[
+            "xai/grok-3-beta",
+            "xai/grok-3",
+        ],
+        rpm=10 * 60,
+    ),
+    ModelRateLimit(
+        model_names=[
+            "xai/grok-3-mini-beta",
+            "xai/grok-3-mini",
+        ],
+        rpm=8 * 60,
+    ),
 ]
