@@ -70,10 +70,14 @@ def save_cached_provider_data(provider: str, data: dict[str, Any]) -> None:
 
 
 def bulkllm_register_models(
-    model_cost_map: dict[str, Any], warn_existing: bool = True, *, source: str | None = None
+    model_cost_map: dict[str, Any],
+    warn_existing: bool = True,
+    *,
+    source: str | None = None,
+    load_existing: bool = False,
 ) -> None:
     """Register multiple models with LiteLLM, warning if already present."""
-
+    models_to_register = {}
     for model_name in model_cost_map:
         model_info = None
         try:
@@ -83,13 +87,16 @@ def bulkllm_register_models(
         if model_info:
             if warn_existing:
                 logger.debug(f"Model '{model_name}' already registered")
+            if load_existing:
+                models_to_register[model_name] = model_info
         else:
             logger.info(f"Registering model '{model_name}' from {source}")
             entry = (model_name, source)
+            models_to_register[model_name] = model_cost_map[model_name]
             if entry not in ADDED_MODELS:
                 ADDED_MODELS.append(entry)
 
-    litellm.register_model(model_cost_map)
+    litellm.register_model(models_to_register)
 
 
 def print_added_models() -> None:
