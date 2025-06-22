@@ -69,6 +69,42 @@ def test_list_missing_rate_limits(monkeypatch):
     assert "limited/model" not in lines
 
 
+def test_missing_rate_limits(monkeypatch):
+    """missing-rate-limits should use config slugs."""
+    from types import SimpleNamespace
+
+    def fake_register_models() -> None:
+        pass
+
+    cfgs = [
+        SimpleNamespace(slug="limited", litellm_model_name="limited/model"),
+        SimpleNamespace(slug="unlimited", litellm_model_name="unlimited/model"),
+    ]
+
+    class DummyRateLimiter:
+        def __init__(self) -> None:
+            self.default_rate_limit = object()
+
+        def get_rate_limit_for_model(self, model: str) -> object:
+            if model == "limited/model":
+                return object()
+            return self.default_rate_limit
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.cli.create_model_configs", lambda: cfgs)
+    monkeypatch.setattr("bulkllm.cli.RateLimiter", DummyRateLimiter)
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["missing-rate-limits"])
+
+    assert result.exit_code == 0
+    lines = result.output.splitlines()
+    assert "unlimited" in lines
+    assert "limited" not in lines
+
+
 def test_list_missing_model_configs(monkeypatch):
     from types import SimpleNamespace
 
