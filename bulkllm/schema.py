@@ -40,6 +40,7 @@ class LLMConfig(CiBaseModel):
     reasoning_effort: Literal["low", "medium", "high"] | None = None
     release_date: date | None = None
     is_reasoning: bool = False
+    is_deprecated: bool | date = False
 
     @computed_field
     @property
