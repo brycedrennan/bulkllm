@@ -1,19 +1,10 @@
 from __future__ import annotations
 
-import datetime
-
 import litellm
 import typer
 
 from bulkllm.llm_configs import create_model_configs
-from bulkllm.model_registration import (
-    anthropic,
-    gemini,
-    mistral,
-    openai,
-    xai,
-)
-from bulkllm.model_registration.canonical import _canonical_model_name
+from bulkllm.model_registration.canonical import _canonical_model_name, get_canonical_models
 from bulkllm.model_registration.main import register_models
 from bulkllm.rate_limiter import RateLimiter
 
@@ -65,106 +56,7 @@ def list_unique_models() -> None:
 @app.command("list-canonical-models")
 def list_canonical_models() -> None:
     """List canonical chat models with release dates."""
-    register_models()
-
-    scraped_models: dict[str, dict] = {}
-    providers = [
-        openai.get_openai_models,
-        anthropic.get_anthropic_models,
-        gemini.get_gemini_models,
-        mistral.get_mistral_models,
-        xai.get_xai_models,
-        # openrouter.get_openrouter_models,
-    ]
-    for get_models in providers:
-        scraped_models.update(get_models())
-
-    def _is_xai_fast(name: str) -> bool:
-        return name.startswith("xai/") and "fast" in name
-
-    # Keep only chat models
-    scraped_models = {name: info for name, info in scraped_models.items() if info.get("mode") == "chat"}
-
-    alias_names = {
-        c
-        for a in openai.get_openai_aliases()
-        if (c := _canonical_model_name(a, {"litellm_provider": "openai", "mode": "chat"}))
-    }
-    alias_names |= {
-        c
-        for a in mistral.get_mistral_aliases()
-        if (c := _canonical_model_name(a, {"litellm_provider": "mistral", "mode": "chat"}))
-    }
-    alias_names |= {
-        c for a in xai.get_xai_aliases() if (c := _canonical_model_name(a, {"litellm_provider": "xai", "mode": "chat"}))
-    }
-
-    canonical_scraped: dict[str, dict] = {}
-    for model, model_info in scraped_models.items():
-        canonical = _canonical_model_name(model, model_info)
-        if canonical is None or canonical in alias_names or _is_xai_fast(canonical):
-            continue
-        canonical_scraped.setdefault(canonical, model_info)
-
-    def _dedupe_gemini_by_version(models: dict[str, dict]) -> dict[str, dict]:
-        seen: set[str] = set()
-        deduped: dict[str, dict] = {}
-        for name in sorted(models):
-            info = models[name]
-            if info.get("litellm_provider") == "gemini":
-                version = info.get("version")
-                if version and version in seen:
-                    continue
-                if version:
-                    seen.add(version)
-            deduped[name] = info
-        return deduped
-
-    canonical_scraped = _dedupe_gemini_by_version(canonical_scraped)
-
-    canonical_registered: dict[str, dict] = {}
-    for model, model_info in litellm.model_cost.items():
-        if model_info.get("mode") != "chat":
-            continue
-        canonical = _canonical_model_name(model, model_info)
-        if canonical is None or canonical in alias_names or _is_xai_fast(canonical):
-            continue
-        canonical_registered.setdefault(canonical, model_info)
-
-    # Map canonical model name to release date from LLMConfig
-    release_dates = {}
-    for cfg in create_model_configs():
-        if not cfg.release_date:
-            continue
-        provider = cfg.litellm_model_name.split("/", 1)[0]
-        canonical = _canonical_model_name(
-            cfg.litellm_model_name,
-            {"mode": "chat", "litellm_provider": provider},
-        )
-        if canonical and canonical not in release_dates:
-            release_dates[canonical] = cfg.release_date.isoformat()
-
-    created_dates = {}
-    for name, info in canonical_scraped.items():
-        created = info.get("created_at", info.get("created"))
-        if created is None:
-            continue
-        try:
-            if isinstance(created, str):
-                dt = datetime.datetime.fromisoformat(created.replace("Z", "+00:00"))
-            else:
-                dt = datetime.datetime.fromtimestamp(int(created), tz=datetime.UTC)
-            created_dates[name] = dt.date().isoformat()
-        except (ValueError, OSError, OverflowError):
-            created_dates[name] = str(created)
-
-    rows = []
-    for name in sorted(canonical_scraped):
-        info = canonical_registered.get(name, canonical_scraped[name])
-        release_date = release_dates.get(name, "")
-        created = created_dates.get(name, "")
-        rows.append([name, str(info.get("mode", "")), release_date, created])
-
+    rows = get_canonical_models()
     table = _tabulate(rows, headers=["model", "mode", "release_date", "scraped_date"])
     typer.echo(table)
 

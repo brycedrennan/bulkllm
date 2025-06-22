@@ -23,6 +23,7 @@ def test_list_models(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
 
     runner = CliRunner()
     result = runner.invoke(app, ["list-models"])
@@ -56,6 +57,7 @@ def test_list_missing_rate_limits(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.cli.RateLimiter", DummyRateLimiter)
 
     runner = CliRunner()
@@ -85,10 +87,8 @@ def test_list_missing_model_configs(monkeypatch):
         }
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
-    monkeypatch.setattr(
-        "bulkllm.model_registration.main.register_models",
-        fake_register_models,
-    )
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
     monkeypatch.setattr(
         "bulkllm.cli.create_model_configs",
         lambda: [SimpleNamespace(litellm_model_name="configured/model")],
@@ -124,6 +124,7 @@ def test_list_unique_models(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
 
     runner = CliRunner()
     result = runner.invoke(app, ["list-unique-models"])
@@ -141,14 +142,14 @@ def test_list_canonical_models(monkeypatch):
     monkeypatch.setattr(litellm, "model_cost", {})
 
     monkeypatch.setattr(
-        "bulkllm.cli.openai.get_openai_models",
+        "bulkllm.model_registration.openai.get_openai_models",
         lambda: {
             "openai/gpt": {"litellm_provider": "openai", "mode": "chat", "created": 1},
             "openai/text": {"litellm_provider": "openai", "mode": "completion"},
         },
     )
     monkeypatch.setattr(
-        "bulkllm.cli.anthropic.get_anthropic_models",
+        "bulkllm.model_registration.anthropic.get_anthropic_models",
         lambda: {
             "anthropic/claude": {
                 "litellm_provider": "anthropic",
@@ -158,7 +159,7 @@ def test_list_canonical_models(monkeypatch):
         },
     )
     monkeypatch.setattr(
-        "bulkllm.cli.gemini.get_gemini_models",
+        "bulkllm.model_registration.gemini.get_gemini_models",
         lambda: {
             "gemini/flash": {
                 "litellm_provider": "gemini",
@@ -167,7 +168,7 @@ def test_list_canonical_models(monkeypatch):
         },
     )
     monkeypatch.setattr(
-        "bulkllm.cli.mistral.get_mistral_models",
+        "bulkllm.model_registration.mistral.get_mistral_models",
         lambda: {
             "mistral/small": {
                 "litellm_provider": "mistral",
@@ -189,8 +190,9 @@ def test_list_canonical_models(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
     monkeypatch.setattr(
-        "bulkllm.cli.create_model_configs",
+        "bulkllm.model_registration.canonical.create_model_configs",
         lambda: [
             LLMConfig(
                 slug="gpt",
@@ -266,26 +268,26 @@ def test_list_canonical_models_drops_aliases(monkeypatch):
     monkeypatch.setattr(litellm, "model_cost", {})
 
     monkeypatch.setattr(
-        "bulkllm.cli.openai.get_openai_models",
+        "bulkllm.model_registration.openai.get_openai_models",
         lambda: {
             "openai/base": {"litellm_provider": "openai", "mode": "chat"},
             "openai/alias": {"litellm_provider": "openai", "mode": "chat"},
         },
     )
     monkeypatch.setattr(
-        "bulkllm.cli.anthropic.get_anthropic_models",
+        "bulkllm.model_registration.anthropic.get_anthropic_models",
         dict,
     )
     monkeypatch.setattr(
-        "bulkllm.cli.gemini.get_gemini_models",
+        "bulkllm.model_registration.gemini.get_gemini_models",
         dict,
     )
     monkeypatch.setattr(
-        "bulkllm.cli.mistral.get_mistral_models",
+        "bulkllm.model_registration.mistral.get_mistral_models",
         dict,
     )
     monkeypatch.setattr(
-        "bulkllm.cli.openai.get_openai_aliases",
+        "bulkllm.model_registration.openai.get_openai_aliases",
         lambda: {"openai/alias"},
     )
 
@@ -295,8 +297,9 @@ def test_list_canonical_models_drops_aliases(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
     monkeypatch.setattr(
-        "bulkllm.cli.create_model_configs",
+        "bulkllm.model_registration.canonical.create_model_configs",
         lambda: [
             LLMConfig(
                 slug="base",
@@ -338,19 +341,19 @@ def test_list_canonical_models_drops_mistral_aliases(monkeypatch):
 
     monkeypatch.setattr(litellm, "model_cost", {})
 
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_models", dict)
-    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
-    monkeypatch.setattr("bulkllm.cli.gemini.get_gemini_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.gemini.get_gemini_models", dict)
     monkeypatch.setattr(
-        "bulkllm.cli.mistral.get_mistral_models",
+        "bulkllm.model_registration.mistral.get_mistral_models",
         lambda: {
             "mistral/base": {"litellm_provider": "mistral", "mode": "chat"},
             "mistral/alias": {"litellm_provider": "mistral", "mode": "chat"},
         },
     )
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_aliases", set)
     monkeypatch.setattr(
-        "bulkllm.cli.mistral.get_mistral_aliases",
+        "bulkllm.model_registration.mistral.get_mistral_aliases",
         lambda: {"mistral/alias"},
     )
 
@@ -366,8 +369,9 @@ def test_list_canonical_models_drops_mistral_aliases(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
     monkeypatch.setattr(
-        "bulkllm.cli.create_model_configs",
+        "bulkllm.model_registration.canonical.create_model_configs",
         lambda: [
             LLMConfig(
                 slug="base",
@@ -422,12 +426,12 @@ def test_list_canonical_models_prefers_id_named_model(monkeypatch):
     mistral.get_mistral_models.cache_clear()
     mistral.get_mistral_aliases.cache_clear()
 
-    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", mistral.get_mistral_models)
-    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_aliases", mistral.get_mistral_aliases)
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_models", dict)
-    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
-    monkeypatch.setattr("bulkllm.cli.gemini.get_gemini_models", dict)
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+    monkeypatch.setattr("bulkllm.model_registration.mistral.get_mistral_models", mistral.get_mistral_models)
+    monkeypatch.setattr("bulkllm.model_registration.mistral.get_mistral_aliases", mistral.get_mistral_aliases)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.gemini.get_gemini_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_aliases", set)
 
     def fake_register_models() -> None:
         litellm.model_cost["mistral/base"] = {"litellm_provider": "mistral", "mode": "chat"}
@@ -435,8 +439,9 @@ def test_list_canonical_models_prefers_id_named_model(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
     monkeypatch.setattr(
-        "bulkllm.cli.create_model_configs",
+        "bulkllm.model_registration.canonical.create_model_configs",
         lambda: [
             LLMConfig(
                 slug="base",
@@ -478,16 +483,16 @@ def test_list_canonical_models_skips_xai_fast(monkeypatch):
     monkeypatch.setattr(litellm, "model_cost", {})
 
     monkeypatch.setattr(
-        "bulkllm.cli.openai.get_openai_models",
+        "bulkllm.model_registration.openai.get_openai_models",
         lambda: {
             "xai/grok-3-fast": {"litellm_provider": "xai", "mode": "chat"},
             "xai/grok-3": {"litellm_provider": "xai", "mode": "chat"},
         },
     )
-    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
-    monkeypatch.setattr("bulkllm.cli.gemini.get_gemini_models", dict)
-    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", dict)
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+    monkeypatch.setattr("bulkllm.model_registration.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.gemini.get_gemini_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.mistral.get_mistral_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_aliases", set)
 
     def fake_register_models() -> None:
         litellm.model_cost["xai/grok-3-fast"] = {
@@ -501,7 +506,8 @@ def test_list_canonical_models_skips_xai_fast(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
-    monkeypatch.setattr("bulkllm.cli.create_model_configs", list)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.create_model_configs", list)
 
     runner = CliRunner()
     result = runner.invoke(app, ["list-canonical-models"])
@@ -519,20 +525,20 @@ def test_list_canonical_models_drops_xai_aliases(monkeypatch):
 
     monkeypatch.setattr(litellm, "model_cost", {})
 
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_models", dict)
-    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
-    monkeypatch.setattr("bulkllm.cli.gemini.get_gemini_models", dict)
-    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.gemini.get_gemini_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.mistral.get_mistral_models", dict)
     monkeypatch.setattr(
-        "bulkllm.cli.xai.get_xai_models",
+        "bulkllm.model_registration.xai.get_xai_models",
         lambda: {
             "xai/base": {"litellm_provider": "xai", "mode": "chat"},
             "xai/alias": {"litellm_provider": "xai", "mode": "chat"},
         },
     )
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_aliases", set)
     monkeypatch.setattr(
-        "bulkllm.cli.xai.get_xai_aliases",
+        "bulkllm.model_registration.xai.get_xai_aliases",
         lambda: {"xai/alias"},
     )
 
@@ -542,8 +548,9 @@ def test_list_canonical_models_drops_xai_aliases(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
     monkeypatch.setattr(
-        "bulkllm.cli.create_model_configs",
+        "bulkllm.model_registration.canonical.create_model_configs",
         lambda: [
             LLMConfig(
                 slug="base",
@@ -585,12 +592,12 @@ def test_list_canonical_models_dedupes_gemini(monkeypatch):
 
     monkeypatch.setattr(litellm, "model_cost", {})
 
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_models", dict)
-    monkeypatch.setattr("bulkllm.cli.anthropic.get_anthropic_models", dict)
-    monkeypatch.setattr("bulkllm.cli.mistral.get_mistral_models", dict)
-    monkeypatch.setattr("bulkllm.cli.openai.get_openai_aliases", set)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.anthropic.get_anthropic_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.mistral.get_mistral_models", dict)
+    monkeypatch.setattr("bulkllm.model_registration.openai.get_openai_aliases", set)
     monkeypatch.setattr(
-        "bulkllm.cli.gemini.get_gemini_models",
+        "bulkllm.model_registration.gemini.get_gemini_models",
         lambda: {
             "gemini/a": {
                 "litellm_provider": "gemini",
@@ -623,7 +630,8 @@ def test_list_canonical_models_dedupes_gemini(monkeypatch):
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
-    monkeypatch.setattr("bulkllm.cli.create_model_configs", list)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.create_model_configs", list)
 
     runner = CliRunner()
     result = runner.invoke(app, ["list-canonical-models"])
