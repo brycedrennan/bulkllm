@@ -31,42 +31,43 @@ def test_list_models(monkeypatch):
     assert "fake/model" in result.output
 
 
-def test_list_missing_rate_limits(monkeypatch):
+def test_list_mode_configs(monkeypatch):
+    from types import SimpleNamespace
+
     import litellm
 
     monkeypatch.setattr(litellm, "model_cost", {})
 
     def fake_register_models() -> None:
-        litellm.model_cost["limited/model"] = {
+        litellm.model_cost["chat/model"] = {
             "litellm_provider": "openai",
             "mode": "chat",
         }
-        litellm.model_cost["unlimited/model"] = {
+        litellm.model_cost["complete/model"] = {
             "litellm_provider": "openai",
-            "mode": "chat",
+            "mode": "completion",
         }
 
-    class DummyRateLimiter:
-        def __init__(self) -> None:
-            self.default_rate_limit = object()
-
-        def get_rate_limit_for_model(self, model: str) -> object:
-            if model == "limited/model":
-                return object()
-            return self.default_rate_limit
+    cfgs = [
+        SimpleNamespace(slug="chat", litellm_model_name="chat/model"),
+        SimpleNamespace(slug="complete", litellm_model_name="complete/model"),
+    ]
 
     monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
     monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
-    monkeypatch.setattr("bulkllm.cli.RateLimiter", DummyRateLimiter)
+    monkeypatch.setattr("bulkllm.cli.create_model_configs", lambda: cfgs)
 
     runner = CliRunner()
-    result = runner.invoke(app, ["list-missing-rate-limits"])
+    result = runner.invoke(app, ["list-mode-configs"])
 
     assert result.exit_code == 0
-    lines = result.output.splitlines()
-    assert "unlimited/model" in lines
-    assert "limited/model" not in lines
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|") for line in lines[2:]]
+    table = {cells[0].strip(): cells[1].strip() for cells in rows}
+
+    assert table["chat"] == "chat"
+    assert table["complete"] == "completion"
 
 
 def test_missing_rate_limits(monkeypatch):

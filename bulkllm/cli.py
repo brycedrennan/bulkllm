@@ -61,14 +61,17 @@ def list_canonical_models() -> None:
     typer.echo(table)
 
 
-@app.command("list-missing-rate-limits")
-def list_missing_rate_limits() -> None:
-    """List models without a configured rate limit."""
+@app.command("list-mode-configs")
+def list_mode_configs() -> None:
+    """List config slugs with the model mode."""
     register_models()
-    limiter = RateLimiter()
-    for model in sorted(litellm.model_cost):
-        if limiter.get_rate_limit_for_model(model) is limiter.default_rate_limit:
-            typer.echo(model)
+    rows = []
+    for cfg in create_model_configs():
+        info = litellm.model_cost.get(cfg.litellm_model_name)
+        mode = info.get("mode") if info else ""
+        rows.append([cfg.slug, mode])
+    table = _tabulate(rows, headers=["slug", "mode"])
+    typer.echo(table)
 
 
 @app.command("missing-rate-limits")
