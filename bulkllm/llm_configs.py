@@ -22,7 +22,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-o4-mini-2025-04-16-low",
         display_name="o4-mini (Low) 20250416",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/o4-mini-2025-04-16",
         llm_family="openai/o4-mini",
         temperature=1,
@@ -36,7 +36,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-o4-mini-2025-04-16-medium",
         display_name="o4-mini (Medium) 20250416",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/o4-mini-2025-04-16",
         llm_family="openai/o4-mini",
         temperature=1,
@@ -50,7 +50,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-o4-mini-2025-04-16-high",
         display_name="o4-mini (High) 20250416",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/o4-mini-2025-04-16",
         llm_family="openai/o4-mini",
         temperature=1,
@@ -64,7 +64,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-o3-mini-2025-01-31-low",
         display_name="o3-mini (Low) 20250131",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/o3-mini-2025-01-31",
         llm_family="openai/o3-mini",
         temperature=1,
@@ -78,7 +78,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-o3-mini-2025-01-31-medium",
         display_name="o3-mini (Medium) 20250131",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/o3-mini-2025-01-31",
         llm_family="openai/o3-mini",
         temperature=1,
@@ -92,7 +92,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-o3-mini-2025-01-31-high",
         display_name="o3-mini (High) 20250131",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/o3-mini-2025-01-31",
         llm_family="openai/o3-mini",
         temperature=1,
@@ -106,7 +106,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4.1-2025-04-14",
         display_name="GPT-4.1 20250414",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4.1-2025-04-14",
         llm_family="openai/gpt-4.1",
         temperature=default_temperature,
@@ -118,7 +118,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4.1-mini-2025-04-14",
         display_name="GPT-4.1 Mini 20250414",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4.1-mini-2025-04-14",
         llm_family="openai/gpt-4.1-mini",
         temperature=default_temperature,
@@ -130,7 +130,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4.1-nano-2025-04-14",
         display_name="GPT-4.1 Nano 20250414",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4.1-nano-2025-04-14",
         llm_family="openai/gpt-4.1-nano",
         temperature=default_temperature,
@@ -142,7 +142,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4o-2024-05-13",
         display_name="GPT-4o 20240513",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4o-2024-05-13",
         llm_family="openai/gpt-4o",
         temperature=default_temperature,
@@ -154,7 +154,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4o-2024-08-06",
         display_name="GPT-4o 20240806",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4o-2024-08-06",
         llm_family="openai/gpt-4o",
         temperature=default_temperature,
@@ -166,7 +166,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4o-2024-11-20",
         display_name="GPT-4o 20241120",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4o-2024-11-20",
         llm_family="openai/gpt-4o",
         temperature=default_temperature,
@@ -178,7 +178,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4o-mini-2024-07-18",
         display_name="GPT-4o mini 20240718",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4o-mini-2024-07-18",
         llm_family="openai/gpt-4o-mini",
         temperature=default_temperature,
@@ -190,7 +190,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-3.5-turbo-0125",
         display_name="GPT-3.5 Turbo 20230125",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-3.5-turbo-0125",
         llm_family="openai/gpt-3.5-turbo",
         temperature=default_temperature,
@@ -202,7 +202,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-3.5-turbo-1106",
         display_name="GPT-3.5 Turbo 20231106",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-3.5-turbo-1106",
         llm_family="openai/gpt-3.5-turbo",
         temperature=default_temperature,
@@ -214,7 +214,7 @@ openai_configs = [
     # LLMConfig(
     #     slug="openai-babbage-002",
     #     display_name="Babbage 002",
-    #     company_name="Openai",
+    #     company_name="OpenAI",
     #     litellm_model_name="openai/babbage-002",
     #     llm_family="openai/babbage",
     #     temperature=default_temperature,
@@ -225,8 +225,8 @@ openai_configs = [
     # ),
     LLMConfig(
         slug="openai-chatgpt-4o-latest",
-        display_name="ChatGPT-4o",
-        company_name="Openai",
+        display_name="ChatGPT-4o Latest",
+        company_name="OpenAI",
         litellm_model_name="openai/chatgpt-4o-latest",
         llm_family="openai/chatgpt-4o-latest",
         temperature=default_temperature,
@@ -238,19 +238,19 @@ openai_configs = [
     LLMConfig(
         slug="openai-codex-mini-latest",
         display_name="codex-mini-latest",
-        company_name="Openai",
+        company_name="OpenAI",
         litellm_model_name="openai/codex-mini-latest",
         llm_family="openai/codex-mini-latest",
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
         system_prompt=default_system_prompt,
-        release_date=None,
+        release_date=date(2025, 5, 16),
     ),
     # LLMConfig(
     #     slug="openai-davinci-002",
     #     display_name="Davinci 002",
-    #     company_name="Openai",
+    #     company_name="OpenAI",
     #     litellm_model_name="openai/davinci-002",
     #     llm_family="openai/davinci",
     #     temperature=default_temperature,
@@ -262,7 +262,7 @@ openai_configs = [
     # LLMConfig(
     #     slug="openai-gpt-3.5-0301",
     #     display_name="Gpt 3.5 0301",
-    #     company_name="Openai",
+    #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-3.5-0301",
     #     llm_family="openai/gpt-3.5",
     #     temperature=default_temperature,
@@ -274,7 +274,7 @@ openai_configs = [
     # LLMConfig(
     #     slug="openai-gpt-3.5-turbo-0613",
     #     display_name="Gpt 3.5 Turbo 0613",
-    #     company_name="Openai",
+    #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-3.5-turbo-0613",
     #     llm_family="openai/gpt-3.5-turbo",
     #     temperature=default_temperature,
@@ -286,7 +286,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-3.5-turbo-16k-0613",
         display_name="Gpt 3.5 Turbo 16K 0613",
-        company_name="Openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-3.5-turbo-16k-0613",
         llm_family="openai/gpt-3.5-turbo-16k",
         temperature=default_temperature,
@@ -299,7 +299,7 @@ openai_configs = [
     # LLMConfig(
     #     slug="openai-gpt-3.5-turbo-instruct",
     #     display_name="Gpt 3.5 Turbo Instruct",
-    #     company_name="Openai",
+    #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-3.5-turbo-instruct",
     #     llm_family="openai/gpt-3.5-turbo-instruct",
     #     temperature=default_temperature,
@@ -311,7 +311,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4-0125-preview",
         display_name="GPT-4 Turbo Preview",
-        company_name="Openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0125-preview",
         llm_family="openai/gpt-4-0125-preview",
         temperature=default_temperature,
@@ -322,8 +322,8 @@ openai_configs = [
     ),
     LLMConfig(
         slug="openai-gpt-4-0314",
-        display_name="Gpt 4 0314",
-        company_name="Openai",
+        display_name="GPT-4 20230314",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0314",
         llm_family="openai/gpt",
         temperature=default_temperature,
@@ -335,8 +335,8 @@ openai_configs = [
     ),
     LLMConfig(
         slug="openai-gpt-4-0613",
-        display_name="GPT-4",
-        company_name="Openai",
+        display_name="GPT-4 20230613",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0613",
         llm_family="openai/gpt",
         temperature=default_temperature,
@@ -347,8 +347,8 @@ openai_configs = [
     ),
     LLMConfig(
         slug="openai-gpt-4-1106-preview",
-        display_name="Gpt 4 1106 Preview",
-        company_name="Openai",
+        display_name="GPT-4 20231106",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4-1106-preview",
         llm_family="openai/gpt-4-1106-preview",
         temperature=default_temperature,
@@ -360,7 +360,7 @@ openai_configs = [
     # LLMConfig(
     #     slug="openai-gpt-4-1106-vision-preview",
     #     display_name="Gpt 4 1106 Vision Preview",
-    #     company_name="Openai",
+    #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-4-1106-vision-preview",
     #     llm_family="openai/gpt-4-1106-vision-preview",
     #     temperature=default_temperature,
@@ -372,7 +372,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4-turbo-2024-04-09",
         display_name="GPT-4 Turbo",
-        company_name="Openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4-turbo-2024-04-09",
         llm_family="openai/gpt-4-turbo",
         temperature=default_temperature,
@@ -384,7 +384,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-gpt-4.5-preview-2025-02-27",
         display_name="GPT-4.5 Preview",
-        company_name="Openai",
+        company_name="OpenAI",
         litellm_model_name="openai/gpt-4.5-preview-2025-02-27",
         llm_family="openai/gpt-4.5-preview",
         temperature=default_temperature,
@@ -396,7 +396,7 @@ openai_configs = [
     # LLMConfig(
     #     slug="openai-gpt-4o-mini-search-preview-2025-03-11",
     #     display_name="GPT-4o mini Search Preview",
-    #     company_name="Openai",
+    #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-4o-mini-search-preview-2025-03-11",
     #     llm_family="openai/gpt-4o-mini-search-preview",
     #     temperature=default_temperature,
@@ -408,7 +408,7 @@ openai_configs = [
     # LLMConfig(
     #     slug="openai-gpt-4o-search-preview-2025-03-11",
     #     display_name="GPT-4o Search Preview",
-    #     company_name="Openai",
+    #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-4o-search-preview-2025-03-11",
     #     llm_family="openai/gpt-4o-search-preview",
     #     temperature=default_temperature,
@@ -419,8 +419,8 @@ openai_configs = [
     # ),
     LLMConfig(
         slug="openai-o1-2024-12-17",
-        display_name="O1 2024 12 17",
-        company_name="Openai",
+        display_name="o1 20241217",
+        company_name="OpenAI",
         litellm_model_name="openai/o1-2024-12-17",
         llm_family="openai/o1",
         temperature=default_temperature,
@@ -431,8 +431,8 @@ openai_configs = [
     ),
     LLMConfig(
         slug="openai-o1-mini-2024-09-12",
-        display_name="O1 Mini 2024 09 12",
-        company_name="Openai",
+        display_name="o1-mini 20240912",
+        company_name="OpenAI",
         litellm_model_name="openai/o1-mini-2024-09-12",
         llm_family="openai/o1-mini",
         temperature=default_temperature,
@@ -443,8 +443,8 @@ openai_configs = [
     ),
     LLMConfig(
         slug="openai-o1-preview-20240912",
-        display_name="o1 Preview",
-        company_name="Openai",
+        display_name="o1 20240912",
+        company_name="OpenAI",
         litellm_model_name="openai/o1-preview-2024-09-12",
         llm_family="openai/o1-preview",
         temperature=default_temperature,
@@ -455,8 +455,8 @@ openai_configs = [
     ),
     LLMConfig(
         slug="openai-o1-pro-20250319",
-        display_name="O1 Pro 20250319",
-        company_name="Openai",
+        display_name="o1-pro 20250319",
+        company_name="OpenAI",
         litellm_model_name="openai/o1-pro-2025-03-19",
         llm_family="openai/o1-pro",
         temperature=default_temperature,
@@ -468,7 +468,7 @@ openai_configs = [
     LLMConfig(
         slug="openai-o3-20250416",
         display_name="o3 20250416",
-        company_name="openai",
+        company_name="OpenAI",
         litellm_model_name="openai/o3-2025-04-16",
         llm_family="openai/o3",
         temperature=1,
@@ -481,8 +481,8 @@ openai_configs = [
     ),
     LLMConfig(
         slug="openai-o3-pro-20250610",
-        display_name="O3 Pro 20250610",
-        company_name="Openai",
+        display_name="o3-pro 20250610",
+        company_name="OpenAI",
         litellm_model_name="openai/o3-pro-2025-06-10",
         llm_family="openai/o3-pro",
         temperature=default_temperature,
@@ -846,7 +846,7 @@ gemini_configs = [
     # LLMConfig(
     #     slug="gemini-gemini-1.0-pro-vision-latest",
     #     display_name="Gemini 1.0 Pro Vision",
-    #     company_name="Gemini",
+    #     company_name="Google",
     #     litellm_model_name="gemini/gemini-1.0-pro-vision-latest",
     #     llm_family="gemini/gemini-1.0-pro-vision-latest",
     #     temperature=default_temperature,
@@ -858,8 +858,8 @@ gemini_configs = [
     # ),
     LLMConfig(
         slug="gemini-gemini-2.0-flash-lite-preview",
-        display_name="Gemini 2.0 Flash-Lite Preview",
-        company_name="Gemini",
+        display_name="Gemini 2.0 Flash Lite 20250225",
+        company_name="Google",
         litellm_model_name="gemini/gemini-2.0-flash-lite-preview",
         llm_family="gemini/gemini-2.0-flash-lite-preview",
         temperature=default_temperature,
@@ -870,7 +870,7 @@ gemini_configs = [
     ),
     LLMConfig(
         slug="gemini-2.5-pro-preview-03-25",
-        display_name="Gemini 2.5 Pro Preview 20250325",
+        display_name="Gemini 2.5 Pro 20250325",
         company_name="Google",
         litellm_model_name="gemini/gemini-2.5-pro-preview-03-25",
         llm_family="gemini/gemini-2.5-pro-preview",
@@ -882,8 +882,8 @@ gemini_configs = [
     ),
     LLMConfig(
         slug="gemini-2.5-pro-preview-05-06",
-        display_name="Gemini 2.5 Pro Preview 05-06",
-        company_name="Gemini",
+        display_name="Gemini 2.5 Pro 20250506",
+        company_name="Google",
         litellm_model_name="gemini/gemini-2.5-pro-preview-05-06",
         llm_family="gemini/gemini-2.5-pro-preview",
         temperature=default_temperature,
@@ -894,8 +894,8 @@ gemini_configs = [
     ),
     LLMConfig(
         slug="gemini-2.5-pro-preview-06-05",
-        display_name="Gemini 2.5 Pro Preview",
-        company_name="Gemini",
+        display_name="Gemini 2.5 Pro 20250605",
+        company_name="Google",
         litellm_model_name="gemini/gemini-2.5-pro-preview-06-05",
         llm_family="gemini/gemini-2.5-pro-preview",
         temperature=default_temperature,
