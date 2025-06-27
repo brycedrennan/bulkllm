@@ -285,7 +285,7 @@ openai_configs = [
     # ),
     LLMConfig(
         slug="openai-gpt-3.5-turbo-16k-0613",
-        display_name="Gpt 3.5 Turbo 16K 0613",
+        display_name="GPT-3.5 Turbo 16K 0613",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-3.5-turbo-16k-0613",
         llm_family="openai/gpt-3.5-turbo-16k",
