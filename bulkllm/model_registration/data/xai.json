@@ -95,7 +95,7 @@
     },
     {
       "id": "grok-3-mini",
-      "fingerprint": "fp_391c6f91d0",
+      "fingerprint": "fp_2e0c052777",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",

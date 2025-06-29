@@ -874,7 +874,7 @@
       "name": "gpt-4o-audio-preview",
       "slug": "gpt-4o-audio-preview",
       "display_name": "GPT-4o Audio",
-      "current_snapshot": "gpt-4o-audio-preview-2024-12-17",
+      "current_snapshot": "gpt-4o-audio-preview-2025-06-03",
       "tagline": "GPT-4o models capable of audio inputs and outputs",
       "description": "This is a preview release of the GPT-4o Audio models. These models accept \naudio inputs and outputs, and can be used in the Chat Completions REST API.\n",
       "type": "chat",
@@ -882,12 +882,6 @@
         "gpt-4o-audio-preview-2025-06-03",
         "gpt-4o-audio-preview-2024-12-17",
         "gpt-4o-audio-preview-2024-10-01"
-      ],
-      "supported_tools": [
-        "web_search",
-        "file_search",
-        "code_interpreter",
-        "mcp"
       ],
       "rate_limits": {
         "tier_1": {
@@ -1198,7 +1192,7 @@
       "name": "gpt-4o-realtime-preview",
       "slug": "gpt-4o-realtime-preview",
       "display_name": "GPT-4o Realtime",
-      "current_snapshot": "gpt-4o-realtime-preview-2024-12-17",
+      "current_snapshot": "gpt-4o-realtime-preview-2025-06-03",
       "tagline": "Model capable of realtime text and audio inputs and outputs",
       "description": "This is a preview release of the GPT-4o Realtime model, capable of responding to audio and text inputs in realtime over WebRTC or a WebSocket interface.\n",
       "type": "other",
@@ -1595,6 +1589,53 @@
       }
     },
     {
+      "name": "o3-deep-research",
+      "slug": "o3-deep-research",
+      "current_snapshot": "o3-deep-research-2025-06-26",
+      "tagline": "Our most powerful deep research model",
+      "description": "o3-deep-research is our most advanced model for deep research, \ndesigned to tackle complex, multi-step research tasks. It can \nsearch and synthesize information from across the internet as \nwell as from your own data\u2014brought in through MCP connectors.\n\nLearn more about getting started with this model in our\n[deep research](/docs/guides/deep-research) guide.\n",
+      "type": "reasoning",
+      "snapshots": [
+        "o3-deep-research-2025-06-26"
+      ],
+      "compare_prices": [
+        "o1",
+        "o4-mini"
+      ],
+      "supported_tools": [
+        "web_search",
+        "code_interpreter",
+        "mcp"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 500,
+          "tpm": 200000.0,
+          "batch_queue_limit": 200000.0
+        },
+        "tier_2": {
+          "rpm": 5000.0,
+          "tpm": 450000.0,
+          "batch_queue_limit": 300000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 800000.0,
+          "batch_queue_limit": 500000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 2000000.0
+        },
+        "tier_5": {
+          "rpm": 10000.0,
+          "tpm": 30000000.0,
+          "batch_queue_limit": 10000000.0
+        }
+      }
+    },
+    {
       "name": "o3-mini",
       "slug": "o3-mini",
       "current_snapshot": "o3-mini-2025-01-31",
@@ -1667,7 +1708,8 @@
         "function_calling",
         "file_search",
         "image_generation",
-        "mcp"
+        "mcp",
+        "web_search"
       ],
       "rate_limits": {
         "tier_1": {
@@ -1716,7 +1758,8 @@
         "file_search",
         "image_generation",
         "code_interpreter",
-        "mcp"
+        "mcp",
+        "web_search"
       ],
       "rate_limits": {
         "tier_1": {
@@ -1747,6 +1790,53 @@
       }
     },
     {
+      "name": "o4-mini-deep-research",
+      "slug": "o4-mini-deep-research",
+      "current_snapshot": "o4-mini-deep-research-2025-06-26",
+      "tagline": "Faster, more affordable deep research model",
+      "description": "o4-mini-deep-research is our faster, more affordable deep \nresearch model\u2014ideal for tackling complex, multi-step research \ntasks. It can search and synthesize information from across the \ninternet as well as from your own data, brought in through \nMCP connectors.\n\nLearn more about how to use this model in our\n[deep research](/docs/guides/deep-research) guide.\n",
+      "type": "reasoning",
+      "snapshots": [
+        "o4-mini-deep-research-2025-06-26"
+      ],
+      "compare_prices": [
+        "o3",
+        "o3-mini"
+      ],
+      "supported_tools": [
+        "web_search",
+        "code_interpreter",
+        "mcp"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 1000.0,
+          "tpm": 200000.0,
+          "batch_queue_limit": 200000.0
+        },
+        "tier_2": {
+          "rpm": 2000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 300000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 4000000.0,
+          "batch_queue_limit": 500000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 10000000.0,
+          "batch_queue_limit": 2000000.0
+        },
+        "tier_5": {
+          "rpm": 30000.0,
+          "tpm": 150000000.0,
+          "batch_queue_limit": 10000000.0
+        }
+      }
+    },
+    {
       "name": "o4-mini",
       "slug": "o4-mini",
       "current_snapshot": "o4-mini-2025-04-16",
@@ -1764,7 +1854,8 @@
         "function_calling",
         "file_search",
         "code_interpreter",
-        "mcp"
+        "mcp",
+        "web_search"
       ],
       "rate_limits": {
         "tier_1": {
@@ -1774,7 +1865,7 @@
         },
         "tier_2": {
           "rpm": 2000.0,
-          "tpm": 200000.0,
+          "tpm": 2000000.0,
           "batch_queue_limit": 2000000.0
         },
         "tier_3": {
@@ -3658,6 +3749,48 @@
       }
     },
     {
+      "name": "o3-deep-research-2025-06-26",
+      "slug": "o3-deep-research-2025-06-26",
+      "performance": 5,
+      "latency": 1,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 200000.0,
+      "max_output_tokens": 100000.0,
+      "knowledge_cutoff": 1717200000000.0,
+      "supported_features": [
+        "streaming",
+        "file_uploads",
+        "image_input",
+        "prompt_caching",
+        "evals",
+        "stored_completions"
+      ],
+      "supported_endpoints": [
+        "responses",
+        "batch"
+      ],
+      "reasoning_tokens": true,
+      "price_data": {
+        "main": {
+          "input": 15,
+          "cached_output": 7.5,
+          "output": 60
+        },
+        "batch": {
+          "input": 7.5,
+          "output": 30
+        }
+      }
+    },
+    {
       "name": "o3-mini-2025-01-31",
       "slug": "o3-mini-2025-01-31",
       "performance": 4,
@@ -3762,6 +3895,48 @@
         "fine_tuning"
       ],
       "reasoning_tokens": true
+    },
+    {
+      "name": "o4-mini-deep-research-2025-06-26",
+      "slug": "o4-mini-deep-research-2025-06-26",
+      "performance": 4,
+      "latency": 3,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 200000.0,
+      "max_output_tokens": 100000.0,
+      "knowledge_cutoff": 1717200000000.0,
+      "supported_features": [
+        "streaming",
+        "file_uploads",
+        "image_input",
+        "prompt_caching",
+        "evals",
+        "stored_completions"
+      ],
+      "supported_endpoints": [
+        "responses",
+        "batch"
+      ],
+      "reasoning_tokens": true,
+      "price_data": {
+        "main": {
+          "input": 8.25,
+          "cached_output": 2.0625,
+          "output": 33
+        },
+        "batch": {
+          "input": 4.125,
+          "output": 16.5
+        }
+      }
     },
     {
       "name": "omni-moderation-2024-09-26",
@@ -4146,7 +4321,7 @@
     },
     {
       "name": "gpt-4o-realtime-preview",
-      "current_snapshot": "gpt-4o-realtime-preview-2024-12-17",
+      "current_snapshot": "gpt-4o-realtime-preview-2025-06-03",
       "values": {
         "main": {
           "input": 5,
@@ -4402,6 +4577,38 @@
       ]
     },
     {
+      "name": "o3-deep-research",
+      "current_snapshot": "o3-deep-research-2025-06-26",
+      "description": "Our most powerful reasoning model",
+      "values": {
+        "main": {
+          "input": 10,
+          "cached_input": 2.5,
+          "output": 40
+        },
+        "batch": {
+          "input": 5,
+          "output": 20
+        }
+      },
+      "snapshots": [
+        {
+          "name": "o3-deep-research-2025-06-26",
+          "values": {
+            "main": {
+              "input": 10,
+              "cached_input": 2.5,
+              "output": 40
+            },
+            "batch": {
+              "input": 5,
+              "output": 20
+            }
+          }
+        }
+      ]
+    },
+    {
       "name": "o4-mini",
       "current_snapshot": "o4-mini-2025-04-16",
       "description": "Small reasoning model for math, science, coding, image parsing, and writing",
@@ -4428,6 +4635,38 @@
             "batch": {
               "input": 0.55,
               "output": 2.2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "o4-mini-deep-research",
+      "current_snapshot": "o4-mini-deep-research-2025-06-26",
+      "description": "Our small, fast reasoning model optimized for deep analysis",
+      "values": {
+        "main": {
+          "input": 2,
+          "cached_input": 0.5,
+          "output": 8
+        },
+        "batch": {
+          "input": 1,
+          "output": 4
+        }
+      },
+      "snapshots": [
+        {
+          "name": "o4-mini-deep-research-2025-06-26",
+          "values": {
+            "main": {
+              "input": 2,
+              "cached_input": 0.5,
+              "output": 8
+            },
+            "batch": {
+              "input": 1,
+              "output": 4
             }
           }
         }
