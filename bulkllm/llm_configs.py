@@ -310,7 +310,7 @@ openai_configs = [
     # ),
     LLMConfig(
         slug="openai-gpt-4-0125-preview",
-        display_name="GPT-4 Turbo Preview",
+        display_name="GPT-4 20240125",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0125-preview",
         llm_family="openai/gpt-4",
@@ -325,7 +325,7 @@ openai_configs = [
         display_name="GPT-4 20230314",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0314",
-        llm_family="openai/gpt",
+        llm_family="openai/gpt-4",
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
@@ -338,7 +338,7 @@ openai_configs = [
         display_name="GPT-4 20230613",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0613",
-        llm_family="openai/gpt",
+        llm_family="openai/gpt-4",
         temperature=default_temperature,
         max_tokens=4096,
         thinking_config={},
@@ -359,7 +359,7 @@ openai_configs = [
     ),
     # LLMConfig(
     #     slug="openai-gpt-4-1106-vision-preview",
-    #     display_name="Gpt 4 1106 Vision Preview",
+    #     display_name="GPT-4 Vision 20231106",
     #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-4-1106-vision-preview",
     #     llm_family="openai/gpt-4-vision",
@@ -383,7 +383,7 @@ openai_configs = [
     ),
     LLMConfig(
         slug="openai-gpt-4.5-preview-2025-02-27",
-        display_name="GPT-4.5 Preview",
+        display_name="GPT-4.5 20250227",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4.5-preview-2025-02-27",
         llm_family="openai/gpt-4.5",
@@ -395,7 +395,7 @@ openai_configs = [
     ),
     # LLMConfig(
     #     slug="openai-gpt-4o-mini-search-preview-2025-03-11",
-    #     display_name="GPT-4o mini Search Preview",
+    #     display_name="GPT-4o mini Search 20250311",
     #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-4o-mini-search-preview-2025-03-11",
     #     llm_family="openai/gpt-4o-mini-search",
@@ -407,7 +407,7 @@ openai_configs = [
     # ),
     # LLMConfig(
     #     slug="openai-gpt-4o-search-preview-2025-03-11",
-    #     display_name="GPT-4o Search Preview",
+    #     display_name="GPT-4o Search 20250311",
     #     company_name="OpenAI",
     #     litellm_model_name="openai/gpt-4o-search-preview-2025-03-11",
     #     llm_family="openai/gpt-4o-search",
@@ -833,7 +833,7 @@ gemini_configs = [
     ),
     LLMConfig(
         slug="gemini-2.5-flash-preview-04-17",
-        display_name="Gemini 2.5 Flash Preview 20250417",
+        display_name="Gemini 2.5 Flash 20250417",
         company_name="Google",
         litellm_model_name="gemini/gemini-2.5-flash-preview-04-17",
         llm_family="gemini/gemini-2.5-flash",
