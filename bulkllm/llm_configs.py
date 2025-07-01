@@ -559,6 +559,18 @@ openrouter_configs = [
         release_date=date(2025, 3, 6),
     ),
     LLMConfig(
+        slug="openrouter-qwen-qwen-max-20250128",
+        display_name="Qwen 2.5 Max 20250128",
+        company_name="Alibaba",
+        litellm_model_name="openrouter/qwen/qwen-max",
+        llm_family="qwen/qwen-max",
+        temperature=default_temperature,
+        max_tokens=8000,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 1, 28),
+    ),
+    LLMConfig(
         slug="openrouter-meta-llama-llama-3.3-70b-instruct",
         display_name="Llama 3.3 70b Instruct",
         company_name="Meta",
