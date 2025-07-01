@@ -16,14 +16,14 @@
       },
       "name": "mistral-medium-2505",
       "description": "Official mistral-medium-2505 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "mistral-medium-latest",
         "mistral-medium"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.3,
       "type": "base"
     },
     {
@@ -41,14 +41,14 @@
       },
       "name": "mistral-medium-2505",
       "description": "Official mistral-medium-2505 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "mistral-medium-2505",
         "mistral-medium"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.3,
       "type": "base"
     },
     {
@@ -66,14 +66,14 @@
       },
       "name": "mistral-medium-2505",
       "description": "Official mistral-medium-2505 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "mistral-medium-2505",
         "mistral-medium-latest"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.3,
       "type": "base"
     },
     {
@@ -581,14 +581,14 @@
       },
       "name": "pixtral-large-2411",
       "description": "Official pixtral-large-2411 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "pixtral-large-latest",
         "mistral-large-pixtral-2411"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.7,
       "type": "base"
     },
     {
@@ -606,14 +606,14 @@
       },
       "name": "pixtral-large-2411",
       "description": "Official pixtral-large-2411 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "pixtral-large-2411",
         "mistral-large-pixtral-2411"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.7,
       "type": "base"
     },
     {
@@ -631,14 +631,14 @@
       },
       "name": "pixtral-large-2411",
       "description": "Official pixtral-large-2411 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "pixtral-large-2411",
         "pixtral-large-latest"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.7,
       "type": "base"
     },
     {
@@ -808,14 +808,14 @@
       },
       "name": "pixtral-12b-2409",
       "description": "Official pixtral-12b-2409 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "pixtral-12b",
         "pixtral-12b-latest"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.3,
       "type": "base"
     },
     {
@@ -833,14 +833,14 @@
       },
       "name": "pixtral-12b-2409",
       "description": "Official pixtral-12b-2409 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "pixtral-12b-2409",
         "pixtral-12b-latest"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.3,
       "type": "base"
     },
     {
@@ -858,14 +858,14 @@
       },
       "name": "pixtral-12b-2409",
       "description": "Official pixtral-12b-2409 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [
         "pixtral-12b-2409",
         "pixtral-12b"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.3,
       "type": "base"
     },
     {
@@ -905,11 +905,11 @@
       },
       "name": "mistral-small-2503",
       "description": "Official mistral-small-2503 Mistral AI model",
-      "max_context_length": 32768,
+      "max_context_length": 131072,
       "aliases": [],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": null,
+      "default_model_temperature": 0.3,
       "type": "base"
     },
     {
