@@ -607,6 +607,18 @@ openrouter_configs = [
         release_date=date(2025, 3, 17),
     ),
     LLMConfig(
+        slug="openrouter-meta-llama-llama-3.3-70b-instruct",
+        display_name="Llama 3.3 70B Instruct",
+        company_name="Meta",
+        litellm_model_name="openrouter/meta-llama/llama-3.3-70b-instruct",
+        llm_family="meta-llama/llama-3.3",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2024, 12, 6),
+    ),
+    LLMConfig(
         slug="openrouter-google-gemma-3-27b-it",
         display_name="Gemma 3 27b IT",
         company_name="Google",
