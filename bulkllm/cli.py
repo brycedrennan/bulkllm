@@ -105,7 +105,7 @@ def list_configs(
     limiter = RateLimiter()
     rows = []
     for cfg in configs:
-        info = litellm.model_cost.get(cfg.litellm_model_name, {})
+        info = litellm.get_model_info(cfg.litellm_model_name)
         inp = info.get("input_cost_per_token")
         out = info.get("output_cost_per_token")
         rl = limiter.get_rate_limit_for_model(cfg.litellm_model_name)
