@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+from datetime import date
+
 import litellm
 import typer
 
-from bulkllm.llm_configs import create_model_configs
+from bulkllm.llm_configs import create_model_configs, model_resolver
 from bulkllm.model_registration.canonical import _canonical_model_name, get_canonical_models
 from bulkllm.model_registration.main import register_models
 from bulkllm.rate_limiter import RateLimiter
@@ -58,6 +60,67 @@ def list_canonical_models() -> None:
     """List canonical chat models with release dates."""
     rows = get_canonical_models()
     table = _tabulate(rows, headers=["model", "mode", "release_date", "scraped_date"])
+    typer.echo(table)
+
+
+@app.command("list-configs")
+def list_configs(
+    sort_by: str = typer.Option(
+        "slug",
+        "--sort-by",
+        "-s",
+        help="Sort by slug, company or release-date",
+        case_sensitive=False,
+    ),
+    model: list[str] = typer.Option(
+        None,
+        "--model",
+        "-m",
+        help="Model slugs or groups (can be repeated)",
+    ),
+) -> None:
+    """List LLM configurations."""
+    register_models()
+    sort_key = sort_by.replace("-", "_").lower()
+    key_funcs = {
+        "slug": lambda c: c.slug,
+        "company": lambda c: c.company_name.lower(),
+        "release_date": lambda c: c.release_date or date.min,
+    }
+    if sort_key not in key_funcs:
+        raise typer.BadParameter("Invalid sort option")
+
+    configs = create_model_configs() if not model else model_resolver(list(model))
+    configs = sorted(configs, key=key_funcs[sort_key])
+
+    rows = []
+    for cfg in configs:
+        info = litellm.model_cost.get(cfg.litellm_model_name, {})
+        inp = info.get("input_cost_per_token")
+        out = info.get("output_cost_per_token")
+        cost = f"{inp * 1_000_000:.2f}/{out * 1_000_000:.2f}" if inp is not None and out is not None else ""
+        rows.append(
+            [
+                cfg.slug,
+                cfg.company_name,
+                cfg.display_name,
+                cfg.release_date.isoformat() if cfg.release_date else "",
+                cfg.is_deprecated.isoformat() if isinstance(cfg.is_deprecated, date) else "",
+                cost,
+            ]
+        )
+
+    table = _tabulate(
+        rows,
+        headers=[
+            "slug",
+            "company",
+            "display_name",
+            "release_date",
+            "deprecation_date",
+            "cost",
+        ],
+    )
     typer.echo(table)
 
 
