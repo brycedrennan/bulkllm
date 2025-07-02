@@ -570,7 +570,7 @@ openrouter_configs = [
         system_prompt=default_system_prompt,
         release_date=date(2025, 1, 28),
     ),
-     LLMConfig(
+    LLMConfig(
         slug="openrouter-qwen-qwen3-235b-a22b",
         display_name="Qwen 3 235B A22B",
         company_name="Alibaba",
