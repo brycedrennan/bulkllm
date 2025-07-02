@@ -740,7 +740,8 @@ def test_list_configs(monkeypatch):
     rows = [line.split("|") for line in lines[2:]]
     assert [cells[0].strip() for cells in rows] == ["a", "b"]
     assert rows[0][4].strip() == "2024-12-31"
-    assert rows[0][5].strip() == "1.00/2.00"
+    assert rows[0][5].strip() == "1.00"
+    assert rows[0][6].strip() == "2.00"
 
     result = runner.invoke(app, ["list-configs", "--sort-by", "company"])
     assert result.exit_code == 0
@@ -749,6 +750,18 @@ def test_list_configs(monkeypatch):
     assert rows == ["b", "a"]
 
     result = runner.invoke(app, ["list-configs", "--sort-by", "release-date"])
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|")[0].strip() for line in lines[2:]]
+    assert rows == ["a", "b"]
+
+    result = runner.invoke(app, ["list-configs", "--sort-by", "input-cost"])
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|")[0].strip() for line in lines[2:]]
+    assert rows == ["a", "b"]
+
+    result = runner.invoke(app, ["list-configs", "--sort-by", "cost"])
     assert result.exit_code == 0
     lines = [line.strip() for line in result.output.splitlines() if line.strip()]
     rows = [line.split("|")[0].strip() for line in lines[2:]]
