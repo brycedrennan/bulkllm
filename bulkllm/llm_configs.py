@@ -1037,7 +1037,7 @@ xai_configs = [
     LLMConfig(
         slug="xai-grok-2-1212",
         display_name="Grok 2 20241212",
-        company_name="xai",
+        company_name="xAI",
         litellm_model_name="xai/grok-2-1212",
         llm_family="xai/grok-2",
         temperature=default_temperature,
@@ -1089,7 +1089,7 @@ xai_configs = [
     LLMConfig(
         slug="xai-grok-3",
         display_name="Grok 3",
-        company_name="Xai",
+        company_name="xAI",
         litellm_model_name="xai/grok-3",
         llm_family="xai/grok-3",
         temperature=default_temperature,
@@ -1101,7 +1101,7 @@ xai_configs = [
     LLMConfig(
         slug="xai-grok-3-mini",
         display_name="Grok 3 Mini 20250217",
-        company_name="Xai",
+        company_name="xAI",
         litellm_model_name="xai/grok-3-mini",
         llm_family="xai/grok-3-mini",
         temperature=default_temperature,
@@ -1113,7 +1113,7 @@ xai_configs = [
     LLMConfig(
         slug="xai-grok-3-mini-thinking",
         display_name="Grok 3 Mini (thinking) 20250217",
-        company_name="Xai",
+        company_name="xAI",
         litellm_model_name="xai/grok-3-mini",
         llm_family="xai/grok-3-mini",
         temperature=default_temperature,
@@ -1533,7 +1533,7 @@ def model_info():
 def cheap_model_configs():
     """Return LLMConfig objects whose estimated total cost is less than $1."""
     entries = model_info()
-    cheap_ids = {entry["model_id"] for entry in entries if entry["total_cost"] is not None and entry["total_cost"] < 1}
+    cheap_ids = {entry["model_id"] for entry in entries if entry["total_cost"] is not None and entry["total_cost"] < 2}
     if not cheap_ids:
         return []
     configs = create_model_configs()

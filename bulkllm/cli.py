@@ -83,29 +83,25 @@ def list_configs(
     register_models()
     sort_key = sort_by.replace("-", "_").lower()
     key_funcs = {
-        "slug": lambda c: c.slug,
-        "company": lambda c: c.company_name.lower(),
-        "release_date": lambda c: c.release_date or date.min,
-        "input_cost": lambda c: (
-            litellm.model_cost.get(c.litellm_model_name, {}).get("input_cost_per_token") or float("inf")
-        ),
-        "output_cost": lambda c: (
-            litellm.model_cost.get(c.litellm_model_name, {}).get("output_cost_per_token") or float("inf")
-        ),
-        "cost": lambda c: (
-            litellm.model_cost.get(c.litellm_model_name, {}).get("output_cost_per_token") or float("inf")
-        ),
+        "slug": lambda c, i: c.slug,
+        "company": lambda c, i: c.company_name.lower(),
+        "release_date": lambda c, i: c.release_date or date.min,
+        "input_cost": lambda c, i: (i.get("input_cost_per_token") or float("inf")),
+        "output_cost": lambda c, i: (i.get("output_cost_per_token") or float("inf")),
+        "cost": lambda c, i: (i.get("output_cost_per_token") or float("inf")),
     }
     if sort_key not in key_funcs:
         raise typer.BadParameter("Invalid sort option")
 
     configs = create_model_configs() if not model else model_resolver(list(model))
-    configs = sorted(configs, key=key_funcs[sort_key])
+
+    config_infos = [(cfg, litellm.get_model_info(cfg.litellm_model_name)) for cfg in configs]
+
+    config_infos = sorted(config_infos, key=lambda ci: key_funcs[sort_key](*ci))
 
     limiter = RateLimiter()
     rows = []
-    for cfg in configs:
-        info = litellm.get_model_info(cfg.litellm_model_name)
+    for cfg, info in config_infos:
         inp = info.get("input_cost_per_token")
         out = info.get("output_cost_per_token")
         rl = limiter.get_rate_limit_for_model(cfg.litellm_model_name)
@@ -115,7 +111,6 @@ def list_configs(
                 cfg.company_name,
                 cfg.display_name,
                 cfg.release_date.isoformat() if cfg.release_date else "",
-                cfg.is_deprecated.isoformat() if isinstance(cfg.is_deprecated, date) else "",
                 f"{inp * 1_000_000:.2f}" if inp is not None else "",
                 f"{out * 1_000_000:.2f}" if out is not None else "",
                 str(rl.rpm),
@@ -130,7 +125,6 @@ def list_configs(
             "company",
             "display_name",
             "release_date",
-            "deprecation_date",
             "input_cost",
             "output_cost",
             "rpm",
