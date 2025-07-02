@@ -17,6 +17,35 @@ default_system_prompt = "You are a helpful AI assistant."
 default_system_prompt = ""
 default_models = []
 
+# Mapping of model families to the family that supersedes them.  Families
+# appearing as keys here are considered obsolete and excluded from the
+# "current" model group.
+FAMILY_SUCCESSORS: dict[str, str] = {
+    "gemini/gemini-1.5-flash": "gemini/gemini-2.0-flash",
+    "gemini/gemini-1.5-pro": "gemini/gemini-2.0-pro",
+    "gemini/gemini-2.0-flash-lite": "gemini/gemini-2.5-flash-lite",
+    "gemini/gemini-2.0-flash": "gemini/gemini-2.5-flash",
+    "gemini/gemini-2.5-flash-preview": "gemini/gemini-2.5-flash",
+    "anthropic/claude-3-haiku": "anthropic/claude-3.5-haiku",
+    "anthropic/claude-3-sonnet": "anthropic/claude-3.5-sonnet",
+    "anthropic/claude-3.5-sonnet": "anthropic/claude-3.7-sonnet",
+    "anthropic/claude-3.7-sonnet": "anthropic/claude-sonnet",
+    "anthropic/claude-3-opus": "anthropic/claude-opus",
+    "meta-llama/llama-3.3-70b-instruct": "meta-llama/llama-4",
+    "xai/grok": "xai/grok-2",
+    "xai/grok-2": "xai/grok-3",
+    "xai/grok-3": "xai/grok-3-mini",
+    "openai/gpt-4": "openai/gpt-4o",
+    "openai/gpt-4-turbo": "openai/gpt-4o",
+    "openai/gpt-4o": "openai/gpt-4.1",
+    "openai/gpt-3.5-turbo": "openai/gpt-4o",
+    "openai/o1": "openai/o3",
+    "openai/o1-mini": "openai/o3-mini",
+    "openai/o1-pro": "openai/o3-pro",
+    "openai/o3-mini": "openai/o4-mini",
+    "deepseek/deepseek-chat": "deepseek/deepseek-r1",
+}
+
 
 openai_configs = [
     LLMConfig(
@@ -574,7 +603,7 @@ openrouter_configs = [
         slug="openrouter-qwen-qwen3-235b-a22b-20250428",
         display_name="Qwen 3 235B A22B",
         company_name="Alibaba",
-        litellm_model_name="openrouter/qwen/qwen3-235b-a22b-20250428",
+        litellm_model_name="openrouter/qwen/qwen3-235b-a22b-20250428   
         llm_family="qwen/qwen3-235b-a22b",
         temperature=default_temperature,
         max_tokens=default_max_tokens,
@@ -724,7 +753,7 @@ anthropic_configs = [
         display_name="Claude 3.5 Haiku 20241022",
         company_name="Anthropic",
         litellm_model_name="anthropic/claude-3-5-haiku-20241022",
-        llm_family="anthropic/claude-3-5-haiku",
+        llm_family="anthropic/claude-3.5-haiku",
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
@@ -820,7 +849,7 @@ default_models.extend(anthropic_configs)
 
 gemini_configs = [
     LLMConfig(
-        slug="gemini-gemini-1.5-flash-002",
+        slug="gemini-1.5-flash-002",
         display_name="Gemini 1.5 Flash 002",
         company_name="Google",
         litellm_model_name="gemini/gemini-1.5-flash-002",
@@ -832,7 +861,7 @@ gemini_configs = [
         release_date=date(2024, 9, 24),
     ),
     LLMConfig(
-        slug="gemini-gemini-1.5-pro-002",
+        slug="gemini-1.5-pro-002",
         display_name="Gemini 1.5 Pro 002",
         company_name="Google",
         litellm_model_name="gemini/gemini-1.5-pro-002",
@@ -844,7 +873,7 @@ gemini_configs = [
         release_date=date(2024, 9, 24),
     ),
     LLMConfig(
-        slug="gemini-gemini-2.0-flash-lite",
+        slug="gemini-2.0-flash-lite",
         display_name="Gemini 2.0 Flash Lite",
         company_name="Google",
         litellm_model_name="gemini/gemini-2.0-flash-lite",
@@ -856,7 +885,7 @@ gemini_configs = [
         release_date=date(2025, 2, 5),
     ),
     LLMConfig(
-        slug="gemini-gemini-2.0-flash",
+        slug="gemini-2.0-flash",
         display_name="Gemini 2.0 Flash",
         company_name="Google",
         litellm_model_name="gemini/gemini-2.0-flash",
@@ -867,20 +896,8 @@ gemini_configs = [
         system_prompt=default_system_prompt,
         release_date=date(2025, 2, 5),
     ),
-    LLMConfig(
-        slug="gemini-2.5-flash-preview-04-17",
-        display_name="Gemini 2.5 Flash 20250417",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.5-flash-preview-04-17",
-        llm_family="gemini/gemini-2.5-flash",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 4, 17),
-    ),
     # LLMConfig(
-    #     slug="gemini-gemini-1.0-pro-vision-latest",
+    #     slug="gemini-1.0-pro-vision-latest",
     #     display_name="Gemini 1.0 Pro Vision",
     #     company_name="Google",
     #     litellm_model_name="gemini/gemini-1.0-pro-vision-latest",
@@ -893,7 +910,7 @@ gemini_configs = [
     #     is_deprecated=True,
     # ),
     LLMConfig(
-        slug="gemini-gemini-2.0-flash-lite-preview",
+        slug="gemini-2.0-flash-lite-20250225",
         display_name="Gemini 2.0 Flash Lite 20250225",
         company_name="Google",
         litellm_model_name="gemini/gemini-2.0-flash-lite-preview",
@@ -905,67 +922,7 @@ gemini_configs = [
         release_date=date(2025, 2, 25),
     ),
     LLMConfig(
-        slug="gemini-2.5-pro-preview-03-25",
-        display_name="Gemini 2.5 Pro 20250325",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.5-pro-preview-03-25",
-        llm_family="gemini/gemini-2.5-pro",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 3, 25),
-    ),
-    LLMConfig(
-        slug="gemini-2.5-pro-preview-05-06",
-        display_name="Gemini 2.5 Pro 20250506",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.5-pro-preview-05-06",
-        llm_family="gemini/gemini-2.5-pro",
-        temperature=default_temperature,
-        max_tokens=8000,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 5, 6),
-    ),
-    LLMConfig(
-        slug="gemini-2.5-pro-preview-06-05",
-        display_name="Gemini 2.5 Pro 20250605",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.5-pro-preview-06-05",
-        llm_family="gemini/gemini-2.5-pro",
-        temperature=default_temperature,
-        max_tokens=8000,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 6, 5),
-    ),
-    LLMConfig(
-        slug="gemini-gemini-2.5-flash-20250617",
-        display_name="Gemini 2.5 Flash 20250617",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.5-flash",
-        llm_family="gemini/gemini-2.5-flash",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 6, 17),
-    ),
-    LLMConfig(
-        slug="gemini-gemini-2.5-flash-thinking-20250617",
-        display_name="Gemini 2.5 Flash Thinking 20250617",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.5-flash",
-        llm_family="gemini/gemini-2.5-flash",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={"type": "enabled", "budget_tokens": 8192},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 6, 17),
-    ),
-    LLMConfig(
-        slug="gemini-gemini-2.5-flash-lite-20250617",
+        slug="gemini-2.5-flash-lite-20250617",
         display_name="Gemini 2.5 Flash Lite 20250617",
         company_name="Google",
         litellm_model_name="gemini/gemini-2.5-flash-lite-preview-06-17",
@@ -977,32 +934,8 @@ gemini_configs = [
         release_date=date(2025, 6, 17),
     ),
     LLMConfig(
-        slug="gemini-gemini-2.5-flash-lite-20250617-low",
-        display_name="Gemini 2.5 Flash Lite 20250617 (low)",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.5-flash-lite-preview-06-17",
-        llm_family="gemini/gemini-2.5-flash-lite",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={"type": "enabled", "budget_tokens": 1024},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 6, 17),
-    ),
-    LLMConfig(
-        slug="gemini-gemini-2.5-flash-lite-20250617-medium",
-        display_name="Gemini 2.5 Flash Lite 20250617 (medium)",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.5-flash-lite-preview-06-17",
-        llm_family="gemini/gemini-2.5-flash-lite",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={"type": "enabled", "budget_tokens": 2048},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 6, 17),
-    ),
-    LLMConfig(
-        slug="gemini-gemini-2.5-flash-lite-20250617-high",
-        display_name="Gemini 2.5 Flash Lite 20250617 (high)",
+        slug="gemini-2.5-flash-lite-thinking-20250617",
+        display_name="Gemini 2.5 Flash Lite Thinking 20250617",
         company_name="Google",
         litellm_model_name="gemini/gemini-2.5-flash-lite-preview-06-17",
         llm_family="gemini/gemini-2.5-flash-lite",
@@ -1011,6 +944,78 @@ gemini_configs = [
         thinking_config={"type": "enabled", "budget_tokens": 4096},
         system_prompt=default_system_prompt,
         release_date=date(2025, 6, 17),
+    ),
+    LLMConfig(
+        slug="gemini-2.5-flash-20250417",
+        display_name="Gemini 2.5 Flash 20250417",
+        company_name="Google",
+        litellm_model_name="gemini/gemini-2.5-flash-preview-04-17",
+        llm_family="gemini/gemini-2.5-flash",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 4, 17),
+    ),
+    LLMConfig(
+        slug="gemini-2.5-flash-20250617",
+        display_name="Gemini 2.5 Flash 20250617",
+        company_name="Google",
+        litellm_model_name="gemini/gemini-2.5-flash",
+        llm_family="gemini/gemini-2.5-flash",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 6, 17),
+    ),
+    LLMConfig(
+        slug="gemini-2.5-flash-thinking-20250617",
+        display_name="Gemini 2.5 Flash Thinking 20250617",
+        company_name="Google",
+        litellm_model_name="gemini/gemini-2.5-flash",
+        llm_family="gemini/gemini-2.5-flash",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={"type": "enabled", "budget_tokens": 8192},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 6, 17),
+    ),
+    LLMConfig(
+        slug="gemini-2.5-pro-20250325",
+        display_name="Gemini 2.5 Pro 20250325",
+        company_name="Google",
+        litellm_model_name="gemini/gemini-2.5-pro-preview-03-25",
+        llm_family="gemini/gemini-2.5-pro",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 3, 25),
+    ),
+    LLMConfig(
+        slug="gemini-2.5-pro-20250506",
+        display_name="Gemini 2.5 Pro 20250506",
+        company_name="Google",
+        litellm_model_name="gemini/gemini-2.5-pro-preview-05-06",
+        llm_family="gemini/gemini-2.5-pro",
+        temperature=default_temperature,
+        max_tokens=8000,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 5, 6),
+    ),
+    LLMConfig(
+        slug="gemini-2.5-pro-20250605",
+        display_name="Gemini 2.5 Pro 20250605",
+        company_name="Google",
+        litellm_model_name="gemini/gemini-2.5-pro-preview-06-05",
+        llm_family="gemini/gemini-2.5-pro",
+        temperature=default_temperature,
+        max_tokens=8000,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 6, 5),
     ),
 ]
 default_models.extend(gemini_configs)
@@ -1028,46 +1033,46 @@ xai_configs = [
         system_prompt=default_system_prompt,
         release_date=date(2024, 12, 12),
     ),
-    LLMConfig(
-        slug="xai-grok-3-20250409",
-        display_name="Grok 3 Beta",
-        company_name="xai",
-        litellm_model_name="xai/grok-3-beta",
-        llm_family="xai/grok-3",
-        temperature=default_temperature,
-        max_tokens=8000,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 4, 9),
-    ),
-    LLMConfig(
-        slug="xai-grok-3-mini-low-20250409",
-        display_name="Grok 3 Mini Beta (low)",
-        company_name="xai",
-        litellm_model_name="xai/grok-3-mini-beta",
-        llm_family="xai/grok-3-mini",
-        temperature=default_temperature,
-        max_tokens=32000,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 4, 9),
-        reasoning_effort="low",
-        is_reasoning=True,
-    ),
-    LLMConfig(
-        slug="xai-grok-3-mini-high-20250409",
-        display_name="Grok 3 Mini Beta (high)",
-        company_name="xai",
-        litellm_model_name="xai/grok-3-mini-beta",
-        llm_family="xai/grok-3-mini",
-        temperature=default_temperature,
-        max_tokens=32000,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 4, 9),
-        reasoning_effort="high",
-        is_reasoning=True,
-    ),
+    # LLMConfig(
+    #     slug="xai-grok-3-20250409",
+    #     display_name="Grok 3 Beta",
+    #     company_name="xai",
+    #     litellm_model_name="xai/grok-3-beta",
+    #     llm_family="xai/grok-3",
+    #     temperature=default_temperature,
+    #     max_tokens=8000,
+    #     thinking_config={},
+    #     system_prompt=default_system_prompt,
+    #     release_date=date(2025, 4, 9),
+    # ),
+    # LLMConfig(
+    #     slug="xai-grok-3-mini-low-20250409",
+    #     display_name="Grok 3 Mini Beta (low)",
+    #     company_name="xai",
+    #     litellm_model_name="xai/grok-3-mini-beta",
+    #     llm_family="xai/grok-3-mini",
+    #     temperature=default_temperature,
+    #     max_tokens=32000,
+    #     thinking_config={},
+    #     system_prompt=default_system_prompt,
+    #     release_date=date(2025, 4, 9),
+    #     reasoning_effort="low",
+    #     is_reasoning=True,
+    # ),
+    # LLMConfig(
+    #     slug="xai-grok-3-mini-high-20250409",
+    #     display_name="Grok 3 Mini Beta (high)",
+    #     company_name="xai",
+    #     litellm_model_name="xai/grok-3-mini-beta",
+    #     llm_family="xai/grok-3-mini",
+    #     temperature=default_temperature,
+    #     max_tokens=32000,
+    #     thinking_config={},
+    #     system_prompt=default_system_prompt,
+    #     release_date=date(2025, 4, 9),
+    #     reasoning_effort="high",
+    #     is_reasoning=True,
+    # ),
     LLMConfig(
         slug="xai-grok-3",
         display_name="Grok 3",
@@ -1082,7 +1087,7 @@ xai_configs = [
     ),
     LLMConfig(
         slug="xai-grok-3-mini",
-        display_name="Grok 3 Mini",
+        display_name="Grok 3 Mini 20250217",
         company_name="Xai",
         litellm_model_name="xai/grok-3-mini",
         llm_family="xai/grok-3-mini",
@@ -1091,6 +1096,20 @@ xai_configs = [
         thinking_config={},
         system_prompt=default_system_prompt,
         release_date=date(2025, 2, 17),
+    ),
+    LLMConfig(
+        slug="xai-grok-3-mini-thinking",
+        display_name="Grok 3 Mini (thinking) 20250217",
+        company_name="Xai",
+        litellm_model_name="xai/grok-3-mini",
+        llm_family="xai/grok-3-mini",
+        temperature=default_temperature,
+        max_tokens=8000,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 2, 17),
+        reasoning_effort="high",
+        is_reasoning=True,
     ),
 ]
 default_models.extend(xai_configs)
@@ -1509,6 +1528,24 @@ def cheap_model_configs():
     return [config for config in configs if config.litellm_model_name in cheap_ids]
 
 
+@cache
+def current_model_configs() -> list[LLMConfig]:
+    """Return the latest config in each family that has no successor."""
+    configs = create_model_configs()
+    succeeded = set(FAMILY_SUCCESSORS.keys())
+
+    latest: dict[str, LLMConfig] = {}
+    for cfg in configs:
+        if cfg.llm_family in succeeded:
+            continue
+        existing = latest.get(cfg.llm_family)
+        if existing is None or (
+            cfg.release_date and existing.release_date and cfg.release_date > existing.release_date
+        ):
+            latest[cfg.llm_family] = cfg
+    return list(latest.values())
+
+
 def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
     """Expand slugs or groups into concrete model configurations."""
     if not model_slugs:
@@ -1521,6 +1558,7 @@ def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
         "default": cheap_model_configs,
         "all": configs,
         "reasoning": [config for config in configs if config.is_reasoning],
+        "current": current_model_configs,
     }
     found_configs = []
     for slug in model_slugs:

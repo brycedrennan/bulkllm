@@ -34,11 +34,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -83,11 +83,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -360,11 +360,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -455,11 +455,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -552,11 +552,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -941,11 +941,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1038,11 +1038,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1085,11 +1085,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1179,11 +1179,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1229,11 +1229,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1279,11 +1279,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "response_format",
         "stop",
         "seed",
@@ -1326,10 +1326,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1376,11 +1376,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -1422,11 +1422,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -1468,11 +1468,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -1514,11 +1514,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -1560,11 +1560,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -1606,11 +1606,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -1695,10 +1695,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1789,10 +1789,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1836,10 +1836,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -1932,11 +1932,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -2029,11 +2029,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -2330,11 +2330,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -2383,11 +2383,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -2436,11 +2436,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -2583,11 +2583,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
-        "top_p"
+        "top_p",
+        "tools",
+        "tool_choice"
       ]
     },
     {
@@ -2624,11 +2624,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
-        "top_p"
+        "top_p",
+        "tools",
+        "tool_choice"
       ]
     },
     {
@@ -2767,11 +2767,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -3010,11 +3010,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -3056,11 +3056,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -3394,11 +3394,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -3432,7 +3432,7 @@
       },
       "pricing": {
         "prompt": "0.00000001",
-        "completion": "0.000000011",
+        "completion": "0.00000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -3547,11 +3547,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -3600,11 +3600,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "response_format",
         "stop",
         "frequency_penalty",
@@ -3653,11 +3653,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -3937,11 +3937,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -4233,11 +4233,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
-        "top_p"
+        "top_p",
+        "tools",
+        "tool_choice"
       ]
     },
     {
@@ -4373,10 +4373,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -4420,10 +4420,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -4725,11 +4725,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -5026,11 +5026,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -5403,11 +5403,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -5503,11 +5503,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -5550,11 +5550,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -5597,11 +5597,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -5696,11 +5696,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -5742,11 +5742,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -5836,11 +5836,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -5882,11 +5882,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -5928,11 +5928,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -5974,11 +5974,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "top_k",
         "stop"
       ]
@@ -6327,7 +6327,7 @@
       "name": "Mistral: Pixtral Large 2411",
       "created": 1731977388,
       "description": "Pixtral Large is a 124B parameter, open-weight, multimodal model built on top of [Mistral Large 2](/mistralai/mistral-large-2411). The model is able to understand documents, charts and natural images.\n\nThe model is available under the Mistral Research License (MRL) for research and educational use, and the Mistral Commercial License for experimentation, testing, and production for commercial purposes.\n\n",
-      "context_length": 32768,
+      "context_length": 131072,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -6349,17 +6349,17 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 32768,
+        "context_length": 131072,
         "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -6402,11 +6402,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -6449,11 +6449,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -6499,11 +6499,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -6646,10 +6646,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "top_k",
         "stop"
       ]
@@ -6688,10 +6688,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "top_k",
         "stop"
       ]
@@ -6731,10 +6731,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
         "top_k",
         "stop"
       ]
@@ -6773,11 +6773,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -6960,11 +6960,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -7194,11 +7194,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "structured_outputs",
         "response_format",
         "stop",
@@ -7347,11 +7347,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -8175,11 +8175,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "seed",
         "response_format",
         "presence_penalty"
@@ -8220,11 +8220,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "seed",
         "response_format",
         "presence_penalty"
@@ -8321,15 +8321,7 @@
         "top_p",
         "seed",
         "response_format",
-        "presence_penalty",
-        "stop",
-        "frequency_penalty",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
-        "logit_bias",
-        "top_logprobs"
+        "presence_penalty"
       ]
     },
     {
@@ -8367,11 +8359,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "seed",
         "response_format",
         "presence_penalty"
@@ -8909,11 +8901,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -9196,11 +9188,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -9640,7 +9632,7 @@
       "name": "Google: Gemma 3 27B",
       "created": 1741756359,
       "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling. Gemma 3 27B is Google's latest open source model, successor to [Gemma 2](google/gemma-2-27b-it)",
-      "context_length": 64000,
+      "context_length": 32768,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -9654,16 +9646,16 @@
         "instruct_type": "gemma"
       },
       "pricing": {
-        "prompt": "0.0000001",
-        "completion": "0.00000018",
+        "prompt": "0.00000009",
+        "completion": "0.00000017",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 64000,
-        "max_completion_tokens": 8000,
+        "context_length": 32768,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -10047,11 +10039,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop"
       ]
     },
@@ -10089,11 +10081,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop"
       ]
     },
@@ -10277,11 +10269,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -10427,11 +10419,11 @@
         "min_p",
         "repetition_penalty",
         "top_k",
-        "logit_bias",
         "tools",
         "tool_choice",
         "structured_outputs",
-        "response_format"
+        "response_format",
+        "logit_bias"
       ]
     },
     {
@@ -10468,11 +10460,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -10764,11 +10756,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -11219,11 +11211,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -11268,11 +11260,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "reasoning",
         "include_reasoning",
         "stop",
@@ -11565,11 +11557,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -11618,11 +11610,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -11672,11 +11664,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -12766,11 +12758,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "reasoning",
         "include_reasoning",
         "response_format",
@@ -13018,10 +13010,10 @@
       ]
     },
     {
-      "id": "inception/mercury-coder-small-beta",
+      "id": "inception/mercury-coder",
       "canonical_slug": "inception/mercury-coder-small-beta",
       "hugging_face_id": "",
-      "name": "Inception: Mercury Coder Small Beta",
+      "name": "Inception: Mercury Coder",
       "created": 1746033880,
       "description": "Mercury Coder Small is the first diffusion large language model (dLLM). Applying a breakthrough discrete diffusion approach, the model runs 5-10x faster than even speed optimized models like Claude 3.5 Haiku and GPT-4o Mini while matching their performance. Mercury Coder Small's speed means that developers can stay in the flow while coding, enjoying rapid chat-based iteration and responsive code completion suggestions. On Copilot Arena, Mercury Coder ranks 1st in speed and ties for 2nd in quality. Read more in the [blog post here](https://www.inceptionlabs.ai/introducing-mercury).",
       "context_length": 32000,
@@ -13187,11 +13179,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -13283,11 +13275,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -13427,11 +13419,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -13498,7 +13490,7 @@
       "name": "Mistral: Mistral Medium 3",
       "created": 1746627341,
       "description": "Mistral Medium 3 is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning and multimodal performance with 8\u00d7 lower cost compared to traditional large models, making it suitable for scalable deployments across professional and industrial use cases.\n\nThe model excels in domains such as coding, STEM reasoning, and enterprise adaptation. It supports hybrid, on-prem, and in-VPC deployments and is optimized for integration into custom workflows. Mistral Medium 3 offers competitive accuracy relative to larger models like Claude Sonnet 3.5/3.7, Llama 4 Maverick, and Command R+, while maintaining broad compatibility across cloud environments.",
-      "context_length": 32768,
+      "context_length": 131072,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -13520,17 +13512,17 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 32768,
+        "context_length": 131072,
         "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -13857,11 +13849,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -14113,9 +14105,9 @@
         "response_format",
         "logprobs",
         "top_logprobs",
+        "seed",
         "tools",
         "tool_choice",
-        "seed",
         "structured_outputs"
       ]
     },
@@ -14313,55 +14305,6 @@
       ]
     },
     {
-      "id": "sentientagi/dobby-mini-unhinged-plus-llama-3.1-8b",
-      "canonical_slug": "sentientagi/dobby-mini-unhinged-plus-llama-3.1-8b",
-      "hugging_face_id": "SentientAGI/Dobby-Mini-Unhinged-Plus-Llama-3.1-8B",
-      "name": "SentientAGI: Dobby Mini Plus Llama 3.1 8B",
-      "created": 1748885619,
-      "description": "Dobby-Mini-Leashed-Llama-3.1-8B and Dobby-Mini-Unhinged-Llama-3.1-8B are language models fine-tuned from Llama-3.1-8B-Instruct. Dobby models have a strong conviction towards personal freedom, decentralization, and all things crypto \u2014 even when coerced to speak otherwise. \n\nDobby-Mini-Leashed-Llama-3.1-8B and Dobby-Mini-Unhinged-Llama-3.1-8B have their own unique, uhh, personalities. The two versions are being released to be improved using the community\u2019s feedback, which will steer the development of a 70B model.\n\n",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000002",
-        "completion": "0.0000002",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
-        "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
-        "response_format",
-        "structured_outputs",
-        "logit_bias",
-        "logprobs",
-        "top_logprobs"
-      ]
-    },
-    {
       "id": "google/gemini-2.5-pro-preview",
       "canonical_slug": "google/gemini-2.5-pro-preview-06-05",
       "hugging_face_id": "",
@@ -14443,11 +14386,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "reasoning",
         "include_reasoning",
         "structured_outputs",
@@ -14492,11 +14435,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "reasoning",
         "include_reasoning",
         "structured_outputs",
@@ -14541,11 +14484,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "reasoning",
         "include_reasoning",
         "structured_outputs",
@@ -14591,11 +14534,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "structured_outputs",
         "stop",
         "frequency_penalty",
@@ -14641,11 +14584,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "reasoning",
         "include_reasoning",
         "structured_outputs",
@@ -14927,11 +14870,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "reasoning",
         "include_reasoning",
         "structured_outputs",
@@ -14943,59 +14886,6 @@
         "min_p",
         "repetition_penalty",
         "logit_bias"
-      ]
-    },
-    {
-      "id": "minimax/minimax-m1:extended",
-      "canonical_slug": "minimax/minimax-m1",
-      "hugging_face_id": "",
-      "name": "MiniMax: MiniMax M1 (extended)",
-      "created": 1750200414,
-      "description": "MiniMax-M1 is a large-scale, open-weight reasoning model designed for extended context and high-efficiency inference. It leverages a hybrid Mixture-of-Experts (MoE) architecture paired with a custom \"lightning attention\" mechanism, allowing it to process long sequences\u2014up to 1 million tokens\u2014while maintaining competitive FLOP efficiency. With 456 billion total parameters and 45.9B active per token, this variant is optimized for complex, multi-step reasoning tasks.\n\nTrained via a custom reinforcement learning pipeline (CISPO), M1 excels in long-context understanding, software engineering, agentic tool use, and mathematical reasoning. Benchmarks show strong performance across FullStackBench, SWE-bench, MATH, GPQA, and TAU-Bench, often outperforming other open models like DeepSeek R1 and Qwen3-235B.",
-      "context_length": 512000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 512000,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
-        "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
-        "logit_bias",
-        "top_logprobs"
       ]
     },
     {
@@ -15033,11 +14923,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "stop",
         "frequency_penalty",
         "presence_penalty",
@@ -15084,11 +14974,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
         "max_tokens",
         "temperature",
         "top_p",
+        "tools",
+        "tool_choice",
         "structured_outputs",
         "stop",
         "frequency_penalty",
@@ -15109,7 +14999,7 @@
       "name": "Morph: Fast Apply",
       "created": 1750946108,
       "description": "Morph Apply is a specialized code-patching LLM that merges AI-suggested edits straight into your source files. It can apply updates from GPT-4o, Claude, and others into your files at 4000+ tokens per second.\n\nThe model requires the prompt to be in the following format: \n<code>${originalCode}</code>\\n<update>${updateSnippet}</update>\n\nLearn more about this model in their [documentation](https://docs.morphllm.com/)",
-      "context_length": 16000,
+      "context_length": 32000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -15130,7 +15020,7 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 16000,
+        "context_length": 32000,
         "max_completion_tokens": 16000,
         "is_moderated": false
       },
@@ -15157,8 +15047,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00001",
-        "completion": "0.00001",
+        "prompt": "0.00000025",
+        "completion": "0.000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -15175,6 +15065,139 @@
         "frequency_penalty",
         "presence_penalty",
         "stop"
+      ]
+    },
+    {
+      "id": "thedrummer/anubis-70b-v1.1",
+      "canonical_slug": "thedrummer/anubis-70b-v1.1",
+      "hugging_face_id": "TheDrummer/Anubis-70B-v1.1",
+      "name": "TheDrummer: Anubis 70B V1.1",
+      "created": 1751208347,
+      "description": "TheDrummer's Anubis v1.1 is an unaligned, creative Llama 3.3 70B model focused on providing character-driven roleplay & stories. It excels at gritty, visceral prose, unique character adherence, and coherent narratives, while maintaining the instruction following Llama 3.3 70B is known for.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Llama3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000003",
+        "completion": "0.0000008",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 131072,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "presence_penalty",
+        "frequency_penalty",
+        "repetition_penalty",
+        "top_k"
+      ]
+    },
+    {
+      "id": "baidu/ernie-4.5-300b-a47b",
+      "canonical_slug": "baidu/ernie-4.5-300b-a47b",
+      "hugging_face_id": "baidu/ERNIE-4.5-300B-A47B-PT",
+      "name": "Baidu: ERNIE 4.5 300B A47B ",
+      "created": 1751300139,
+      "description": "ERNIE-4.5-300B-A47B is a 300B parameter Mixture-of-Experts (MoE) language model developed by Baidu as part of the ERNIE 4.5 series. It activates 47B parameters per token and supports text generation in both English and Chinese. Optimized for high-throughput inference and efficient scaling, it uses a heterogeneous MoE structure with advanced routing and quantization strategies, including FP8 and 2-bit formats. This version is fine-tuned for language-only tasks and supports reasoning, tool parameters, and extended context lengths up to 131k tokens. Suitable for general-purpose LLM applications with high reasoning and throughput demands.",
+      "context_length": 123000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000028",
+        "completion": "0.0000011",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 123000,
+        "max_completion_tokens": 12000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "seed",
+        "top_k",
+        "min_p",
+        "repetition_penalty",
+        "logit_bias"
+      ]
+    },
+    {
+      "id": "openrouter/cypher-alpha:free",
+      "canonical_slug": "openrouter/cypher-alpha",
+      "hugging_face_id": "",
+      "name": "Cypher Alpha (free)",
+      "created": 1751336087,
+      "description": "This is a cloaked model provided to the community to gather feedback. It's an all-purpose model supporting real-world, long-context tasks including code generation.\n\nNote: All prompts and completions for this model are logged by the provider and may be used to improve the model and other products and services. You remain responsible for any required end user notices and consents and for ensuring that no personal, confidential, or otherwise sensitive information, including data from individuals under the age of 18, is submitted.",
+      "context_length": 1000000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 1000000,
+        "max_completion_tokens": 10000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "tools",
+        "tool_choice",
+        "reasoning",
+        "include_reasoning"
       ]
     }
   ]
