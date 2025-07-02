@@ -706,6 +706,13 @@ def test_list_configs(monkeypatch):
     import litellm
 
     monkeypatch.setattr("bulkllm.cli.create_model_configs", lambda: [cfg_b, cfg_a])
+    called: list[list[str]] = []
+
+    def fake_model_resolver(slugs: list[str]) -> list[LLMConfig]:
+        called.append(slugs)
+        return [cfg_a]
+
+    monkeypatch.setattr("bulkllm.cli.model_resolver", fake_model_resolver)
 
     def fake_register_models() -> None:
         litellm.model_cost["zzz/a"] = {
@@ -746,3 +753,10 @@ def test_list_configs(monkeypatch):
     lines = [line.strip() for line in result.output.splitlines() if line.strip()]
     rows = [line.split("|")[0].strip() for line in lines[2:]]
     assert rows == ["a", "b"]
+
+    result = runner.invoke(app, ["list-configs", "-m", "cheap", "-m", "other"])
+    assert result.exit_code == 0
+    assert called == [["cheap", "other"]]
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|")[0].strip() for line in lines[2:]]
+    assert rows == ["a"]

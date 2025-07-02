@@ -5,7 +5,7 @@ from datetime import date
 import litellm
 import typer
 
-from bulkllm.llm_configs import create_model_configs
+from bulkllm.llm_configs import create_model_configs, model_resolver
 from bulkllm.model_registration.canonical import _canonical_model_name, get_canonical_models
 from bulkllm.model_registration.main import register_models
 from bulkllm.rate_limiter import RateLimiter
@@ -72,6 +72,12 @@ def list_configs(
         help="Sort by slug, company or release-date",
         case_sensitive=False,
     ),
+    model: list[str] = typer.Option(
+        None,
+        "--model",
+        "-m",
+        help="Model slugs or groups (can be repeated)",
+    ),
 ) -> None:
     """List LLM configurations."""
     register_models()
@@ -84,7 +90,8 @@ def list_configs(
     if sort_key not in key_funcs:
         raise typer.BadParameter("Invalid sort option")
 
-    configs = sorted(create_model_configs(), key=key_funcs[sort_key])
+    configs = create_model_configs() if not model else model_resolver(list(model))
+    configs = sorted(configs, key=key_funcs[sort_key])
 
     rows = []
     for cfg in configs:
