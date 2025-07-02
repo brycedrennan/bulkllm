@@ -584,10 +584,10 @@ openrouter_configs = [
     ),
     LLMConfig(
         slug="openrouter-meta-llama-llama-3.3-70b-instruct",
-        display_name="Llama 3.3 70B Instruct",
+        display_name="Llama 3.3 70b Instruct",
         company_name="Meta",
         litellm_model_name="openrouter/meta-llama/llama-3.3-70b-instruct",
-        llm_family="meta-llama/llama-3.3",
+        llm_family="meta-llama/llama-3.3-70b-instruct",
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
