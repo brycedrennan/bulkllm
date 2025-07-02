@@ -17,6 +17,35 @@ default_system_prompt = "You are a helpful AI assistant."
 default_system_prompt = ""
 default_models = []
 
+# Mapping of model families to the family that supersedes them.  Families
+# appearing as keys here are considered obsolete and excluded from the
+# "current" model group.
+FAMILY_SUCCESSORS: dict[str, str] = {
+    "gemini/gemini-1.5-flash": "gemini/gemini-2.0-flash",
+    "gemini/gemini-1.5-pro": "gemini/gemini-2.0-pro",
+    "gemini/gemini-2.0-flash-lite": "gemini/gemini-2.5-flash-lite",
+    "gemini/gemini-2.0-flash": "gemini/gemini-2.5-flash",
+    "gemini/gemini-2.5-flash-preview": "gemini/gemini-2.5-flash",
+    "anthropic/claude-3-haiku": "anthropic/claude-3.5-haiku",
+    "anthropic/claude-3-sonnet": "anthropic/claude-3.5-sonnet",
+    "anthropic/claude-3.5-sonnet": "anthropic/claude-3.7-sonnet",
+    "anthropic/claude-3.7-sonnet": "anthropic/claude-sonnet",
+    "anthropic/claude-3-opus": "anthropic/claude-opus",
+    "meta-llama/llama-3.3-70b-instruct": "meta-llama/llama-4",
+    "xai/grok": "xai/grok-2",
+    "xai/grok-2": "xai/grok-3",
+    "xai/grok-3": "xai/grok-3-mini",
+    "openai/gpt-4": "openai/gpt-4o",
+    "openai/gpt-4-turbo": "openai/gpt-4o",
+    "openai/gpt-4o": "openai/gpt-4.1",
+    "openai/gpt-3.5-turbo": "openai/gpt-4o",
+    "openai/o1": "openai/o3",
+    "openai/o1-mini": "openai/o3-mini",
+    "openai/o1-pro": "openai/o3-pro",
+    "openai/o3-mini": "openai/o4-mini",
+    "deepseek/deepseek-chat": "deepseek/deepseek-r1",
+}
+
 
 openai_configs = [
     LLMConfig(
@@ -1487,6 +1516,24 @@ def cheap_model_configs():
     return [config for config in configs if config.litellm_model_name in cheap_ids]
 
 
+@cache
+def current_model_configs() -> list[LLMConfig]:
+    """Return the latest config in each family that has no successor."""
+    configs = create_model_configs()
+    succeeded = set(FAMILY_SUCCESSORS.keys())
+
+    latest: dict[str, LLMConfig] = {}
+    for cfg in configs:
+        if cfg.llm_family in succeeded:
+            continue
+        existing = latest.get(cfg.llm_family)
+        if existing is None or (
+            cfg.release_date and existing.release_date and cfg.release_date > existing.release_date
+        ):
+            latest[cfg.llm_family] = cfg
+    return list(latest.values())
+
+
 def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
     """Expand slugs or groups into concrete model configurations."""
     if not model_slugs:
@@ -1499,6 +1546,7 @@ def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
         "default": cheap_model_configs,
         "all": configs,
         "reasoning": [config for config in configs if config.is_reasoning],
+        "current": current_model_configs,
     }
     found_configs = []
     for slug in model_slugs:
