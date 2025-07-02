@@ -574,6 +574,18 @@ openrouter_configs = [
         system_prompt=default_system_prompt,
         release_date=date(2024, 12, 3),
     ),
+     LLMConfig(
+        slug="openrouter-amazon-nova-lite-v1",
+        display_name="Nova Lite V1",
+        company_name="Amazon",
+        litellm_model_name="openrouter/amazon/nova-lite-v1",
+        llm_family="amazon/nova-lite",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2024, 12, 1),
+    ),
     LLMConfig(
         slug="openrouter-qwen-qwq-32b",
         display_name="Qwen QwQ-32B",
