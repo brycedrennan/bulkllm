@@ -574,7 +574,7 @@ openrouter_configs = [
         system_prompt=default_system_prompt,
         release_date=date(2024, 12, 3),
     ),
-     LLMConfig(
+    LLMConfig(
         slug="openrouter-amazon-nova-lite-v1",
         display_name="Nova Lite V1",
         company_name="Amazon",
