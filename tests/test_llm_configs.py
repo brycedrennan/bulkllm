@@ -44,27 +44,35 @@ def stub_configs(monkeypatch: pytest.MonkeyPatch):
     )
     all_cfgs = [cfg1, cfg2]
     cheap_cfgs = [cfg1]
+    current_cfgs = [cfg2]
     monkeypatch.setattr(
         llm_configs, "create_model_configs", lambda system_prompt="You are a helpful AI assistant.": all_cfgs
     )
     monkeypatch.setattr(llm_configs, "cheap_model_configs", lambda: cheap_cfgs)
-    return llm_configs, cheap_cfgs, all_cfgs
+    monkeypatch.setattr(llm_configs, "current_model_configs", lambda: current_cfgs)
+    return llm_configs, cheap_cfgs, all_cfgs, current_cfgs
 
 
 def test_model_resolver_cheap(stub_configs):
-    llm_configs, cheap_cfgs, _ = stub_configs
+    llm_configs, cheap_cfgs, _, _ = stub_configs
     result = llm_configs.model_resolver(["cheap"])
     assert result == cheap_cfgs
     assert all(isinstance(c, LLMConfig) for c in result)
 
 
 def test_model_resolver_default(stub_configs):
-    llm_configs, cheap_cfgs, _ = stub_configs
+    llm_configs, cheap_cfgs, _, _ = stub_configs
     result = llm_configs.model_resolver(["default"])
     assert result == cheap_cfgs
 
 
 def test_model_resolver_all(stub_configs):
-    llm_configs, _, all_cfgs = stub_configs
+    llm_configs, _, all_cfgs, _ = stub_configs
     result = llm_configs.model_resolver(["all"])
     assert result == all_cfgs
+
+
+def test_model_resolver_current(stub_configs):
+    llm_configs, _, _, current_cfgs = stub_configs
+    result = llm_configs.model_resolver(["current"])
+    assert result == current_cfgs
