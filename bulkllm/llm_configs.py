@@ -619,6 +619,18 @@ openrouter_configs = [
         release_date=date(2025, 3, 17),
     ),
     LLMConfig(
+        slug="mistral-mistral-small-2506",
+        display_name="Mistral Small 2506",
+        company_name="Mistral",
+        litellm_model_name="mistral/mistral-small-2506",
+        llm_family="mistral/mistral-small",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 6, 20),
+    ),
+    LLMConfig(
         slug="openrouter-google-gemma-3-27b-it",
         display_name="Gemma 3 27b IT",
         company_name="Google",
