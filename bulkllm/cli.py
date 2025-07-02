@@ -69,7 +69,7 @@ def list_configs(
         "slug",
         "--sort-by",
         "-s",
-        help="Sort by slug, company or release-date",
+        help="Sort by slug, company, release-date, input-cost, output-cost or cost",
         case_sensitive=False,
     ),
     model: list[str] = typer.Option(
@@ -86,6 +86,15 @@ def list_configs(
         "slug": lambda c: c.slug,
         "company": lambda c: c.company_name.lower(),
         "release_date": lambda c: c.release_date or date.min,
+        "input_cost": lambda c: (
+            litellm.model_cost.get(c.litellm_model_name, {}).get("input_cost_per_token") or float("inf")
+        ),
+        "output_cost": lambda c: (
+            litellm.model_cost.get(c.litellm_model_name, {}).get("output_cost_per_token") or float("inf")
+        ),
+        "cost": lambda c: (
+            litellm.model_cost.get(c.litellm_model_name, {}).get("output_cost_per_token") or float("inf")
+        ),
     }
     if sort_key not in key_funcs:
         raise typer.BadParameter("Invalid sort option")
@@ -93,12 +102,13 @@ def list_configs(
     configs = create_model_configs() if not model else model_resolver(list(model))
     configs = sorted(configs, key=key_funcs[sort_key])
 
+    limiter = RateLimiter()
     rows = []
     for cfg in configs:
         info = litellm.model_cost.get(cfg.litellm_model_name, {})
         inp = info.get("input_cost_per_token")
         out = info.get("output_cost_per_token")
-        cost = f"{inp * 1_000_000:.2f}/{out * 1_000_000:.2f}" if inp is not None and out is not None else ""
+        rl = limiter.get_rate_limit_for_model(cfg.litellm_model_name)
         rows.append(
             [
                 cfg.slug,
@@ -106,7 +116,10 @@ def list_configs(
                 cfg.display_name,
                 cfg.release_date.isoformat() if cfg.release_date else "",
                 cfg.is_deprecated.isoformat() if isinstance(cfg.is_deprecated, date) else "",
-                cost,
+                f"{inp * 1_000_000:.2f}" if inp is not None else "",
+                f"{out * 1_000_000:.2f}" if out is not None else "",
+                str(rl.rpm),
+                str(rl.tpm),
             ]
         )
 
@@ -118,7 +131,10 @@ def list_configs(
             "display_name",
             "release_date",
             "deprecation_date",
-            "cost",
+            "input_cost",
+            "output_cost",
+            "rpm",
+            "tpm",
         ],
     )
     typer.echo(table)
