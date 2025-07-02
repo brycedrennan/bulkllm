@@ -74,6 +74,7 @@ def list_configs(
     ),
 ) -> None:
     """List LLM configurations."""
+    register_models()
     sort_key = sort_by.replace("-", "_").lower()
     key_funcs = {
         "slug": lambda c: c.slug,
@@ -85,20 +86,33 @@ def list_configs(
 
     configs = sorted(create_model_configs(), key=key_funcs[sort_key])
 
-    rows = [
-        [
-            cfg.slug,
-            cfg.company_name,
-            cfg.display_name,
-            cfg.release_date.isoformat() if cfg.release_date else "",
-            cfg.is_deprecated.isoformat() if isinstance(cfg.is_deprecated, date) else "",
-        ]
-        for cfg in configs
-    ]
+    rows = []
+    for cfg in configs:
+        info = litellm.model_cost.get(cfg.litellm_model_name, {})
+        inp = info.get("input_cost_per_token")
+        out = info.get("output_cost_per_token")
+        cost = f"{inp * 1_000_000:.2f}/{out * 1_000_000:.2f}" if inp is not None and out is not None else ""
+        rows.append(
+            [
+                cfg.slug,
+                cfg.company_name,
+                cfg.display_name,
+                cfg.release_date.isoformat() if cfg.release_date else "",
+                cfg.is_deprecated.isoformat() if isinstance(cfg.is_deprecated, date) else "",
+                cost,
+            ]
+        )
 
     table = _tabulate(
         rows,
-        headers=["slug", "company", "display_name", "release_date", "deprecation_date"],
+        headers=[
+            "slug",
+            "company",
+            "display_name",
+            "release_date",
+            "deprecation_date",
+            "cost",
+        ],
     )
     typer.echo(table)
 

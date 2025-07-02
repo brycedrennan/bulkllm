@@ -703,7 +703,27 @@ def test_list_configs(monkeypatch):
         release_date=datetime.date(2023, 2, 1),
     )
 
+    import litellm
+
     monkeypatch.setattr("bulkllm.cli.create_model_configs", lambda: [cfg_b, cfg_a])
+
+    def fake_register_models() -> None:
+        litellm.model_cost["zzz/a"] = {
+            "litellm_provider": "zzz",
+            "mode": "chat",
+            "input_cost_per_token": 0.000001,
+            "output_cost_per_token": 0.000002,
+        }
+        litellm.model_cost["acme/b"] = {
+            "litellm_provider": "acme",
+            "mode": "chat",
+            "input_cost_per_token": 0.000003,
+            "output_cost_per_token": 0.000004,
+        }
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
 
     runner = CliRunner()
 
@@ -713,6 +733,7 @@ def test_list_configs(monkeypatch):
     rows = [line.split("|") for line in lines[2:]]
     assert [cells[0].strip() for cells in rows] == ["a", "b"]
     assert rows[0][4].strip() == "2024-12-31"
+    assert rows[0][5].strip() == "1.00/2.00"
 
     result = runner.invoke(app, ["list-configs", "--sort-by", "company"])
     assert result.exit_code == 0
