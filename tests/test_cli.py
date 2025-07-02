@@ -678,3 +678,50 @@ def test_list_canonical_models_dedupes_gemini(monkeypatch):
 
     assert rows.count("gemini/a") == 1
     assert "gemini/b" not in rows
+
+
+def test_list_configs(monkeypatch):
+    cfg_a = LLMConfig(
+        slug="a",
+        display_name="A",
+        company_name="ZZZ",
+        litellm_model_name="zzz/a",
+        llm_family="zzz/a",
+        temperature=0.0,
+        max_tokens=1,
+        release_date=datetime.date(2023, 1, 1),
+        is_deprecated=datetime.date(2024, 12, 31),
+    )
+    cfg_b = LLMConfig(
+        slug="b",
+        display_name="B",
+        company_name="ACME",
+        litellm_model_name="acme/b",
+        llm_family="acme/b",
+        temperature=0.0,
+        max_tokens=1,
+        release_date=datetime.date(2023, 2, 1),
+    )
+
+    monkeypatch.setattr("bulkllm.cli.create_model_configs", lambda: [cfg_b, cfg_a])
+
+    runner = CliRunner()
+
+    result = runner.invoke(app, ["list-configs"])
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|") for line in lines[2:]]
+    assert [cells[0].strip() for cells in rows] == ["a", "b"]
+    assert rows[0][4].strip() == "2024-12-31"
+
+    result = runner.invoke(app, ["list-configs", "--sort-by", "company"])
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|")[0].strip() for line in lines[2:]]
+    assert rows == ["b", "a"]
+
+    result = runner.invoke(app, ["list-configs", "--sort-by", "release-date"])
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    rows = [line.split("|")[0].strip() for line in lines[2:]]
+    assert rows == ["a", "b"]
