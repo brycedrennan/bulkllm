@@ -322,6 +322,9 @@ class ModelRateLimit(BaseModel):
             f"Checking if can make request for {self.model_names} with estimated tokens: {desired_input_tokens}, {desired_output_tokens}"
         )
 
+        if desired_input_tokens < 0 or desired_output_tokens < 0:
+            raise ValueError("negative token counts are not allowed")
+
         if self.rpm and self.current_requests_in_window + 1 > self.rpm:
             logger.debug(f"Request count {self.current_requests_in_window} + 1 > rpm {self.rpm}, returning False")
             return False
