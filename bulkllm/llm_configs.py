@@ -587,18 +587,6 @@ openrouter_configs = [
         release_date=date(2024, 12, 1),
     ),
     LLMConfig(
-        slug="openrouter-amazon-nova-premier-v1",
-        display_name="Nova Premier V1",
-        company_name="Amazon",
-        litellm_model_name="openrouter/amazon/nova-premier-v1",
-        llm_family="amazon/nova-premier",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 4, 30),
-    ),
-    LLMConfig(
         slug="openrouter-amazon-nova-micro-v1",
         display_name="Nova Micro V1",
         company_name="Amazon",
