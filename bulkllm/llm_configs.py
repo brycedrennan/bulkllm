@@ -671,7 +671,7 @@ openrouter_configs = [
         release_date=date(2025, 3, 17),
     ),
     LLMConfig(
-        slug="mistral-mistral-small-20250620",
+        slug="mistral-small-20250620",
         display_name="Mistral Small 20250620",
         company_name="MistralAI",
         litellm_model_name="mistral/mistral-small-latest",
