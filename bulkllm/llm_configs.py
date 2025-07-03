@@ -718,6 +718,18 @@ openrouter_configs = [
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 5),
     ),
+    LLMConfig(
+        slug="openrouter-snowflake-arctic-instruct",
+        display_name="Arctic Instruct 20240423",
+        company_name="Snowflake",
+        litellm_model_name="openrouter/snowflake/arctic-instruct",
+        llm_family="snowflake/arctic-instruct",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
+        release_date=date(2024, 4, 24),
+    ),
 ]
 default_models.extend(openrouter_configs)
 
