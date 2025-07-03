@@ -13,8 +13,7 @@ default_max_tokens = None
 
 default_temperature = 1
 
-default_system_prompt = "You are a helpful AI assistant."
-default_system_prompt = ""
+DEFAULT_SYSTEM_PROMPT = ""
 default_models = []
 
 # Mapping of model families to the family that supersedes them.  Families
@@ -57,7 +56,7 @@ openai_configs = [
         temperature=1,
         max_completion_tokens=8000 - 1,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         reasoning_effort="low",
         release_date=date(2025, 4, 16),
         is_reasoning=True,
@@ -71,7 +70,7 @@ openai_configs = [
         temperature=1,
         max_completion_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         reasoning_effort="medium",
         release_date=date(2025, 4, 16),
         is_reasoning=True,
@@ -85,7 +84,7 @@ openai_configs = [
         temperature=1,
         max_completion_tokens=8000 - 2,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         reasoning_effort="high",
         release_date=date(2025, 4, 16),
         is_reasoning=True,
@@ -99,7 +98,7 @@ openai_configs = [
         temperature=1,
         max_tokens=8000 - 1,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         reasoning_effort="low",
         release_date=date(2025, 1, 31),
         is_reasoning=True,
@@ -113,7 +112,7 @@ openai_configs = [
         temperature=1,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         reasoning_effort="medium",
         release_date=date(2025, 1, 31),
         is_reasoning=True,
@@ -127,7 +126,7 @@ openai_configs = [
         temperature=1,
         max_tokens=8000 - 2,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         reasoning_effort="high",
         release_date=date(2025, 1, 31),
         is_reasoning=True,
@@ -141,7 +140,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 14),
     ),
     LLMConfig(
@@ -153,7 +152,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 14),
     ),
     LLMConfig(
@@ -165,7 +164,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 14),
     ),
     LLMConfig(
@@ -177,7 +176,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 5, 13),
     ),
     LLMConfig(
@@ -189,7 +188,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 8, 6),
     ),
     LLMConfig(
@@ -201,7 +200,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 11, 20),
     ),
     LLMConfig(
@@ -213,7 +212,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 7, 18),
     ),
     LLMConfig(
@@ -225,7 +224,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2023, 1, 25),
     ),
     LLMConfig(
@@ -237,7 +236,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2023, 11, 6),
     ),
     # LLMConfig(
@@ -249,7 +248,7 @@ openai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     LLMConfig(
@@ -261,7 +260,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 5, 13),
     ),
     LLMConfig(
@@ -273,7 +272,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 5, 16),
     ),
     # LLMConfig(
@@ -285,7 +284,7 @@ openai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2022, 3, 15),
     # ),
     # LLMConfig(
@@ -297,7 +296,7 @@ openai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2023, 3, 1),
     # ),
     # LLMConfig(
@@ -309,7 +308,7 @@ openai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2023, 6, 13),
     # ),
     LLMConfig(
@@ -321,7 +320,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2023, 6, 13),
         is_deprecated=date(2024, 9, 13),
     ),
@@ -334,7 +333,7 @@ openai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     LLMConfig(
@@ -346,7 +345,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=4096,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 1, 25),
     ),
     LLMConfig(
@@ -358,7 +357,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2023, 3, 14),
         is_deprecated=date(2024, 6, 13),
     ),
@@ -371,7 +370,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=4096,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2023, 6, 13),
     ),
     LLMConfig(
@@ -383,7 +382,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=4096,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2023, 11, 6),
     ),
     # LLMConfig(
@@ -395,7 +394,7 @@ openai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2023, 11, 6),
     # ),
     LLMConfig(
@@ -407,7 +406,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=4096,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 4, 9),
     ),
     LLMConfig(
@@ -419,7 +418,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 27),
     ),
     # LLMConfig(
@@ -431,7 +430,7 @@ openai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 3, 11),
     # ),
     # LLMConfig(
@@ -443,7 +442,7 @@ openai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 3, 11),
     # ),
     LLMConfig(
@@ -455,7 +454,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 12, 17),
     ),
     LLMConfig(
@@ -467,7 +466,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 9, 12),
     ),
     LLMConfig(
@@ -479,7 +478,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 9, 12),
     ),
     LLMConfig(
@@ -491,7 +490,7 @@ openai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 3, 19),
     ),
     LLMConfig(
@@ -503,7 +502,7 @@ openai_configs = [
         temperature=1,
         max_completion_tokens=8000 - 2,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         reasoning_effort="high",
         release_date=date(2025, 4, 16),
         is_reasoning=True,
@@ -518,7 +517,7 @@ openai_configs = [
         max_tokens=8000,
         thinking_config={},
         reasoning_effort="high",
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 10),
     ),
 ]
@@ -534,7 +533,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         is_reasoning=True,
         release_date=date(2025, 1, 20),
     ),
@@ -547,7 +546,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 3, 24),
     ),
     LLMConfig(
@@ -559,7 +558,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 12, 26),
     ),
     LLMConfig(
@@ -571,7 +570,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 12, 3),
     ),
     LLMConfig(
@@ -583,7 +582,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 12, 3),
     ),
     LLMConfig(
@@ -595,7 +594,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 12, 3),
     ),
     LLMConfig(
@@ -607,7 +606,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         is_reasoning=True,
         release_date=date(2025, 3, 6),
     ),
@@ -620,7 +619,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 1, 28),
     ),
     LLMConfig(
@@ -632,7 +631,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 28),
     ),
     LLMConfig(
@@ -644,7 +643,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 12, 6),
     ),
     LLMConfig(
@@ -656,7 +655,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 11, 18),
     ),
     LLMConfig(
@@ -668,7 +667,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 3, 17),
     ),
     LLMConfig(
@@ -680,7 +679,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 20),
     ),
     LLMConfig(
@@ -692,7 +691,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 3, 12),
     ),
     LLMConfig(
@@ -704,7 +703,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 5),
     ),
     LLMConfig(
@@ -716,7 +715,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 5),
     ),
 ]
@@ -732,7 +731,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 19),
     ),
     LLMConfig(
@@ -744,7 +743,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=8000 + 1,
         thinking_config={"type": "enabled", "budget_tokens": 4096},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 19),
         is_reasoning=True,
     ),
@@ -757,7 +756,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 10, 22),
     ),
     LLMConfig(
@@ -769,7 +768,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 6, 20),
     ),
     LLMConfig(
@@ -781,7 +780,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 10, 22),
     ),
     # LLMConfig(
@@ -793,7 +792,7 @@ anthropic_configs = [
     #     temperature=default_temperature,
     #     max_tokens=4096,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2023, 7, 11),
     # ),
     # LLMConfig(
@@ -805,7 +804,7 @@ anthropic_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2023, 11, 21),
     # ),
     LLMConfig(
@@ -817,7 +816,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=4096,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 3, 7),
     ),
     LLMConfig(
@@ -829,7 +828,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=4096,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 2, 29),
     ),
     LLMConfig(
@@ -841,7 +840,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=4096,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 2, 29),
     ),
     LLMConfig(
@@ -853,7 +852,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 5, 14),
     ),
     LLMConfig(
@@ -865,7 +864,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=8000 + 1,  # litellm caching issue
         thinking_config={"type": "enabled", "budget_tokens": 4096},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 5, 14),
     ),
     LLMConfig(
@@ -877,7 +876,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 5, 14),
     ),
     #        thinking_config={"type": "enabled", "budget_tokens": 4096},
@@ -890,7 +889,7 @@ anthropic_configs = [
         temperature=default_temperature,
         max_tokens=8000 + 1,  # litellm caching issue
         thinking_config={"type": "enabled", "budget_tokens": 4096},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 5, 14),
     ),
 ]
@@ -906,7 +905,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 9, 24),
     ),
     LLMConfig(
@@ -918,7 +917,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 9, 24),
     ),
     LLMConfig(
@@ -930,7 +929,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 25),
     ),
     # LLMConfig(
@@ -942,7 +941,7 @@ gemini_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 2, 15),
     #     is_deprecated=True,
     # ),
@@ -955,7 +954,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 5),
     ),
     LLMConfig(
@@ -967,7 +966,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 25),
     ),
     LLMConfig(
@@ -979,7 +978,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 17),
     ),
     LLMConfig(
@@ -991,7 +990,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={"type": "enabled", "budget_tokens": 4096},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 17),
     ),
     LLMConfig(
@@ -1003,7 +1002,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 17),
     ),
     LLMConfig(
@@ -1015,7 +1014,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 17),
     ),
     LLMConfig(
@@ -1027,7 +1026,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={"type": "enabled", "budget_tokens": 8192},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 17),
     ),
     LLMConfig(
@@ -1039,7 +1038,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 3, 25),
     ),
     LLMConfig(
@@ -1051,7 +1050,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 5, 6),
     ),
     LLMConfig(
@@ -1063,7 +1062,7 @@ gemini_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 5),
     ),
 ]
@@ -1079,7 +1078,7 @@ xai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 12, 12),
     ),
     # LLMConfig(
@@ -1091,7 +1090,7 @@ xai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 4, 9),
     # ),
     # LLMConfig(
@@ -1103,7 +1102,7 @@ xai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=32000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 4, 9),
     #     reasoning_effort="low",
     #     is_reasoning=True,
@@ -1117,7 +1116,7 @@ xai_configs = [
     #     temperature=default_temperature,
     #     max_tokens=32000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 4, 9),
     #     reasoning_effort="high",
     #     is_reasoning=True,
@@ -1131,7 +1130,7 @@ xai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 17),
     ),
     LLMConfig(
@@ -1143,7 +1142,7 @@ xai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 17),
     ),
     LLMConfig(
@@ -1155,7 +1154,7 @@ xai_configs = [
         temperature=default_temperature,
         max_tokens=8000,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 17),
         reasoning_effort="high",
         is_reasoning=True,
@@ -1173,7 +1172,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 5, 29),
     # ),
     # LLMConfig(
@@ -1185,7 +1184,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 1, 13),
     # ),
     # LLMConfig(
@@ -1197,7 +1196,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 5, 21),
     # ),
     # LLMConfig(
@@ -1209,7 +1208,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 6, 10),
     # ),
     # LLMConfig(
@@ -1221,7 +1220,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 6, 10),
     # ),
     # LLMConfig(
@@ -1233,7 +1232,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 10, 9),
     # ),
     # LLMConfig(
@@ -1245,7 +1244,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 10, 9),
     # ),
     # LLMConfig(
@@ -1257,7 +1256,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     # LLMConfig(
@@ -1269,7 +1268,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 7, 24),
     # ),
     # LLMConfig(
@@ -1281,7 +1280,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 11, 18),
     # ),
     # LLMConfig(
@@ -1293,7 +1292,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     # LLMConfig(
@@ -1305,7 +1304,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 5, 7),
     # ),
     # LLMConfig(
@@ -1317,7 +1316,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 2, 17),
     # ),
     # LLMConfig(
@@ -1329,7 +1328,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     # LLMConfig(
@@ -1341,7 +1340,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 1, 13),
     # ),
     # LLMConfig(
@@ -1353,7 +1352,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     # LLMConfig(
@@ -1365,7 +1364,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     # LLMConfig(
@@ -1377,7 +1376,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     # LLMConfig(
@@ -1389,7 +1388,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 7, 18),
     # ),
     # LLMConfig(
@@ -1401,7 +1400,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 4, 17),
     # ),
     # LLMConfig(
@@ -1413,7 +1412,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=None,
     # ),
     # LLMConfig(
@@ -1425,7 +1424,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2025, 1, 13),
     # ),
     # LLMConfig(
@@ -1437,7 +1436,7 @@ mistral_configs = [
     #     temperature=default_temperature,
     #     max_tokens=8000,
     #     thinking_config={},
-    #     system_prompt=default_system_prompt,
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
     #     release_date=date(2024, 11, 18),
     # ),
 ]
