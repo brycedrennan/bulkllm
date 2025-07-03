@@ -584,7 +584,7 @@ openrouter_configs = [
         max_tokens=default_max_tokens,
         thinking_config={},
         system_prompt=default_system_prompt,
-        release_date=date(2024, 12, 1),
+        release_date=date(2024, 12, 3),
     ),
     LLMConfig(
         slug="openrouter-amazon-nova-micro-v1",
@@ -596,7 +596,7 @@ openrouter_configs = [
         max_tokens=default_max_tokens,
         thinking_config={},
         system_prompt=default_system_prompt,
-        release_date=date(2024, 12, 1),
+        release_date=date(2024, 12, 3),
     ),
     LLMConfig(
         slug="openrouter-qwen-qwq-32b",
