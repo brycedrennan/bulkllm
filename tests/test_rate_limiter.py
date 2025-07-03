@@ -13,6 +13,12 @@ def test_has_capacity_exceeds_itpm():
         limit.has_capacity(15, 0)
 
 
+def test_negative_tokens_rejected():
+    limit = ModelRateLimit(model_names=["m"])
+    with pytest.raises(ValueError, match="negative"):
+        limit.has_capacity(-1, 0)
+
+
 def test_reserve_record_usage_sync():
     limit = ModelRateLimit(model_names=["m"], rpm=2, tpm=50, itpm=50, otpm=50)
     with limit.reserve_capacity_sync(10, 5) as ctx:
