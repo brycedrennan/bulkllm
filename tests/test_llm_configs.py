@@ -76,3 +76,47 @@ def test_model_resolver_current(stub_configs):
     llm_configs, _, _, current_cfgs = stub_configs
     result = llm_configs.model_resolver(["current"])
     assert result == current_cfgs
+
+
+def test_model_resolver_company_filter(stub_configs):
+    llm_configs, _, all_cfgs, _ = stub_configs
+
+    # Test company filtering (case insensitive)
+    result = llm_configs.model_resolver(["company:acme"])
+    assert result == all_cfgs  # Both cfg1 and cfg2 are from ACME
+
+    result_upper = llm_configs.model_resolver(["company:ACME"])
+    assert result_upper == all_cfgs  # Case insensitive
+
+
+def test_model_resolver_company_filter_unknown(stub_configs):
+    llm_configs, _, _, _ = stub_configs
+
+    # Test unknown company
+    with pytest.raises(ValueError, match="No models found for company: unknown"):
+        llm_configs.model_resolver(["company:unknown"])
+
+
+def test_model_resolver_individual_slugs(stub_configs):
+    llm_configs, _, all_cfgs, _ = stub_configs
+
+    # Test individual config slugs
+    result = llm_configs.model_resolver(["cfg1"])
+    assert len(result) == 1
+    assert result[0].slug == "cfg1"
+
+    result = llm_configs.model_resolver(["cfg2"])
+    assert len(result) == 1
+    assert result[0].slug == "cfg2"
+
+    # Test multiple slugs
+    result = llm_configs.model_resolver(["cfg1", "cfg2"])
+    assert len(result) == 2
+    assert {cfg.slug for cfg in result} == {"cfg1", "cfg2"}
+
+
+def test_model_resolver_unknown_slug(stub_configs):
+    llm_configs, _, _, _ = stub_configs
+
+    with pytest.raises(ValueError, match="Unknown model config: unknown_slug"):
+        llm_configs.model_resolver(["unknown_slug"])

@@ -108,6 +108,7 @@ def list_configs(
         rows.append(
             [
                 cfg.slug,
+                cfg.litellm_model_name,
                 cfg.company_name,
                 cfg.display_name,
                 cfg.release_date.isoformat() if cfg.release_date else "",
@@ -122,6 +123,7 @@ def list_configs(
         rows,
         headers=[
             "slug",
+            "litellm_model_name",
             "company",
             "display_name",
             "release_date",

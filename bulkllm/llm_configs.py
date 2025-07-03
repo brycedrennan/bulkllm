@@ -49,7 +49,7 @@ FAMILY_SUCCESSORS: dict[str, str] = {
 
 openai_configs = [
     LLMConfig(
-        slug="openai-o4-mini-2025-04-16-low",
+        slug="openai-o4-mini-low-20250416",
         display_name="o4-mini (Low) 20250416",
         company_name="OpenAI",
         litellm_model_name="openai/o4-mini-2025-04-16",
@@ -63,7 +63,7 @@ openai_configs = [
         is_reasoning=True,
     ),
     LLMConfig(
-        slug="openai-o4-mini-2025-04-16-medium",
+        slug="openai-o4-mini-medium-20250416",
         display_name="o4-mini (Medium) 20250416",
         company_name="OpenAI",
         litellm_model_name="openai/o4-mini-2025-04-16",
@@ -77,7 +77,7 @@ openai_configs = [
         is_reasoning=True,
     ),
     LLMConfig(
-        slug="openai-o4-mini-2025-04-16-high",
+        slug="openai-o4-mini-20250416-high",
         display_name="o4-mini (High) 20250416",
         company_name="OpenAI",
         litellm_model_name="openai/o4-mini-2025-04-16",
@@ -91,7 +91,7 @@ openai_configs = [
         is_reasoning=True,
     ),
     LLMConfig(
-        slug="openai-o3-mini-2025-01-31-low",
+        slug="openai-o3-mini-low-20250131",
         display_name="o3-mini (Low) 20250131",
         company_name="OpenAI",
         litellm_model_name="openai/o3-mini-2025-01-31",
@@ -105,7 +105,7 @@ openai_configs = [
         is_reasoning=True,
     ),
     LLMConfig(
-        slug="openai-o3-mini-2025-01-31-medium",
+        slug="openai-o3-mini-medium-20250131",
         display_name="o3-mini (Medium) 20250131",
         company_name="OpenAI",
         litellm_model_name="openai/o3-mini-2025-01-31",
@@ -119,7 +119,7 @@ openai_configs = [
         is_reasoning=True,
     ),
     LLMConfig(
-        slug="openai-o3-mini-2025-01-31-high",
+        slug="openai-o3-mini-high-20250131",
         display_name="o3-mini (High) 20250131",
         company_name="OpenAI",
         litellm_model_name="openai/o3-mini-2025-01-31",
@@ -133,7 +133,7 @@ openai_configs = [
         is_reasoning=True,
     ),
     LLMConfig(
-        slug="openai-gpt-4.1-2025-04-14",
+        slug="openai-gpt-4.1-20250414",
         display_name="GPT-4.1 20250414",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4.1-2025-04-14",
@@ -145,7 +145,7 @@ openai_configs = [
         release_date=date(2025, 4, 14),
     ),
     LLMConfig(
-        slug="openai-gpt-4.1-mini-2025-04-14",
+        slug="openai-gpt-4.1-mini-20250414",
         display_name="GPT-4.1 Mini 20250414",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4.1-mini-2025-04-14",
@@ -157,7 +157,7 @@ openai_configs = [
         release_date=date(2025, 4, 14),
     ),
     LLMConfig(
-        slug="openai-gpt-4.1-nano-2025-04-14",
+        slug="openai-gpt-4.1-nano-20250414",
         display_name="GPT-4.1 Nano 20250414",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4.1-nano-2025-04-14",
@@ -169,7 +169,7 @@ openai_configs = [
         release_date=date(2025, 4, 14),
     ),
     LLMConfig(
-        slug="openai-gpt-4o-2024-05-13",
+        slug="openai-gpt-4o-20240513",
         display_name="GPT-4o 20240513",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4o-2024-05-13",
@@ -181,7 +181,7 @@ openai_configs = [
         release_date=date(2024, 5, 13),
     ),
     LLMConfig(
-        slug="openai-gpt-4o-2024-08-06",
+        slug="openai-gpt-4o-20240806",
         display_name="GPT-4o 20240806",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4o-2024-08-06",
@@ -193,7 +193,7 @@ openai_configs = [
         release_date=date(2024, 8, 6),
     ),
     LLMConfig(
-        slug="openai-gpt-4o-2024-11-20",
+        slug="openai-gpt-4o-20241120",
         display_name="GPT-4o 20241120",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4o-2024-11-20",
@@ -205,7 +205,7 @@ openai_configs = [
         release_date=date(2024, 11, 20),
     ),
     LLMConfig(
-        slug="openai-gpt-4o-mini-2024-07-18",
+        slug="openai-gpt-4o-mini-20240718",
         display_name="GPT-4o mini 20240718",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4o-mini-2024-07-18",
@@ -217,7 +217,7 @@ openai_configs = [
         release_date=date(2024, 7, 18),
     ),
     LLMConfig(
-        slug="openai-gpt-3.5-turbo-0125",
+        slug="openai-gpt-3.5-turbo-20230125",
         display_name="GPT-3.5 Turbo 20230125",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-3.5-turbo-0125",
@@ -229,7 +229,7 @@ openai_configs = [
         release_date=date(2023, 1, 25),
     ),
     LLMConfig(
-        slug="openai-gpt-3.5-turbo-1106",
+        slug="openai-gpt-3.5-turbo-20231106",
         display_name="GPT-3.5 Turbo 20231106",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-3.5-turbo-1106",
@@ -313,7 +313,7 @@ openai_configs = [
     #     release_date=date(2023, 6, 13),
     # ),
     LLMConfig(
-        slug="openai-gpt-3.5-turbo-16k-0613",
+        slug="openai-gpt-3.5-turbo-16k-20230613",
         display_name="GPT-3.5 Turbo 16K 0613",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-3.5-turbo-16k-0613",
@@ -338,7 +338,7 @@ openai_configs = [
     #     release_date=None,
     # ),
     LLMConfig(
-        slug="openai-gpt-4-0125-preview",
+        slug="openai-gpt-4-20240125",
         display_name="GPT-4 20240125",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0125-preview",
@@ -350,7 +350,7 @@ openai_configs = [
         release_date=date(2024, 1, 25),
     ),
     LLMConfig(
-        slug="openai-gpt-4-0314",
+        slug="openai-gpt-4-20230314",
         display_name="GPT-4 20230314",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0314",
@@ -363,7 +363,7 @@ openai_configs = [
         is_deprecated=date(2024, 6, 13),
     ),
     LLMConfig(
-        slug="openai-gpt-4-0613",
+        slug="openai-gpt-4-20230613",
         display_name="GPT-4 20230613",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4-0613",
@@ -375,7 +375,7 @@ openai_configs = [
         release_date=date(2023, 6, 13),
     ),
     LLMConfig(
-        slug="openai-gpt-4-1106-preview",
+        slug="openai-gpt-4-20231106",
         display_name="GPT-4 20231106",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4-1106-preview",
@@ -399,8 +399,8 @@ openai_configs = [
     #     release_date=date(2023, 11, 6),
     # ),
     LLMConfig(
-        slug="openai-gpt-4-turbo-2024-04-09",
-        display_name="GPT-4 Turbo",
+        slug="openai-gpt-4-turbo-20240409",
+        display_name="GPT-4 Turbo 20240409",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4-turbo-2024-04-09",
         llm_family="openai/gpt-4-turbo",
@@ -411,7 +411,7 @@ openai_configs = [
         release_date=date(2024, 4, 9),
     ),
     LLMConfig(
-        slug="openai-gpt-4.5-preview-2025-02-27",
+        slug="openai-gpt-4.5-20250227",
         display_name="GPT-4.5 20250227",
         company_name="OpenAI",
         litellm_model_name="openai/gpt-4.5-preview-2025-02-27",
@@ -447,7 +447,7 @@ openai_configs = [
     #     release_date=date(2025, 3, 11),
     # ),
     LLMConfig(
-        slug="openai-o1-2024-12-17",
+        slug="openai-o1-20241217",
         display_name="o1 20241217",
         company_name="OpenAI",
         litellm_model_name="openai/o1-2024-12-17",
@@ -459,7 +459,7 @@ openai_configs = [
         release_date=date(2024, 12, 17),
     ),
     LLMConfig(
-        slug="openai-o1-mini-2024-09-12",
+        slug="openai-o1-mini-20240912",
         display_name="o1-mini 20240912",
         company_name="OpenAI",
         litellm_model_name="openai/o1-mini-2024-09-12",
@@ -471,7 +471,7 @@ openai_configs = [
         release_date=date(2024, 9, 12),
     ),
     LLMConfig(
-        slug="openai-o1-preview-20240912",
+        slug="openai-o1-20240912",
         display_name="o1 20240912",
         company_name="OpenAI",
         litellm_model_name="openai/o1-preview-2024-09-12",
@@ -539,7 +539,7 @@ openrouter_configs = [
         release_date=date(2025, 1, 20),
     ),
     LLMConfig(
-        slug="openrouter-deepseek-deepseek-chat-v3-0324",
+        slug="openrouter-deepseek-deepseek-chat-v3-20250324",
         display_name="DeepSeek V3 20250324",
         company_name="DeepSeek",
         litellm_model_name="openrouter/deepseek/deepseek-chat-v3-0324",
@@ -898,28 +898,16 @@ gemini_configs = [
         release_date=date(2024, 9, 24),
     ),
     LLMConfig(
-        slug="gemini-2.0-flash-lite",
-        display_name="Gemini 2.0 Flash Lite",
-        company_name="Google",
-        litellm_model_name="gemini/gemini-2.0-flash-lite",
-        llm_family="gemini/gemini-2.0-flash-lite",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={},
-        system_prompt=default_system_prompt,
-        release_date=date(2025, 2, 5),
-    ),
-    LLMConfig(
         slug="gemini-2.0-flash",
         display_name="Gemini 2.0 Flash",
         company_name="Google",
-        litellm_model_name="gemini/gemini-2.0-flash",
+        litellm_model_name="gemini/gemini-2.0-flash-001",
         llm_family="gemini/gemini-2.0-flash",
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
         system_prompt=default_system_prompt,
-        release_date=date(2025, 2, 5),
+        release_date=date(2025, 2, 25),
     ),
     # LLMConfig(
     #     slug="gemini-1.0-pro-vision-latest",
@@ -935,13 +923,25 @@ gemini_configs = [
     #     is_deprecated=True,
     # ),
     LLMConfig(
-        slug="gemini-2.0-flash-lite-20250225",
-        display_name="Gemini 2.0 Flash Lite 20250225",
+        slug="gemini-2.0-flash-lite-20250205",
+        display_name="Gemini 2.0 Flash Lite 20250205",
         company_name="Google",
-        litellm_model_name="gemini/gemini-2.0-flash-lite-preview",
+        litellm_model_name="gemini/gemini-2.0-flash-lite-preview-02-05",
         llm_family="gemini/gemini-2.0-flash-lite",
         temperature=default_temperature,
         max_tokens=8000,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        release_date=date(2025, 2, 5),
+    ),
+    LLMConfig(
+        slug="gemini-2.0-flash-lite-20250225",
+        display_name="Gemini 2.0 Flash Lite 20250225",
+        company_name="Google",
+        litellm_model_name="gemini/gemini-2.0-flash-lite-001",
+        llm_family="gemini/gemini-2.0-flash-lite",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
         thinking_config={},
         system_prompt=default_system_prompt,
         release_date=date(2025, 2, 25),
@@ -1047,7 +1047,7 @@ default_models.extend(gemini_configs)
 
 xai_configs = [
     LLMConfig(
-        slug="xai-grok-2-1212",
+        slug="xai-grok-2-20241212",
         display_name="Grok 2 20241212",
         company_name="xAI",
         litellm_model_name="xai/grok-2-1212",
@@ -1594,6 +1594,14 @@ def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
             if callable(val):
                 val = val()
             found_configs.extend(val)
+        elif slug.startswith("company:"):
+            # Handle company-based filtering
+            company_name = slug[8:]  # Remove "company:" prefix
+            company_configs = [config for config in configs if config.company_name.lower() == company_name.lower()]
+            if not company_configs:
+                msg = f"No models found for company: {company_name}"
+                raise ValueError(msg)
+            found_configs.extend(company_configs)
         else:
             msg = f"Unknown model config: {slug}"
             raise ValueError(msg)
