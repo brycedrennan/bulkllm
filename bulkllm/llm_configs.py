@@ -5,6 +5,7 @@ from functools import cache
 
 import litellm
 
+from bulkllm.rate_limiter import RateLimiter
 from bulkllm.schema import LLMConfig
 
 logger = logging.getLogger(__name__)
@@ -544,7 +545,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
-        system_prompt=default_system_prompt,
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
         is_reasoning=True,
         release_date=date(2025, 5, 28),
     ),
@@ -1615,12 +1616,19 @@ def current_model_configs() -> list[LLMConfig]:
     return current_configs
 
 
+def has_rate_limit(cfg: LLMConfig) -> bool:
+    """Return True if the model has a configured rate limit."""
+    limiter = RateLimiter()
+    return limiter.get_rate_limit_for_model(cfg.litellm_model_name) is not limiter.default_rate_limit
+
+
 def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
     """Expand slugs or groups into concrete model configurations."""
     if not model_slugs:
         return cheap_model_configs()
 
     configs = create_model_configs()
+
     model_lookup = {config.slug: [config] for config in configs}
     model_group_lookup = {
         "cheap": cheap_model_configs,
@@ -1628,6 +1636,7 @@ def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
         "all": configs,
         "reasoning": [config for config in configs if config.is_reasoning],
         "current": current_model_configs,
+        "missing-rate-limits": [config for config in configs if not has_rate_limit(config)],
     }
     found_configs = []
     for slug in model_slugs:
