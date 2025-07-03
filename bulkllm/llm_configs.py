@@ -34,7 +34,6 @@ FAMILY_SUCCESSORS: dict[str, str] = {
     "meta-llama/llama-3.3-70b-instruct": "meta-llama/llama-4",
     "xai/grok": "xai/grok-2",
     "xai/grok-2": "xai/grok-3",
-    "xai/grok-3": "xai/grok-3-mini",
     "openai/gpt-4": "openai/gpt-4o",
     "openai/gpt-4-turbo": "openai/gpt-4o",
     "openai/gpt-4o": "openai/gpt-4.1",
@@ -43,7 +42,6 @@ FAMILY_SUCCESSORS: dict[str, str] = {
     "openai/o1-mini": "openai/o3-mini",
     "openai/o1-pro": "openai/o3-pro",
     "openai/o3-mini": "openai/o4-mini",
-    "deepseek/deepseek-chat": "deepseek/deepseek-r1",
 }
 
 
@@ -526,7 +524,7 @@ default_models.extend(openai_configs)
 
 openrouter_configs = [
     LLMConfig(
-        slug="openrouter-deepseek-deepseek-r1",
+        slug="openrouter-deepseek-r1",
         display_name="DeepSeek R1 20250120",
         company_name="DeepSeek",
         litellm_model_name="openrouter/deepseek/deepseek-r1",
@@ -539,7 +537,20 @@ openrouter_configs = [
         release_date=date(2025, 1, 20),
     ),
     LLMConfig(
-        slug="openrouter-deepseek-deepseek-chat-v3-20250324",
+        slug="openrouter-deepseek-r1-20250528",
+        display_name="DeepSeek R1 20250528",
+        company_name="DeepSeek",
+        litellm_model_name="openrouter/deepseek/deepseek-r1-0528",
+        llm_family="deepseek/deepseek-r1",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=default_system_prompt,
+        is_reasoning=True,
+        release_date=date(2025, 5, 28),
+    ),
+    LLMConfig(
+        slug="openrouter-deepseek-chat-v3-20250324",
         display_name="DeepSeek V3 20250324",
         company_name="DeepSeek",
         litellm_model_name="openrouter/deepseek/deepseek-chat-v3-0324",
@@ -551,7 +562,7 @@ openrouter_configs = [
         release_date=date(2025, 3, 24),
     ),
     LLMConfig(
-        slug="openrouter-deepseek-deepseek-chat",
+        slug="openrouter-deepseek-chat",
         display_name="DeepSeek V3 20241226",
         company_name="DeepSeek",
         litellm_model_name="openrouter/deepseek/deepseek-chat",
@@ -588,7 +599,7 @@ openrouter_configs = [
         release_date=date(2025, 3, 6),
     ),
     LLMConfig(
-        slug="openrouter-qwen-qwen-max-20250128",
+        slug="openrouter-qwen-max-20250128",
         display_name="Qwen 2.5 Max 20250128",
         company_name="Alibaba",
         litellm_model_name="openrouter/qwen/qwen-max",
@@ -600,7 +611,7 @@ openrouter_configs = [
         release_date=date(2025, 1, 28),
     ),
     LLMConfig(
-        slug="openrouter-qwen-qwen3-235b-a22b-20250428",
+        slug="openrouter-qwen3-235b-a22b-20250428",
         display_name="Qwen 3 235B A22B-20250428",
         company_name="Alibaba",
         litellm_model_name="openrouter/qwen/qwen3-235b-a22b",
@@ -612,7 +623,7 @@ openrouter_configs = [
         release_date=date(2025, 4, 28),
     ),
     LLMConfig(
-        slug="openrouter-meta-llama-llama-3.3-70b-instruct",
+        slug="openrouter-llama-3.3-70b-instruct",
         display_name="Llama 3.3 70b Instruct",
         company_name="Meta",
         litellm_model_name="openrouter/meta-llama/llama-3.3-70b-instruct",
@@ -672,7 +683,7 @@ openrouter_configs = [
         release_date=date(2025, 3, 12),
     ),
     LLMConfig(
-        slug="openrouter-meta-llama-llama-4-maverick",
+        slug="openrouter-meta-llama-4-maverick",
         display_name="Llama 4 Maverick",
         company_name="Meta",
         litellm_model_name="openrouter/meta-llama/llama-4-maverick",
@@ -684,7 +695,7 @@ openrouter_configs = [
         release_date=date(2025, 4, 5),
     ),
     LLMConfig(
-        slug="openrouter-meta-llama-llama-4-scout",
+        slug="openrouter-meta-llama-4-scout",
         display_name="Llama 4 Scout",
         company_name="Meta",
         litellm_model_name="openrouter/meta-llama/llama-4-scout",
@@ -1555,20 +1566,30 @@ def cheap_model_configs():
 
 @cache
 def current_model_configs() -> list[LLMConfig]:
-    """Return the latest config in each family that has no successor."""
+    """Return all configs in each family that share the latest release date and have no successor."""
     configs = create_model_configs()
     succeeded = set(FAMILY_SUCCESSORS.keys())
 
-    latest: dict[str, LLMConfig] = {}
+    # First, find the latest release date for each family
+    latest_dates: dict[str, date | None] = {}
     for cfg in configs:
         if cfg.llm_family in succeeded:
             continue
-        existing = latest.get(cfg.llm_family)
-        if existing is None or (
-            cfg.release_date and existing.release_date and cfg.release_date > existing.release_date
-        ):
-            latest[cfg.llm_family] = cfg
-    return list(latest.values())
+        existing_date = latest_dates.get(cfg.llm_family)
+        if existing_date is None or (cfg.release_date and existing_date and cfg.release_date > existing_date):
+            latest_dates[cfg.llm_family] = cfg.release_date
+        elif existing_date is None and cfg.release_date:
+            latest_dates[cfg.llm_family] = cfg.release_date
+
+    # Then, collect all models that have the latest release date for their family
+    current_configs = []
+    for cfg in configs:
+        if cfg.llm_family in succeeded:
+            continue
+        if cfg.release_date == latest_dates.get(cfg.llm_family):
+            current_configs.append(cfg)
+
+    return current_configs
 
 
 def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
