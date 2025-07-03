@@ -720,9 +720,9 @@ openrouter_configs = [
     ),
     LLMConfig(
         slug="openrouter-snowflake-arctic-instruct",
-        display_name="Arctic Instruct 20240423",
+        display_name="Arctic Instruct 20240424",
         company_name="Snowflake",
-        litellm_model_name="openrouter/snowflake/arctic-instruct",
+        litellm_model_name="openrouter/snowflake/snowflake-arctic",
         llm_family="snowflake/arctic-instruct",
         temperature=default_temperature,
         max_tokens=default_max_tokens,
