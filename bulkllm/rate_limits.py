@@ -251,11 +251,20 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         model_names=[
             "gemini/gemini-2.0-flash-lite",
             "gemini/gemini-2.0-flash-lite-preview",
+            "gemini/gemini-2.0-flash-lite-preview-02-05",
+            "gemini/gemini-2.0-flash-lite-001",
         ],
         rpm=4000,
         tpm=4_000_000,
     ),
-    ModelRateLimit(model_names=["gemini/gemini-2.0-flash"], rpm=2000, tpm=4_000_000),
+    ModelRateLimit(
+        model_names=[
+            "gemini/gemini-2.0-flash",
+            "gemini/gemini-2.0-flash-001",
+        ],
+        rpm=2000,
+        tpm=4_000_000,
+    ),
     ModelRateLimit(
         model_names=[
             "gemini/gemini-2.5-flash-lite-preview-06-17",
@@ -295,6 +304,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
             "xai/grok-3-mini-beta",
             "xai/grok-3-mini",
         ],
-        rpm=8 * 60,
+        # despite console saying 8 RPS, error message says its 3 RPS
+        rpm=3 * 60,
     ),
 ]
