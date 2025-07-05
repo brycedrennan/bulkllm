@@ -169,6 +169,9 @@ class UsageAggregate(BaseModel):
                 self.invalid_count.add(1)
 
             for field_name, value in r.__dict__.items():
+                # round the time_ms
+                if field_name == "time_ms" and field_name not in self.stats:
+                    self.stats[field_name] = UsageStat(round_to=1)
                 if isinstance(value, int | float | bool) and field_name != "model":
                     self.stats[field_name].add(value)
 

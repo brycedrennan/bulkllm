@@ -19,6 +19,8 @@ class UsageStat(BaseModel):
           `max_bins`.
     """
 
+    round_to: int | None = None
+
     # running tallies -------------------------------------------------
     count: int = 0
     total: int | float = 0
@@ -30,7 +32,7 @@ class UsageStat(BaseModel):
     reservoir_count: int = Field(0, exclude=True)
     reservoir_k: int = Field(default=RESERVOIR_K, exclude=False)
 
-    # new - data-kind lock-in ----------------------------------------
+    # data-kind lock-in ----------------------------------------
     is_discrete: bool | None = Field(default=None, exclude=False)
 
     model_config = ConfigDict(arbitrary_types_allowed=True, extra="ignore")
@@ -51,10 +53,14 @@ class UsageStat(BaseModel):
 
         # ----- lock in data kind on first insert ---------------------
         if self.is_discrete is None and value > 0:
-            self.is_discrete = isinstance(value, int)
+            self.is_discrete = isinstance(value, int) or self.round_to == 0
         elif self.is_discrete and not isinstance(value, int):
             msg = "UsageStat initialised for integers, but received a non-integer value"
             raise TypeError(msg)
+
+        # ----- round if rounding is configured ------------------
+        if self.round_to is not None and isinstance(value, float):
+            value = round(value, self.round_to)
 
         # update aggregates ------------------------------------------
         self.count += 1
@@ -100,7 +106,7 @@ class UsageStat(BaseModel):
         return sorted(sample)
 
     def _percentile(self, pct: float, data: list[int | float]) -> float:
-        """Return the percentile of *data* using linear interpolation."""
+        """Return the percentile of *data*"""
         if not data:
             return 0.0
         idx = round(pct * (len(data) - 1))
