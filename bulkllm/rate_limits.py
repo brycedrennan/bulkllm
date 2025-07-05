@@ -290,6 +290,12 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         rpm=150,
         tpm=2_000_000,
     ),
+    # Mistral Models
+    ModelRateLimit(
+        model_names=["mistral/mistral-small-latest"],
+        rpm=600,
+        tpm=6_000_000,
+    ),
     # XAI Models
     ModelRateLimit(model_names=["xai/grok-2-1212"], rpm=8 * 60, tpm=90000),
     ModelRateLimit(
