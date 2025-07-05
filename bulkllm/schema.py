@@ -41,6 +41,7 @@ class LLMConfig(CiBaseModel):
     release_date: date | None = None
     is_reasoning: bool = False
     is_deprecated: bool | date = False
+    timeout: int = 120
 
     @computed_field
     @property
@@ -81,7 +82,7 @@ class LLMConfig(CiBaseModel):
             "model": self.litellm_model_name,
             "temperature": self.temperature,
             "stream": False,
-            "timeout": 90,
+            "timeout": self.timeout,
         }
 
         if self.reasoning_effort:
