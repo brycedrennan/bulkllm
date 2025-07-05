@@ -38,6 +38,7 @@ FAMILY_SUCCESSORS: dict[str, str] = {
     "openai/gpt-4-turbo": "openai/gpt-4o",
     "openai/gpt-4o": "openai/gpt-4.1",
     "openai/gpt-3.5-turbo": "openai/gpt-4o",
+    "openai/gpt-4.5": "openai/gpt-4.1",
     "openai/o1": "openai/o3",
     "openai/o1-mini": "openai/o3-mini",
     "openai/o1-pro": "openai/o3-pro",
@@ -419,6 +420,7 @@ openai_configs = [
         thinking_config={},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 2, 27),
+        is_deprecated=date(2025, 7, 16),
     ),
     # LLMConfig(
     #     slug="openai-gpt-4o-mini-search-preview-2025-03-11",
