@@ -604,3 +604,54 @@ def test_list_canonical_models_dedupes_gemini(monkeypatch):
 
     assert rows.count("gemini/a") == 1
     assert "gemini/b" not in rows
+
+
+def test_list_configs_estimated_cost(monkeypatch):
+    from types import SimpleNamespace
+
+    import litellm
+
+    monkeypatch.setattr(litellm, "model_cost", {})
+
+    def fake_register_models() -> None:
+        litellm.model_cost["m"] = {"litellm_provider": "openai", "mode": "chat"}
+
+    monkeypatch.setattr("bulkllm.cli.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.main.register_models", fake_register_models)
+    monkeypatch.setattr("bulkllm.model_registration.canonical.register_models", fake_register_models)
+
+    cfg = LLMConfig(
+        slug="cfg",
+        display_name="Cfg",
+        company_name="ACME",
+        litellm_model_name="m",
+        llm_family="f",
+        temperature=1,
+        max_tokens=1,
+    )
+
+    monkeypatch.setattr("bulkllm.cli.create_model_configs", lambda: [cfg])
+    monkeypatch.setattr("bulkllm.cli.model_resolver", lambda m: [cfg])
+
+    monkeypatch.setattr(
+        litellm,
+        "get_model_info",
+        lambda name: {
+            "input_cost_per_token": 0.000001,
+            "output_cost_per_token": 0.000002,
+        },
+    )
+
+    monkeypatch.setattr(
+        "bulkllm.cli.RateLimiter",
+        lambda: SimpleNamespace(get_rate_limit_for_model=lambda n: SimpleNamespace(rpm=1, tpm=2)),
+    )
+
+    runner = CliRunner()
+    result = runner.invoke(app, ["list-configs", "--input-tokens", "100", "--output-tokens", "50"])
+
+    assert result.exit_code == 0
+    lines = [line.strip() for line in result.output.splitlines() if line.strip()]
+    assert "est_cost" in lines[0]
+    row = [c.strip() for c in lines[2].split("|")]
+    assert row[-1] == "0.00020"

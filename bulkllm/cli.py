@@ -78,6 +78,18 @@ def list_configs(
         "-m",
         help="Model slugs or groups (can be repeated)",
     ),
+    input_tokens: int | None = typer.Option(
+        None,
+        "--input-tokens",
+        "-i",
+        help="Input token count for cost estimation",
+    ),
+    output_tokens: int | None = typer.Option(
+        None,
+        "--output-tokens",
+        "-o",
+        help="Output token count for cost estimation",
+    ),
 ) -> None:
     """List LLM configurations."""
     register_models()
@@ -99,40 +111,50 @@ def list_configs(
 
     config_infos = sorted(config_infos, key=lambda ci: key_funcs[sort_key](*ci))
 
+    show_est_cost = input_tokens is not None or output_tokens is not None
     limiter = RateLimiter()
     rows = []
     for cfg, info in config_infos:
         inp = info.get("input_cost_per_token")
         out = info.get("output_cost_per_token")
         rl = limiter.get_rate_limit_for_model(cfg.litellm_model_name)
-        rows.append(
-            [
-                cfg.slug,
-                cfg.litellm_model_name,
-                cfg.company_name,
-                cfg.display_name,
-                cfg.release_date.isoformat() if cfg.release_date else "",
-                f"{inp * 1_000_000:.2f}" if inp is not None else "",
-                f"{out * 1_000_000:.2f}" if out is not None else "",
-                str(rl.rpm),
-                str(rl.tpm),
-            ]
-        )
+        est_cost = ""
+        if show_est_cost:
+            cost = 0.0
+            if input_tokens is not None and inp is not None:
+                cost += input_tokens * inp
+            if output_tokens is not None and out is not None:
+                cost += output_tokens * out
+            est_cost = f"{cost:.5f}"
+        row = [
+            cfg.slug,
+            cfg.litellm_model_name,
+            cfg.company_name,
+            cfg.display_name,
+            cfg.release_date.isoformat() if cfg.release_date else "",
+            f"{inp * 1_000_000:.2f}" if inp is not None else "",
+            f"{out * 1_000_000:.2f}" if out is not None else "",
+            str(rl.rpm),
+            str(rl.tpm),
+        ]
+        if show_est_cost:
+            row.append(est_cost)
+        rows.append(row)
 
-    table = _tabulate(
-        rows,
-        headers=[
-            "slug",
-            "litellm_model_name",
-            "company",
-            "display_name",
-            "release_date",
-            "input_cost",
-            "output_cost",
-            "rpm",
-            "tpm",
-        ],
-    )
+    headers = [
+        "slug",
+        "litellm_model_name",
+        "company",
+        "display_name",
+        "release_date",
+        "input_cost",
+        "output_cost",
+        "rpm",
+        "tpm",
+    ]
+    if show_est_cost:
+        headers.append("est_cost")
+    table = _tabulate(rows, headers=headers)
     typer.echo(table)
 
 
