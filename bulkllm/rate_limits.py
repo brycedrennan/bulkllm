@@ -188,6 +188,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         ],
         rpm=10000,
         tpm=30000000,
+        pending_timeout_seconds=600,
     ),
     # OpenAI o3-pro family
     ModelRateLimit(

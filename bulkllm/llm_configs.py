@@ -518,6 +518,7 @@ openai_configs = [
         reasoning_effort="high",
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 10),
+        timeout=600,
     ),
 ]
 default_models.extend(openai_configs)
@@ -682,18 +683,18 @@ openrouter_configs = [
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 3, 17),
     ),
-    LLMConfig(
-        slug="mistral-small-20250620",
-        display_name="Mistral Small 20250620",
-        company_name="MistralAI",
-        litellm_model_name="mistral/mistral-small-latest",
-        llm_family="mistral/mistral-small",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={},
-        system_prompt=DEFAULT_SYSTEM_PROMPT,
-        release_date=date(2025, 6, 20),
-    ),
+    # LLMConfig(
+    #     slug="mistral-small-20250620",
+    #     display_name="Mistral Small 20250620",
+    #     company_name="MistralAI",
+    #     litellm_model_name="mistral/mistral-small-latest",
+    #     llm_family="mistral/mistral-small",
+    #     temperature=default_temperature,
+    #     max_tokens=default_max_tokens,
+    #     thinking_config={},
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
+    #     release_date=date(2025, 6, 20),
+    # ),
     LLMConfig(
         slug="openrouter-google-gemma-3-27b-it",
         display_name="Gemma 3 27b IT",
@@ -730,18 +731,18 @@ openrouter_configs = [
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 5),
     ),
-    LLMConfig(
-        slug="openrouter-snowflake-arctic-instruct",
-        display_name="Arctic Instruct 20240424",
-        company_name="Snowflake",
-        litellm_model_name="openrouter/snowflake/snowflake-arctic",
-        llm_family="snowflake/arctic-instruct",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={},
-        system_prompt=DEFAULT_SYSTEM_PROMPT,
-        release_date=date(2024, 4, 24),
-    ),
+    # LLMConfig(
+    #     slug="openrouter-snowflake-arctic-instruct",
+    #     display_name="Arctic Instruct 20240424",
+    #     company_name="Snowflake",
+    #     litellm_model_name="openrouter/snowflake/snowflake-arctic",
+    #     llm_family="snowflake/arctic-instruct",
+    #     temperature=default_temperature,
+    #     max_tokens=default_max_tokens,
+    #     thinking_config={},
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
+    #     release_date=date(2024, 4, 24),
+    # ),
 ]
 default_models.extend(openrouter_configs)
 
@@ -1649,6 +1650,9 @@ def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
         "reasoning": [config for config in configs if config.is_reasoning],
         "current": current_model_configs,
         "missing-rate-limits": [config for config in configs if not has_rate_limit(config)],
+        "cheap-current": lambda: [
+            cfg for cfg in cheap_model_configs() if cfg.slug in {c.slug for c in current_model_configs()}
+        ],
     }
     found_configs = []
     for slug in model_slugs:

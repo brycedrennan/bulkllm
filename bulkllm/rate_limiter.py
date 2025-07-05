@@ -375,7 +375,7 @@ class ModelRateLimit(BaseModel):
                 self._cleanup_old_requests()
                 if self.has_capacity(input_tokens, output_tokens):
                     return
-            time.sleep(0.1)
+            time.sleep(0.05)
 
     async def await_capacity(self, input_tokens: int, output_tokens: int) -> None:
         """Async version of :meth:`await_capacity_sync`."""
@@ -384,7 +384,7 @@ class ModelRateLimit(BaseModel):
                 self._cleanup_old_requests()
                 if self.has_capacity(input_tokens, output_tokens):
                     return
-            await anyio.sleep(0.1)
+            await anyio.sleep(0.05)
 
     # ---------------------------- acquire logic ---------------------------- #
     # Internal helper (no locking)
