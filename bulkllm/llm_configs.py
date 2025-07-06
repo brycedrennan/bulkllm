@@ -1040,9 +1040,10 @@ gemini_configs = [
         llm_family="gemini/gemini-2.5-flash",
         temperature=default_temperature,
         max_tokens=default_max_tokens,
-        thinking_config={},
+        thinking_config={"type": "disabled", "budget_tokens": 0},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 17),
+        is_reasoning=False
     ),
     LLMConfig(
         slug="gemini-2.5-flash-thinking-20250617",
@@ -1055,6 +1056,7 @@ gemini_configs = [
         thinking_config={"type": "enabled", "budget_tokens": 8192},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 17),
+        is_reasoning=True,
     ),
     LLMConfig(
         slug="gemini-2.5-pro-20250325",
@@ -1067,6 +1069,7 @@ gemini_configs = [
         thinking_config={},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 3, 25),
+        is_reasoning=True,
     ),
     LLMConfig(
         slug="gemini-2.5-pro-20250506",
@@ -1079,6 +1082,7 @@ gemini_configs = [
         thinking_config={},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 5, 6),
+        is_reasoning=True,
     ),
     LLMConfig(
         slug="gemini-2.5-pro-20250605",
@@ -1091,6 +1095,7 @@ gemini_configs = [
         thinking_config={},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 5),
+        is_reasoning=True,
     ),
 ]
 default_models.extend(gemini_configs)
