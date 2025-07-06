@@ -1,5 +1,7 @@
+import heapq
 import math
 import random
+from collections import Counter
 
 from pydantic import BaseModel, ConfigDict, Field, computed_field
 
@@ -8,15 +10,21 @@ RESERVOIR_K = 10_000
 
 class UsageStat(BaseModel):
     """
-    Metric accumulator with streaming stats and a fixed-size reservoir that
-    stores a *frequency table* (value → multiplicity).  The class now:
+    Metric accumulator with streaming stats and a cardinality-adaptive reservoir.
+
+    ``reservoir`` begins as an exact frequency table (value → count) and, once
+    the number of distinct values exceeds ``reservoir_k``, it automatically
+    downgrades to a fixed-size uniform sample where the counts represent the
+    number of copies inside the reservoir.
+
+    The class also:
 
     • Detects whether the series is *discrete* (int) or *continuous* (float)
       on the first `add()` and locks that decision (`is_discrete`).
     • Builds histograms with a data-driven number of buckets:
         - Discrete: one bucket per integer up to `max_bins` (default 20).
         - Continuous: Freedman-Diaconis / Sturges / √n heuristic, capped at
-          `max_bins`.
+          ``max_bins``.
     """
 
     round_to: int | None = None
@@ -28,8 +36,8 @@ class UsageStat(BaseModel):
     max: int | float | None = None
 
     # reservoir -------------------------------------------------------
-    reservoir: dict[int | float, int] | None = None  # value → multiplicity
-    reservoir_count: int = Field(0, exclude=True)
+    reservoir: dict[int | float, int] = Field(default_factory=dict)
+    sample_mode: bool = False
     reservoir_k: int = Field(default=RESERVOIR_K, exclude=False)
 
     # data-kind lock-in ----------------------------------------
@@ -68,30 +76,15 @@ class UsageStat(BaseModel):
         self.min = value if self.min is None else min(self.min, value)
         self.max = value if self.max is None else max(self.max, value)
 
-        # initialise reservoir lazily --------------------------------
-        if self.reservoir is None:
-            self.reservoir = {}
-
-        # ----------- Vitter`s Algorithm R with freq table ------------
-        if self.reservoir_count < self.reservoir_k:
+        # ----- adaptive reservoir updates ----------------------------
+        if not self.sample_mode:
             self.reservoir[value] = self.reservoir.get(value, 0) + 1
-            self.reservoir_count += 1
+            if len(self.reservoir) > self.reservoir_k:
+                self._convert_to_sample_mode()
         else:
-            j = random.randint(0, self.count - 1)
-            if j < self.reservoir_k:
-                # remove a random element (probability 1/k)
-                idx = random.randint(0, self.reservoir_count - 1)
-                running = 0
-                for v, c in list(self.reservoir.items()):
-                    running += c
-                    if idx < running:
-                        self.reservoir[v] = c - 1 if c > 1 else 0
-                        if self.reservoir[v] == 0:
-                            del self.reservoir[v]
-                        break
-                # insert the new value
-                self.reservoir[value] = self.reservoir.get(value, 0) + 1
-                # reservoir_count stays constant (k)
+            self._reservoir_update_sample_mode(value)
+
+        self._assert_invariants()
 
     # ----------------------------------------------------------------
     # helpers for percentile / histogram
@@ -111,6 +104,39 @@ class UsageStat(BaseModel):
             return 0.0
         idx = round(pct * (len(data) - 1))
         return float(data[idx])
+
+    # ------------------------------------------------------------------
+    # reservoir helpers
+    # ------------------------------------------------------------------
+    def _convert_to_sample_mode(self) -> None:
+        """Convert exact counts to a uniform reservoir sample."""
+        key_weight_pairs = [(random.random() ** (1 / c), v) for v, c in self.reservoir.items()]
+        top = heapq.nlargest(self.reservoir_k, key_weight_pairs)
+        self.reservoir = Counter(v for _, v in top)
+        self.sample_mode = True
+
+    def _reservoir_update_sample_mode(self, x: int | float) -> None:
+        j = random.randrange(self.count)
+        if j < self.reservoir_k:
+            idx = random.randrange(self.reservoir_k)
+            running = 0
+            for v, c in list(self.reservoir.items()):
+                if running + c > idx:
+                    self.reservoir[v] = c - 1
+                    if self.reservoir[v] == 0:
+                        del self.reservoir[v]
+                    break
+                running += c
+            self.reservoir[x] = self.reservoir.get(x, 0) + 1
+
+    def _assert_invariants(self) -> None:
+        n = sum(self.reservoir.values())
+        if n != min(self.count, self.reservoir_k):
+            raise ValueError("reservoir size invariant violated")
+        if len(self.reservoir) > self.reservoir_k:
+            raise ValueError("reservoir cardinality invariant violated")
+        if self.sample_mode and self.count < self.reservoir_k + 1:
+            raise ValueError("sample mode before reservoir full")
 
     # ---------- adaptive bin rules for continuous data --------------
     def _auto_bins(self, data: list[float], max_bins: int) -> int:

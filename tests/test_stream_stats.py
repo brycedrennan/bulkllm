@@ -67,9 +67,52 @@ def test_reservoir_sampling(monkeypatch):
     s.add(1)
     s.add(2)
 
-    monkeypatch.setattr(random, "randint", lambda a, b: 0)
+    seq = iter([0.1, 0.2, 0.3])
+    monkeypatch.setattr(random, "random", lambda: next(seq))
+    monkeypatch.setattr(random, "randrange", lambda n: 0)
+
     s.add(3)
     s.add(4)
 
-    assert s.reservoir_count == 2
-    assert set(s.reservoir.keys()) == {3, 4}
+    assert sum(s.reservoir.values()) == 2
+    assert 4 in s.reservoir
+
+
+def test_exact_to_sample_switch():
+    s = UsageStat(reservoir_k=10_000)
+    for i in range(10_001):
+        s.add(i)
+
+    assert s.sample_mode is True
+    assert sum(s.reservoir.values()) == 10_000
+    assert len(s.reservoir) <= 10_000
+
+
+def test_exact_mode_stable():
+    s = UsageStat(reservoir_k=10_000)
+    for i in range(500):
+        s.add(i)
+
+    assert s.sample_mode is False
+    for i in range(500):
+        assert s.reservoir[i] == 1
+    assert sum(s.reservoir.values()) == 500
+
+
+def test_mean_min_max_continuity():
+    s = UsageStat(reservoir_k=10_000)
+    for i in range(10_000):
+        s.add(i)
+
+    expected_mean = sum(range(10_000)) / 10_000
+    assert s.mean == pytest.approx(expected_mean)
+    assert s.min == 0
+    assert s.max == 9_999
+
+    s.add(10_000)
+
+    assert s.sample_mode is True
+    new_mean = (sum(range(10_000)) + 10_000) / 10_001
+    assert s.mean == pytest.approx(new_mean)
+    assert s.min == 0
+    assert s.max == 10_000
