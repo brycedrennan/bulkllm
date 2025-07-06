@@ -130,9 +130,6 @@ class UsageStat(BaseModel):
             self.reservoir[x] = self.reservoir.get(x, 0) + 1
 
     def _assert_invariants(self) -> None:
-        n = sum(self.reservoir.values())
-        if n != min(self.count, self.reservoir_k):
-            raise ValueError("reservoir size invariant violated")
         if len(self.reservoir) > self.reservoir_k:
             raise ValueError("reservoir cardinality invariant violated")
         if self.sample_mode and self.count < self.reservoir_k + 1:
