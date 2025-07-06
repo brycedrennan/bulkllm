@@ -176,7 +176,7 @@ class UsageAggregate(BaseModel):
                     self.stats[field_name].add(value)
 
     # -----------------------------------------------------------------
-    def snapshot(self) -> dict[str, Any]:
+    def snapshot(self, include_reservoir: bool = True) -> dict[str, Any]:
         """Return a JSON-serialisable snapshot of the aggregates."""
         dump = {
             "model": self.model,
@@ -184,6 +184,10 @@ class UsageAggregate(BaseModel):
             "invalid_count": self.invalid_count.model_dump(mode="json"),
         }
         dump.update({k: v.model_dump(mode="json") for k, v in self.stats.items()})
+        if not include_reservoir:
+            for v in dump.values():
+                if isinstance(v, dict):
+                    v.pop("reservoir")
         return dump
 
 
