@@ -3431,7 +3431,7 @@
         "instruct_type": "mistral"
       },
       "pricing": {
-        "prompt": "0.00000001",
+        "prompt": "0.000000008",
         "completion": "0.000000001",
         "request": "0",
         "image": "0",
@@ -3440,7 +3440,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 16384,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -3639,8 +3639,8 @@
         "instruct_type": "llama3"
       },
       "pricing": {
-        "prompt": "0.000000016",
-        "completion": "0.000000021",
+        "prompt": "0.000000015",
+        "completion": "0.00000002",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -3670,90 +3670,6 @@
         "repetition_penalty",
         "top_k",
         "structured_outputs"
-      ]
-    },
-    {
-      "id": "perplexity/llama-3.1-sonar-large-128k-online",
-      "canonical_slug": "perplexity/llama-3.1-sonar-large-128k-online",
-      "hugging_face_id": null,
-      "name": "Perplexity: Llama 3.1 Sonar 70B Online",
-      "created": 1722470400,
-      "description": "Llama 3.1 Sonar is Perplexity's latest model family. It surpasses their earlier Sonar models in cost-efficiency, speed, and performance.\n\nThis is the online version of the [offline chat model](/models/perplexity/llama-3.1-sonar-large-128k-chat). It is focused on delivering helpful, up-to-date, and factual responses. #online",
-      "context_length": 127072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000001",
-        "completion": "0.000001",
-        "request": "0.005",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 127072,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "top_k",
-        "frequency_penalty",
-        "presence_penalty"
-      ]
-    },
-    {
-      "id": "perplexity/llama-3.1-sonar-small-128k-online",
-      "canonical_slug": "perplexity/llama-3.1-sonar-small-128k-online",
-      "hugging_face_id": null,
-      "name": "Perplexity: Llama 3.1 Sonar 8B Online",
-      "created": 1722470400,
-      "description": "Llama 3.1 Sonar is Perplexity's latest model family. It surpasses their earlier Sonar models in cost-efficiency, speed, and performance.\n\nThis is the online version of the [offline chat model](/models/perplexity/llama-3.1-sonar-small-128k-chat). It is focused on delivering helpful, up-to-date, and factual responses. #online",
-      "context_length": 127072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000002",
-        "completion": "0.0000002",
-        "request": "0.005",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 127072,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "top_k",
-        "frequency_penalty",
-        "presence_penalty"
       ]
     },
     {
@@ -5466,54 +5382,6 @@
       ]
     },
     {
-      "id": "x-ai/grok-beta",
-      "canonical_slug": "x-ai/grok-beta",
-      "hugging_face_id": null,
-      "name": "xAI: Grok Beta",
-      "created": 1729382400,
-      "description": "Grok Beta is xAI's experimental language model with state-of-the-art reasoning capabilities, best for complex and multi-step use cases.\n\nIt is the successor of [Grok 2](https://x.ai/blog/grok-2) with enhanced context length.",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Grok",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000005",
-        "completion": "0.000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
-        "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "logprobs",
-        "top_logprobs",
-        "response_format"
-      ]
-    },
-    {
       "id": "anthracite-org/magnum-v4-72b",
       "canonical_slug": "anthracite-org/magnum-v4-72b",
       "hugging_face_id": "anthracite-org/magnum-v4-72b",
@@ -5935,52 +5803,6 @@
         "tools",
         "tool_choice",
         "logprobs"
-      ]
-    },
-    {
-      "id": "eva-unit-01/eva-qwen-2.5-32b",
-      "canonical_slug": "eva-unit-01/eva-qwen-2.5-32b",
-      "hugging_face_id": "EVA-UNIT-01/EVA-Qwen2.5-32B-v0.2",
-      "name": "EVA Qwen2.5 32B",
-      "created": 1731104847,
-      "description": "EVA Qwen2.5 32B is a roleplaying/storywriting specialist model. It's a full-parameter finetune of Qwen2.5-32B on mixture of synthetic and natural data.\n\nIt uses Celeste 70B 0.1 data mixture, greatly expanding it to improve versatility, creativity and \"flavor\" of the resulting model.",
-      "context_length": 16384,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen",
-        "instruct_type": "chatml"
-      },
-      "pricing": {
-        "prompt": "0.0000026",
-        "completion": "0.0000034",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 16384,
-        "max_completion_tokens": 4096,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
-        "frequency_penalty",
-        "presence_penalty",
-        "repetition_penalty",
-        "top_k",
-        "min_p",
-        "seed"
       ]
     },
     {
@@ -6648,7 +6470,7 @@
       "name": "Meta: Llama 3.3 70B Instruct",
       "created": 1733506137,
       "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperforms many of the available open source and closed chat models on common industry benchmarks.\n\nSupported languages: English, German, French, Italian, Portuguese, Hindi, Spanish, and Thai.\n\n[Model Card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)",
-      "context_length": 131072,
+      "context_length": 131000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -6661,7 +6483,7 @@
         "instruct_type": "llama3"
       },
       "pricing": {
-        "prompt": "0.000000039",
+        "prompt": "0.000000038",
         "completion": "0.00000012",
         "request": "0",
         "image": "0",
@@ -6669,8 +6491,8 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 8192,
+        "context_length": 131000,
+        "max_completion_tokens": 131000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -7869,7 +7691,7 @@
       },
       "pricing": {
         "prompt": "0.00000005",
-        "completion": "0.00000009",
+        "completion": "0.00000008",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -10625,54 +10447,6 @@
       ]
     },
     {
-      "id": "all-hands/openhands-lm-32b-v0.1",
-      "canonical_slug": "all-hands/openhands-lm-32b-v0.1",
-      "hugging_face_id": "all-hands/openhands-lm-32b-v0.1",
-      "name": "OpenHands LM 32B V0.1",
-      "created": 1743613013,
-      "description": "OpenHands LM v0.1 is a 32B open-source coding model fine-tuned from Qwen2.5-Coder-32B-Instruct using reinforcement learning techniques outlined in SWE-Gym. It is optimized for autonomous software development agents and achieves strong performance on SWE-Bench Verified, with a 37.2% resolve rate. The model supports a 128K token context window, making it well-suited for long-horizon code reasoning and large codebase tasks.\n\nOpenHands LM is designed for local deployment and runs on consumer-grade GPUs such as a single 3090. It enables fully offline agent workflows without dependency on proprietary APIs. This release is intended as a research preview, and future updates aim to improve generalizability, reduce repetition, and offer smaller variants.",
-      "context_length": 16384,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000026",
-        "completion": "0.0000034",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 16384,
-        "max_completion_tokens": 4096,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
-        "frequency_penalty",
-        "presence_penalty",
-        "repetition_penalty",
-        "top_k",
-        "min_p",
-        "seed"
-      ]
-    },
-    {
       "id": "meta-llama/llama-4-scout",
       "canonical_slug": "meta-llama/llama-4-scout-17b-16e-instruct",
       "hugging_face_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
@@ -11959,55 +11733,6 @@
       ]
     },
     {
-      "id": "thudm/glm-z1-32b",
-      "canonical_slug": "thudm/glm-z1-32b-0414",
-      "hugging_face_id": "THUDM/GLM-Z1-32B-0414",
-      "name": "THUDM: GLM Z1 32B",
-      "created": 1744924148,
-      "description": "GLM-Z1-32B-0414 is an enhanced reasoning variant of GLM-4-32B, built for deep mathematical, logical, and code-oriented problem solving. It applies extended reinforcement learning\u2014both task-specific and general pairwise preference-based\u2014to improve performance on complex multi-step tasks. Compared to the base GLM-4-32B model, Z1 significantly boosts capabilities in structured reasoning and formal domains.\n\nThe model supports enforced \u201cthinking\u201d steps via prompt engineering and offers improved coherence for long-form outputs. It\u2019s optimized for use in agentic workflows, and includes support for long context (via YaRN), JSON tool calling, and fine-grained sampling configuration for stable inference. Ideal for use cases requiring deliberate, multi-step reasoning or formal derivations.",
-      "context_length": 32000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": "deepseek-r1"
-      },
-      "pricing": {
-        "prompt": "0.00000024",
-        "completion": "0.00000024",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 32000,
-        "max_completion_tokens": 32000,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
-        "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logit_bias"
-      ]
-    },
-    {
       "id": "thudm/glm-z1-32b:free",
       "canonical_slug": "thudm/glm-z1-32b-0414",
       "hugging_face_id": "THUDM/GLM-Z1-32B-0414",
@@ -12107,55 +11832,6 @@
         "logprobs",
         "logit_bias",
         "top_logprobs"
-      ]
-    },
-    {
-      "id": "thudm/glm-z1-rumination-32b",
-      "canonical_slug": "thudm/glm-z1-rumination-32b-0414",
-      "hugging_face_id": "THUDM/GLM-Z1-Rumination-32B-0414",
-      "name": "THUDM: GLM Z1 Rumination 32B ",
-      "created": 1745601495,
-      "description": "THUDM: GLM Z1 Rumination 32B is a 32B-parameter deep reasoning model from the GLM-4-Z1 series, optimized for complex, open-ended tasks requiring prolonged deliberation. It builds upon glm-4-32b-0414 with additional reinforcement learning phases and multi-stage alignment strategies, introducing \u201crumination\u201d capabilities designed to emulate extended cognitive processing. This includes iterative reasoning, multi-hop analysis, and tool-augmented workflows such as search, retrieval, and citation-aware synthesis.\n\nThe model excels in research-style writing, comparative analysis, and intricate question answering. It supports function calling for search and navigation primitives (`search`, `click`, `open`, `finish`), enabling use in agent-style pipelines. Rumination behavior is governed by multi-turn loops with rule-based reward shaping and delayed decision mechanisms, benchmarked against Deep Research frameworks such as OpenAI\u2019s internal alignment stacks. This variant is suitable for scenarios requiring depth over speed.",
-      "context_length": 32000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": "deepseek-r1"
-      },
-      "pricing": {
-        "prompt": "0.00000024",
-        "completion": "0.00000024",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 32000,
-        "max_completion_tokens": 32000,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
-        "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logit_bias"
       ]
     },
     {
@@ -12829,46 +12505,6 @@
         "repetition_penalty",
         "logit_bias",
         "response_format"
-      ]
-    },
-    {
-      "id": "opengvlab/internvl3-2b",
-      "canonical_slug": "opengvlab/internvl3-2b",
-      "hugging_face_id": "OpenGVLab/InternVL3-2B",
-      "name": "OpenGVLab: InternVL3 2B",
-      "created": 1746019807,
-      "description": "The 2b version of the InternVL3 series, for an even higher inference speed and very reasonable performance. An advanced multimodal large language model (MLLM) series that demonstrates superior overall performance. Compared to InternVL 2.5, InternVL3 exhibits superior multimodal perception and reasoning capabilities, while further extending its multimodal capabilities to encompass tool usage, GUI agents, industrial image analysis, 3D vision perception, and more.",
-      "context_length": 12288,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "image",
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.00000005",
-        "completion": "0.0000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 12288,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p"
       ]
     },
     {

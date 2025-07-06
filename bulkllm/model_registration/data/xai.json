@@ -49,7 +49,7 @@
     },
     {
       "id": "grok-3",
-      "fingerprint": "fp_be0739e203",
+      "fingerprint": "fp_9ad1a16f77",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -64,7 +64,7 @@
       "cached_prompt_text_token_price": 7500,
       "prompt_image_token_price": 0,
       "completion_text_token_price": 150000,
-      "search_price": 0,
+      "search_price": 250000000,
       "aliases": [
         "grok-3-latest",
         "grok-3-beta"
@@ -72,7 +72,7 @@
     },
     {
       "id": "grok-3-fast",
-      "fingerprint": "fp_d95dc2d0b2",
+      "fingerprint": "fp_9c1fa52e52",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -87,7 +87,7 @@
       "cached_prompt_text_token_price": 12500,
       "prompt_image_token_price": 0,
       "completion_text_token_price": 250000,
-      "search_price": 0,
+      "search_price": 250000000,
       "aliases": [
         "grok-3-fast-latest",
         "grok-3-fast-beta"
@@ -95,7 +95,7 @@
     },
     {
       "id": "grok-3-mini",
-      "fingerprint": "fp_2e0c052777",
+      "fingerprint": "fp_98701f8c5d",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -110,7 +110,7 @@
       "cached_prompt_text_token_price": 750,
       "prompt_image_token_price": 0,
       "completion_text_token_price": 5000,
-      "search_price": 0,
+      "search_price": 250000000,
       "aliases": [
         "grok-3-mini-latest",
         "grok-3-mini-beta"
@@ -118,7 +118,7 @@
     },
     {
       "id": "grok-3-mini-fast",
-      "fingerprint": "fp_768091f8b2",
+      "fingerprint": "fp_c1e970f3b6",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -133,7 +133,7 @@
       "cached_prompt_text_token_price": 1500,
       "prompt_image_token_price": 0,
       "completion_text_token_price": 40000,
-      "search_price": 0,
+      "search_price": 250000000,
       "aliases": [
         "grok-3-mini-fast-latest",
         "grok-3-mini-fast-beta"
