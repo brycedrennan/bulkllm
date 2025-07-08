@@ -34,19 +34,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -83,20 +83,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -133,19 +133,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "presence_penalty",
         "frequency_penalty",
-        "repetition_penalty",
-        "top_k",
-        "stop",
-        "seed",
-        "min_p",
         "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "top_a"
+        "seed",
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -182,18 +182,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "top_k",
-        "min_p",
         "seed",
-        "logit_bias",
-        "top_a"
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -231,10 +231,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -272,10 +272,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -312,18 +312,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "logit_bias",
-        "top_k",
-        "min_p",
         "seed",
-        "top_a"
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -360,19 +360,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -409,16 +409,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -455,20 +455,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "seed"
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -505,17 +505,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -552,20 +552,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -633,20 +633,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "response_format",
-        "structured_outputs",
-        "repetition_penalty",
         "logit_bias",
-        "top_k",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
         "seed",
-        "top_a"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -683,16 +683,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -730,10 +730,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -771,10 +771,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -812,10 +812,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -853,10 +853,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -893,18 +893,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "logit_bias",
-        "top_k",
-        "min_p",
         "seed",
-        "top_a"
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -941,20 +941,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "seed"
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -991,17 +991,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -1038,17 +1038,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -1085,17 +1085,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -1132,17 +1132,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -1179,20 +1179,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -1229,20 +1229,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -1279,17 +1279,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "response_format",
-        "stop",
-        "seed",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "structured_outputs"
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -1326,17 +1326,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -1377,12 +1377,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -1423,12 +1423,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -1469,12 +1469,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -1515,12 +1515,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -1561,12 +1561,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -1607,12 +1607,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -1649,16 +1649,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -1695,17 +1695,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -1742,17 +1742,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "logit_bias"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -1789,17 +1789,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -1836,17 +1836,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -1884,17 +1884,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "tools",
-        "tool_choice",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -1932,19 +1932,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -1981,18 +1981,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
         "logit_bias",
-        "response_format"
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -2029,22 +2029,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "response_format",
-        "structured_outputs",
-        "seed",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
         "logprobs",
-        "top_logprobs"
+        "max_tokens",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -2081,22 +2081,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
-        "min_p",
-        "response_format",
-        "top_logprobs",
         "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
         "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
         "tools",
-        "tool_choice"
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -2133,23 +2133,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "top_k",
-        "seed",
-        "repetition_penalty",
         "frequency_penalty",
-        "presence_penalty",
-        "stop",
-        "min_p",
         "logit_bias",
-        "tools",
-        "tool_choice",
-        "response_format",
-        "top_logprobs",
         "logprobs",
-        "top_a"
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -2186,16 +2185,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -2205,7 +2204,7 @@
       "name": "NeverSleep: Llama 3 Lumimaid 8B",
       "created": 1714780800,
       "description": "The NeverSleep team is back, with a Llama 3 8B finetune trained on their curated roleplay data. Striking a balance between eRP and RP, Lumimaid was designed to be serious, yet uncensored when necessary.\n\nTo enhance it's overall intelligence and chat capability, roughly 40% of the training data was not roleplay. This provides a breadth of knowledge to access, while still keeping roleplay as the primary strength.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
-      "context_length": 24576,
+      "context_length": 8192,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -2218,32 +2217,30 @@
         "instruct_type": "llama3"
       },
       "pricing": {
-        "prompt": "0.0000002",
-        "completion": "0.00000125",
+        "prompt": "0.0000008",
+        "completion": "0.0000012",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 24576,
-        "max_completion_tokens": 2048,
+        "context_length": 8192,
+        "max_completion_tokens": 4096,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "top_k",
-        "min_p",
         "seed",
-        "logit_bias",
-        "top_a"
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -2280,17 +2277,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -2330,21 +2327,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -2383,21 +2380,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -2436,21 +2433,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -2490,17 +2487,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "tools",
-        "tool_choice",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -2537,16 +2534,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -2585,9 +2582,9 @@
       "supported_parameters": [
         "max_tokens",
         "temperature",
-        "top_p",
+        "tool_choice",
         "tools",
-        "tool_choice"
+        "top_p"
       ]
     },
     {
@@ -2626,9 +2623,9 @@
       "supported_parameters": [
         "max_tokens",
         "temperature",
-        "top_p",
+        "tool_choice",
         "tools",
-        "tool_choice"
+        "top_p"
       ]
     },
     {
@@ -2665,21 +2662,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
         "seed",
-        "logprobs",
+        "stop",
+        "temperature",
+        "tool_choice",
         "tools",
-        "tool_choice"
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -2716,21 +2713,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
         "seed",
-        "tools",
+        "stop",
+        "temperature",
         "tool_choice",
-        "logprobs"
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -2767,19 +2764,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p"
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -2816,20 +2813,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
-        "response_format",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "top_k"
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -2866,17 +2863,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -2913,17 +2910,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "logit_bias"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -2960,17 +2957,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "logit_bias"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -3011,12 +3008,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -3057,12 +3054,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -3099,19 +3096,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
-        "response_format",
-        "structured_outputs",
         "logit_bias",
         "logprobs",
-        "top_logprobs"
+        "max_tokens",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -3148,17 +3145,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
+        "temperature",
         "top_logprobs",
-        "logprobs",
-        "logit_bias",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -3195,19 +3192,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -3244,16 +3241,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -3290,17 +3287,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -3340,21 +3337,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
+        "temperature",
+        "tool_choice",
         "tools",
-        "tool_choice"
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -3394,21 +3391,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -3445,23 +3442,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
         "min_p",
-        "seed",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "tools",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
         "tool_choice",
-        "structured_outputs"
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -3498,19 +3495,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -3547,23 +3544,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
-        "response_format",
-        "structured_outputs",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
         "min_p",
-        "seed"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -3600,23 +3597,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "response_format",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "repetition_penalty",
-        "top_k",
-        "seed",
-        "min_p",
         "logit_bias",
         "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
         "top_logprobs",
-        "structured_outputs"
+        "top_p"
       ]
     },
     {
@@ -3653,23 +3650,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
-        "response_format",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_k",
-        "structured_outputs"
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -3706,19 +3703,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "logprobs",
-        "top_logprobs",
-        "seed",
         "logit_bias",
-        "top_k",
+        "logprobs",
+        "max_tokens",
         "min_p",
-        "repetition_penalty"
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -3755,16 +3752,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -3804,21 +3801,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -3855,16 +3852,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -3901,18 +3898,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
         "logit_bias",
-        "response_format"
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -3950,18 +3947,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -3998,20 +3995,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
-        "response_format",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "top_k"
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4048,22 +4045,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p",
-        "logit_bias",
-        "logprobs",
-        "top_logprobs",
+        "stop",
+        "temperature",
+        "tool_choice",
         "tools",
-        "tool_choice"
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4102,9 +4099,9 @@
       "supported_parameters": [
         "max_tokens",
         "temperature",
-        "top_p",
+        "tool_choice",
         "tools",
-        "tool_choice"
+        "top_p"
       ]
     },
     {
@@ -4142,19 +4139,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
         "min_p",
-        "seed"
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4191,19 +4188,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "response_format",
-        "structured_outputs",
-        "seed",
-        "top_k",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "logit_bias"
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -4240,17 +4237,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -4287,17 +4284,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -4335,23 +4332,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "logprobs",
-        "top_logprobs",
-        "seed",
         "logit_bias",
-        "top_k",
+        "logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "tools",
-        "tool_choice",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4389,8 +4386,8 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "seed",
-        "max_tokens"
+        "max_tokens",
+        "seed"
       ]
     },
     {
@@ -4428,8 +4425,8 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "seed",
-        "max_tokens"
+        "max_tokens",
+        "seed"
       ]
     },
     {
@@ -4467,8 +4464,8 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "seed",
-        "max_tokens"
+        "max_tokens",
+        "seed"
       ]
     },
     {
@@ -4506,8 +4503,8 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "seed",
-        "max_tokens"
+        "max_tokens",
+        "seed"
       ]
     },
     {
@@ -4544,18 +4541,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "top_k",
-        "min_p",
         "seed",
-        "logit_bias",
-        "top_a"
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -4592,23 +4589,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
-        "response_format",
-        "structured_outputs",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
         "seed",
-        "min_p"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4645,19 +4642,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4695,22 +4692,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "top_k",
-        "seed",
-        "repetition_penalty",
         "frequency_penalty",
-        "presence_penalty",
-        "stop",
         "logit_bias",
+        "logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "top_logprobs",
-        "tools",
+        "seed",
+        "stop",
+        "temperature",
         "tool_choice",
-        "logprobs"
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4748,17 +4745,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -4795,19 +4792,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p",
-        "logit_bias",
-        "top_logprobs"
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4844,22 +4841,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
-        "response_format",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "top_k"
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -4897,18 +4894,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "seed"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -4945,17 +4942,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "logit_bias",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -4992,20 +4989,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
         "logit_bias",
         "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -5042,19 +5039,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "response_format",
-        "structured_outputs",
-        "repetition_penalty",
-        "top_k",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
         "seed",
-        "logit_bias"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -5094,17 +5091,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "tools",
-        "tool_choice",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -5142,9 +5139,9 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -5182,9 +5179,9 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -5221,22 +5218,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
-        "response_format",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "top_k"
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -5273,18 +5270,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "seed"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -5321,17 +5318,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -5368,17 +5365,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -5415,18 +5412,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "top_k",
-        "min_p",
         "seed",
-        "logit_bias",
-        "top_a"
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -5467,12 +5464,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -5513,60 +5510,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "top_k",
-        "stop"
-      ]
-    },
-    {
-      "id": "neversleep/llama-3.1-lumimaid-70b",
-      "canonical_slug": "neversleep/llama-3.1-lumimaid-70b",
-      "hugging_face_id": "NeverSleep/Lumimaid-v0.2-70B",
-      "name": "NeverSleep: Lumimaid v0.2 70B",
-      "created": 1729555200,
-      "description": "Lumimaid v0.2 70B is a finetune of [Llama 3.1 70B](/meta-llama/llama-3.1-70b-instruct) with a \"HUGE step up dataset wise\" compared to Lumimaid v0.1. Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
-      "context_length": 16384,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "llama3"
-      },
-      "pricing": {
-        "prompt": "0.0000025",
-        "completion": "0.000003",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 16384,
-        "max_completion_tokens": 2048,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
         "stop",
-        "frequency_penalty",
-        "presence_penalty",
-        "repetition_penalty",
-        "logit_bias",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_k",
-        "min_p",
-        "seed",
-        "top_a"
+        "top_p"
       ]
     },
     {
@@ -5607,12 +5556,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -5653,12 +5602,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -5699,12 +5648,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -5745,12 +5694,12 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
+        "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -5787,22 +5736,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "response_format",
-        "structured_outputs",
-        "repetition_penalty",
         "logit_bias",
-        "top_k",
+        "logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
         "seed",
-        "tools",
+        "stop",
+        "structured_outputs",
+        "temperature",
         "tool_choice",
-        "logprobs"
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -5839,17 +5788,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "logit_bias",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -5886,20 +5835,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
         "seed",
-        "logprobs",
-        "top_logprobs"
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -5936,19 +5885,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -5985,16 +5934,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -6032,16 +5981,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -6079,17 +6028,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -6126,17 +6075,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -6173,17 +6122,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -6223,21 +6172,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -6274,16 +6223,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -6320,19 +6269,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "logprobs",
-        "top_logprobs",
-        "seed",
         "logit_bias",
-        "top_k",
+        "logprobs",
+        "max_tokens",
         "min_p",
-        "repetition_penalty"
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -6371,11 +6320,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -6413,11 +6362,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -6456,11 +6405,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
         "tools",
         "top_k",
-        "stop"
+        "top_p"
       ]
     },
     {
@@ -6470,7 +6419,7 @@
       "name": "Meta: Llama 3.3 70B Instruct",
       "created": 1733506137,
       "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperforms many of the available open source and closed chat models on common industry benchmarks.\n\nSupported languages: English, German, French, Italian, Portuguese, Hindi, Spanish, and Thai.\n\n[Model Card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)",
-      "context_length": 131000,
+      "context_length": 131072,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -6491,29 +6440,29 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131000,
-        "max_completion_tokens": 131000,
+        "context_length": 131072,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p",
-        "logit_bias",
-        "logprobs",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
         "top_logprobs",
-        "structured_outputs"
+        "top_p"
       ]
     },
     {
@@ -6550,17 +6499,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -6599,9 +6548,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "stop"
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -6638,16 +6589,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -6684,18 +6635,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -6733,16 +6684,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -6779,16 +6730,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -6827,12 +6778,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "seed",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -6869,19 +6820,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "response_format",
-        "structured_outputs",
-        "repetition_penalty",
-        "top_k",
-        "seed",
+        "logit_bias",
+        "max_tokens",
         "min_p",
-        "logit_bias"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -6918,23 +6869,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "structured_outputs",
-        "response_format",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
         "seed",
-        "min_p"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -6971,20 +6922,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
         "top_logprobs",
-        "top_a"
+        "top_p"
       ]
     },
     {
@@ -7021,20 +6972,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "min_p"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -7071,17 +7022,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -7158,25 +7109,25 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs",
-        "response_format",
-        "structured_outputs",
         "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
         "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
         "tools",
-        "tool_choice"
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -7213,18 +7164,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "reasoning",
-        "include_reasoning",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
         "presence_penalty",
+        "reasoning",
         "seed",
-        "top_k",
+        "stop",
+        "temperature",
         "top_a",
-        "logprobs"
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -7261,25 +7212,25 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "seed",
-        "top_k",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
+        "include_reasoning",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "reasoning",
         "repetition_penalty",
-        "tools",
-        "tool_choice",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -7316,22 +7267,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
+        "include_reasoning",
         "logit_bias",
+        "logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
         "response_format",
         "seed",
-        "logprobs",
-        "top_logprobs"
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -7368,16 +7319,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "max_tokens",
         "min_p",
-        "repetition_penalty"
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -7414,20 +7365,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
         "logit_bias",
         "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -7465,13 +7416,13 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "web_search_options",
-        "top_k",
         "frequency_penalty",
-        "presence_penalty"
+        "max_tokens",
+        "presence_penalty",
+        "temperature",
+        "top_k",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -7508,15 +7459,15 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "web_search_options",
-        "top_k",
         "frequency_penalty",
-        "presence_penalty"
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "temperature",
+        "top_k",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -7553,20 +7504,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
+        "frequency_penalty",
         "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
-        "frequency_penalty",
-        "presence_penalty",
+        "temperature",
         "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logit_bias",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -7603,21 +7554,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -7654,20 +7605,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
+        "frequency_penalty",
         "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
-        "frequency_penalty",
-        "presence_penalty",
+        "temperature",
         "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logit_bias",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -7704,23 +7655,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
         "min_p",
-        "seed",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "tools",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
         "tool_choice",
-        "structured_outputs"
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -7757,19 +7708,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -7806,19 +7757,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
+        "include_reasoning",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -7856,12 +7807,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "seed",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -7900,13 +7851,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "seed",
+        "presence_penalty",
         "response_format",
-        "presence_penalty"
+        "seed",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -7945,13 +7896,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "seed",
+        "presence_penalty",
         "response_format",
-        "presence_penalty"
+        "seed",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -7989,20 +7940,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
         "logit_bias",
-        "response_format",
         "logprobs",
-        "top_logprobs"
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -8041,11 +7992,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "seed",
+        "presence_penalty",
         "response_format",
-        "presence_penalty"
+        "seed",
+        "temperature",
+        "top_p"
       ]
     },
     {
@@ -8084,13 +8035,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "seed",
+        "presence_penalty",
         "response_format",
-        "presence_penalty"
+        "seed",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -8129,11 +8080,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "seed",
+        "presence_penalty",
         "response_format",
-        "presence_penalty"
+        "seed",
+        "temperature",
+        "top_p"
       ]
     },
     {
@@ -8209,11 +8160,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
         "reasoning",
-        "include_reasoning"
+        "temperature",
+        "top_p"
       ]
     },
     {
@@ -8250,11 +8201,11 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
         "reasoning",
-        "include_reasoning"
+        "temperature",
+        "top_p"
       ]
     },
     {
@@ -8293,11 +8244,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "seed",
+        "presence_penalty",
         "response_format",
-        "presence_penalty"
+        "seed",
+        "temperature",
+        "top_p"
       ]
     },
     {
@@ -8339,13 +8290,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -8382,19 +8333,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "reasoning",
         "repetition_penalty",
-        "logit_bias"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -8432,12 +8383,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "seed",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -8474,21 +8425,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
-        "response_format",
-        "structured_outputs",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
         "min_p",
-        "seed"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -8525,19 +8476,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -8574,21 +8525,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -8625,20 +8576,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
         "presence_penalty",
         "response_format",
-        "structured_outputs",
         "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "logprobs",
-        "logit_bias"
+        "top_p"
       ]
     },
     {
@@ -8675,19 +8626,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "top_k",
         "frequency_penalty",
-        "presence_penalty",
-        "stop",
-        "repetition_penalty",
+        "include_reasoning",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -8727,15 +8678,15 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "stop",
-        "reasoning",
         "include_reasoning",
-        "tools",
+        "max_tokens",
+        "reasoning",
+        "stop",
+        "temperature",
         "tool_choice",
-        "top_p",
-        "top_k"
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -8775,13 +8726,13 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "stop",
-        "reasoning",
         "include_reasoning",
-        "tools",
-        "tool_choice"
+        "max_tokens",
+        "reasoning",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -8821,13 +8772,13 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "stop",
-        "reasoning",
         "include_reasoning",
-        "tools",
-        "tool_choice"
+        "max_tokens",
+        "reasoning",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -8867,13 +8818,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -8912,20 +8863,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -8962,19 +8913,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -9011,23 +8962,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
+        "include_reasoning",
         "logit_bias",
-        "min_p",
-        "response_format",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
         "seed",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -9064,21 +9015,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -9115,14 +9066,14 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "top_k",
         "frequency_penalty",
-        "presence_penalty"
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -9160,13 +9111,13 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "web_search_options",
-        "top_k",
         "frequency_penalty",
-        "presence_penalty"
+        "max_tokens",
+        "presence_penalty",
+        "temperature",
+        "top_k",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -9204,15 +9155,15 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "web_search_options",
-        "top_k",
         "frequency_penalty",
-        "presence_penalty"
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "temperature",
+        "top_k",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -9250,17 +9201,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p"
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -9297,13 +9248,13 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "presence_penalty",
         "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
         "repetition_penalty",
-        "top_k"
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -9326,7 +9277,7 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000008",
+        "prompt": "0.0000005",
         "completion": "0.000001",
         "request": "0",
         "image": "0",
@@ -9340,13 +9291,13 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "presence_penalty",
         "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
         "repetition_penalty",
-        "top_k"
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -9384,20 +9335,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p",
-        "logit_bias",
+        "stop",
+        "temperature",
+        "top_k",
         "top_logprobs",
-        "logprobs"
+        "top_p"
       ]
     },
     {
@@ -9435,21 +9386,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -9486,21 +9437,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -9537,10 +9488,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "web_search_options",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "structured_outputs",
+        "web_search_options"
       ]
     },
     {
@@ -9577,10 +9528,10 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "web_search_options",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "structured_outputs",
+        "web_search_options"
       ]
     },
     {
@@ -9617,16 +9568,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
-        "top_k",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -9664,17 +9615,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p"
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -9712,21 +9663,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -9764,11 +9715,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
-        "stop"
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -9806,11 +9757,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
+        "stop",
         "temperature",
-        "top_p",
-        "tools",
         "tool_choice",
-        "stop"
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -9848,17 +9799,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p"
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -9897,11 +9848,11 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "top_p"
       ]
     },
     {
@@ -9939,23 +9890,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p",
-        "tools",
-        "tool_choice",
+        "stop",
         "structured_outputs",
-        "logit_bias",
-        "logprobs",
-        "top_logprobs"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -9993,21 +9944,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10045,9 +9996,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "seed",
         "max_tokens",
         "response_format",
+        "seed",
         "structured_outputs"
       ]
     },
@@ -10085,16 +10036,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -10131,23 +10082,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
+        "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "top_k",
-        "tools",
-        "tool_choice",
-        "structured_outputs",
         "response_format",
-        "logit_bias"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10184,22 +10135,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_a",
+        "top_k",
         "top_logprobs",
-        "top_a"
+        "top_p"
       ]
     },
     {
@@ -10237,19 +10188,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
-        "response_format",
-        "structured_outputs",
         "logit_bias",
         "logprobs",
-        "top_logprobs"
+        "max_tokens",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10287,20 +10238,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "seed",
-        "response_format",
-        "presence_penalty",
-        "stop",
         "frequency_penalty",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10340,14 +10291,14 @@
       "per_request_limits": null,
       "supported_parameters": [
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
-        "seed",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -10384,17 +10335,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -10431,19 +10382,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10481,23 +10432,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
-        "seed",
-        "response_format",
-        "tools",
-        "tool_choice",
-        "structured_outputs",
         "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_k",
         "top_logprobs",
-        "logprobs",
-        "logit_bias",
-        "min_p"
+        "top_p"
       ]
     },
     {
@@ -10535,21 +10486,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "structured_outputs",
-        "response_format",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10587,23 +10538,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p",
-        "logit_bias",
-        "tools",
-        "tool_choice",
+        "stop",
         "structured_outputs",
-        "logprobs",
-        "top_logprobs"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10641,21 +10592,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "structured_outputs",
-        "response_format",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10692,19 +10643,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "include_reasoning",
         "logit_bias",
         "logprobs",
-        "top_logprobs"
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10741,19 +10692,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10790,17 +10741,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
         "logit_bias",
         "logprobs",
-        "top_logprobs"
+        "max_tokens",
+        "presence_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10837,19 +10788,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -10887,18 +10838,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -10936,18 +10887,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "reasoning",
         "include_reasoning",
-        "stop",
-        "seed",
         "logprobs",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -10985,21 +10936,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11036,21 +10987,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11087,21 +11038,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11138,16 +11089,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -11184,16 +11135,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
         "top_k",
-        "min_p",
-        "seed"
+        "top_p"
       ]
     },
     {
@@ -11233,20 +11184,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11286,21 +11237,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -11340,21 +11291,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "web_search_options",
-        "seed",
         "logit_bias",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "presence_penalty",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p",
+        "web_search_options"
       ]
     },
     {
@@ -11391,19 +11342,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11442,12 +11393,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "seed",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -11487,12 +11438,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "seed",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -11532,12 +11483,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "seed",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -11578,14 +11529,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -11626,14 +11579,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -11670,17 +11625,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "logit_bias"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -11717,19 +11672,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11766,21 +11721,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11817,21 +11772,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11868,21 +11823,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -11919,25 +11874,25 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "seed",
-        "presence_penalty",
         "frequency_penalty",
-        "repetition_penalty",
-        "top_k",
-        "tools",
-        "tool_choice",
-        "stop",
-        "response_format",
-        "structured_outputs",
+        "include_reasoning",
         "logit_bias",
         "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
         "top_logprobs",
-        "min_p"
+        "top_p"
       ]
     },
     {
@@ -11974,21 +11929,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -12025,25 +11980,25 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "response_format",
-        "top_logprobs",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "seed",
-        "tools",
-        "tool_choice",
-        "repetition_penalty",
-        "top_k",
+        "logprobs",
+        "max_tokens",
         "min_p",
-        "structured_outputs"
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -12080,21 +12035,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -12131,24 +12086,24 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "presence_penalty",
         "frequency_penalty",
-        "repetition_penalty",
-        "top_k",
-        "tools",
-        "tool_choice",
-        "stop",
-        "response_format",
-        "seed",
-        "min_p",
+        "include_reasoning",
         "logit_bias",
         "logprobs",
-        "top_logprobs"
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -12185,21 +12140,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -12236,19 +12191,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "reasoning",
         "repetition_penalty",
-        "logit_bias"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12285,21 +12240,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -12336,25 +12291,25 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "reasoning",
-        "include_reasoning",
-        "response_format",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "repetition_penalty",
-        "top_k",
-        "seed",
-        "min_p",
-        "structured_outputs",
+        "include_reasoning",
         "logit_bias",
         "logprobs",
-        "top_logprobs"
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -12391,21 +12346,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -12443,20 +12398,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "logprobs",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "repetition_penalty",
         "response_format",
         "seed",
+        "stop",
+        "temperature",
+        "top_k",
         "top_logprobs",
-        "logprobs"
+        "top_p"
       ]
     },
     {
@@ -12493,18 +12448,18 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
         "logit_bias",
-        "response_format"
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12553,7 +12508,7 @@
       "hugging_face_id": "",
       "name": "Inception: Mercury Coder",
       "created": 1746033880,
-      "description": "Mercury Coder Small is the first diffusion large language model (dLLM). Applying a breakthrough discrete diffusion approach, the model runs 5-10x faster than even speed optimized models like Claude 3.5 Haiku and GPT-4o Mini while matching their performance. Mercury Coder Small's speed means that developers can stay in the flow while coding, enjoying rapid chat-based iteration and responsive code completion suggestions. On Copilot Arena, Mercury Coder ranks 1st in speed and ties for 2nd in quality. Read more in the [blog post here](https://www.inceptionlabs.ai/introducing-mercury).",
+      "description": "Mercury Coder is the first diffusion large language model (dLLM). Applying a breakthrough discrete diffusion approach, the model runs 5-10x faster than even speed optimized models like Claude 3.5 Haiku and GPT-4o Mini while matching their performance. Mercury Coder's speed means that developers can stay in the flow while coding, enjoying rapid chat-based iteration and responsive code completion suggestions. On Copilot Arena, Mercury Coder ranks 1st in speed and ties for 2nd in quality. Read more in the [blog post here](https://www.inceptionlabs.ai/introducing-mercury).",
       "context_length": 32000,
       "architecture": {
         "modality": "text->text",
@@ -12581,8 +12536,8 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "stop"
       ]
@@ -12621,19 +12576,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
+        "reasoning",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p"
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12670,17 +12625,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12717,19 +12672,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12766,17 +12721,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12813,19 +12768,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12862,17 +12817,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12910,17 +12865,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -12957,19 +12912,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -13010,15 +12965,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
-        "seed",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -13056,17 +13013,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "seed"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -13105,12 +13062,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "seed",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -13151,14 +13108,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -13199,14 +13158,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -13243,17 +13204,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
         "logit_bias",
+        "max_tokens",
         "min_p",
-        "response_format"
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -13290,14 +13251,14 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
+        "response_format",
         "seed",
-        "response_format"
+        "stop",
+        "temperature",
+        "top_p"
       ]
     },
     {
@@ -13334,23 +13295,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
-        "top_k",
         "seed",
-        "min_p",
-        "tools",
+        "stop",
+        "structured_outputs",
+        "temperature",
         "tool_choice",
-        "logit_bias",
-        "logprobs",
+        "tools",
+        "top_k",
         "top_logprobs",
-        "structured_outputs"
+        "top_p"
       ]
     },
     {
@@ -13387,21 +13348,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -13441,15 +13402,15 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "stop",
-        "reasoning",
         "include_reasoning",
-        "tools",
+        "max_tokens",
+        "reasoning",
+        "stop",
+        "temperature",
         "tool_choice",
-        "top_p",
-        "top_k"
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -13489,15 +13450,15 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "stop",
-        "reasoning",
         "include_reasoning",
-        "tools",
+        "max_tokens",
+        "reasoning",
+        "stop",
+        "temperature",
         "tool_choice",
-        "top_p",
-        "top_k"
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -13520,8 +13481,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000005",
-        "completion": "0.0000008",
+        "prompt": "0.00000065",
+        "completion": "0.000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -13534,15 +13495,15 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "presence_penalty",
         "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
         "repetition_penalty",
-        "top_k"
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -13579,19 +13540,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -13628,25 +13589,25 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "top_k",
-        "repetition_penalty",
+        "include_reasoning",
         "logit_bias",
-        "min_p",
-        "response_format",
         "logprobs",
-        "top_logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
         "seed",
-        "tools",
+        "stop",
+        "structured_outputs",
+        "temperature",
         "tool_choice",
-        "structured_outputs"
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -13683,23 +13644,23 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
         "response_format",
-        "top_a"
+        "seed",
+        "stop",
+        "temperature",
+        "top_a",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -13736,19 +13697,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "presence_penalty",
         "frequency_penalty",
-        "repetition_penalty",
-        "top_k",
-        "stop",
-        "seed",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
         "min_p",
-        "logit_bias"
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -13785,21 +13746,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -13836,12 +13797,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
         "include_reasoning",
-        "seed"
+        "max_tokens",
+        "reasoning",
+        "seed",
+        "temperature",
+        "top_p"
       ]
     },
     {
@@ -13882,14 +13843,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -13926,19 +13889,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "reasoning",
-        "include_reasoning",
-        "structured_outputs",
-        "response_format",
-        "stop",
         "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
         "presence_penalty",
-        "seed"
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -13975,19 +13938,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "reasoning",
-        "include_reasoning",
-        "structured_outputs",
-        "response_format",
-        "stop",
         "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
         "presence_penalty",
-        "seed"
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -13997,7 +13960,7 @@
       "name": "Mistral: Magistral Small 2506",
       "created": 1749569561,
       "description": "Magistral Small is a 24B parameter instruction-tuned model based on Mistral-Small-3.1 (2503), enhanced through supervised fine-tuning on traces from Magistral Medium and further refined via reinforcement learning. It is optimized for reasoning and supports a wide multilingual range, including over 20 languages.",
-      "context_length": 40000,
+      "context_length": 40960,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -14010,33 +13973,39 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000005",
-        "completion": "0.0000015",
+        "prompt": "0.0000001",
+        "completion": "0.0000003",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 40000,
-        "max_completion_tokens": 40000,
+        "context_length": 40960,
+        "max_completion_tokens": 40960,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "reasoning",
-        "include_reasoning",
-        "structured_outputs",
-        "response_format",
-        "stop",
         "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
-        "seed"
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -14074,19 +14043,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "structured_outputs",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
         "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -14124,19 +14093,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "reasoning",
         "include_reasoning",
-        "structured_outputs",
-        "stop",
-        "seed",
         "logprobs",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_logprobs",
-        "response_format"
+        "top_p"
       ]
     },
     {
@@ -14175,12 +14144,12 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "tools",
-        "tool_choice",
-        "seed",
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ]
     },
     {
@@ -14217,21 +14186,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "reasoning",
-        "include_reasoning",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
+        "include_reasoning",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -14272,14 +14241,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -14320,14 +14291,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -14366,14 +14339,16 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
+        "reasoning",
         "response_format",
-        "structured_outputs"
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
     },
     {
@@ -14410,22 +14385,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "reasoning",
-        "include_reasoning",
-        "structured_outputs",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
+        "reasoning",
         "repetition_penalty",
-        "logit_bias"
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -14463,20 +14438,20 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "stop",
         "frequency_penalty",
+        "max_tokens",
+        "min_p",
         "presence_penalty",
-        "response_format",
-        "structured_outputs",
-        "seed",
         "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
         "top_k",
-        "min_p"
+        "top_p"
       ]
     },
     {
@@ -14514,22 +14489,22 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
-        "structured_outputs",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
-        "min_p",
-        "repetition_penalty",
-        "logprobs",
         "logit_bias",
-        "top_logprobs"
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     },
     {
@@ -14601,8 +14576,8 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
         "frequency_penalty",
+        "max_tokens",
         "presence_penalty",
         "stop"
       ]
@@ -14627,7 +14602,7 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000003",
+        "prompt": "0.0000005",
         "completion": "0.0000008",
         "request": "0",
         "image": "0",
@@ -14641,13 +14616,13 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "presence_penalty",
         "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
         "repetition_penalty",
-        "top_k"
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -14684,17 +14659,17 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "max_tokens",
-        "temperature",
-        "top_p",
-        "stop",
         "frequency_penalty",
-        "presence_penalty",
-        "seed",
-        "top_k",
+        "logit_bias",
+        "max_tokens",
         "min_p",
+        "presence_penalty",
         "repetition_penalty",
-        "logit_bias"
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
       ]
     },
     {
@@ -14731,14 +14706,84 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
-        "temperature",
-        "top_p",
-        "tools",
-        "tool_choice",
         "reasoning",
-        "include_reasoning"
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
       ]
+    },
+    {
+      "id": "morph/morph-v3-fast",
+      "canonical_slug": "morph/morph-v3-fast",
+      "hugging_face_id": "",
+      "name": "Morph: V3 Fast",
+      "created": 1751910002,
+      "description": "Morph's fastest apply model for code edits. 4500+ tokens/sec with 96% accuracy for rapid code transformations.",
+      "context_length": 32000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000012",
+        "completion": "0.0000027",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 32000,
+        "max_completion_tokens": 16000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": []
+    },
+    {
+      "id": "morph/morph-v3-large",
+      "canonical_slug": "morph/morph-v3-large",
+      "hugging_face_id": "",
+      "name": "Morph: V3 Large",
+      "created": 1751910858,
+      "description": "Morph's high-accuracy apply model for complex code edits. 2000+ tokens/sec with 98% accuracy for precise code transformations.",
+      "context_length": 32000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000012",
+        "completion": "0.0000027",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 32000,
+        "max_completion_tokens": 16000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": []
     }
   ]
 }

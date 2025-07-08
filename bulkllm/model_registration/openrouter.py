@@ -67,6 +67,10 @@ def fetch_openrouter_data() -> dict[str, Any]:
     resp.raise_for_status()
     data = resp.json()
     data["data"] = sorted(data.get("data", []), key=lambda m: (m.get("created", 0), m.get("id")))
+    for row in data["data"]:
+        if "supported_parameters" in row:
+            row["supported_parameters"] = sorted(row["supported_parameters"])
+
     save_cached_provider_data("openrouter", data)
     return data
 
