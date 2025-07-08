@@ -1043,7 +1043,7 @@ gemini_configs = [
         thinking_config={"type": "disabled", "budget_tokens": 0},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 6, 17),
-        is_reasoning=False
+        is_reasoning=False,
     ),
     LLMConfig(
         slug="gemini-2.5-flash-thinking-20250617",

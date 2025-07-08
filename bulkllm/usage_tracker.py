@@ -22,11 +22,14 @@ import contextvars
 import logging
 from collections import defaultdict
 from datetime import UTC, datetime
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pydantic import BaseModel, ConfigDict, Field, model_serializer, model_validator
 
 from bulkllm.stream_stats import UsageStat
+
+if TYPE_CHECKING:
+    from litellm import Usage
 
 logger = logging.getLogger(__name__)
 
@@ -39,6 +42,9 @@ class UsageRecord(BaseModel):
     input_image_tokens: int = 0
     input_audio_tokens: int = 0
     input_cached_tokens: int = 0
+    # Anthropic prompt-cache specifics --------------------------------------
+    # Tokens used to WRITE a segment into the provider-side prompt cache
+    cache_creation_input_tokens: int = 0
     input_tokens_total: int = 0
 
     # ---- raw tallies (completion / output) ----
@@ -98,7 +104,10 @@ class UsageRecord(BaseModel):
                 errors.append(f"{label}: expected {expected}, computed {sum_components}")
 
         _check(
-            self.input_text_tokens + self.input_image_tokens + self.input_audio_tokens + self.input_cached_tokens,
+            self.input_text_tokens
+            + self.input_image_tokens
+            + self.input_audio_tokens
+            + self.cache_creation_input_tokens,
             self.input_tokens_total,
             "input total mismatch",
         )
@@ -265,7 +274,7 @@ _usage_stack_var.set((GLOBAL_TRACKER,))
 # Core helpers
 # ---------------------------------------------------------------------------
 def convert_litellm_usage_to_usage_record(
-    litellm_usage: dict[str, Any],
+    litellm_usage: Usage | dict[str, Any],
     model: str,
     *,
     time_ms: float | None = None,
@@ -288,24 +297,41 @@ def convert_litellm_usage_to_usage_record(
     iimg = getattr(pt_details, "image_tokens", None) or 0
     iaud = getattr(pt_details, "audio_tokens", None) or 0
     icache = getattr(pt_details, "cached_tokens", None) or 0
+    iwritecache = getattr(litellm_usage, "cache_creation_input_tokens", None) or 0
+    getattr(litellm_usage, "cache_read_input_tokens", None) or 0
 
-    # If details are missing **or** entirely empty, assume everything is text
+    # Fill in missing text-token breakdown when we have a cached-token count
+    if pt_details is not None and itext == 0 and icache > 0 and getattr(litellm_usage, "prompt_tokens", None):
+        # Provider reported prompt_tokens already accounts for both the text
+        # *and* cached portions.  If the text part is missing from the
+        # detailed breakdown we can recover it arithmetically.
+        itext = max(getattr(litellm_usage, "prompt_tokens") - iimg - iaud, 0)
+
+    # If details are missing **or** entirely empty (all numeric fields zero),
+    # assume everything is text.  Note that for Anthropic prompt-caching the
+    # `cached_tokens` field may be populated even when the others are not -
+    # in that case we *do* consider the object non-empty and keep the
+    # detailed breakdown.
     if (pt_details is None) or (itext + iimg + iaud + icache == 0):
         itext = getattr(litellm_usage, "prompt_tokens", 0) or (
-            itext + iimg + iaud + icache  # fall back to 0
+            itext + iimg + iaud  # fall back to 0
         )
         iimg = iaud = icache = 0
 
     # authoritative total if supplied
     input_total = getattr(litellm_usage, "prompt_tokens", None)
     if input_total is None:
-        input_total = itext + iimg + iaud + icache
+        input_total = itext + iimg + iaud + iwritecache + icache
+    else:
+        # prompt_tokens present — need to manually incorporate cache *write* tokens
+        # (these are billed but excluded from the provider's prompt_tokens figure)
+        input_total += iwritecache
 
     # ---------- completion tokens ------------------------------------
     ct_details = getattr(litellm_usage, "completion_tokens_details", None)
 
     otext = getattr(ct_details, "text_tokens", None) or 0
-    if "xai/grok-3-mini-beta" in model and otext == 0:
+    if model.startswith("xai/") and otext == 0:
         otext = getattr(litellm_usage, "completion_tokens", 0)
     oaud = getattr(ct_details, "audio_tokens", None) or 0
     oreason = getattr(ct_details, "reasoning_tokens", None) or 0
@@ -326,17 +352,16 @@ def convert_litellm_usage_to_usage_record(
         if logged_output_total > computed_output_total and otext == 0:
             otext = logged_output_total - computed_output_total
 
-    if (
-        "xai/grok-3-mini-beta" in model
-        and logged_output_total is not None
-        and computed_output_total > logged_output_total
-    ):
+    if model.startswith("xai/") and logged_output_total is not None and computed_output_total > logged_output_total:
         output_total = computed_output_total
 
     # ---------- grand total ------------------------------------------
     grand_total = getattr(litellm_usage, "total_tokens", None)
     if grand_total is None:
         grand_total = input_total + output_total
+    else:
+        # Total reported by the provider never includes cache-write tokens.
+        grand_total += iwritecache
 
     # ---------- UsageRecord ------------------------------------------
     return UsageRecord(
@@ -360,6 +385,8 @@ def convert_litellm_usage_to_usage_record(
         time_ms=time_ms,
         cost_usd=cost_usd,
         is_cached_hit=is_cached_hit,
+        # cache accounting --------------------------------------------
+        cache_creation_input_tokens=iwritecache,
     )
 
 

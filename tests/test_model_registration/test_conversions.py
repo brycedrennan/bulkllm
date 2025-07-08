@@ -139,14 +139,14 @@ def test_convert_mistral():
 
 def test_keyword_mode_openai_embed():
     result = convert_openai_to_litellm({"id": "text-embed-foo"})
-    assert result["model_info"]["mode"] == "embedding"
+    assert result["model_info"]["mode"] == "embedding"  # type: ignore
 
 
 def test_keyword_mode_anthropic_moderation():
     result = convert_anthropic_to_litellm({"id": "guard-moderation"})
-    assert result["model_info"]["mode"] == "moderation"
+    assert result["model_info"]["mode"] == "moderation"  # type: ignore
 
 
 def test_keyword_mode_mistral_ocr():
     result = convert_mistral_to_litellm({"id": "mistral-ocr-123"})
-    assert result["model_info"]["mode"] == "ocr"
+    assert result["model_info"]["mode"] == "ocr"  # type: ignore
