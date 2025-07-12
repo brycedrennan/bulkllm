@@ -141,13 +141,14 @@
     },
     {
       "id": "grok-4-0709",
-      "fingerprint": "fp_325598280e",
+      "fingerprint": "fp_acdceb26fb",
       "created": 1752019200,
       "object": "model",
       "owned_by": "xai",
       "version": "1.0",
       "input_modalities": [
-        "text"
+        "text",
+        "image"
       ],
       "output_modalities": [
         "text"
