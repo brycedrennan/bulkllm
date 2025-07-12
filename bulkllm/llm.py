@@ -171,7 +171,6 @@ async def _acompletion(*args, **kwargs):
         try:
             cost_usd = completion_cost(completion_response=response)
         except Exception:  # noqa - best effort for mocks
-            
             cost_usd = 0.0
 
     usage_record = convert_litellm_usage_to_usage_record(

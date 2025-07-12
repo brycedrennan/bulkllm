@@ -43,11 +43,10 @@ def convert_xai_to_litellm(xai_model: dict[str, Any]) -> dict[str, Any] | None:
     if out is not None:
         model_info["output_cost_per_token"] = float(out) / 1_000_000 / 10_000
 
-
     created = xai_model.get("created")
     if created is not None:
         model_info["created"] = created
-    
+
     return {"model_name": litellm_model_name, "model_info": model_info}
 
 

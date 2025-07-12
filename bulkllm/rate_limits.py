@@ -327,11 +327,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
             "xai/grok-4-0709",
         ],
         rpm=60,
-        tpm=16000
+        tpm=16000,
     ),
-    ModelRateLimit(
-        model_names=["bedrock/us.amazon.nova-premier-v1:0"],
-        rpm=100,
-        tpm=800_000
-    )
+    ModelRateLimit(model_names=["bedrock/us.amazon.nova-premier-v1:0"], rpm=100, tpm=800_000),
 ]
