@@ -35,16 +35,19 @@ def convert_xai_to_litellm(xai_model: dict[str, Any]) -> dict[str, Any] | None:
         model_info["supports_vision"] = True
 
     inp = xai_model.get("prompt_text_token_price")
+
     out = xai_model.get("completion_text_token_price")
     if inp is not None:
-        model_info["input_cost_per_token"] = float(inp) / 1_000_000
+        model_info["input_cost_per_token"] = float(inp) / 1_000_000 / 10_000
+
     if out is not None:
-        model_info["output_cost_per_token"] = float(out) / 1_000_000
+        model_info["output_cost_per_token"] = float(out) / 1_000_000 / 10_000
+
 
     created = xai_model.get("created")
     if created is not None:
         model_info["created"] = created
-
+    
     return {"model_name": litellm_model_name, "model_info": model_info}
 
 
