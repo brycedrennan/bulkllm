@@ -34,9 +34,10 @@ FAMILY_SUCCESSORS: dict[str, str] = {
     "meta-llama/llama-3.3-70b-instruct": "meta-llama/llama-4",
     "xai/grok": "xai/grok-2",
     "xai/grok-2": "xai/grok-3",
+    "xai/grok-3": "xai/grok-4",
     "openai/gpt-4": "openai/gpt-4o",
     "openai/gpt-4-turbo": "openai/gpt-4o",
-    "openai/gpt-4o": "openai/gpt-4.1",
+    # "openai/gpt-4o": "openai/gpt-4.1",
     "openai/gpt-3.5-turbo": "openai/gpt-4o",
     "openai/gpt-4.5": "openai/gpt-4.1",
     "openai/o1": "openai/o3",
@@ -577,18 +578,6 @@ openrouter_configs = [
         release_date=date(2024, 12, 26),
     ),
     LLMConfig(
-        slug="openrouter-amazon-nova-pro-v1",
-        display_name="Nova Pro V1",
-        company_name="Amazon",
-        litellm_model_name="openrouter/amazon/nova-pro-v1",
-        llm_family="amazon/nova-pro",
-        temperature=default_temperature,
-        max_tokens=default_max_tokens,
-        thinking_config={},
-        system_prompt=DEFAULT_SYSTEM_PROMPT,
-        release_date=date(2024, 12, 3),
-    ),
-    LLMConfig(
         slug="openrouter-amazon-nova-lite-v1",
         display_name="Nova Lite V1",
         company_name="Amazon",
@@ -611,6 +600,30 @@ openrouter_configs = [
         thinking_config={},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 12, 3),
+    ),
+    LLMConfig(
+        slug="openrouter-amazon-nova-pro-v1",
+        display_name="Nova Pro V1",
+        company_name="Amazon",
+        litellm_model_name="openrouter/amazon/nova-pro-v1",
+        llm_family="amazon/nova-pro",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
+        release_date=date(2024, 12, 3),
+    ),
+    LLMConfig(
+        slug="amazon-nova-premier-v1",
+        display_name="Nova Premier V1",
+        company_name="Amazon",
+        litellm_model_name="bedrock/us.amazon.nova-premier-v1:0",
+        llm_family="amazon/nova-premier",
+        temperature=default_temperature,
+        max_tokens=default_max_tokens,
+        thinking_config={},
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
+        release_date=date(2025, 4, 30),
     ),
     LLMConfig(
         slug="openrouter-qwen-qwq-32b",
@@ -663,7 +676,7 @@ openrouter_configs = [
     ),
     LLMConfig(
         slug="openrouter-mistralai-mistral-large-2411",
-        display_name="Mistral Large 2411",
+        display_name="Mistral Large 20241118",
         company_name="MistralAI",
         litellm_model_name="openrouter/mistralai/mistral-large-2411",
         llm_family="mistralai/mistral-large",
@@ -763,7 +776,7 @@ anthropic_configs = [
     ),
     LLMConfig(
         slug="anthropic-claude-3.7-sonnet-20250219-thinking",
-        display_name="Claude 3.7 Sonnet (thinking) 20250219",
+        display_name="Claude 3.7 Sonnet Thinking 20250219",
         company_name="Anthropic",
         litellm_model_name="anthropic/claude-3-7-sonnet-20250219",
         llm_family="anthropic/claude-3.7-sonnet",
@@ -872,7 +885,7 @@ anthropic_configs = [
     ),
     LLMConfig(
         slug="anthropic-claude-opus-4-20250514",
-        display_name="Claude Opus 4",
+        display_name="Claude Opus 4 20250514",
         company_name="Anthropic",
         litellm_model_name="anthropic/claude-opus-4-20250514",
         llm_family="anthropic/claude-4-opus",
@@ -884,7 +897,7 @@ anthropic_configs = [
     ),
     LLMConfig(
         slug="anthropic-claude-opus-4-thinking-20250514",
-        display_name="Claude Opus 4 (thinking) 20250514",
+        display_name="Claude Opus 4 Thinking 20250514",
         company_name="Anthropic",
         litellm_model_name="anthropic/claude-opus-4-20250514",
         llm_family="anthropic/claude-4-opus",
@@ -909,7 +922,7 @@ anthropic_configs = [
     #        thinking_config={"type": "enabled", "budget_tokens": 4096},
     LLMConfig(
         slug="anthropic-claude-sonnet-4-thinking-20250514",
-        display_name="Claude Sonnet 4 (thinking) 20250514",
+        display_name="Claude Sonnet 4 Thinking 20250514",
         company_name="Anthropic",
         litellm_model_name="anthropic/claude-sonnet-4-20250514",
         llm_family="anthropic/claude-4-sonnet",
@@ -1097,6 +1110,33 @@ gemini_configs = [
         release_date=date(2025, 6, 5),
         is_reasoning=True,
     ),
+    # LLMConfig(
+    #     slug="gemini-2.5-pro-20250617",
+    #     display_name="Gemini 2.5 Pro 20250617",
+    #     company_name="Google",
+    #     litellm_model_name="gemini/gemini-2.5-pro",
+    #     llm_family="gemini/gemini-2.5-pro",
+    #     temperature=default_temperature,
+    #     max_tokens=8000,
+    #     thinking_config={},
+    #     system_prompt=DEFAULT_SYSTEM_PROMPT,
+    #     release_date=date(2025, 6, 17),
+    #     is_reasoning=True,
+    # ),
+    LLMConfig(
+        slug="openrouter-gemini-2.5-pro-20250617",
+        display_name="Gemini 2.5 Pro 20250617",
+        company_name="Google",
+        litellm_model_name="openrouter/google/gemini-2.5-pro",
+        llm_family="gemini/gemini-2.5-pro",
+        temperature=default_temperature,
+        max_tokens=8000,
+        thinking_config={},
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
+        release_date=date(2025, 6, 17),
+        is_reasoning=True,
+        timeout=500,
+    ),
 ]
 default_models.extend(gemini_configs)
 
@@ -1179,7 +1219,7 @@ xai_configs = [
     ),
     LLMConfig(
         slug="xai-grok-3-mini-thinking",
-        display_name="Grok 3 Mini (thinking) 20250217",
+        display_name="Grok 3 Mini Thinking 20250217",
         company_name="xAI",
         litellm_model_name="xai/grok-3-mini",
         llm_family="xai/grok-3-mini",
@@ -1190,6 +1230,31 @@ xai_configs = [
         release_date=date(2025, 2, 17),
         reasoning_effort="high",
         is_reasoning=True,
+    ),
+    LLMConfig(
+        slug="xai-grok-4",
+        display_name="Grok 4",
+        company_name="xAI",
+        litellm_model_name="xai/grok-4-0709",
+        llm_family="xai/grok-4",
+        temperature=default_temperature,
+        max_tokens=8000,
+        thinking_config={},
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
+        release_date=date(2025, 7, 9),
+    ),
+    LLMConfig(
+        slug="openrouter-xai-grok-4",
+        display_name="Grok 4",
+        company_name="xAI",
+        litellm_model_name="openrouter/x-ai/grok-4-07-09",
+        llm_family="xai/grok-4",
+        temperature=default_temperature,
+        max_tokens=8000,
+        thinking_config={},
+        system_prompt=DEFAULT_SYSTEM_PROMPT,
+        release_date=date(2025, 7, 9),
+        timeout=600,
     ),
 ]
 default_models.extend(xai_configs)
@@ -1636,6 +1701,20 @@ def current_model_configs() -> list[LLMConfig]:
     return current_configs
 
 
+def for_benchmarking() -> list[LLMConfig]:
+    """Return all configs that are not deprecated and have a rate limit."""
+    configs = current_model_configs()
+    excluded_for_daily_limit = {
+        # "gemini/gemini-2.5-pro-preview-06-05",
+    }
+    excluded_for_openrouter = {"xai/grok-4-0709"}
+    excluded_configs = {"openai/codex-mini-latest", "openai/chatgpt-4o-latest", "openai/o3-pro-2025-06-10"}
+    configs = [config for config in configs if config.litellm_model_name not in excluded_for_daily_limit]
+    configs = [config for config in configs if config.litellm_model_name not in excluded_configs]
+    configs = [config for config in configs if config.litellm_model_name not in excluded_for_openrouter]
+    return configs
+
+
 def has_rate_limit(cfg: LLMConfig) -> bool:
     """Return True if the model has a configured rate limit."""
     limiter = RateLimiter()
@@ -1654,6 +1733,7 @@ def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
         "cheap": cheap_model_configs,
         "default": cheap_model_configs,
         "all": configs,
+        "benchmarking": for_benchmarking,
         "reasoning": [config for config in configs if config.is_reasoning],
         "current": current_model_configs,
         "missing-rate-limits": [config for config in configs if not has_rate_limit(config)],
@@ -1681,4 +1761,7 @@ def model_resolver(model_slugs: list[str]) -> list[LLMConfig]:
         else:
             msg = f"Unknown model config: {slug}"
             raise ValueError(msg)
-    return found_configs
+    # deduplicate configs
+    cfgs = list({cfg.slug: cfg for cfg in found_configs}.values())
+
+    return cfgs
