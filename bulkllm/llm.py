@@ -1,6 +1,7 @@
 import functools
 import inspect
 import logging
+import os
 import time
 from asyncio import CancelledError
 from pathlib import Path
@@ -62,11 +63,18 @@ def _scrubbing_callback(m):
 def initialize_litellm(enable_logfire=False):
     """Initialise LiteLLM and optional Logfire instrumentation."""
     patch_LLMCachingHandler()
+
     if enable_logfire:
+        from dotenv import load_dotenv
+
+        load_dotenv()
         import logfire  # type: ignore
 
+        logfire_token = os.getenv("LOGFIRE_TOKEN")
+        if not logfire_token:
+            raise ValueError("LOGFIRE_TOKEN is not set")
         logfire.configure(
-            token="",
+            token=logfire_token,
             console=False,
             scrubbing=logfire.ScrubbingOptions(callback=_scrubbing_callback),
         )
@@ -119,9 +127,14 @@ async def acompletion(*args, retry_cfg: dict | None = None, **kwargs):
     retry_cfg = retry_cfg or _DEFAULT_RETRY_CFG
     retrying = tenacity.AsyncRetrying(**retry_cfg)
 
-    async for attempt in retrying:
-        with attempt:
-            return await _acompletion(*args, **kwargs)
+    try:
+        async for attempt in retrying:
+            with attempt:
+                return await _acompletion(*args, **kwargs)
+    except Exception as e:
+        if hasattr(e, "bulkllm_model_name"):
+            logger.error(f"Failed to complete request for model '{e.bulkllm_model_name}': {str(e)[:50]}")
+        raise
 
 
 @functools.wraps(litellm.acompletion)
@@ -134,8 +147,11 @@ async def _acompletion(*args, **kwargs):
 
     async with await rate_limiter().reserve_capacity(model_name, input_tokens, output_tokens) as ctx:
         start_ms = time.monotonic()
-
-        response = await litellm.acompletion(*args, **kwargs)
+        try:
+            response = await litellm.acompletion(*args, **kwargs)
+        except Exception as e:
+            e.bulkllm_model_name = model_name
+            raise
 
         duration_ms = (time.monotonic() - start_ms) * 1000
 
@@ -155,6 +171,7 @@ async def _acompletion(*args, **kwargs):
         try:
             cost_usd = completion_cost(completion_response=response)
         except Exception:  # noqa - best effort for mocks
+            
             cost_usd = 0.0
 
     usage_record = convert_litellm_usage_to_usage_record(
@@ -239,6 +256,8 @@ def completion(*args, retry_cfg: dict | None = None, **kwargs):
 
 def should_retry_error(exception):
     """Determine if an error from litellm.acompletion should be retried."""
+    model_name = getattr(exception, "bulkllm_model_name", getattr(exception, "model", None))
+    provider = getattr(exception, "llm_provider", None)
     if "model_not_found" in str(exception) or "does not exist" in str(exception):
         return False
     if "authentication" in str(exception).lower() or "auth" in str(exception).lower():
@@ -254,7 +273,15 @@ def should_retry_error(exception):
         | litellm.exceptions.RateLimitError
         | litellm.exceptions.ServiceUnavailableError,
     ):
-        logger.warning(f"Retrying API call due to {type(exception).__name__}: {exception}")
+        logger.warning(
+            f"Retrying API call for model '{model_name}' from provider '{provider}' due to {type(exception).__name__}"
+        )
+        logger.exception("retry caused by")
+        return True
+    if isinstance(exception, litellm.exceptions.InternalServerError) and "overloaded_error" in str(exception):
+        logger.warning(
+            f"Retrying API call for model '{model_name}' from provider '{provider}' due to {type(exception).__name__}: {exception}"
+        )
         return True
     if isinstance(exception, CancelledError):
         return False
@@ -264,7 +291,7 @@ def should_retry_error(exception):
 
 _DEFAULT_RETRY_CFG = {
     "stop": tenacity.stop_after_attempt(3),
-    "wait": tenacity.wait_exponential(multiplier=1, min=1, max=10),
+    "wait": tenacity.wait_exponential(multiplier=2, min=3, max=30),
     "retry": tenacity.retry_if_exception(should_retry_error),
     "reraise": True,
 }
