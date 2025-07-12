@@ -146,6 +146,13 @@ class RateLimitContext:
         msg = f"Usage not recorded for request {self.request_id}. Cancelling pending request."
         if exc_type:
             msg += f" {'Cancellation' if is_cancellation else 'Exception'} occurred during context."
+
+        exc_info = exc_val if exc_type and not is_cancellation else None
+        if exc_info:
+            from bulkllm.llm import should_retry_error
+
+            if should_retry_error(exc_val):
+                log_level = logging.DEBUG
         logger.log(
             log_level,
             msg,
@@ -202,7 +209,7 @@ class ModelRateLimit(BaseModel):
     otpm: int = Field(0, description="Output tokens per minute")
     is_regex: bool = Field(False, description="If *model_names* are regex patterns")
     window_seconds: int = Field(60, description="Window size in seconds")
-    pending_timeout_seconds: int = Field(120, description="Pending request timeout in seconds")
+    pending_timeout_seconds: int = Field(300, description="Pending request timeout in seconds")
 
     # Locks
     _lock: anyio.Lock = PrivateAttr(default_factory=anyio.Lock)

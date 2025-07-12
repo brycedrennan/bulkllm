@@ -237,6 +237,12 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         is_regex=True,
         pending_timeout_seconds=180,
     ),
+    ModelRateLimit(
+        model_names=["openrouter/x-ai/grok-4-07-09"],
+        rpm=360 * 60,
+        tpm=1_000_000_000,  # OpenRouter doesn't have a token limit, so set very high
+        pending_timeout_seconds=600,
+    ),
     # Gemini Models
     ModelRateLimit(
         model_names=["gemini/gemini-1.5-flash", "gemini/gemini-1.5-flash-002", "gemini/gemini-1.5-flash-001"],
@@ -287,6 +293,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
             "gemini/gemini-2.5-pro-preview-03-25",
             "gemini/gemini-2.5-pro-preview-05-06",
             "gemini/gemini-2.5-pro-preview-06-05",
+            "gemini/gemini-2.5-pro",
         ],
         rpm=150,
         tpm=2_000_000,
@@ -314,4 +321,17 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         # despite console saying 8 RPS, error message says its 3 RPS
         rpm=3 * 60,
     ),
+    ModelRateLimit(
+        model_names=[
+            "xai/grok-4",
+            "xai/grok-4-0709",
+        ],
+        rpm=60,
+        tpm=16000
+    ),
+    ModelRateLimit(
+        model_names=["bedrock/us.amazon.nova-premier-v1:0"],
+        rpm=100,
+        tpm=800_000
+    )
 ]
