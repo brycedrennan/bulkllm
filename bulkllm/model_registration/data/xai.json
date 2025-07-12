@@ -138,6 +138,29 @@
         "grok-3-mini-fast-latest",
         "grok-3-mini-fast-beta"
       ]
+    },
+    {
+      "id": "grok-4-0709",
+      "fingerprint": "fp_325598280e",
+      "created": 1752019200,
+      "object": "model",
+      "owned_by": "xai",
+      "version": "1.0",
+      "input_modalities": [
+        "text"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "prompt_text_token_price": 30000,
+      "cached_prompt_text_token_price": 7500,
+      "prompt_image_token_price": 0,
+      "completion_text_token_price": 150000,
+      "search_price": 0,
+      "aliases": [
+        "grok-4",
+        "grok-4-latest"
+      ]
     }
   ]
 }
