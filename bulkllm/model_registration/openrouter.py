@@ -98,6 +98,8 @@ def get_openrouter_models(*, use_cached: bool = True) -> dict[str, Any]:
 
         if converted_model:
             litellm_models[converted_model["model_name"]] = converted_model["model_info"]
+            if "canonical_slug" in model:
+                litellm_models[f"openrouter/{model['canonical_slug']}"] = converted_model["model_info"]
 
     # Cache the results
     write_cache(litellm_models)
