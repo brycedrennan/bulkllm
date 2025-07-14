@@ -243,6 +243,12 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         tpm=1_000_000_000,  # OpenRouter doesn't have a token limit, so set very high
         pending_timeout_seconds=600,
     ),
+    ModelRateLimit(
+        model_names=["openrouter/moonshotai/kimi-k2"],
+        rpm=60,
+        tpm=1_000_000_000,  # OpenRouter doesn't have a token limit, so set very high
+        pending_timeout_seconds=600,
+    ),
     # Gemini Models
     ModelRateLimit(
         model_names=["gemini/gemini-1.5-flash", "gemini/gemini-1.5-flash-002", "gemini/gemini-1.5-flash-001"],
@@ -330,4 +336,5 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         tpm=16000,
     ),
     ModelRateLimit(model_names=["bedrock/us.amazon.nova-premier-v1:0"], rpm=100, tpm=800_000),
+    ModelRateLimit(model_names=["novita/moonshotai/kimi-k2-instruct"], rpm=10, tpm=50_000_000),
 ]
