@@ -1361,6 +1361,102 @@
       "deprecation_replacement_model": null,
       "default_model_temperature": 0.0,
       "type": "base"
+    },
+    {
+      "id": "voxtral-mini-2507",
+      "object": "model",
+      "created": 1753136164,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "voxtral-mini-2507",
+      "description": "Official voxtral-mini-2507 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [
+        "voxtral-mini-latest"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": null,
+      "type": "base"
+    },
+    {
+      "id": "voxtral-mini-latest",
+      "object": "model",
+      "created": 1753136164,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "voxtral-mini-2507",
+      "description": "Official voxtral-mini-2507 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [
+        "voxtral-mini-2507"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": null,
+      "type": "base"
+    },
+    {
+      "id": "voxtral-small-2507",
+      "object": "model",
+      "created": 1753136164,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "voxtral-small-2507",
+      "description": "Official voxtral-small-2507 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [
+        "voxtral-small-latest"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": null,
+      "type": "base"
+    },
+    {
+      "id": "voxtral-small-latest",
+      "object": "model",
+      "created": 1753136164,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "voxtral-small-2507",
+      "description": "Official voxtral-small-2507 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [
+        "voxtral-small-2507"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": null,
+      "type": "base"
     }
   ]
 }

@@ -320,18 +320,6 @@
       "owned_by": "system"
     },
     {
-      "id": "gpt-4.5-preview",
-      "object": "model",
-      "created": 1740623059,
-      "owned_by": "system"
-    },
-    {
-      "id": "gpt-4.5-preview-2025-02-27",
-      "object": "model",
-      "created": 1740623304,
-      "owned_by": "system"
-    },
-    {
       "id": "computer-use-preview-2025-03-11",
       "object": "model",
       "created": 1741377021,

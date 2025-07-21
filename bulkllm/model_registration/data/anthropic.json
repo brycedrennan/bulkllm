@@ -2,26 +2,8 @@
   "data": [
     {
       "type": "model",
-      "id": "claude-2.0",
-      "display_name": "Claude 2.0",
-      "created_at": "2023-07-11T00:00:00Z"
-    },
-    {
-      "type": "model",
-      "id": "claude-2.1",
-      "display_name": "Claude 2.1",
-      "created_at": "2023-11-21T00:00:00Z"
-    },
-    {
-      "type": "model",
       "id": "claude-3-opus-20240229",
       "display_name": "Claude Opus 3",
-      "created_at": "2024-02-29T00:00:00Z"
-    },
-    {
-      "type": "model",
-      "id": "claude-3-sonnet-20240229",
-      "display_name": "Claude Sonnet 3",
       "created_at": "2024-02-29T00:00:00Z"
     },
     {
@@ -69,5 +51,5 @@
   ],
   "has_more": false,
   "first_id": "claude-opus-4-20250514",
-  "last_id": "claude-2.0"
+  "last_id": "claude-3-opus-20240229"
 }

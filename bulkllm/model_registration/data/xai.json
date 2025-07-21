@@ -49,7 +49,7 @@
     },
     {
       "id": "grok-3",
-      "fingerprint": "fp_9ad1a16f77",
+      "fingerprint": "fp_0d42a4eb3d",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -95,7 +95,7 @@
     },
     {
       "id": "grok-3-mini",
-      "fingerprint": "fp_98701f8c5d",
+      "fingerprint": "fp_70809dc834",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -118,7 +118,7 @@
     },
     {
       "id": "grok-3-mini-fast",
-      "fingerprint": "fp_c1e970f3b6",
+      "fingerprint": "fp_9565ca872a",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -141,7 +141,7 @@
     },
     {
       "id": "grok-4-0709",
-      "fingerprint": "fp_acdceb26fb",
+      "fingerprint": "fp_3a7881249c",
       "created": 1752019200,
       "object": "model",
       "owned_by": "xai",
@@ -157,7 +157,7 @@
       "cached_prompt_text_token_price": 7500,
       "prompt_image_token_price": 0,
       "completion_text_token_price": 150000,
-      "search_price": 0,
+      "search_price": 250000000,
       "aliases": [
         "grok-4",
         "grok-4-latest"
