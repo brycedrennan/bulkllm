@@ -1,8 +1,10 @@
+import os
 import time
 
 import pytest
 
 
+@pytest.mark.skipif(not os.getenv("OPENAI_API_KEY"), reason="requires OPENAI_API_KEY")
 def test_helloworld():
     from bulkllm.llm import completion
 
@@ -10,6 +12,7 @@ def test_helloworld():
     print(response)
 
 
+@pytest.mark.skipif(not os.getenv("OPENAI_API_KEY"), reason="requires OPENAI_API_KEY")
 def test_created_field_cached_after_5_seconds():
     """Test that the 'created' field is cached when identical calls are made 5 seconds apart."""
     from bulkllm.llm import completion

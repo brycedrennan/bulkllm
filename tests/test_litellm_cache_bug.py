@@ -11,6 +11,8 @@ def test_litellm_cache_bug(monkeypatch):
     """there was a bug in litellm where the cache key was not being hashed correctly and was not sufficinetly unique"""
     initialize_litellm()
 
+    assert litellm.cache is not None
+
     monkeypatch.setattr(Cache, "_get_hashed_cache_key", lambda k: k)
     key_counts = defaultdict(int)
 

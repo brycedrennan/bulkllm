@@ -62,9 +62,10 @@ output-format = "concise"
 
 [tool.ruff.lint]
 extend-ignore = [
-    "E501", "G004", "ISC001",  "PT011", "RET504", "SIM114", 
+    "E501", "G004", "ISC001",  "PT011", "RET504", "SIM114",
     "TC003",
-    "TRY003", "TRY400", "TRY401", "RUF012", "RUF100"
+    "TRY003", "TRY400", "TRY401", "RUF012", "RUF100",
+    "PLC0415"
 ]
 extend-select = [
     "I", "E", "W", "UP", "ASYNC", "BLE", "A001", "A002",

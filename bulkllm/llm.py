@@ -150,7 +150,7 @@ async def _acompletion(*args, **kwargs):
         try:
             response = await litellm.acompletion(*args, **kwargs)
         except Exception as e:
-            e.bulkllm_model_name = model_name
+            e.bulkllm_model_name = model_name  # type: ignore[attr-defined]
             raise
 
         duration_ms = (time.monotonic() - start_ms) * 1000
