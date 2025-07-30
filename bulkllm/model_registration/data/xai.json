@@ -25,7 +25,7 @@
     },
     {
       "id": "grok-2-vision-1212",
-      "fingerprint": "fp_b3554c57d2",
+      "fingerprint": "fp_236db45c03",
       "created": 1733961600,
       "object": "model",
       "owned_by": "xai",
@@ -95,7 +95,7 @@
     },
     {
       "id": "grok-3-mini",
-      "fingerprint": "fp_70809dc834",
+      "fingerprint": "fp_bcbcada1ec",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -118,7 +118,7 @@
     },
     {
       "id": "grok-3-mini-fast",
-      "fingerprint": "fp_9565ca872a",
+      "fingerprint": "fp_5097008838",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -141,7 +141,7 @@
     },
     {
       "id": "grok-4-0709",
-      "fingerprint": "fp_3a7881249c",
+      "fingerprint": "fp_04a99640bc",
       "created": 1752019200,
       "object": "model",
       "owned_by": "xai",
@@ -155,7 +155,7 @@
       ],
       "prompt_text_token_price": 30000,
       "cached_prompt_text_token_price": 7500,
-      "prompt_image_token_price": 0,
+      "prompt_image_token_price": 30000,
       "completion_text_token_price": 150000,
       "search_price": 250000000,
       "aliases": [

@@ -38,21 +38,6 @@
       ]
     },
     {
-      "name": "models/gemini-1.0-pro-vision-latest",
-      "version": "001",
-      "displayName": "Gemini 1.0 Pro Vision",
-      "description": "The original Gemini 1.0 Pro Vision model version which was optimized for image understanding. Gemini 1.0 Pro Vision was deprecated on July 12, 2024. Move to a newer Gemini version.",
-      "inputTokenLimit": 12288,
-      "outputTokenLimit": 4096,
-      "supportedGenerationMethods": [
-        "generateContent",
-        "countTokens"
-      ],
-      "temperature": 0.4,
-      "topP": 1,
-      "topK": 32
-    },
-    {
       "name": "models/gemini-1.5-flash",
       "version": "001",
       "displayName": "Gemini 1.5 Flash",
@@ -474,6 +459,25 @@
       "thinking": true
     },
     {
+      "name": "models/gemini-2.5-flash-lite",
+      "version": "001",
+      "displayName": "Gemini 2.5 Flash-Lite",
+      "description": "Stable verion of Gemini 2.5 Flash-Lite, released in July of 2025",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens",
+        "createCachedContent",
+        "batchGenerateContent"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 2,
+      "thinking": true
+    },
+    {
       "name": "models/gemini-2.5-flash-lite-preview-06-17",
       "version": "2.5-preview-06-17",
       "displayName": "Gemini 2.5 Flash-Lite Preview 06-17",
@@ -678,21 +682,6 @@
       "thinking": true
     },
     {
-      "name": "models/gemini-pro-vision",
-      "version": "001",
-      "displayName": "Gemini 1.0 Pro Vision",
-      "description": "The original Gemini 1.0 Pro Vision model version which was optimized for image understanding. Gemini 1.0 Pro Vision was deprecated on July 12, 2024. Move to a newer Gemini version.",
-      "inputTokenLimit": 12288,
-      "outputTokenLimit": 4096,
-      "supportedGenerationMethods": [
-        "generateContent",
-        "countTokens"
-      ],
-      "temperature": 0.4,
-      "topP": 1,
-      "topK": 32
-    },
-    {
       "name": "models/gemma-3-12b-it",
       "version": "001",
       "displayName": "Gemma 3 12B",
@@ -788,6 +777,17 @@
       ]
     },
     {
+      "name": "models/imagen-4.0-generate-preview-06-06",
+      "version": "01",
+      "displayName": "Imagen 4 (Preview)",
+      "description": "Vertex served Imagen 4.0 model",
+      "inputTokenLimit": 480,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": [
+        "predict"
+      ]
+    },
+    {
       "name": "models/learnlm-2.0-flash-experimental",
       "version": "2.0",
       "displayName": "LearnLM 2.0 Flash Experimental",
@@ -815,5 +815,5 @@
       ]
     }
   ],
-  "nextPageToken": "Ch5tb2RlbHMvaW1hZ2VuLTMuMC1nZW5lcmF0ZS0wMDI="
+  "nextPageToken": "Cihtb2RlbHMvaW1hZ2VuLTQuMC1nZW5lcmF0ZS1wcmV2aWV3LTA2LTA2"
 }

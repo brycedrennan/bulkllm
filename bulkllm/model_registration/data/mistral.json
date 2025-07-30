@@ -658,33 +658,6 @@
       "description": "Official codestral-2501 Mistral AI model",
       "max_context_length": 262144,
       "aliases": [
-        "codestral-latest",
-        "codestral-2412",
-        "codestral-2411-rc5"
-      ],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
-      "type": "base"
-    },
-    {
-      "id": "codestral-latest",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "completion_fim": true,
-        "function_calling": true,
-        "fine_tuning": false,
-        "vision": false,
-        "classification": false
-      },
-      "name": "codestral-2501",
-      "description": "Official codestral-2501 Mistral AI model",
-      "max_context_length": 262144,
-      "aliases": [
-        "codestral-2501",
         "codestral-2412",
         "codestral-2411-rc5"
       ],
@@ -711,7 +684,6 @@
       "max_context_length": 262144,
       "aliases": [
         "codestral-2501",
-        "codestral-latest",
         "codestral-2411-rc5"
       ],
       "deprecation": null,
@@ -737,8 +709,31 @@
       "max_context_length": 262144,
       "aliases": [
         "codestral-2501",
-        "codestral-latest",
         "codestral-2412"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": 0.3,
+      "type": "base"
+    },
+    {
+      "id": "codestral-latest",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": true,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "codestral-2508",
+      "description": "Official codestral-2508 Mistral AI model",
+      "max_context_length": 256000,
+      "aliases": [
+        "codestral-2508"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
@@ -998,9 +993,7 @@
       "name": "magistral-medium-2506",
       "description": "Official magistral-medium-2506 Mistral AI model",
       "max_context_length": 40960,
-      "aliases": [
-        "magistral-medium-latest"
-      ],
+      "aliases": [],
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": 0.7,
@@ -1019,11 +1012,11 @@
         "vision": false,
         "classification": false
       },
-      "name": "magistral-medium-2506",
-      "description": "Official magistral-medium-2506 Mistral AI model",
+      "name": "magistral-medium-2507",
+      "description": "Official magistral-medium-2507 Mistral AI model",
       "max_context_length": 40960,
       "aliases": [
-        "magistral-medium-2506"
+        "magistral-medium-2507"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
@@ -1046,9 +1039,7 @@
       "name": "magistral-small-2506",
       "description": "Official magistral-small-2506 Mistral AI model",
       "max_context_length": 40000,
-      "aliases": [
-        "magistral-small-latest"
-      ],
+      "aliases": [],
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": 0.7,
@@ -1067,11 +1058,11 @@
         "vision": false,
         "classification": false
       },
-      "name": "magistral-small-2506",
-      "description": "Official magistral-small-2506 Mistral AI model",
-      "max_context_length": 40000,
+      "name": "magistral-small-2507",
+      "description": "Official magistral-small-2507 Mistral AI model",
+      "max_context_length": 40960,
       "aliases": [
-        "magistral-small-2506"
+        "magistral-small-2507"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
@@ -1456,6 +1447,78 @@
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": null,
+      "type": "base"
+    },
+    {
+      "id": "codestral-2508",
+      "object": "model",
+      "created": 1753904061,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": true,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "codestral-2508",
+      "description": "Official codestral-2508 Mistral AI model",
+      "max_context_length": 256000,
+      "aliases": [
+        "codestral-latest"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": 0.3,
+      "type": "base"
+    },
+    {
+      "id": "magistral-medium-2507",
+      "object": "model",
+      "created": 1753904061,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "magistral-medium-2507",
+      "description": "Official magistral-medium-2507 Mistral AI model",
+      "max_context_length": 40960,
+      "aliases": [
+        "magistral-medium-latest"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": 0.7,
+      "type": "base"
+    },
+    {
+      "id": "magistral-small-2507",
+      "object": "model",
+      "created": 1753904061,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "completion_fim": false,
+        "function_calling": true,
+        "fine_tuning": false,
+        "vision": false,
+        "classification": false
+      },
+      "name": "magistral-small-2507",
+      "description": "Official magistral-small-2507 Mistral AI model",
+      "max_context_length": 40960,
+      "aliases": [
+        "magistral-small-latest"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": 0.7,
       "type": "base"
     }
   ]
