@@ -244,7 +244,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         pending_timeout_seconds=600,
     ),
     ModelRateLimit(
-        model_names=["openrouter/moonshotai/kimi-k2"],
+        model_names=["openrouter/moonshotai/kimi-k2", "openrouter/qwen/qwen3-235b-a22b-07-25"],
         rpm=60,
         tpm=1_000_000_000,  # OpenRouter doesn't have a token limit, so set very high
         pending_timeout_seconds=600,

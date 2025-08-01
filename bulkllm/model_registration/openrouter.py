@@ -92,14 +92,38 @@ def get_openrouter_models(*, use_cached: bool = True) -> dict[str, Any]:
             logger.warning("Failed to fetch OpenRouter models (offline mode?): %s", exc)
             return {}
 
-    litellm_models = {}
+    # First, collect all converted models
+    all_converted_models = []
     for model in models_data.get("data", []):
         converted_model = convert_openrouter_to_litellm(model)
-
         if converted_model:
-            litellm_models[converted_model["model_name"]] = converted_model["model_info"]
-            if "canonical_slug" in model:
-                litellm_models[f"openrouter/{model['canonical_slug']}"] = converted_model["model_info"]
+            all_converted_models.append((converted_model, model))
+
+    # Filter out :free versions if non-suffixed versions exist
+    # Build a set of base model names (without :free suffix)
+    base_model_names = set()
+    for converted_model, _ in all_converted_models:
+        model_name = converted_model["model_name"]
+        if model_name.endswith(":free"):
+            base_name = model_name[:-5]  # Remove ":free" suffix
+            base_model_names.add(base_name)
+        else:
+            base_model_names.add(model_name)
+
+    # Now populate litellm_models, filtering out :free versions when non-suffixed exists
+    litellm_models = {}
+    for converted_model, original_model in all_converted_models:
+        model_name = converted_model["model_name"]
+
+        # Skip :free versions if a non-suffixed version exists
+        if model_name.endswith(":free"):
+            base_name = model_name[:-5]
+            if base_name in base_model_names and any(cm["model_name"] == base_name for cm, _ in all_converted_models):
+                continue  # Skip this :free version
+
+        litellm_models[model_name] = converted_model["model_info"]
+        if "canonical_slug" in original_model:
+            litellm_models[f"openrouter/{original_model['canonical_slug']}"] = converted_model["model_info"]
 
     # Cache the results
     write_cache(litellm_models)
