@@ -977,7 +977,7 @@ anthropic_configs = [
         llm_family="anthropic/claude-4-opus",
         temperature=default_temperature,
         max_tokens=8000,
-        thinking_config={"type": "disabled", "budget_tokens": 0},
+        thinking_config={"type": "disabled"},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 8, 5),
     ),
