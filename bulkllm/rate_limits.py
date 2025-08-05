@@ -227,8 +227,13 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
     ModelRateLimit(model_names=["anthropic/claude-3-5-sonnet-20240620"], rpm=4000, itpm=400_000, otpm=80_000),
     ModelRateLimit(model_names=["anthropic/claude-3-5-haiku-20241022"], rpm=4000, itpm=400_000, otpm=80_000),
     ModelRateLimit(model_names=["anthropic/claude-3-7-sonnet-20250219"], rpm=4000, itpm=200_000, otpm=80_000),
-    ModelRateLimit(model_names=["anthropic/claude-opus-4-20250514"], rpm=4000, itpm=200_000, otpm=80_000),
-    ModelRateLimit(model_names=["anthropic/claude-sonnet-4-20250514"], rpm=4000, itpm=200_000, otpm=80_000),
+    ModelRateLimit(
+        model_names=["anthropic/claude-opus-4-20250514", "anthropic/claude-opus-4-1-20250805"],
+        rpm=4000,
+        itpm=2_000_000,
+        otpm=400_000,
+    ),
+    ModelRateLimit(model_names=["anthropic/claude-sonnet-4-20250514"], rpm=4000, itpm=2_000_000, otpm=400_000),
     # OpenRouter Models - use regex to match all models
     ModelRateLimit(
         model_names=["^openrouter/.*$"],
