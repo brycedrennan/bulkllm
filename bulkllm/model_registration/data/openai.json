@@ -486,6 +486,48 @@
       "object": "model",
       "created": 1750866121,
       "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-chat-latest",
+      "object": "model",
+      "created": 1754073306,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-2025-08-07",
+      "object": "model",
+      "created": 1754075360,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5",
+      "object": "model",
+      "created": 1754425777,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-mini-2025-08-07",
+      "object": "model",
+      "created": 1754425867,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-mini",
+      "object": "model",
+      "created": 1754425928,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-nano-2025-08-07",
+      "object": "model",
+      "created": 1754426303,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-nano",
+      "object": "model",
+      "created": 1754426384,
+      "owned_by": "system"
     }
   ]
 }
