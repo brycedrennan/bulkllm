@@ -15,13 +15,17 @@ When a new provider model is added (e.g., OpenAI GPT-5), update all three layers
     - `company_name`: provider (e.g., `OpenAI`).
     - `litellm_model_name`: full provider-prefixed name (e.g., `openai/gpt-5-2025-08-07`).
     - `llm_family`: family without the dated suffix (e.g., `openai/gpt-5`). Used to group snapshots.
-    - `temperature`, `max_tokens` or `max_completion_tokens` per model type, `thinking_config`, `system_prompt`, `release_date`.
+    - `temperature`, `max_tokens` or `max_completion_tokens` per model type, `system_prompt`, `release_date`.
+    - For reasoning models, provide explicit variants using `reasoning_effort` set to `"low"`, `"medium"`, or `"high"` as supported.
+      - Prefer two SKUs: minimal/low effort and high effort (match existing `o3`/`o4-mini` patterns).
+      - Do not use `thinking_config` for OpenAI models. Use `reasoning_effort` instead.
     - Set `is_reasoning=True` where applicable.
   - If the model supersedes an older family, update `FAMILY_SUCCESSORS` so `current_model_configs()` selects the right snapshot.
 
 - **Rate limits (`bulkllm/rate_limits.py`)**
   - Add a `ModelRateLimit` group for the family and snapshots. Use provider docs or mirrored limits from similar families.
   - Include aliases like `...-latest` where applicable.
+  - For reasoning variants, limits typically apply to the base model; just include all snapshots/aliases in the same group.
 
 ### Sanity checklist
 - Models appear in `model_info()` output with costs and rate limits.

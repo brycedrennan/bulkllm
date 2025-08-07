@@ -37,7 +37,7 @@ class LLMConfig(CiBaseModel):
     max_completion_tokens: int | None = None
     thinking_config: dict | None = None
     system_prompt: str | None = None
-    reasoning_effort: Literal["low", "medium", "high"] | None = None
+    reasoning_effort: Literal["minimal", "low", "medium", "high"] | None = None
     release_date: date | None = None
     is_reasoning: bool = False
     is_deprecated: bool | date = False
