@@ -697,7 +697,7 @@
       "slug": "gpt-4.1",
       "display_name": "GPT-4.1",
       "current_snapshot": "gpt-4.1-2025-04-14",
-      "tagline": "Flagship GPT model for complex tasks",
+      "tagline": "Excels at function calling and instruction following",
       "description": "GPT-4.1 is our flagship model for complex tasks. It is well suited for problem\nsolving across domains.\n",
       "type": "chat",
       "snapshots": [
@@ -782,19 +782,17 @@
     {
       "name": "gpt-4.5-preview",
       "slug": "gpt-4-5-preview",
-      "display_name": "GPT-4.5 Preview",
+      "display_name": "GPT-4.5 Preview (Deprecated)",
       "current_snapshot": "gpt-4.5-preview-2025-02-27",
-      "tagline": "Largest and most capable GPT model",
-      "description": "This is a research preview of GPT-4.5, our largest and most capable GPT model yet. Its deep world knowledge and better understanding of user intent makes it good at creative tasks and agentic planning. GPT-4.5 excels at tasks that benefit from creative, open-ended thinking and conversation, such as writing, learning, or exploring new ideas. \n",
-      "video_url": "https://www.youtube.com/embed/cfRYp0nItZ8",
-      "video_thumbnail": "/images/model-page/GPT-4.5-livestream.jpg",
+      "tagline": "Deprecated large model.",
+      "description": "Deprecated - a research preview of GPT-4.5. We recommend using gpt-4.1 or o3 \nmodels instead for most use cases.\n",
       "type": "chat",
       "snapshots": [
         "gpt-4.5-preview-2025-02-27"
       ],
       "compare_prices": [
-        "gpt-4o",
-        "o3-mini"
+        "gpt-4.1",
+        "o3"
       ],
       "rate_limits": {
         "tier_1": {
@@ -1367,6 +1365,200 @@
       }
     },
     {
+      "name": "gpt-5-chat-latest",
+      "slug": "gpt-5-chat-latest",
+      "display_name": "GPT-5 Chat",
+      "current_snapshot": "gpt-5-chat-latest",
+      "tagline": "GPT-5 model used in ChatGPT",
+      "description": "GPT-5 Chat points to the GPT-5 snapshot currently used in ChatGPT. \nGPT-5 is our next-generation, high-intelligence flagship model.\nIt accepts both text and image inputs, and produces text outputs.\n",
+      "type": "reasoning",
+      "snapshots": [
+        "gpt-5-chat-latest"
+      ],
+      "compare_prices": [
+        "gpt-5",
+        "gpt-5-mini"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 500,
+          "tpm": 30000.0,
+          "batch_queue_limit": 50000.0
+        },
+        "tier_2": {
+          "rpm": 5000.0,
+          "tpm": 450000.0,
+          "batch_queue_limit": 1350000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 800000.0,
+          "batch_queue_limit": 100000000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 200000000.0
+        },
+        "tier_5": {
+          "rpm": 15000.0,
+          "tpm": 40000000.0,
+          "batch_queue_limit": 15000000000.0
+        }
+      }
+    },
+    {
+      "name": "gpt-5-mini",
+      "slug": "gpt-5-mini",
+      "display_name": "GPT-5 mini",
+      "current_snapshot": "gpt-5-mini-2025-08-07",
+      "tagline": "A faster, more cost-efficient version of GPT-5 for well-defined tasks",
+      "description": "GPT-5 mini is a faster, more cost-efficient version of GPT-5. It's great for\nwell-defined tasks and precise prompts. Learn more in our \n[GPT-5 usage guide](/docs/guides/gpt-5).\n",
+      "type": "reasoning",
+      "snapshots": [
+        "gpt-5-mini-2025-08-07"
+      ],
+      "compare_prices": [
+        "gpt-5",
+        "gpt-5-nano"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "web_search",
+        "file_search",
+        "code_interpreter",
+        "mcp"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 500,
+          "tpm": 200000.0,
+          "batch_queue_limit": 2000000.0
+        },
+        "tier_2": {
+          "rpm": 5000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 20000000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 4000000.0,
+          "batch_queue_limit": 40000000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 10000000.0,
+          "batch_queue_limit": 1000000000.0
+        },
+        "tier_5": {
+          "rpm": 30000.0,
+          "tpm": 180000000.0,
+          "batch_queue_limit": 15000000000.0
+        }
+      }
+    },
+    {
+      "name": "gpt-5-nano",
+      "slug": "gpt-5-nano",
+      "display_name": "GPT-5 nano",
+      "current_snapshot": "gpt-5-nano-2025-08-07",
+      "tagline": "Fastest, most cost-efficient version of GPT-5",
+      "description": "GPT-5 Nano is our fastest, cheapest version of GPT-5. It's great for summarization and classification tasks.\nLearn more in our [GPT-5 usage guide](/docs/guides/gpt-5).\n",
+      "type": "reasoning",
+      "snapshots": [
+        "gpt-5-nano-2025-08-07"
+      ],
+      "compare_prices": [
+        "gpt-5-mini",
+        "gpt-5"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "file_search",
+        "image_generation",
+        "code_interpreter",
+        "mcp"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 500,
+          "tpm": 200000.0,
+          "batch_queue_limit": 2000000.0
+        },
+        "tier_2": {
+          "rpm": 5000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 20000000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 4000000.0,
+          "batch_queue_limit": 40000000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 10000000.0,
+          "batch_queue_limit": 1000000000.0
+        },
+        "tier_5": {
+          "rpm": 30000.0,
+          "tpm": 180000000.0,
+          "batch_queue_limit": 15000000000.0
+        }
+      }
+    },
+    {
+      "name": "gpt-5",
+      "slug": "gpt-5",
+      "display_name": "GPT-5",
+      "current_snapshot": "gpt-5-2025-08-07",
+      "tagline": "The best model for coding and agentic tasks across domains",
+      "description": "GPT-5 is our flagship model for coding, reasoning, and agentic tasks across domains.\nLearn more in our [GPT-5 usage guide](/docs/guides/gpt-5).\n",
+      "type": "reasoning",
+      "snapshots": [
+        "gpt-5-2025-08-07"
+      ],
+      "compare_prices": [
+        "gpt-5-mini",
+        "gpt-5-nano"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "web_search",
+        "file_search",
+        "image_generation",
+        "code_interpreter",
+        "mcp"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 500,
+          "tpm": 30000.0,
+          "batch_queue_limit": 90000.0
+        },
+        "tier_2": {
+          "rpm": 5000.0,
+          "tpm": 450000.0,
+          "batch_queue_limit": 1350000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 800000.0,
+          "batch_queue_limit": 100000000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 200000000.0
+        },
+        "tier_5": {
+          "rpm": 15000.0,
+          "tpm": 40000000.0,
+          "batch_queue_limit": 15000000000.0
+        }
+      }
+    },
+    {
       "name": "gpt-image-1",
       "slug": "gpt-image-1",
       "display_name": "GPT Image 1",
@@ -1398,6 +1590,104 @@
         "tier_5": {
           "tpm": 8000000.0,
           "ipm": 250
+        }
+      }
+    },
+    {
+      "name": "gpt-oss-120b",
+      "slug": "gpt-oss-120b",
+      "current_snapshot": "gpt-oss-120b",
+      "tagline": "Our most powerful open weight model, which fits into a single H100 GPU",
+      "description": "`gpt-oss-120b`is our most powerful open weight model, which fits into a single \nH100 GPU (117B parameters with 5.1B active parameters).\n\n[Download gpt-oss-120b on HuggingFace](https://huggingface.co/openai/gpt-oss-120b).\n\n**Key features**\n\n-   **Permissive Apache 2.0 license:** Build freely without copyleft restrictions or patent risk\u2014ideal for experimentation, customization, and commercial deployment.\n-   **Configurable reasoning effort:** Easily adjust the reasoning effort (low, medium, high) based on your specific use case and latency needs.\n-   **Full chain-of-thought:** Gain complete access to the model's reasoning process, facilitating easier debugging and increased trust in outputs.\n-   **Fine-tunable:** Fully customize models to your specific use case through parameter fine-tuning.\n-   **Agentic capabilities:** Use the models' native capabilities for function calling, web browsing, Python code execution, and structured outputs.\n",
+      "type": "reasoning",
+      "snapshots": [
+        "gpt-oss-120b"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "code_interpreter",
+        "mcp",
+        "web_search"
+      ],
+      "compare_prices": [
+        "o3",
+        "gpt-oss-20b"
+      ],
+      "playground_url": "none",
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        },
+        "tier_2": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        },
+        "tier_3": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        },
+        "tier_4": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        },
+        "tier_5": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        }
+      }
+    },
+    {
+      "name": "gpt-oss-20b",
+      "slug": "gpt-oss-20b",
+      "current_snapshot": "gpt-oss-20b",
+      "tagline": "Our medium-sized open weight model for low latency",
+      "description": "`gpt-oss-20b` isur medium-sized open model for low latency, local, or \nspecialized use-cases (21B parameters with 3.6B active parameters).\n\n[Download gpt-oss-20b on HuggingFace](https://huggingface.co/openai/gpt-oss-20b).\n\n**Key features**\n\n-   **Permissive Apache 2.0 license:** Build freely without copyleft restrictions or patent risk\u2014ideal for experimentation, customization, and commercial deployment.\n-   **Configurable reasoning effort:** Easily adjust the reasoning effort (low, medium, high) based on your specific use case and latency needs.\n-   **Full chain-of-thought:** Gain complete access to the model's reasoning process, facilitating easier debugging and increased trust in outputs.\n-   **Fine-tunable:** Fully customize models to your specific use case through parameter fine-tuning.\n-   **Agentic capabilities:** Use the models' native capabilities for function calling, web browsing, Python code execution, and structured outputs.\n",
+      "type": "reasoning",
+      "snapshots": [
+        "gpt-oss-20b"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "code_interpreter",
+        "mcp",
+        "web_search"
+      ],
+      "playground_url": "none",
+      "compare_prices": [
+        "o3",
+        "gpt-oss-120b"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        },
+        "tier_2": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        },
+        "tier_3": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        },
+        "tier_4": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
+        },
+        "tier_5": {
+          "rpm": 0,
+          "tpm": 0,
+          "batch_queue_limit": 0
         }
       }
     },
@@ -2846,6 +3136,7 @@
       "max_output_tokens": 32768,
       "knowledge_cutoff": 1717200000000.0,
       "supported_features": [
+        "predicted_outputs",
         "streaming",
         "function_calling",
         "fine_tuning",
@@ -2882,6 +3173,7 @@
       "max_output_tokens": 32768,
       "knowledge_cutoff": 1717200000000.0,
       "supported_features": [
+        "predicted_outputs",
         "streaming",
         "function_calling",
         "file_search",
@@ -2958,7 +3250,8 @@
         "file_search",
         "file_uploads",
         "image_input",
-        "web_search"
+        "web_search",
+        "predicted_outputs"
       ],
       "supported_endpoints": [
         "chat_completions",
@@ -3191,6 +3484,7 @@
       "max_output_tokens": 16384,
       "knowledge_cutoff": 1696118400000.0,
       "supported_features": [
+        "predicted_outputs",
         "streaming",
         "function_calling",
         "fine_tuning",
@@ -3522,6 +3816,156 @@
       "reasoning_tokens": false
     },
     {
+      "name": "gpt-5-2025-08-07",
+      "slug": "gpt-5-2025-08-07",
+      "performance": 4,
+      "latency": 3,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 400000.0,
+      "max_output_tokens": 128000.0,
+      "max_input_tokens": 272000.0,
+      "knowledge_cutoff": 1727740800000.0,
+      "supported_features": [
+        "streaming",
+        "structured_outputs",
+        "predicted_outputs",
+        "distillation",
+        "function_calling",
+        "file_search",
+        "file_uploads",
+        "image_input",
+        "web_search",
+        "fine_tuning",
+        "prompt_caching"
+      ],
+      "supported_endpoints": [
+        "chat_completions",
+        "responses",
+        "assistants",
+        "batch"
+      ],
+      "reasoning_tokens": true,
+      "price_data": {
+        "main": {
+          "input": 10,
+          "output": 30
+        },
+        "batch": {
+          "input": 5,
+          "output": 15
+        }
+      }
+    },
+    {
+      "name": "gpt-5-chat-latest",
+      "slug": "gpt-5-chat-latest",
+      "performance": 3,
+      "latency": 3,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 400000.0,
+      "max_output_tokens": 128000.0,
+      "max_input_tokens": 272000.0,
+      "knowledge_cutoff": 1727654400000.0,
+      "supported_features": [
+        "streaming",
+        "predicted_outputs",
+        "image_input"
+      ],
+      "supported_endpoints": [
+        "chat_completions",
+        "responses"
+      ],
+      "reasoning_tokens": true
+    },
+    {
+      "name": "gpt-5-mini-2025-08-07",
+      "slug": "gpt-5-mini-2025-08-07",
+      "performance": 3,
+      "latency": 4,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 400000.0,
+      "max_output_tokens": 128000.0,
+      "max_input_tokens": 272000.0,
+      "knowledge_cutoff": 1717113600000.0,
+      "supported_features": [
+        "streaming",
+        "function_calling",
+        "fine_tuning",
+        "file_search",
+        "file_uploads",
+        "web_search",
+        "structured_outputs",
+        "image_input"
+      ],
+      "supported_endpoints": [
+        "chat_completions",
+        "responses",
+        "assistants",
+        "batch"
+      ],
+      "reasoning_tokens": true
+    },
+    {
+      "name": "gpt-5-nano-2025-08-07",
+      "slug": "gpt-5-nano-2025-08-07",
+      "performance": 2,
+      "latency": 5,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 400000.0,
+      "max_output_tokens": 128000.0,
+      "max_input_tokens": 272000.0,
+      "knowledge_cutoff": 1717113600000.0,
+      "supported_features": [
+        "streaming",
+        "function_calling",
+        "file_search",
+        "file_uploads",
+        "structured_outputs",
+        "image_input",
+        "prompt_caching",
+        "fine_tuning"
+      ],
+      "supported_endpoints": [
+        "chat_completions",
+        "responses",
+        "assistants",
+        "batch"
+      ],
+      "reasoning_tokens": true
+    },
+    {
       "name": "gpt-image-1",
       "slug": "gpt-image-1",
       "performance": 4,
@@ -3543,6 +3987,82 @@
         "inpainting"
       ],
       "reasoning_tokens": false
+    },
+    {
+      "name": "gpt-oss-120b",
+      "slug": "gpt-oss-120b",
+      "performance": 4,
+      "latency": 3,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 131072,
+      "max_output_tokens": 131072,
+      "knowledge_cutoff": 1717200000000.0,
+      "supported_features": [
+        "streaming",
+        "structured_outputs",
+        "function_calling"
+      ],
+      "supported_endpoints": [
+        "responses",
+        "batch"
+      ],
+      "reasoning_tokens": true,
+      "price_data": {
+        "main": {
+          "input": 0.0005,
+          "cached_output": 0.0001,
+          "output": 0.0015
+        },
+        "batch": {
+          "input": 0.0004,
+          "output": 0.0012
+        }
+      }
+    },
+    {
+      "name": "gpt-oss-20b",
+      "slug": "gpt-oss-20b",
+      "performance": 4,
+      "latency": 3,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 131072,
+      "max_output_tokens": 131072,
+      "knowledge_cutoff": 1717200000000.0,
+      "supported_features": [
+        "streaming",
+        "structured_outputs",
+        "function_calling"
+      ],
+      "supported_endpoints": [
+        "responses",
+        "batch"
+      ],
+      "reasoning_tokens": true,
+      "price_data": {
+        "main": {
+          "input": 0.0002,
+          "cached_output": 5e-05,
+          "output": 0.0006
+        },
+        "batch": {
+          "input": 0.00015,
+          "output": 0.0005
+        }
+      }
     },
     {
       "name": "o1-2024-12-17",
@@ -4282,7 +4802,7 @@
     },
     {
       "name": "gpt-4o-audio-preview",
-      "current_snapshot": "gpt-4o-audio-preview-2024-12-17",
+      "current_snapshot": "gpt-4o-audio-preview-2025-06-03",
       "values": {
         "main": {
           "input": 2.5,
@@ -4844,6 +5364,170 @@
           "cached_input": 1.25
         }
       }
+    },
+    {
+      "name": "gpt-5",
+      "current_snapshot": "gpt-5-2025-08-07",
+      "description": "Flagship GPT-5 model for complex tasks",
+      "values": {
+        "main": {
+          "input": 1.25,
+          "cached_input": 0.125,
+          "output": 10
+        },
+        "batch": {
+          "input": 0.625,
+          "cached_input": 0.0625,
+          "output": 5
+        },
+        "flex": {
+          "input": 0.625,
+          "cached_input": 0.0625,
+          "output": 5
+        },
+        "priority": {
+          "input": 2.5,
+          "cached_input": 0.25,
+          "output": 20
+        }
+      },
+      "snapshots": [
+        {
+          "name": "gpt-5-2025-08-07",
+          "values": {
+            "main": {
+              "input": 1.25,
+              "cached_input": 0.125,
+              "output": 10
+            },
+            "batch": {
+              "input": 0.625,
+              "cached_input": 0.0625,
+              "output": 5
+            },
+            "flex": {
+              "input": 0.625,
+              "cached_input": 0.0625,
+              "output": 5
+            },
+            "priority": {
+              "input": 2.5,
+              "cached_input": 0.25,
+              "output": 20
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "gpt-5-latest",
+      "current_snapshot": "gpt-5-chat-latest",
+      "description": "Latest GPT-5 chat model",
+      "values": {
+        "main": {
+          "input": 1.25,
+          "cached_input": 0.125,
+          "output": 10
+        }
+      }
+    },
+    {
+      "name": "gpt-5-mini",
+      "current_snapshot": "gpt-5-mini-2025-08-07",
+      "description": "Smaller, cost-effective GPT-5 model",
+      "values": {
+        "main": {
+          "input": 0.25,
+          "cached_input": 0.025,
+          "output": 2
+        },
+        "batch": {
+          "input": 0.125,
+          "cached_input": 0.0125,
+          "output": 1
+        },
+        "flex": {
+          "input": 0.125,
+          "cached_input": 0.0125,
+          "output": 1
+        },
+        "priority": {
+          "input": 0.45,
+          "cached_input": 0.05,
+          "output": 3.6
+        }
+      },
+      "snapshots": [
+        {
+          "name": "gpt-5-mini-2025-08-07",
+          "values": {
+            "main": {
+              "input": 0.25,
+              "cached_input": 0.025,
+              "output": 2
+            },
+            "batch": {
+              "input": 0.125,
+              "cached_input": 0.0125,
+              "output": 1
+            },
+            "flex": {
+              "input": 0.125,
+              "cached_input": 0.0125,
+              "output": 1
+            },
+            "priority": {
+              "input": 0.45,
+              "cached_input": 0.05,
+              "output": 3.6
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "gpt-5-nano",
+      "current_snapshot": "gpt-5-nano-2025-08-07",
+      "description": "Fastest, most cost-effective GPT-5 model",
+      "values": {
+        "main": {
+          "input": 0.05,
+          "cached_input": 0.005,
+          "output": 0.4
+        },
+        "batch": {
+          "input": 0.025,
+          "cached_input": 0.0025,
+          "output": 0.2
+        },
+        "flex": {
+          "input": 0.025,
+          "cached_input": 0.0025,
+          "output": 0.2
+        }
+      },
+      "snapshots": [
+        {
+          "name": "gpt-5-nano-2025-08-07",
+          "values": {
+            "main": {
+              "input": 0.05,
+              "cached_input": 0.005,
+              "output": 0.4
+            },
+            "batch": {
+              "input": 0.025,
+              "cached_input": 0.0025,
+              "output": 0.2
+            },
+            "flex": {
+              "input": 0.025,
+              "cached_input": 0.0025,
+              "output": 0.2
+            }
+          }
+        }
+      ]
     }
   ]
 }

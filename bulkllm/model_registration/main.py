@@ -84,6 +84,21 @@ manual_model_registrations = {
         "supports_reasoning": True,
         "supports_computer_use": True,
     },
+    # Ensure GPT-5 Chat is available and prioritized even if provider fetch fails
+    "openai/gpt-5-chat-latest": {
+        "max_tokens": 128000,
+        "max_input_tokens": 400000,
+        "max_output_tokens": 128000,
+        "input_cost_per_token": 10 / 1_000_000,
+        "output_cost_per_token": 30 / 1_000_000,
+        "litellm_provider": "openai",
+        "mode": "chat",
+        "supports_function_calling": True,
+        "supports_vision": True,
+        "supports_prompt_caching": True,
+        "supports_response_schema": True,
+        "supports_reasoning": True,
+    },
 }
 
 

@@ -214,6 +214,34 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         rpm=30000,
         tpm=150000000,
     ),
+    # OpenAI GPT-5 family
+    ModelRateLimit(
+        model_names=[
+            "openai/gpt-5",
+            "openai/gpt-5-2025-08-07",
+            "openai/gpt-5-chat-latest",
+        ],
+        rpm=15000,
+        tpm=40000000,
+    ),
+    # OpenAI GPT-5-mini family
+    ModelRateLimit(
+        model_names=[
+            "openai/gpt-5-mini",
+            "openai/gpt-5-mini-2025-08-07",
+        ],
+        rpm=30000,
+        tpm=180000000,
+    ),
+    # OpenAI GPT-5-nano family
+    ModelRateLimit(
+        model_names=[
+            "openai/gpt-5-nano",
+            "openai/gpt-5-nano-2025-08-07",
+        ],
+        rpm=30000,
+        tpm=180000000,
+    ),
     ModelRateLimit(
         model_names=["openai/codex-mini-latest"],
         rpm=30000,
