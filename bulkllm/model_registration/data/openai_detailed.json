@@ -50,7 +50,7 @@
       "display_name": "ChatGPT-4o",
       "current_snapshot": "chatgpt-4o-latest",
       "tagline": "GPT-4o model used in ChatGPT",
-      "description": "ChatGPT-4o points to the GPT-4o snapshot currently used in ChatGPT. GPT-4o is our versatile, high-intelligence flagship model.\nIt accepts both text and image inputs, and produces text outputs.\nIt is the best model for most tasks, and is our most capable model outside of our o-series models.\n",
+      "description": "ChatGPT-4o points to the GPT-4o snapshot currently used in ChatGPT. We recommend using an API model like [GPT-5](/docs/models/gpt-5) or [GPT-4o](/docs/models/gpt-4o) for most API integrations, but feel free to use this ChatGPT-4o model to test our latest improvements for chat use cases.\n",
       "type": "chat",
       "snapshots": [
         "chatgpt-4o-latest"
@@ -513,15 +513,15 @@
       "slug": "gpt-4.1-mini",
       "display_name": "GPT-4.1 mini",
       "current_snapshot": "gpt-4.1-mini-2025-04-14",
-      "tagline": "Balanced for intelligence, speed, and cost",
-      "description": "GPT-4.1 mini provides a balance between intelligence, speed, and cost that\nmakes it an attractive model for many use cases.\n",
+      "tagline": "Smaller, faster version of GPT-4.1",
+      "description": "GPT-4.1 mini excels at instruction following and tool calling. It features a \n1M token context window, and low latency without a reasoning step.\n\nNote that we recommend starting with [GPT-5 mini](/docs/models/gpt-5-mini) for \nmore complex tasks.\n",
       "type": "chat",
       "snapshots": [
         "gpt-4.1-mini-2025-04-14"
       ],
       "compare_prices": [
         "gpt-4o-mini",
-        "gpt-4.1"
+        "gpt-5-mini"
       ],
       "supported_tools": [
         "function_calling",
@@ -605,15 +605,15 @@
       "slug": "gpt-4.1-nano",
       "display_name": "GPT-4.1 nano",
       "current_snapshot": "gpt-4.1-nano-2025-04-14",
-      "tagline": "Fastest, most cost-effective GPT-4.1 model",
-      "description": "GPT-4.1 nano is the fastest, most cost-effective GPT-4.1 model.\n",
+      "tagline": "Fastest, most cost-efficient version of GPT-4.1",
+      "description": "GPT-4.1 nano excels at instruction following and tool calling. It features a \n1M token context window, and low latency without a reasoning step.\n\nNote that we recommend starting with [GPT-5 nano](/docs/models/gpt-5-nano) for \nmore complex tasks.\n",
       "type": "chat",
       "snapshots": [
         "gpt-4.1-nano-2025-04-14"
       ],
       "compare_prices": [
         "gpt-4.1-mini",
-        "gpt-4o-mini"
+        "gpt-5-nano"
       ],
       "supported_tools": [
         "function_calling",
@@ -697,8 +697,8 @@
       "slug": "gpt-4.1",
       "display_name": "GPT-4.1",
       "current_snapshot": "gpt-4.1-2025-04-14",
-      "tagline": "Excels at function calling and instruction following",
-      "description": "GPT-4.1 is our flagship model for complex tasks. It is well suited for problem\nsolving across domains.\n",
+      "tagline": "Smartest non-reasoning model",
+      "description": "GPT-4.1 excels at instruction following and tool calling, with broad \nknowledge across domains. It features a 1M token context window, and\nlow latency without a reasoning step.\n\nNote that we recommend starting with [GPT-5](/docs/models/gpt-5) for complex tasks.\n",
       "type": "chat",
       "snapshots": [
         "gpt-4.1-2025-04-14"
@@ -1370,8 +1370,8 @@
       "display_name": "GPT-5 Chat",
       "current_snapshot": "gpt-5-chat-latest",
       "tagline": "GPT-5 model used in ChatGPT",
-      "description": "GPT-5 Chat points to the GPT-5 snapshot currently used in ChatGPT. \nGPT-5 is our next-generation, high-intelligence flagship model.\nIt accepts both text and image inputs, and produces text outputs.\n",
-      "type": "reasoning",
+      "description": "GPT-5 Chat points to the GPT-5 snapshot currently used in ChatGPT. \nWe recommend [GPT-5](/docs/models/gpt-5) for most API usage, but feel free to use this GPT-5 Chat model to test our latest improvements for chat use cases.\n",
+      "type": "chat",
       "snapshots": [
         "gpt-5-chat-latest"
       ],
@@ -1412,7 +1412,7 @@
       "slug": "gpt-5-mini",
       "display_name": "GPT-5 mini",
       "current_snapshot": "gpt-5-mini-2025-08-07",
-      "tagline": "A faster, more cost-efficient version of GPT-5 for well-defined tasks",
+      "tagline": "A faster, cost-efficient version of GPT-5 for well-defined tasks",
       "description": "GPT-5 mini is a faster, more cost-efficient version of GPT-5. It's great for\nwell-defined tasks and precise prompts. Learn more in our \n[GPT-5 usage guide](/docs/guides/gpt-5).\n",
       "type": "reasoning",
       "snapshots": [
@@ -1597,8 +1597,8 @@
       "name": "gpt-oss-120b",
       "slug": "gpt-oss-120b",
       "current_snapshot": "gpt-oss-120b",
-      "tagline": "Our most powerful open weight model, which fits into a single H100 GPU",
-      "description": "`gpt-oss-120b`is our most powerful open weight model, which fits into a single \nH100 GPU (117B parameters with 5.1B active parameters).\n\n[Download gpt-oss-120b on HuggingFace](https://huggingface.co/openai/gpt-oss-120b).\n\n**Key features**\n\n-   **Permissive Apache 2.0 license:** Build freely without copyleft restrictions or patent risk\u2014ideal for experimentation, customization, and commercial deployment.\n-   **Configurable reasoning effort:** Easily adjust the reasoning effort (low, medium, high) based on your specific use case and latency needs.\n-   **Full chain-of-thought:** Gain complete access to the model's reasoning process, facilitating easier debugging and increased trust in outputs.\n-   **Fine-tunable:** Fully customize models to your specific use case through parameter fine-tuning.\n-   **Agentic capabilities:** Use the models' native capabilities for function calling, web browsing, Python code execution, and structured outputs.\n",
+      "tagline": "Most powerful open-weight model, fits into an H100 GPU",
+      "description": "`gpt-oss-120b`is our most powerful open-weight model, which fits into a single \nH100 GPU (117B parameters with 5.1B active parameters).\n\n[Download gpt-oss-120b on HuggingFace](https://huggingface.co/openai/gpt-oss-120b).\n\n**Key features**\n\n-   **Permissive Apache 2.0 license:** Build freely without copyleft restrictions or patent risk\u2014ideal for experimentation, customization, and commercial deployment.\n-   **Configurable reasoning effort:** Easily adjust the reasoning effort (low, medium, high) based on your specific use case and latency needs.\n-   **Full chain-of-thought:** Gain complete access to the model's reasoning process, facilitating easier debugging and increased trust in outputs.\n-   **Fine-tunable:** Fully customize models to your specific use case through parameter fine-tuning.\n-   **Agentic capabilities:** Use the models' native capabilities for function calling, web browsing, Python code execution, and structured outputs.\n",
       "type": "reasoning",
       "snapshots": [
         "gpt-oss-120b"
@@ -1646,8 +1646,8 @@
       "name": "gpt-oss-20b",
       "slug": "gpt-oss-20b",
       "current_snapshot": "gpt-oss-20b",
-      "tagline": "Our medium-sized open weight model for low latency",
-      "description": "`gpt-oss-20b` isur medium-sized open model for low latency, local, or \nspecialized use-cases (21B parameters with 3.6B active parameters).\n\n[Download gpt-oss-20b on HuggingFace](https://huggingface.co/openai/gpt-oss-20b).\n\n**Key features**\n\n-   **Permissive Apache 2.0 license:** Build freely without copyleft restrictions or patent risk\u2014ideal for experimentation, customization, and commercial deployment.\n-   **Configurable reasoning effort:** Easily adjust the reasoning effort (low, medium, high) based on your specific use case and latency needs.\n-   **Full chain-of-thought:** Gain complete access to the model's reasoning process, facilitating easier debugging and increased trust in outputs.\n-   **Fine-tunable:** Fully customize models to your specific use case through parameter fine-tuning.\n-   **Agentic capabilities:** Use the models' native capabilities for function calling, web browsing, Python code execution, and structured outputs.\n",
+      "tagline": "Medium-sized open-weight model for low latency",
+      "description": "`gpt-oss-20b` is our medium-sized open-weight model for low latency, local, or \nspecialized use-cases (21B parameters with 3.6B active parameters).\n\n[Download gpt-oss-20b on HuggingFace](https://huggingface.co/openai/gpt-oss-20b).\n\n**Key features**\n\n-   **Permissive Apache 2.0 license:** Build freely without copyleft restrictions or patent risk\u2014ideal for experimentation, customization, and commercial deployment.\n-   **Configurable reasoning effort:** Easily adjust the reasoning effort (low, medium, high) based on your specific use case and latency needs.\n-   **Full chain-of-thought:** Gain complete access to the model's reasoning process, facilitating easier debugging and increased trust in outputs.\n-   **Fine-tunable:** Fully customize models to your specific use case through parameter fine-tuning.\n-   **Agentic capabilities:** Use the models' native capabilities for function calling, web browsing, Python code execution, and structured outputs.\n",
       "type": "reasoning",
       "snapshots": [
         "gpt-oss-20b"
@@ -2033,8 +2033,8 @@
       "name": "o3",
       "slug": "o3",
       "current_snapshot": "o3-2025-04-16",
-      "tagline": "Our most powerful reasoning model",
-      "description": "o3 is a well-rounded and powerful model across domains. It sets a new standard for math, science, coding, and visual reasoning tasks. It also excels at technical writing and instruction-following. Use it to think through multi-step problems that involve analysis across text, code, and images. \n\nLearn more about how to use our reasoning models in our [reasoning](/docs/guides/reasoning?api-mode=responses) guide.\n",
+      "tagline": "Reasoning model for complex tasks, succeeded by GPT-5",
+      "description": "o3 is a well-rounded and powerful model across domains. It sets a new \nstandard for math, science, coding, and visual reasoning tasks. It also \nexcels at technical writing and instruction-following. Use it to think \nthrough multi-step problems that involve analysis across text, code, and images. \n\no3 is succeeded by [GPT-5](/docs/models/gpt-5).\n\nLearn more about how to use our reasoning models in our \n[reasoning](/docs/guides/reasoning?api-mode=responses) guide.\n",
       "type": "reasoning",
       "snapshots": [
         "o3-2025-04-16"
@@ -2130,8 +2130,8 @@
       "name": "o4-mini",
       "slug": "o4-mini",
       "current_snapshot": "o4-mini-2025-04-16",
-      "tagline": "Faster, more affordable reasoning model",
-      "description": "o4-mini is our latest small o-series model. It's optimized for fast, effective reasoning with exceptionally efficient performance in coding and visual tasks. \n\nLearn more about how to use our reasoning models in our [reasoning](/docs/guides/reasoning?api-mode=responses) guide.\n",
+      "tagline": "Fast, cost-efficient reasoning model, succeeded by GPT-5 mini",
+      "description": "o4-mini is our latest small o-series model. It's optimized for fast, \neffective reasoning with exceptionally efficient performance in coding and \nvisual tasks. It's succeeded by [GPT-5 mini](/docs/models/gpt-5-mini).\n\nLearn more about how to use our reasoning models in our \n[reasoning](/docs/guides/reasoning?api-mode=responses) guide.\n",
       "type": "reasoning",
       "snapshots": [
         "o4-mini-2025-04-16"
@@ -3832,24 +3832,21 @@
       "context_window": 400000.0,
       "max_output_tokens": 128000.0,
       "max_input_tokens": 272000.0,
-      "knowledge_cutoff": 1727740800000.0,
+      "knowledge_cutoff": 1727654400000.0,
       "supported_features": [
         "streaming",
         "structured_outputs",
-        "predicted_outputs",
         "distillation",
         "function_calling",
         "file_search",
         "file_uploads",
         "image_input",
         "web_search",
-        "fine_tuning",
         "prompt_caching"
       ],
       "supported_endpoints": [
         "chat_completions",
         "responses",
-        "assistants",
         "batch"
       ],
       "reasoning_tokens": true,
@@ -3878,20 +3875,19 @@
           "text"
         ]
       },
-      "context_window": 400000.0,
-      "max_output_tokens": 128000.0,
+      "context_window": 128000.0,
+      "max_output_tokens": 16384,
       "max_input_tokens": 272000.0,
       "knowledge_cutoff": 1727654400000.0,
       "supported_features": [
         "streaming",
-        "predicted_outputs",
         "image_input"
       ],
       "supported_endpoints": [
         "chat_completions",
         "responses"
       ],
-      "reasoning_tokens": true
+      "reasoning_tokens": false
     },
     {
       "name": "gpt-5-mini-2025-08-07",
@@ -3914,7 +3910,6 @@
       "supported_features": [
         "streaming",
         "function_calling",
-        "fine_tuning",
         "file_search",
         "file_uploads",
         "web_search",
@@ -3924,7 +3919,6 @@
       "supported_endpoints": [
         "chat_completions",
         "responses",
-        "assistants",
         "batch"
       ],
       "reasoning_tokens": true
@@ -3960,7 +3954,6 @@
       "supported_endpoints": [
         "chat_completions",
         "responses",
-        "assistants",
         "batch"
       ],
       "reasoning_tokens": true

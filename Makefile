@@ -54,5 +54,6 @@ help: ## Show this help message.
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)" | sort
 
 
-update-models:
+update-models:  ## scrape list of models from providers
 	@uv run -- python scripts/update_model_cache.py
+	@uv run -- python private/extract_openai.py

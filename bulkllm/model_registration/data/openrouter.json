@@ -24,7 +24,6 @@
         "completion": "0.0000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -75,7 +74,6 @@
         "completion": "0.00006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -126,7 +124,6 @@
         "completion": "0.00006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -177,7 +174,6 @@
         "completion": "0.00000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -224,11 +220,10 @@
         "instruct_type": "alpaca"
       },
       "pricing": {
-        "prompt": "0.0000007",
-        "completion": "0.000001",
+        "prompt": "0.00000045",
+        "completion": "0.00000065",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -275,17 +270,16 @@
         "instruct_type": "alpaca"
       },
       "pricing": {
-        "prompt": "0.0000015",
-        "completion": "0.0000015",
+        "prompt": "0.000001125",
+        "completion": "0.000001125",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
         "context_length": 8000,
-        "max_completion_tokens": 1000,
+        "max_completion_tokens": 2000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -328,7 +322,6 @@
         "completion": "0.000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -375,11 +368,10 @@
         "instruct_type": "alpaca"
       },
       "pricing": {
-        "prompt": "0.0000006",
-        "completion": "0.000001",
+        "prompt": "0.0000007",
+        "completion": "0.0000011",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -426,7 +418,6 @@
         "completion": "0.00000019",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -476,7 +467,6 @@
         "completion": "0.000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -525,7 +515,6 @@
         "completion": "0.00003",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -603,17 +592,16 @@
         "instruct_type": "airoboros"
       },
       "pricing": {
-        "prompt": "0.000009",
-        "completion": "0.000011",
+        "prompt": "0.000004",
+        "completion": "0.0000055",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
         "context_length": 6144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 512,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -658,7 +646,6 @@
         "completion": "0.00000175",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -709,7 +696,6 @@
         "completion": "0.00000024",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -732,53 +718,6 @@
         "temperature",
         "tool_choice",
         "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "mistralai/mistral-7b-instruct-v0.2",
-      "canonical_slug": "mistralai/mistral-7b-instruct-v0.2",
-      "hugging_face_id": "mistralai/Mistral-7B-Instruct-v0.2",
-      "name": "Mistral: Mistral 7B Instruct v0.2",
-      "created": 1703721600,
-      "description": "A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.\n\nAn improved version of [Mistral 7B Instruct](/modelsmistralai/mistral-7b-instruct-v0.1), with the following changes:\n\n- 32k context window (vs 8k context in v0.1)\n- Rope-theta = 1e6\n- No Sliding-Window Attention",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Mistral",
-        "instruct_type": "mistral"
-      },
-      "pricing": {
-        "prompt": "0.0000002",
-        "completion": "0.0000002",
-        "request": "0",
-        "image": "0",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "stop",
-        "temperature",
         "top_k",
         "top_p"
       ]
@@ -807,7 +746,6 @@
         "completion": "0.0000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -855,7 +793,6 @@
         "completion": "0.00000025",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -903,7 +840,6 @@
         "completion": "0.0000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -950,7 +886,6 @@
         "completion": "0.000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1001,7 +936,6 @@
         "completion": "0.00003",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1052,7 +986,6 @@
         "completion": "0.000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1100,7 +1033,6 @@
         "completion": "0.0000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1149,7 +1081,6 @@
         "completion": "0.000075",
         "request": "0",
         "image": "0.024",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000015",
@@ -1159,53 +1090,6 @@
         "context_length": 200000,
         "max_completion_tokens": 4096,
         "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "anthropic/claude-3-opus:beta",
-      "canonical_slug": "anthropic/claude-3-opus",
-      "hugging_face_id": null,
-      "name": "Anthropic: Claude 3 Opus (self-moderated)",
-      "created": 1709596800,
-      "description": "Claude 3 Opus is Anthropic's most powerful model for highly complex tasks. It boasts top-level performance, intelligence, fluency, and understanding.\n\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-family)\n\n#multimodal",
-      "context_length": 200000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Claude",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000015",
-        "completion": "0.000075",
-        "request": "0",
-        "image": "0.024",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.0000015",
-        "input_cache_write": "0.00001875"
-      },
-      "top_provider": {
-        "context_length": 200000,
-        "max_completion_tokens": 4096,
-        "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -1243,7 +1127,6 @@
         "completion": "0.00000125",
         "request": "0",
         "image": "0.0004",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000003",
@@ -1253,53 +1136,6 @@
         "context_length": 200000,
         "max_completion_tokens": 4096,
         "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "anthropic/claude-3-haiku:beta",
-      "canonical_slug": "anthropic/claude-3-haiku",
-      "hugging_face_id": null,
-      "name": "Anthropic: Claude 3 Haiku (self-moderated)",
-      "created": 1710288000,
-      "description": "Claude 3 Haiku is Anthropic's fastest and most compact model for\nnear-instant responsiveness. Quick and accurate targeted performance.\n\nSee the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-haiku)\n\n#multimodal",
-      "context_length": 200000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Claude",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.00000025",
-        "completion": "0.00000125",
-        "request": "0",
-        "image": "0.0004",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000003",
-        "input_cache_write": "0.0000003"
-      },
-      "top_provider": {
-        "context_length": 200000,
-        "max_completion_tokens": 4096,
-        "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -1336,7 +1172,6 @@
         "completion": "0.000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1383,7 +1218,6 @@
         "completion": "0.0000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1431,7 +1265,6 @@
         "completion": "0.0000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1479,7 +1312,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1527,7 +1359,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1576,7 +1407,6 @@
         "completion": "0.000005",
         "request": "0",
         "image": "0.0006575",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1625,7 +1455,6 @@
         "completion": "0.00003",
         "request": "0",
         "image": "0.01445",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1676,7 +1505,6 @@
         "completion": "0.00000048",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1725,7 +1553,6 @@
         "completion": "0.0000009",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1778,7 +1605,6 @@
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1831,7 +1657,6 @@
         "completion": "0.00000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1844,7 +1669,6 @@
       "supported_parameters": [
         "frequency_penalty",
         "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -1856,7 +1680,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ]
     },
@@ -1884,7 +1707,6 @@
         "completion": "0.0000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -1933,7 +1755,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0.003613",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000125"
@@ -1988,7 +1809,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0.007225",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2042,7 +1862,6 @@
         "completion": "0.000018",
         "request": "0",
         "image": "0.007225",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2095,7 +1914,6 @@
         "completion": "0.0000003",
         "request": "0",
         "image": "0.00004",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000001875",
@@ -2145,7 +1963,6 @@
         "completion": "0.000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2192,7 +2009,6 @@
         "completion": "0.000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2234,7 +2050,6 @@
         "completion": "0.0000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2276,7 +2091,6 @@
         "completion": "0.000000054",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2328,7 +2142,6 @@
         "completion": "0.000000054",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2380,7 +2193,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2430,7 +2242,6 @@
         "completion": "0.00000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2482,7 +2293,6 @@
         "completion": "0.0000009",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2529,7 +2339,6 @@
         "completion": "0.0000009",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2577,7 +2386,6 @@
         "completion": "0.00000148",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2613,7 +2421,8 @@
         "modality": "text+image->text",
         "input_modalities": [
           "text",
-          "image"
+          "image",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -2626,7 +2435,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0.0048",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000003",
@@ -2636,53 +2444,6 @@
         "context_length": 200000,
         "max_completion_tokens": 8192,
         "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "anthropic/claude-3.5-sonnet-20240620:beta",
-      "canonical_slug": "anthropic/claude-3.5-sonnet-20240620",
-      "hugging_face_id": null,
-      "name": "Anthropic: Claude 3.5 Sonnet (2024-06-20) (self-moderated)",
-      "created": 1718841600,
-      "description": "Claude 3.5 Sonnet delivers better-than-Opus capabilities, faster-than-Sonnet speeds, at the same Sonnet prices. Sonnet is particularly good at:\n\n- Coding: Autonomously writes, edits, and runs code with reasoning and troubleshooting\n- Data science: Augments human data science expertise; navigates unstructured data while using multiple tools for insights\n- Visual processing: excelling at interpreting charts, graphs, and images, accurately transcribing text to derive insights beyond just the text alone\n- Agentic tasks: exceptional tool use, making it great at agentic tasks (i.e. complex, multi-step problem solving tasks that require engaging with other systems)\n\nFor the latest version (2024-10-23), check out [Claude 3.5 Sonnet](/anthropic/claude-3.5-sonnet).\n\n#multimodal",
-      "context_length": 200000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Claude",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000003",
-        "completion": "0.000015",
-        "request": "0",
-        "image": "0.0048",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.0000003",
-        "input_cache_write": "0.00000375"
-      },
-      "top_provider": {
-        "context_length": 200000,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -2719,7 +2480,6 @@
         "completion": "0.0000000100008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2770,7 +2530,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2820,7 +2579,6 @@
         "completion": "0.00000065",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -2871,7 +2629,6 @@
         "completion": "0.0000006",
         "request": "0",
         "image": "0.000217",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000075"
@@ -2926,7 +2683,6 @@
         "completion": "0.0000006",
         "request": "0",
         "image": "0.007225",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000075"
@@ -2979,7 +2735,6 @@
         "completion": "0.00000005",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3033,7 +2788,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3083,7 +2837,6 @@
         "completion": "0.0000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3137,7 +2890,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3183,7 +2935,6 @@
         "completion": "0.00000028",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3237,7 +2988,6 @@
         "completion": "0.00000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3291,7 +3041,6 @@
         "completion": "0.000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3343,7 +3092,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0.003613",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000125"
@@ -3396,7 +3144,6 @@
         "completion": "0.00000005",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3446,7 +3193,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0.007225",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3495,7 +3241,6 @@
         "completion": "0.0000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3546,7 +3291,6 @@
         "completion": "0.00000028",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3600,7 +3344,6 @@
         "completion": "0.0000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3643,7 +3386,6 @@
         "completion": "0.0000002",
         "request": "0",
         "image": "0.0001445",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3695,7 +3437,6 @@
         "completion": "0.00000075",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3745,7 +3486,6 @@
         "completion": "0.0000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3793,7 +3533,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3842,7 +3581,6 @@
         "completion": "0.0000001",
         "request": "0",
         "image": "0.0001445",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -3896,7 +3634,6 @@
         "completion": "0.0000044",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000055"
@@ -3936,7 +3673,6 @@
         "completion": "0.0000044",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000055"
@@ -3959,7 +3695,7 @@
       "name": "NeverSleep: Lumimaid v0.2 8B",
       "created": 1726358400,
       "description": "Lumimaid v0.2 8B is a finetune of [Llama 3.1 8B](/models/meta-llama/llama-3.1-8b-instruct) with a \"HUGE step up dataset wise\" compared to Lumimaid v0.1. Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
-      "context_length": 8192,
+      "context_length": 32768,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -3972,17 +3708,16 @@
         "instruct_type": "llama3"
       },
       "pricing": {
-        "prompt": "0.0000001",
-        "completion": "0.0000009",
+        "prompt": "0.00000009",
+        "completion": "0.0000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 8192,
-        "max_completion_tokens": 8192,
+        "context_length": 32768,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -4027,7 +3762,6 @@
         "completion": "0.000000266688",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4080,7 +3814,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4131,7 +3864,6 @@
         "completion": "0.000000049",
         "request": "0",
         "image": "0.00007948",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4144,7 +3876,6 @@
       "supported_parameters": [
         "frequency_penalty",
         "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -4154,8 +3885,6 @@
         "stop",
         "structured_outputs",
         "temperature",
-        "tool_choice",
-        "tools",
         "top_k",
         "top_logprobs",
         "top_p"
@@ -4186,7 +3915,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4233,7 +3961,6 @@
         "completion": "0.00000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4284,7 +4011,6 @@
         "completion": "0.000000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4338,7 +4064,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4383,7 +4108,6 @@
         "completion": "0.0000012",
         "request": "0",
         "image": "0.001734",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4432,7 +4156,6 @@
         "completion": "0.000003",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4457,64 +4180,13 @@
       ]
     },
     {
-      "id": "liquid/lfm-40b",
-      "canonical_slug": "liquid/lfm-40b",
-      "hugging_face_id": null,
-      "name": "Liquid: LFM 40B MoE",
-      "created": 1727654400,
-      "description": "Liquid's 40.3B Mixture of Experts (MoE) model. Liquid Foundation Models (LFMs) are large neural networks built with computational units rooted in dynamic systems.\n\nLFMs are general-purpose AI models that can be used to model any kind of sequential data, including video, audio, text, time series, and signals.\n\nSee the [launch announcement](https://www.liquid.ai/liquid-foundation-models) for benchmarks and more info.",
-      "context_length": 65536,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": "chatml"
-      },
-      "pricing": {
-        "prompt": "0.00000015",
-        "completion": "0.00000015",
-        "request": "0",
-        "image": "0",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 65536,
-        "max_completion_tokens": 65536,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ]
-    },
-    {
       "id": "thedrummer/rocinante-12b",
       "canonical_slug": "thedrummer/rocinante-12b",
       "hugging_face_id": "TheDrummer/Rocinante-12B-v1.1",
       "name": "TheDrummer: Rocinante 12B",
       "created": 1727654400,
       "description": "Rocinante 12B is designed for engaging storytelling and rich prose.\n\nEarly testers have reported:\n- Expanded vocabulary with unique and expressive word choices\n- Enhanced creativity for vivid narratives\n- Adventure-filled and captivating stories",
-      "context_length": 8192,
+      "context_length": 32768,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -4527,17 +4199,16 @@
         "instruct_type": "chatml"
       },
       "pricing": {
-        "prompt": "0.00000019",
-        "completion": "0.00000045",
+        "prompt": "0.00000017",
+        "completion": "0.00000043",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 8192,
-        "max_completion_tokens": 8192,
+        "context_length": 32768,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -4585,7 +4256,6 @@
         "completion": "0.00000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000001",
@@ -4635,7 +4305,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4676,7 +4345,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4717,20 +4385,18 @@
         "completion": "0.0000003",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 131072,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
         "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -4742,7 +4408,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ]
     },
@@ -4770,7 +4435,6 @@
         "completion": "0.0000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4820,7 +4484,6 @@
         "completion": "0.00000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4866,7 +4529,6 @@
         "completion": "0.0000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -4910,17 +4572,16 @@
         "instruct_type": "chatml"
       },
       "pricing": {
-        "prompt": "0.0000025",
-        "completion": "0.000003",
+        "prompt": "0.000002",
+        "completion": "0.000005",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
         "context_length": 16384,
-        "max_completion_tokens": 1024,
+        "max_completion_tokens": 2048,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -4951,7 +4612,8 @@
         "modality": "text+image->text",
         "input_modalities": [
           "text",
-          "image"
+          "image",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -4964,7 +4626,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0.0048",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000003",
@@ -4974,53 +4635,6 @@
         "context_length": 200000,
         "max_completion_tokens": 8192,
         "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "anthropic/claude-3.5-sonnet:beta",
-      "canonical_slug": "anthropic/claude-3.5-sonnet",
-      "hugging_face_id": null,
-      "name": "Anthropic: Claude 3.5 Sonnet (self-moderated)",
-      "created": 1729555200,
-      "description": "New Claude 3.5 Sonnet delivers better-than-Opus capabilities, faster-than-Sonnet speeds, at the same Sonnet prices. Sonnet is particularly good at:\n\n- Coding: Scores ~49% on SWE-Bench Verified, higher than the last best score, and without any fancy prompt scaffolding\n- Data science: Augments human data science expertise; navigates unstructured data while using multiple tools for insights\n- Visual processing: excelling at interpreting charts, graphs, and images, accurately transcribing text to derive insights beyond just the text alone\n- Agentic tasks: exceptional tool use, making it great at agentic tasks (i.e. complex, multi-step problem solving tasks that require engaging with other systems)\n\n#multimodal",
-      "context_length": 200000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Claude",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000003",
-        "completion": "0.000015",
-        "request": "0",
-        "image": "0.0048",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.0000003",
-        "input_cache_write": "0.00000375"
-      },
-      "top_provider": {
-        "context_length": 200000,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -5058,7 +4672,6 @@
         "completion": "0.000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000008",
@@ -5092,7 +4705,8 @@
         "modality": "text+image->text",
         "input_modalities": [
           "text",
-          "image"
+          "image",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -5105,54 +4719,6 @@
         "completion": "0.000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000008",
-        "input_cache_write": "0.000001"
-      },
-      "top_provider": {
-        "context_length": 200000,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "anthropic/claude-3.5-haiku:beta",
-      "canonical_slug": "anthropic/claude-3-5-haiku",
-      "hugging_face_id": null,
-      "name": "Anthropic: Claude 3.5 Haiku (self-moderated)",
-      "created": 1730678400,
-      "description": "Claude 3.5 Haiku features offers enhanced capabilities in speed, coding accuracy, and tool use. Engineered to excel in real-time applications, it delivers quick response times that are essential for dynamic tasks such as chat interactions and immediate coding suggestions.\n\nThis makes it highly suitable for environments that demand both speed and precision, such as software development, customer service bots, and data management systems.\n\nThis model is currently pointing to [Claude 3.5 Haiku (2024-10-22)](/anthropic/claude-3-5-haiku-20241022).",
-      "context_length": 200000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Claude",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000008",
-        "completion": "0.000004",
-        "request": "0",
-        "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000008",
@@ -5198,7 +4764,6 @@
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5251,7 +4816,6 @@
         "completion": "0.0000045",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5299,7 +4863,6 @@
         "completion": "0.000000200016",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5350,7 +4913,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5400,7 +4962,6 @@
         "completion": "0.000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5448,7 +5009,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0.009",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5496,7 +5056,6 @@
         "completion": "0.000006",
         "request": "0",
         "image": "0.002888",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5544,7 +5103,6 @@
         "completion": "0.000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5592,7 +5150,6 @@
         "completion": "0.000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5642,7 +5199,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0.003613",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000125"
@@ -5695,7 +5251,6 @@
         "completion": "0.0000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5746,7 +5301,6 @@
         "completion": "0.0000032",
         "request": "0",
         "image": "0.0012",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5789,7 +5343,6 @@
         "completion": "0.00000014",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5833,7 +5386,6 @@
         "completion": "0.00000024",
         "request": "0",
         "image": "0.00009",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5876,7 +5428,6 @@
         "completion": "0.00000012",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5930,7 +5481,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -5980,7 +5530,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6025,7 +5574,6 @@
         "completion": "0.00000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6072,7 +5620,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6122,7 +5669,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0.0036",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6170,7 +5716,6 @@
         "completion": "0.00006",
         "request": "0",
         "image": "0.021675",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000075"
@@ -6214,13 +5759,12 @@
         "completion": "0.00000075",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6260,11 +5804,10 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000017992692",
-        "completion": "0.0000007200576",
+        "prompt": "0.0000001999188",
+        "completion": "0.000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6318,7 +5861,6 @@
         "completion": "0.00000014",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6370,7 +5912,6 @@
         "completion": "0.0000009",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6419,7 +5960,6 @@
         "completion": "0.0000011",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6459,7 +5999,6 @@
         "completion": "0.000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6515,7 +6054,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6556,7 +6094,6 @@
         "completion": "0.000000133344",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6579,7 +6116,6 @@
         "response_format",
         "seed",
         "stop",
-        "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",
@@ -6612,7 +6148,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6664,7 +6199,6 @@
         "completion": "0.00000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6711,7 +6245,6 @@
         "completion": "0.00000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6763,7 +6296,6 @@
         "completion": "0.000001",
         "request": "0.005",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6807,7 +6339,6 @@
         "completion": "0.000005",
         "request": "0.005",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6853,7 +6384,6 @@
         "completion": "0.00000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6903,7 +6433,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -6955,7 +6484,6 @@
         "completion": "0.00000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7006,7 +6534,6 @@
         "completion": "0.0000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7060,7 +6587,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7110,7 +6636,6 @@
         "completion": "0.00000018",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7159,7 +6684,6 @@
         "completion": "0.0000044",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000055"
@@ -7203,7 +6727,6 @@
         "completion": "0.0000064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000064"
@@ -7249,7 +6772,6 @@
         "completion": "0.0000012",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000016"
@@ -7278,7 +6800,7 @@
       "name": "Qwen: Qwen2.5 VL 72B Instruct",
       "created": 1738410311,
       "description": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
-      "context_length": 32000,
+      "context_length": 32768,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -7292,16 +6814,15 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000025",
-        "completion": "0.00000075",
+        "prompt": "0.0000000999594",
+        "completion": "0.000000400032",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 32000,
+        "context_length": 32768,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -7347,7 +6868,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7394,7 +6914,6 @@
         "completion": "0.0000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000002"
@@ -7441,7 +6960,6 @@
         "completion": "0.0000032",
         "request": "0",
         "image": "0.001024",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7484,7 +7002,6 @@
         "completion": "0.0000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7524,7 +7041,6 @@
         "completion": "0.0000014",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7566,7 +7082,6 @@
         "completion": "0.000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7609,7 +7124,6 @@
         "completion": "0.00000063",
         "request": "0",
         "image": "0.0002688",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7703,7 +7217,6 @@
         "completion": "0.00000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7753,7 +7266,6 @@
         "completion": "0.0000044",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000055"
@@ -7797,7 +7309,6 @@
         "completion": "0.00000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7848,7 +7359,6 @@
         "completion": "0.00000014816",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7898,7 +7408,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -7948,7 +7457,6 @@
         "completion": "0.0000000340768",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8000,7 +7508,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8052,7 +7559,6 @@
         "completion": "0.0000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8100,7 +7606,6 @@
         "completion": "0.000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8137,7 +7642,8 @@
         "modality": "text+image->text",
         "input_modalities": [
           "text",
-          "image"
+          "image",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -8150,7 +7656,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0.0048",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000003",
@@ -8175,53 +7680,6 @@
       ]
     },
     {
-      "id": "anthropic/claude-3.7-sonnet:beta",
-      "canonical_slug": "anthropic/claude-3-7-sonnet-20250219",
-      "hugging_face_id": "",
-      "name": "Anthropic: Claude 3.7 Sonnet (self-moderated)",
-      "created": 1740422110,
-      "description": "Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and extended, step-by-step processing for complex tasks. The model demonstrates notable improvements in coding, particularly in front-end development and full-stack updates, and excels in agentic workflows, where it can autonomously navigate multi-step processes. \n\nClaude 3.7 Sonnet maintains performance parity with its predecessor in standard mode while offering an extended reasoning mode for enhanced accuracy in math, coding, and instruction-following tasks.\n\nRead more at the [blog post here](https://www.anthropic.com/news/claude-3-7-sonnet)",
-      "context_length": 200000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Claude",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000003",
-        "completion": "0.000015",
-        "request": "0",
-        "image": "0.0048",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.0000003",
-        "input_cache_write": "0.00000375"
-      },
-      "top_provider": {
-        "context_length": 200000,
-        "max_completion_tokens": 128000,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools"
-      ]
-    },
-    {
       "id": "anthropic/claude-3.7-sonnet:thinking",
       "canonical_slug": "anthropic/claude-3-7-sonnet-20250219",
       "hugging_face_id": "",
@@ -8233,7 +7691,8 @@
         "modality": "text+image->text",
         "input_modalities": [
           "text",
-          "image"
+          "image",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -8246,7 +7705,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0.0048",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000003",
@@ -8281,7 +7739,8 @@
         "input_modalities": [
           "text",
           "image",
-          "file"
+          "file",
+          "audio"
         ],
         "output_modalities": [
           "text"
@@ -8294,7 +7753,6 @@
         "completion": "0.0000003",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8340,7 +7798,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8390,7 +7847,6 @@
         "completion": "0.00000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8444,7 +7900,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8490,7 +7945,6 @@
         "completion": "0.000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0.005",
         "internal_reasoning": "0.000003"
       },
@@ -8537,7 +7991,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0.005",
         "internal_reasoning": "0"
       },
@@ -8582,7 +8035,6 @@
         "completion": "0.000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0.005",
         "internal_reasoning": "0"
       },
@@ -8629,7 +8081,6 @@
         "completion": "0.0000001",
         "request": "0",
         "image": "0.00017685",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8677,7 +8128,6 @@
         "completion": "0.000000192608",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8729,7 +8179,6 @@
         "completion": "0.000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8777,7 +8226,6 @@
         "completion": "0.000000266688",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8798,6 +8246,7 @@
         "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "top_k",
         "top_logprobs",
@@ -8829,7 +8278,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8881,7 +8329,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8933,7 +8380,6 @@
         "completion": "0.00001",
         "request": "0.035",
         "image": "0.003613",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -8974,7 +8420,6 @@
         "completion": "0.0000006",
         "request": "0.0275",
         "image": "0.000217",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9015,7 +8460,6 @@
         "completion": "0.000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9063,7 +8507,6 @@
         "completion": "0.000000192608",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9097,7 +8540,7 @@
       "name": "Google: Gemma 3 12B (free)",
       "created": 1741902625,
       "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling. Gemma 3 12B is the second largest in the family of Gemma 3 models after [Gemma 3 27B](google/gemma-3-27b-it)",
-      "context_length": 96000,
+      "context_length": 32768,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -9115,12 +8558,11 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 96000,
+        "context_length": 32768,
         "max_completion_tokens": 8192,
         "is_moderated": false
       },
@@ -9133,10 +8575,8 @@
         "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "response_format",
         "seed",
         "stop",
-        "structured_outputs",
         "temperature",
         "top_k",
         "top_logprobs",
@@ -9168,7 +8608,6 @@
         "completion": "0.00000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9217,7 +8656,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9257,11 +8695,10 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.000000017992692",
-        "completion": "0.00000007200576",
+        "prompt": "0.00000001999188",
+        "completion": "0.0000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9316,7 +8753,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9371,7 +8807,6 @@
         "completion": "0.0006",
         "request": "0",
         "image": "0.21675",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9382,7 +8817,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs"
@@ -9412,7 +8849,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9455,11 +8891,10 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000017992692",
-        "completion": "0.0000007200576",
+        "prompt": "0.0000001999188",
+        "completion": "0.000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9513,7 +8948,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9566,7 +9000,6 @@
         "completion": "0.0000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9619,7 +9052,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9672,7 +9104,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9718,7 +9149,6 @@
         "completion": "0.00000088",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9765,7 +9195,6 @@
         "completion": "0.000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9816,7 +9245,6 @@
         "completion": "0.0000003",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9871,7 +9299,6 @@
         "completion": "0.0000006",
         "request": "0",
         "image": "0.0006684",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9925,7 +9352,6 @@
         "completion": "0.0000018",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -9975,7 +9401,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10025,7 +9450,6 @@
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10073,7 +9497,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000075"
@@ -10123,7 +9546,6 @@
         "completion": "0.0000005",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000075"
@@ -10153,7 +9575,7 @@
       "id": "moonshotai/kimi-vl-a3b-thinking",
       "canonical_slug": "moonshotai/kimi-vl-a3b-thinking",
       "hugging_face_id": "moonshotai/Kimi-VL-A3B-Thinking",
-      "name": "Moonshot AI: Kimi VL A3B Thinking",
+      "name": "MoonshotAI: Kimi VL A3B Thinking",
       "created": 1744304841,
       "description": "Kimi-VL is a lightweight Mixture-of-Experts vision-language model that activates only 2.8B parameters per step while delivering strong performance on multimodal reasoning and long-context tasks. The Kimi-VL-A3B-Thinking variant, fine-tuned with chain-of-thought and reinforcement learning, excels in math and visual reasoning benchmarks like MathVision, MMMU, and MathVista, rivaling much larger models such as Qwen2.5-VL-7B and Gemma-3-12B. It supports 128K context and high-resolution input via its MoonViT encoder.",
       "context_length": 131072,
@@ -10174,7 +9596,6 @@
         "completion": "0.000000100008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10206,7 +9627,7 @@
       "id": "moonshotai/kimi-vl-a3b-thinking:free",
       "canonical_slug": "moonshotai/kimi-vl-a3b-thinking",
       "hugging_face_id": "moonshotai/Kimi-VL-A3B-Thinking",
-      "name": "Moonshot AI: Kimi VL A3B Thinking (free)",
+      "name": "MoonshotAI: Kimi VL A3B Thinking (free)",
       "created": 1744304841,
       "description": "Kimi-VL is a lightweight Mixture-of-Experts vision-language model that activates only 2.8B parameters per step while delivering strong performance on multimodal reasoning and long-context tasks. The Kimi-VL-A3B-Thinking variant, fine-tuned with chain-of-thought and reinforcement learning, excels in math and visual reasoning benchmarks like MathVision, MMMU, and MathVista, rivaling much larger models such as Qwen2.5-VL-7B and Gemma-3-12B. It supports 128K context and high-resolution input via its MoonViT encoder.",
       "context_length": 131072,
@@ -10227,7 +9648,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10279,7 +9699,6 @@
         "completion": "0.000000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10331,7 +9750,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10383,7 +9801,6 @@
         "completion": "0.0000000400032",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10435,7 +9852,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10483,11 +9899,10 @@
         "instruct_type": "alpaca"
       },
       "pricing": {
-        "prompt": "0.0000006",
-        "completion": "0.000001",
+        "prompt": "0.0000007",
+        "completion": "0.0000011",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10534,7 +9949,6 @@
         "completion": "0.0000012",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10583,7 +9997,6 @@
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000025"
@@ -10637,7 +10050,6 @@
         "completion": "0.0000016",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000001"
@@ -10692,7 +10104,6 @@
         "completion": "0.000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000005"
@@ -10745,7 +10156,6 @@
         "completion": "0.0000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10795,7 +10205,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -10846,7 +10255,6 @@
         "completion": "0.0000044",
         "request": "0",
         "image": "0.0008415",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000275"
@@ -10858,7 +10266,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs",
@@ -10892,7 +10302,6 @@
         "completion": "0.000008",
         "request": "0",
         "image": "0.00153",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000005"
@@ -10904,7 +10313,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs",
@@ -10938,7 +10349,6 @@
         "completion": "0.0000044",
         "request": "0",
         "image": "0.0008415",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000275"
@@ -10950,7 +10360,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs",
@@ -10978,11 +10390,10 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000024",
-        "completion": "0.00000024",
+        "prompt": "0.00000055",
+        "completion": "0.00000166",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11007,10 +10418,10 @@
       ]
     },
     {
-      "id": "thudm/glm-z1-32b:free",
+      "id": "thudm/glm-z1-32b",
       "canonical_slug": "thudm/glm-z1-32b-0414",
       "hugging_face_id": "THUDM/GLM-Z1-32B-0414",
-      "name": "THUDM: GLM Z1 32B (free)",
+      "name": "THUDM: GLM Z1 32B",
       "created": 1744924148,
       "description": "GLM-Z1-32B-0414 is an enhanced reasoning variant of GLM-4-32B, built for deep mathematical, logical, and code-oriented problem solving. It applies extended reinforcement learning\u2014both task-specific and general pairwise preference-based\u2014to improve performance on complex multi-step tasks. Compared to the base GLM-4-32B model, Z1 significantly boosts capabilities in structured reasoning and formal domains.\n\nThe model supports enforced \u201cthinking\u201d steps via prompt engineering and offers improved coherence for long-form outputs. It\u2019s optimized for use in agentic workflows, and includes support for long context (via YaRN), JSON tool calling, and fine-grained sampling configuration for stable inference. Ideal for use cases requiring deliberate, multi-step reasoning or formal derivations.",
       "context_length": 32768,
@@ -11026,11 +10437,10 @@
         "instruct_type": "deepseek-r1"
       },
       "pricing": {
-        "prompt": "0",
-        "completion": "0",
+        "prompt": "0.00000001999188",
+        "completion": "0.0000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11082,7 +10492,6 @@
         "completion": "0.000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11134,7 +10543,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11182,11 +10590,10 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000017992692",
-        "completion": "0.0000007200576",
+        "prompt": "0.0000001999188",
+        "completion": "0.000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11238,7 +10645,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11290,7 +10696,6 @@
         "completion": "0.0000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11346,7 +10751,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11402,7 +10806,6 @@
         "completion": "0.00000007200576",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11458,13 +10861,12 @@
         "completion": "0.00000024",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
         "context_length": 40960,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 40960,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -11514,7 +10916,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11566,7 +10967,6 @@
         "completion": "0.000000138",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11616,7 +11016,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11668,7 +11067,6 @@
         "completion": "0.0000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11724,7 +11122,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11773,11 +11170,10 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000005",
-        "completion": "0.00000005",
+        "prompt": "0.00000018",
+        "completion": "0.00000018",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11790,7 +11186,6 @@
       "supported_parameters": [
         "frequency_penalty",
         "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -11800,7 +11195,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ]
     },
@@ -11828,7 +11222,6 @@
         "completion": "0.00000218",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11877,7 +11270,6 @@
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11917,7 +11309,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -11967,7 +11358,6 @@
         "completion": "0.000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12015,7 +11405,6 @@
         "completion": "0.00000035",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12065,7 +11454,6 @@
         "completion": "0.0000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12112,7 +11500,6 @@
         "completion": "0.0000012",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12161,7 +11548,6 @@
         "completion": "0.0000033",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12209,7 +11595,6 @@
         "completion": "0.00000018",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12245,7 +11630,8 @@
         "input_modalities": [
           "text",
           "image",
-          "file"
+          "file",
+          "audio"
         ],
         "output_modalities": [
           "text"
@@ -12258,7 +11644,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0.00516",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000031",
@@ -12309,7 +11694,6 @@
         "completion": "0.000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12357,7 +11741,6 @@
         "completion": "0.0000003733632",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12410,7 +11793,6 @@
         "completion": "0.000006",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000375"
@@ -12422,7 +11804,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs",
@@ -12454,7 +11838,6 @@
         "completion": "0.00000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12501,7 +11884,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12529,7 +11911,7 @@
       "name": "Mistral: Devstral Small 2505",
       "created": 1747837379,
       "description": "Devstral-Small-2505 is a 24B parameter agentic LLM fine-tuned from Mistral-Small-3.1, jointly developed by Mistral AI and All Hands AI for advanced software engineering tasks. It is optimized for codebase exploration, multi-file editing, and integration into coding agents, achieving state-of-the-art results on SWE-Bench Verified (46.8%).\n\nDevstral supports a 128k context window and uses a custom Tekken tokenizer. It is text-only, with the vision encoder removed, and is suitable for local deployment on high-end consumer hardware (e.g., RTX 4090, 32GB RAM Macs). Devstral is best used in agentic workflows via the OpenHands scaffold and is compatible with inference frameworks like vLLM, Transformers, and Ollama. It is released under the Apache 2.0 license.",
-      "context_length": 32768,
+      "context_length": 131072,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -12546,12 +11928,11 @@
         "completion": "0.0000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 32768,
+        "context_length": 131072,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -12600,7 +11981,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12640,7 +12020,8 @@
         "modality": "text+image->text",
         "input_modalities": [
           "image",
-          "text"
+          "text",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -12653,7 +12034,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0.0048",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000003",
@@ -12689,7 +12069,8 @@
         "modality": "text+image->text",
         "input_modalities": [
           "image",
-          "text"
+          "text",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -12702,7 +12083,6 @@
         "completion": "0.000075",
         "request": "0",
         "image": "0.024",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000015",
@@ -12722,55 +12102,6 @@
         "temperature",
         "tool_choice",
         "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "thedrummer/valkyrie-49b-v1",
-      "canonical_slug": "thedrummer/valkyrie-49b-v1",
-      "hugging_face_id": "TheDrummer/Valkyrie-49B-v1",
-      "name": "TheDrummer: Valkyrie 49B V1",
-      "created": 1748022670,
-      "description": "Built on top of NVIDIA's Llama 3.3 Nemotron Super 49B, Valkyrie is TheDrummer's newest model drop for creative writing.",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.00000065",
-        "completion": "0.000001",
-        "request": "0",
-        "image": "0",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 131072,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
         "top_k",
         "top_p"
       ]
@@ -12799,7 +12130,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12845,11 +12175,10 @@
         "instruct_type": "deepseek-r1"
       },
       "pricing": {
-        "prompt": "0.00000017992692",
-        "completion": "0.0000007200576",
+        "prompt": "0.0000001999188",
+        "completion": "0.000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12905,7 +12234,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -12957,7 +12285,6 @@
         "completion": "0.00000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13009,7 +12336,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13038,49 +12364,6 @@
       ]
     },
     {
-      "id": "deepseek/deepseek-r1-distill-qwen-7b",
-      "canonical_slug": "deepseek/deepseek-r1-distill-qwen-7b",
-      "hugging_face_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
-      "name": "DeepSeek: R1 Distill Qwen 7B",
-      "created": 1748628237,
-      "description": "DeepSeek-R1-Distill-Qwen-7B is a 7 billion parameter dense language model distilled from DeepSeek-R1, leveraging reinforcement learning-enhanced reasoning data generated by DeepSeek's larger models. The distillation process transfers advanced reasoning, math, and code capabilities into a smaller, more efficient model architecture based on Qwen2.5-Math-7B. This model demonstrates strong performance across mathematical benchmarks (92.8% pass@1 on MATH-500), coding tasks (Codeforces rating 1189), and general reasoning (49.1% pass@1 on GPQA Diamond), achieving competitive accuracy relative to larger models while maintaining smaller inference costs.",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen",
-        "instruct_type": "deepseek-r1"
-      },
-      "pricing": {
-        "prompt": "0.0000001",
-        "completion": "0.0000002",
-        "request": "0",
-        "image": "0",
-        "audio": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "seed",
-        "temperature",
-        "top_p"
-      ]
-    },
-    {
       "id": "google/gemini-2.5-pro-preview",
       "canonical_slug": "google/gemini-2.5-pro-preview-06-05",
       "hugging_face_id": "",
@@ -13093,7 +12376,8 @@
         "input_modalities": [
           "file",
           "image",
-          "text"
+          "text",
+          "audio"
         ],
         "output_modalities": [
           "text"
@@ -13106,7 +12390,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0.00516",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000031",
@@ -13156,7 +12439,6 @@
         "completion": "0.000005",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13206,7 +12488,6 @@
         "completion": "0.000005",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13256,7 +12537,6 @@
         "completion": "0.0000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13306,7 +12586,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000075"
@@ -13357,7 +12636,6 @@
         "completion": "0.0000005",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000075"
@@ -13410,7 +12688,6 @@
         "completion": "0.00008",
         "request": "0",
         "image": "0.0153",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13421,7 +12698,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs",
@@ -13433,7 +12712,7 @@
       "id": "moonshotai/kimi-dev-72b:free",
       "canonical_slug": "moonshotai/kimi-dev-72b",
       "hugging_face_id": "moonshotai/Kimi-Dev-72B",
-      "name": "Kimi Dev 72b (free)",
+      "name": "MoonshotAI: Kimi Dev 72B (free)",
       "created": 1750115909,
       "description": "Kimi-Dev-72B is an open-source large language model fine-tuned for software engineering and issue resolution tasks. Based on Qwen2.5-72B, it is optimized using large-scale reinforcement learning that applies code patches in real repositories and validates them via full test suite execution\u2014rewarding only correct, robust completions. The model achieves 60.4% on SWE-bench Verified, setting a new benchmark among open-source models for software bug fixing and code reasoning.",
       "context_length": 131072,
@@ -13453,7 +12732,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13494,7 +12772,8 @@
         "input_modalities": [
           "file",
           "image",
-          "text"
+          "text",
+          "audio"
         ],
         "output_modalities": [
           "text"
@@ -13507,7 +12786,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0.00516",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000031",
@@ -13560,7 +12838,6 @@
         "completion": "0.0000025",
         "request": "0",
         "image": "0.001238",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000075",
@@ -13599,7 +12876,8 @@
         "input_modalities": [
           "file",
           "image",
-          "text"
+          "text",
+          "audio"
         ],
         "output_modalities": [
           "text"
@@ -13612,7 +12890,6 @@
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000025",
@@ -13662,7 +12939,6 @@
         "completion": "0.00000165",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13698,7 +12974,7 @@
       "name": "Mistral: Mistral Small 3.2 24B",
       "created": 1750443016,
       "description": "Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on WildBench and Arena Hard, reduces infinite generations, and delivers gains in tool use and structured output tasks.\n\nIt supports image and text inputs with structured outputs, function/tool calling, and strong performance across coding (HumanEval+, MBPP), STEM (MMLU, MATH, GPQA), and vision benchmarks (ChartQA, DocVQA).",
-      "context_length": 131072,
+      "context_length": 128000,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -13712,16 +12988,15 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000001999188",
-        "completion": "0.0000000800064",
+        "prompt": "0.00000005",
+        "completion": "0.0000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
+        "context_length": 128000,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -13771,7 +13046,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13824,7 +13098,6 @@
         "completion": "0.000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13872,7 +13145,6 @@
         "completion": "0.0000007",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13921,7 +13193,6 @@
         "completion": "0.0000011",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -13937,6 +13208,56 @@
         "max_tokens",
         "min_p",
         "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
+      ]
+    },
+    {
+      "id": "baidu/ernie-4.5-vl-424b-a47b",
+      "canonical_slug": "baidu/ernie-4.5-vl-424b-a47b",
+      "hugging_face_id": "baidu/ERNIE-4.5-VL-424B-A47B-PT",
+      "name": "Baidu: ERNIE 4.5 VL 424B A47B ",
+      "created": 1751300903,
+      "description": "ERNIE-4.5-VL-424B-A47B is a multimodal Mixture-of-Experts (MoE) model from Baidu\u2019s ERNIE 4.5 series, featuring 424B total parameters with 47B active per token. It is trained jointly on text and image data using a heterogeneous MoE architecture and modality-isolated routing to enable high-fidelity cross-modal reasoning, image understanding, and long-context generation (up to 131k tokens). Fine-tuned with techniques like SFT, DPO, UPO, and RLVR, this model supports both \u201cthinking\u201d and non-thinking inference modes. Designed for vision-language tasks in English and Chinese, it is optimized for efficient scaling and can operate under 4-bit/8-bit quantization.",
+      "context_length": 123000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "image",
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000042",
+        "completion": "0.00000125",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 123000,
+        "max_completion_tokens": 16000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
         "repetition_penalty",
         "seed",
         "stop",
@@ -13969,7 +13290,6 @@
         "completion": "0.0000019",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14009,7 +13329,6 @@
         "completion": "0.0000019",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14049,7 +13368,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14101,7 +13419,6 @@
         "completion": "0.00000003",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14153,7 +13470,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14205,7 +13521,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14251,7 +13566,6 @@
         "completion": "0.000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000075"
@@ -14301,7 +13615,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14347,7 +13660,6 @@
         "completion": "0.00000028",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14398,7 +13710,6 @@
         "completion": "0.000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14447,7 +13758,6 @@
         "completion": "0.000000138",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14497,7 +13807,6 @@
         "completion": "0.00000249",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14551,7 +13860,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14603,7 +13911,6 @@
         "completion": "0.0000034",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14648,7 +13955,6 @@
         "completion": "0.00000031202496",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14705,7 +14011,6 @@
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000025",
@@ -14723,6 +14028,7 @@
         "reasoning",
         "response_format",
         "seed",
+        "stop",
         "structured_outputs",
         "temperature",
         "tool_choice",
@@ -14755,7 +14061,6 @@
         "completion": "0.0000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14798,11 +14103,10 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000001999188",
-        "completion": "0.000000800064",
+        "prompt": "0.0000002",
+        "completion": "0.0000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14824,6 +14128,57 @@
         "seed",
         "stop",
         "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "qwen/qwen3-coder:free",
+      "canonical_slug": "qwen/qwen3-coder-480b-a35b-07-25",
+      "hugging_face_id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+      "name": "Qwen: Qwen3 Coder  (free)",
+      "created": 1753230546,
+      "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over repositories. The model features 480 billion total parameters, with 35 billion active per forward pass (8 out of 160 experts).\n\nPricing for the Alibaba endpoints varies by context length. Once a request is greater than 128k input tokens, the higher pricing is used.",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
         "temperature",
         "tool_choice",
         "tools",
@@ -14856,7 +14211,6 @@
         "completion": "0.0000001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14898,7 +14252,6 @@
         "completion": "0.00000031202496",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -14936,7 +14289,7 @@
       "name": "Z.AI: GLM 4.5 Air",
       "created": 1753471258,
       "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact parameter size. GLM-4.5-Air also supports hybrid inference modes, offering a \"thinking mode\" for advanced reasoning and tool use, and a \"non-thinking mode\" for real-time interaction. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)",
-      "context_length": 128000,
+      "context_length": 131072,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -14953,32 +14306,23 @@
         "completion": "0.0000011",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.00000003"
       },
       "top_provider": {
-        "context_length": 128000,
+        "context_length": 131072,
         "max_completion_tokens": 96000,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
         "include_reasoning",
         "max_tokens",
-        "min_p",
-        "presence_penalty",
         "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
         "temperature",
         "tool_choice",
         "tools",
-        "top_k",
         "top_p"
       ]
     },
@@ -15006,7 +14350,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -15029,6 +14372,8 @@
         "seed",
         "stop",
         "temperature",
+        "tool_choice",
+        "tools",
         "top_k",
         "top_logprobs",
         "top_p"
@@ -15054,11 +14399,10 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000002",
-        "completion": "0.0000002",
+        "prompt": "0.0000001999188",
+        "completion": "0.000000800064",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -15113,7 +14457,6 @@
         "completion": "0.0000008",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -15156,7 +14499,6 @@
         "completion": "0.0000009",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -15192,7 +14534,8 @@
         "modality": "text+image->text",
         "input_modalities": [
           "image",
-          "text"
+          "text",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -15205,7 +14548,6 @@
         "completion": "0.000075",
         "request": "0",
         "image": "0.024",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.0000015",
@@ -15234,7 +14576,7 @@
       "name": "OpenAI: gpt-oss-20b",
       "created": 1754414229,
       "description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for lower-latency inference and deployability on consumer or single-GPU hardware. The model is trained in OpenAI\u2019s Harmony response format and supports reasoning level configuration, fine-tuning, and agentic capabilities including function calling, tool use, and structured outputs.",
-      "context_length": 131072,
+      "context_length": 131000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -15248,16 +14590,15 @@
       },
       "pricing": {
         "prompt": "0.00000004",
-        "completion": "0.00000016",
+        "completion": "0.00000015",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": null,
+        "context_length": 131000,
+        "max_completion_tokens": 131000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15307,7 +14648,6 @@
         "completion": "0",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
@@ -15334,7 +14674,7 @@
       "name": "OpenAI: gpt-oss-120b",
       "created": 1754414231,
       "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized to run on a single H100 GPU with native MXFP4 quantization. The model supports configurable reasoning depth, full chain-of-thought access, and native tool use, including function calling, browsing, and structured output generation.",
-      "context_length": 131072,
+      "context_length": 131000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -15347,17 +14687,16 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000009",
-        "completion": "0.00000045",
+        "prompt": "0.000000072",
+        "completion": "0.00000028",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": null,
+        "context_length": 131000,
+        "max_completion_tokens": 131000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15409,7 +14748,6 @@
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000005"
@@ -15421,7 +14759,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs",
@@ -15455,7 +14795,6 @@
         "completion": "0.000002",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000025"
@@ -15467,7 +14806,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs",
@@ -15481,7 +14822,7 @@
       "hugging_face_id": "",
       "name": "OpenAI: GPT-5",
       "created": 1754587413,
-      "description": "GPT-5 is OpenAI\u2019s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and accuracy in high-stakes use cases. It supports test-time routing features and advanced prompt understanding, including user-specified intent like \"think hard about this.\" Improvements include reductions in hallucination, sycophancy, and better performance in coding, writing, and health-related tasks.\n\nNote that BYOK is required for this model. Set up here: https://openrouter.ai/settings/integrations",
+      "description": "GPT-5 is OpenAI\u2019s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and accuracy in high-stakes use cases. It supports test-time routing features and advanced prompt understanding, including user-specified intent like \"think hard about this.\" Improvements include reductions in hallucination, sycophancy, and better performance in coding, writing, and health-related tasks.",
       "context_length": 400000,
       "architecture": {
         "modality": "text+image->text",
@@ -15501,7 +14842,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000125"
@@ -15513,7 +14853,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs",
@@ -15547,7 +14889,6 @@
         "completion": "0.00001",
         "request": "0",
         "image": "0",
-        "audio": "0",
         "web_search": "0",
         "internal_reasoning": "0",
         "input_cache_read": "0.000000125"
@@ -15559,10 +14900,451 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "include_reasoning",
         "max_tokens",
+        "reasoning",
         "response_format",
         "seed",
         "structured_outputs"
+      ]
+    },
+    {
+      "id": "ai21/jamba-large-1.7",
+      "canonical_slug": "ai21/jamba-large-1.7",
+      "hugging_face_id": "ai21labs/AI21-Jamba-Large-1.7",
+      "name": "AI21: Jamba Large 1.7",
+      "created": 1754669020,
+      "description": "Jamba Large 1.7 is the latest model in the Jamba open family, offering improvements in grounding, instruction-following, and overall efficiency. Built on a hybrid SSM-Transformer architecture with a 256K context window, it delivers more accurate, contextually grounded responses and better steerability than previous versions.",
+      "context_length": 256000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000008",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 256000,
+        "max_completion_tokens": 4096,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "response_format",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
+    },
+    {
+      "id": "ai21/jamba-mini-1.7",
+      "canonical_slug": "ai21/jamba-mini-1.7",
+      "hugging_face_id": "ai21labs/AI21-Jamba-Mini-1.7",
+      "name": "AI21: Jamba Mini 1.7",
+      "created": 1754670601,
+      "description": "Jamba Mini 1.7 is a compact and efficient member of the Jamba open model family, incorporating key improvements in grounding and instruction-following while maintaining the benefits of the SSM-Transformer hybrid architecture and 256K context window. Despite its compact size, it delivers accurate, contextually grounded responses and improved steerability.",
+      "context_length": 256000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000002",
+        "completion": "0.0000004",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 256000,
+        "max_completion_tokens": 4096,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "response_format",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
+    },
+    {
+      "id": "z-ai/glm-4.5v",
+      "canonical_slug": "z-ai/glm-4.5v",
+      "hugging_face_id": "zai-org/GLM-4.5V",
+      "name": "Z.AI: GLM 4.5V",
+      "created": 1754922288,
+      "description": "GLM-4.5V is a vision-language foundation model for multimodal agent applications. Built on a Mixture-of-Experts (MoE) architecture with 106B parameters and 12B activated parameters, it achieves state-of-the-art results in video understanding, image Q&A, OCR, and document parsing, with strong gains in front-end web coding, grounding, and spatial reasoning. It offers a hybrid inference mode: a \"thinking mode\" for deep reasoning and a \"non-thinking mode\" for fast responses. Reasoning behavior can be toggled via the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)",
+      "context_length": 65536,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000005",
+        "completion": "0.0000018",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 65536,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ]
+    },
+    {
+      "id": "baidu/ernie-4.5-vl-28b-a3b",
+      "canonical_slug": "baidu/ernie-4.5-vl-28b-a3b",
+      "hugging_face_id": "baidu/ERNIE-4.5-VL-28B-A3B-PT",
+      "name": "Baidu: ERNIE 4.5 VL 28B A3B",
+      "created": 1755032836,
+      "description": "A powerful multimodal Mixture-of-Experts chat model featuring 28B total parameters with 3B activated per token, delivering exceptional text and vision understanding through its innovative heterogeneous MoE structure with modality-isolated routing. Built with scaling-efficient infrastructure for high-throughput training and inference, the model leverages advanced post-training techniques including SFT, DPO, and UPO for optimized performance, while supporting an impressive 131K context length and RLVR alignment for superior cross-modal reasoning and generation capabilities.",
+      "context_length": 30000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000014",
+        "completion": "0.00000056",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 30000,
+        "max_completion_tokens": 8000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
+      ]
+    },
+    {
+      "id": "baidu/ernie-4.5-21b-a3b",
+      "canonical_slug": "baidu/ernie-4.5-21b-a3b",
+      "hugging_face_id": "baidu/ERNIE-4.5-21B-A3B-PT",
+      "name": "Baidu: ERNIE 4.5 21B A3B",
+      "created": 1755034167,
+      "description": "A sophisticated text-based Mixture-of-Experts (MoE) model featuring 21B total parameters with 3B activated per token, delivering exceptional multimodal understanding and generation through heterogeneous MoE structures and modality-isolated routing. Supporting an extensive 131K token context length, the model achieves efficient inference via multi-expert parallel collaboration and quantization, while advanced post-training techniques including SFT, DPO, and UPO ensure optimized performance across diverse applications with specialized routing and balancing losses for superior task handling.",
+      "context_length": 120000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000007",
+        "completion": "0.00000028",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 120000,
+        "max_completion_tokens": 8000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
+      ]
+    },
+    {
+      "id": "mistralai/mistral-medium-3.1",
+      "canonical_slug": "mistralai/mistral-medium-3.1",
+      "hugging_face_id": "",
+      "name": "Mistral: Mistral Medium 3.1",
+      "created": 1755095639,
+      "description": "Mistral Medium 3.1 is an updated version of Mistral Medium 3, which is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning and multimodal performance with 8\u00d7 lower cost compared to traditional large models, making it suitable for scalable deployments across professional and industrial use cases.\n\nThe model excels in domains such as coding, STEM reasoning, and enterprise adaptation. It supports hybrid, on-prem, and in-VPC deployments and is optimized for integration into custom workflows. Mistral Medium 3.1 offers competitive accuracy relative to larger models like Claude Sonnet 3.5/3.7, Llama 4 Maverick, and Command R+, while maintaining broad compatibility across cloud environments.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Mistral",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000004",
+        "completion": "0.000002",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
+    },
+    {
+      "id": "openai/gpt-4o-audio-preview",
+      "canonical_slug": "openai/gpt-4o-audio-preview",
+      "hugging_face_id": "",
+      "name": "OpenAI: GPT-4o Audio",
+      "created": 1755233061,
+      "description": "The gpt-4o-audio-preview model adds support for audio inputs as prompts. This enhancement allows the model to detect nuances within audio recordings and add depth to generated user experiences. Audio outputs are currently not supported. Audio tokens are priced at $40 per million input audio tokens.",
+      "context_length": 128000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "audio",
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "GPT",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000025",
+        "completion": "0.00001",
+        "request": "0",
+        "image": "0",
+        "audio": "0.00004",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 128000,
+        "max_completion_tokens": 16384,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v3.1-base",
+      "canonical_slug": "deepseek/deepseek-v3.1-base",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1-Base",
+      "name": "DeepSeek: DeepSeek V3.1 Base",
+      "created": 1755727017,
+      "description": "This is a base model, trained only for raw next-token prediction. Unlike instruct/chat models, it has not been fine-tuned to follow user instructions. Prompts need to be written more like training text or examples rather than simple requests (e.g., \u201cTranslate the following sentence\u2026\u201d instead of just \u201cTranslate this\u201d).\n\nDeepSeek-V3.1 Base is a 671B parameter open Mixture-of-Experts (MoE) language model with 37B active parameters per forward pass and a context length of 128K tokens. Trained on 14.8T tokens using FP8 mixed precision, it achieves high training efficiency and stability, with strong performance across language, reasoning, math, and coding tasks. \n",
+      "context_length": 163840,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "DeepSeek",
+        "instruct_type": "none"
+      },
+      "pricing": {
+        "prompt": "0.0000002",
+        "completion": "0.0000008",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 163840,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3.1",
+      "canonical_slug": "deepseek/deepseek-chat-v3.1",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
+      "name": "DeepSeek: DeepSeek V3.1",
+      "created": 1755779628,
+      "description": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context training process, reaching up to 128K tokens, and uses FP8 microscaling for efficient inference.\n\nThe model improves tool use, code generation, and reasoning efficiency, achieving performance comparable to DeepSeek-R1 on difficult benchmarks while responding more quickly. It supports structured tool calling, code agents, and search agents, making it suitable for research, coding, and agentic workflows.\n\nIt succeeds the [DeepSeek V3-0324](/deepseek/deepseek-chat-v3-0324) model and performs well on a variety of tasks.",
+      "context_length": 163840,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "DeepSeek",
+        "instruct_type": "deepseek-v3.1"
+      },
+      "pricing": {
+        "prompt": "0.0000002",
+        "completion": "0.0000008",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 163840,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
       ]
     }
   ]

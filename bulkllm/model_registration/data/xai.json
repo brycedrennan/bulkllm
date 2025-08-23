@@ -49,7 +49,7 @@
     },
     {
       "id": "grok-3",
-      "fingerprint": "fp_0d42a4eb3d",
+      "fingerprint": "fp_365680eadf",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -141,7 +141,7 @@
     },
     {
       "id": "grok-4-0709",
-      "fingerprint": "fp_49810a7a87",
+      "fingerprint": "fp_6f9ff14087",
       "created": 1752019200,
       "object": "model",
       "owned_by": "xai",
@@ -162,6 +162,27 @@
         "grok-4",
         "grok-4-latest"
       ]
+    },
+    {
+      "id": "grok-4-0709-eu",
+      "fingerprint": "fp_e83149a648",
+      "created": 1752019200,
+      "object": "model",
+      "owned_by": "xai",
+      "version": "1.0",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "prompt_text_token_price": 30000,
+      "cached_prompt_text_token_price": 7500,
+      "prompt_image_token_price": 30000,
+      "completion_text_token_price": 150000,
+      "search_price": 250000000,
+      "aliases": []
     }
   ]
 }
