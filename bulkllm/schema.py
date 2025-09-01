@@ -38,6 +38,9 @@ class LLMConfig(CiBaseModel):
     thinking_config: dict | None = None
     system_prompt: str | None = None
     reasoning_effort: Literal["minimal", "low", "medium", "high"] | None = None
+    # Optional, new OpenAI GPT-5 parameter. Keep flexible until providers standardize.
+    # Use str | int to allow either enum-like strings or numeric levels.
+    verbosity: Literal["low", "medium", "high"] | None = None
     release_date: date | None = None
     is_reasoning: bool = False
     is_deprecated: bool | date = False
@@ -57,6 +60,9 @@ class LLMConfig(CiBaseModel):
             parts.append(str(self.reasoning_effort))
         if self.max_completion_tokens is not None:
             parts.append(str(self.max_completion_tokens))
+        # Include verbosity in hash only when set to preserve existing hashes
+        if self.verbosity is not None:
+            parts.append(f"verbosity={self.verbosity}")
         return self._md5(*parts)
 
     @model_validator(mode="after")
@@ -87,9 +93,32 @@ class LLMConfig(CiBaseModel):
 
         if self.reasoning_effort:
             completion_kwargs["reasoning_effort"] = self.reasoning_effort
+            # Ensure LiteLLM forwards this param for OpenAI when supported
+            if self.litellm_model_name.startswith("openai/"):
+                allowed = completion_kwargs.get("allowed_openai_params") or []
+                if "reasoning_effort" not in allowed:
+                    allowed = [*allowed, "reasoning_effort"]
+                completion_kwargs["allowed_openai_params"] = allowed
 
         if self.thinking_config:
             completion_kwargs["thinking"] = self.thinking_config
+
+        # Forward verbosity when set. We use extra_body universally and additionally
+        # allow a top-level param for OpenAI to support early provider handling.
+        if self.verbosity is not None:
+            # Ensure extra_body exists and attach verbosity for passthrough
+            extra_body = completion_kwargs.get("extra_body") or {}
+            if "verbosity" not in extra_body:
+                extra_body["verbosity"] = self.verbosity
+            completion_kwargs["extra_body"] = extra_body
+
+            # For OpenAI providers, also add top-level param and allow-list it
+            if self.litellm_model_name.startswith("openai/"):
+                completion_kwargs["verbosity"] = self.verbosity
+                allowed = completion_kwargs.get("allowed_openai_params") or []
+                if "verbosity" not in allowed:
+                    allowed = [*allowed, "verbosity"]
+                completion_kwargs["allowed_openai_params"] = allowed
 
         if self.max_completion_tokens is not None:
             completion_kwargs["max_completion_tokens"] = self.max_completion_tokens

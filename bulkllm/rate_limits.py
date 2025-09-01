@@ -223,6 +223,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         ],
         rpm=15000,
         tpm=40000000,
+        pending_timeout_seconds=600,
     ),
     # OpenAI GPT-5-mini family
     ModelRateLimit(
@@ -232,6 +233,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         ],
         rpm=30000,
         tpm=180000000,
+        pending_timeout_seconds=600,
     ),
     # OpenAI GPT-5-nano family
     ModelRateLimit(
@@ -241,6 +243,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         ],
         rpm=30000,
         tpm=180000000,
+        pending_timeout_seconds=600,
     ),
     ModelRateLimit(
         model_names=["openai/codex-mini-latest"],
