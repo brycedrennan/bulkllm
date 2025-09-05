@@ -1559,6 +1559,45 @@
       }
     },
     {
+      "name": "gpt-audio",
+      "slug": "gpt-audio",
+      "display_name": "gpt-audio",
+      "current_snapshot": "gpt-audio-2025-08-28",
+      "tagline": "For audio inputs and outputs with Chat Completions API",
+      "description": "The gpt-audio model is our first generally available audio model. It accepts\naudio inputs and outputs, and can be used in the Chat Completions REST API.\n",
+      "type": "chat",
+      "snapshots": [
+        "gpt-audio-2025-08-28"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 500,
+          "tpm": 30000.0,
+          "batch_queue_limit": 90000.0
+        },
+        "tier_2": {
+          "rpm": 5000.0,
+          "tpm": 450000.0,
+          "batch_queue_limit": 1350000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 800000.0,
+          "batch_queue_limit": 50000000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 2000000.0
+        },
+        "tier_5": {
+          "rpm": 10000.0,
+          "tpm": 30000000.0,
+          "batch_queue_limit": 5000000000.0
+        }
+      }
+    },
+    {
       "name": "gpt-image-1",
       "slug": "gpt-image-1",
       "display_name": "GPT Image 1",
@@ -1688,6 +1727,42 @@
           "rpm": 0,
           "tpm": 0,
           "batch_queue_limit": 0
+        }
+      }
+    },
+    {
+      "name": "gpt-realtime",
+      "slug": "gpt-realtime",
+      "display_name": "gpt-realtime",
+      "current_snapshot": "gpt-realtime-2025-08-28",
+      "tagline": "Model capable of realtime text and audio inputs and outputs",
+      "description": "This is our first general-availability realtime model, capable of responding to audio and text inputs in realtime over WebRTC, WebSocket, or SIP connections.\n",
+      "type": "other",
+      "playground_url": "/playground/realtime",
+      "snapshots": [
+        "gpt-realtime-2025-08-28"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 200,
+          "rpd": 1000.0,
+          "tpm": 40000.0
+        },
+        "tier_2": {
+          "rpm": 400,
+          "tpm": 200000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 800000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 4000000.0
+        },
+        "tier_5": {
+          "rpm": 20000.0,
+          "tpm": 15000000.0
         }
       }
     },
@@ -3555,7 +3630,7 @@
           "audio"
         ]
       },
-      "context_window": 128000.0,
+      "context_window": 16000.0,
       "max_output_tokens": 4096,
       "knowledge_cutoff": 1696118400000.0,
       "supported_features": [
@@ -3959,6 +4034,43 @@
       "reasoning_tokens": true
     },
     {
+      "name": "gpt-audio-2025-08-28",
+      "slug": "gpt-audio-2025-08-28",
+      "performance": 4,
+      "latency": 3,
+      "modalities": {
+        "input": [
+          "text",
+          "audio"
+        ],
+        "output": [
+          "text",
+          "audio"
+        ]
+      },
+      "context_window": 128000.0,
+      "max_output_tokens": 16384,
+      "knowledge_cutoff": 1696118400000.0,
+      "supported_features": [
+        "streaming",
+        "function_calling"
+      ],
+      "supported_endpoints": [
+        "chat_completions"
+      ],
+      "reasoning_tokens": false,
+      "price_data": {
+        "main": {
+          "input": 10,
+          "output": 30
+        },
+        "batch": {
+          "input": 5,
+          "output": 15
+        }
+      }
+    },
+    {
       "name": "gpt-image-1",
       "slug": "gpt-image-1",
       "performance": 4,
@@ -4054,6 +4166,44 @@
         "batch": {
           "input": 0.00015,
           "output": 0.0005
+        }
+      }
+    },
+    {
+      "name": "gpt-realtime-2025-08-28",
+      "slug": "gpt-realtime-2025-08-28",
+      "performance": 5,
+      "latency": 4,
+      "modalities": {
+        "input": [
+          "text",
+          "audio",
+          "image"
+        ],
+        "output": [
+          "text",
+          "audio"
+        ]
+      },
+      "context_window": 32000.0,
+      "max_output_tokens": 4096,
+      "knowledge_cutoff": 1696118400000.0,
+      "supported_features": [
+        "function_calling",
+        "prompt_caching"
+      ],
+      "supported_endpoints": [
+        "realtime"
+      ],
+      "reasoning_tokens": false,
+      "price_data": {
+        "main": {
+          "input": 10,
+          "output": 30
+        },
+        "batch": {
+          "input": 5,
+          "output": 15
         }
       }
     },
@@ -4794,6 +4944,27 @@
       ]
     },
     {
+      "name": "gpt-audio",
+      "current_snapshot": "gpt-audio-2025-08-28",
+      "values": {
+        "main": {
+          "input": 2.5,
+          "output": 10
+        }
+      },
+      "snapshots": [
+        {
+          "name": "gpt-audio-2025-08-28",
+          "values": {
+            "main": {
+              "input": 2.5,
+              "output": 10
+            }
+          }
+        }
+      ]
+    },
+    {
       "name": "gpt-4o-audio-preview",
       "current_snapshot": "gpt-4o-audio-preview-2025-06-03",
       "values": {
@@ -4827,6 +4998,29 @@
             "main": {
               "input": 2.5,
               "output": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "gpt-realtime",
+      "current_snapshot": "gpt-realtime-2025-08-28",
+      "values": {
+        "main": {
+          "input": 4,
+          "cached_input": 0.4,
+          "output": 16
+        }
+      },
+      "snapshots": [
+        {
+          "name": "gpt-realtime-2025-08-28",
+          "values": {
+            "main": {
+              "input": 4,
+              "cached_input": 0.4,
+              "output": 16
             }
           }
         }

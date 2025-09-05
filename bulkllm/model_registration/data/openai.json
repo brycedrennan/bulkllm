@@ -528,6 +528,30 @@
       "object": "model",
       "created": 1754426384,
       "owned_by": "system"
+    },
+    {
+      "id": "gpt-audio-2025-08-28",
+      "object": "model",
+      "created": 1756256146,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-realtime",
+      "object": "model",
+      "created": 1756271701,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-realtime-2025-08-28",
+      "object": "model",
+      "created": 1756271773,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-audio",
+      "object": "model",
+      "created": 1756339249,
+      "owned_by": "system"
     }
   ]
 }
