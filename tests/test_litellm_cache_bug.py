@@ -20,8 +20,8 @@ def test_litellm_cache_bug(monkeypatch):
         key = litellm.cache.get_cache_key(**llm_config.completion_kwargs())
         key_counts[key] += 1
 
-    for key, count in key_counts.items():
-        assert count == 1, f"Key {key} has count {count}"
+    too_many_keys = [key for key, count in key_counts.items() if count > 1]
+    assert not too_many_keys, f"Too many keys: {too_many_keys}"
 
 
 if __name__ == "__main__":

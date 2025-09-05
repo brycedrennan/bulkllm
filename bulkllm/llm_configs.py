@@ -659,6 +659,7 @@ openrouter_configs = [
         temperature=default_temperature,
         max_tokens=default_max_tokens,
         thinking_config={},
+        reasoning_effort="high",
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         is_reasoning=True,
         release_date=date(2025, 8, 21),
