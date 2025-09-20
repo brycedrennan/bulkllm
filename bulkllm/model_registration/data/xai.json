@@ -49,7 +49,7 @@
     },
     {
       "id": "grok-3",
-      "fingerprint": "fp_898ae9f31c",
+      "fingerprint": "fp_f02e6df795",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -67,35 +67,15 @@
       "search_price": 250000000,
       "aliases": [
         "grok-3-latest",
-        "grok-3-beta"
-      ]
-    },
-    {
-      "id": "grok-3-fast",
-      "fingerprint": "fp_9c1fa52e52",
-      "created": 1743724800,
-      "object": "model",
-      "owned_by": "xai",
-      "version": "1.0",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "prompt_text_token_price": 50000,
-      "cached_prompt_text_token_price": 12500,
-      "prompt_image_token_price": 0,
-      "completion_text_token_price": 250000,
-      "search_price": 250000000,
-      "aliases": [
+        "grok-3-beta",
+        "grok-3-fast",
         "grok-3-fast-latest",
         "grok-3-fast-beta"
       ]
     },
     {
       "id": "grok-3-mini",
-      "fingerprint": "fp_6a09108ff5",
+      "fingerprint": "fp_4fae27f477",
       "created": 1743724800,
       "object": "model",
       "owned_by": "xai",
@@ -113,28 +93,8 @@
       "search_price": 250000000,
       "aliases": [
         "grok-3-mini-latest",
-        "grok-3-mini-beta"
-      ]
-    },
-    {
-      "id": "grok-3-mini-fast",
-      "fingerprint": "fp_5097008838",
-      "created": 1743724800,
-      "object": "model",
-      "owned_by": "xai",
-      "version": "1.0",
-      "input_modalities": [
-        "text"
-      ],
-      "output_modalities": [
-        "text"
-      ],
-      "prompt_text_token_price": 6000,
-      "cached_prompt_text_token_price": 1500,
-      "prompt_image_token_price": 0,
-      "completion_text_token_price": 40000,
-      "search_price": 250000000,
-      "aliases": [
+        "grok-3-mini-beta",
+        "grok-3-mini-fast",
         "grok-3-mini-fast-latest",
         "grok-3-mini-fast-beta"
       ]
@@ -163,9 +123,9 @@
       ]
     },
     {
-      "id": "grok-4-0709-eu",
-      "fingerprint": "fp_e83149a648",
-      "created": 1752019200,
+      "id": "grok-4-fast-non-reasoning",
+      "fingerprint": "fp_e7507192a3",
+      "created": 1756944000,
       "object": "model",
       "owned_by": "xai",
       "version": "1.0",
@@ -176,12 +136,38 @@
       "output_modalities": [
         "text"
       ],
-      "prompt_text_token_price": 30000,
-      "cached_prompt_text_token_price": 7500,
-      "prompt_image_token_price": 30000,
-      "completion_text_token_price": 150000,
+      "prompt_text_token_price": 2000,
+      "cached_prompt_text_token_price": 500,
+      "prompt_image_token_price": 2000,
+      "completion_text_token_price": 5000,
       "search_price": 250000000,
-      "aliases": []
+      "aliases": [
+        "grok-4-fast-non-reasoning-latest"
+      ]
+    },
+    {
+      "id": "grok-4-fast-reasoning",
+      "fingerprint": "fp_9362061f30",
+      "created": 1756944000,
+      "object": "model",
+      "owned_by": "xai",
+      "version": "1.0",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "prompt_text_token_price": 2000,
+      "cached_prompt_text_token_price": 500,
+      "prompt_image_token_price": 2000,
+      "completion_text_token_price": 5000,
+      "search_price": 250000000,
+      "aliases": [
+        "grok-4-fast",
+        "grok-4-fast-reasoning-latest"
+      ]
     },
     {
       "id": "grok-code-fast-1",

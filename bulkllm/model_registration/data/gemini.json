@@ -650,7 +650,8 @@
       "supportedGenerationMethods": [
         "embedContent",
         "countTextTokens",
-        "countTokens"
+        "countTokens",
+        "asyncBatchEmbedContent"
       ]
     },
     {

@@ -1116,33 +1116,6 @@
       "type": "base"
     },
     {
-      "id": "magistral-medium-latest",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
-        "completion_fim": false,
-        "fine_tuning": true,
-        "vision": true,
-        "ocr": false,
-        "classification": false,
-        "moderation": false,
-        "audio": false
-      },
-      "name": "magistral-medium-2507",
-      "description": "Our frontier-class reasoning model released July 2025.",
-      "max_context_length": 40960,
-      "aliases": [
-        "magistral-medium-2507"
-      ],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
-      "default_model_temperature": 0.7,
-      "type": "base"
-    },
-    {
       "id": "magistral-small-2506",
       "object": "model",
       "created": 1749572058,
@@ -1168,6 +1141,33 @@
       "type": "base"
     },
     {
+      "id": "magistral-medium-latest",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "function_calling": true,
+        "completion_fim": false,
+        "fine_tuning": true,
+        "vision": true,
+        "ocr": false,
+        "classification": false,
+        "moderation": false,
+        "audio": false
+      },
+      "name": "magistral-medium-2509",
+      "description": "Our frontier-class reasoning model release candidate September 2025.",
+      "max_context_length": 131072,
+      "aliases": [
+        "magistral-medium-2509"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": 0.7,
+      "type": "base"
+    },
+    {
       "id": "magistral-small-latest",
       "object": "model",
       "created": 1749572058,
@@ -1183,11 +1183,11 @@
         "moderation": false,
         "audio": false
       },
-      "name": "magistral-small-2507",
-      "description": "Our efficient reasoning model released July 2025.",
-      "max_context_length": 40960,
+      "name": "magistral-small-2509",
+      "description": "Our efficient reasoning model released September 2025.",
+      "max_context_length": 131072,
       "aliases": [
-        "magistral-small-2507"
+        "magistral-small-2509"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
@@ -1210,10 +1210,12 @@
         "moderation": false,
         "audio": false
       },
-      "name": "mistral-embed",
-      "description": "Official mistral-embed Mistral AI model",
+      "name": "mistral-embed-2312",
+      "description": "Official mistral-embed-2312 Mistral AI model",
       "max_context_length": 8192,
-      "aliases": [],
+      "aliases": [
+        "mistral-embed-2312"
+      ],
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": null,
@@ -1724,9 +1726,7 @@
       "name": "magistral-medium-2507",
       "description": "Our frontier-class reasoning model released July 2025.",
       "max_context_length": 40960,
-      "aliases": [
-        "magistral-medium-latest"
-      ],
+      "aliases": [],
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": 0.7,
@@ -1751,9 +1751,7 @@
       "name": "magistral-small-2507",
       "description": "Our efficient reasoning model released July 2025.",
       "max_context_length": 40960,
-      "aliases": [
-        "magistral-small-latest"
-      ],
+      "aliases": [],
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": 0.7,
@@ -1813,6 +1811,87 @@
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": 0.3,
+      "type": "base"
+    },
+    {
+      "id": "magistral-medium-2509",
+      "object": "model",
+      "created": 1758408848,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "function_calling": true,
+        "completion_fim": false,
+        "fine_tuning": true,
+        "vision": true,
+        "ocr": false,
+        "classification": false,
+        "moderation": false,
+        "audio": false
+      },
+      "name": "magistral-medium-2509",
+      "description": "Our frontier-class reasoning model release candidate September 2025.",
+      "max_context_length": 131072,
+      "aliases": [
+        "magistral-medium-latest"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": 0.7,
+      "type": "base"
+    },
+    {
+      "id": "magistral-small-2509",
+      "object": "model",
+      "created": 1758408848,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "function_calling": true,
+        "completion_fim": false,
+        "fine_tuning": true,
+        "vision": true,
+        "ocr": false,
+        "classification": false,
+        "moderation": false,
+        "audio": false
+      },
+      "name": "magistral-small-2509",
+      "description": "Our efficient reasoning model released September 2025.",
+      "max_context_length": 131072,
+      "aliases": [
+        "magistral-small-latest"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": 0.7,
+      "type": "base"
+    },
+    {
+      "id": "mistral-embed-2312",
+      "object": "model",
+      "created": 1758408848,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": false,
+        "function_calling": false,
+        "completion_fim": false,
+        "fine_tuning": false,
+        "vision": false,
+        "ocr": false,
+        "classification": false,
+        "moderation": false,
+        "audio": false
+      },
+      "name": "mistral-embed-2312",
+      "description": "Official mistral-embed-2312 Mistral AI model",
+      "max_context_length": 8192,
+      "aliases": [
+        "mistral-embed"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": null,
       "type": "base"
     }
   ]
