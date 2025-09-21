@@ -35,3 +35,4 @@ When a new provider model is added (e.g., OpenAI GPT-5), update all three layers
 ### Tips
 - Prefer adding snapshot-specific entries (e.g., `gpt-5-2025-08-07`) and the base family alias if present (e.g., `gpt-5`).
 - Keep manual registrations minimal; provider JSON plus detailed JSON should carry most metadata.
+- We dont want to add coding-specific or vision-specific models
