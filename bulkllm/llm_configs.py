@@ -487,6 +487,7 @@ openai_configs = [
         thinking_config={},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2024, 9, 12),
+        is_deprecated=date(2025, 7, 28),
     ),
     LLMConfig(
         slug="openai-o1-pro-20250319",
@@ -1194,6 +1195,7 @@ gemini_configs = [
         thinking_config={},
         system_prompt=DEFAULT_SYSTEM_PROMPT,
         release_date=date(2025, 4, 17),
+        is_deprecated=date(2025, 7, 15),
     ),
     LLMConfig(
         slug="gemini-2.5-flash-20250617",
