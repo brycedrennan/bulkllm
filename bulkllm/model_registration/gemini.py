@@ -38,7 +38,7 @@ def convert_gemini_to_litellm(gemini_model: dict[str, Any]) -> dict[str, Any] | 
     if input_limit is not None:
         model_info["max_input_tokens"] = input_limit
 
-    output_limit = gemini_model.get("outputTokenLimit")
+    output_limit = gemini_model.get("outputTokenLimit") or gemini_model.get("max_tokens")
     if output_limit is not None:
         model_info["max_output_tokens"] = output_limit
 

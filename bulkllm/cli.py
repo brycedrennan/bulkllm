@@ -66,10 +66,10 @@ def list_canonical_models() -> None:
 @app.command("list-configs")
 def list_configs(
     sort_by: str = typer.Option(
-        "slug",
+        "name",
         "--sort-by",
         "-s",
-        help="Sort by slug, company, release-date, input-cost, output-cost or cost",
+        help="Sort by slug, name, release-date, input-cost, output-cost or cost",
         case_sensitive=False,
     ),
     model: list[str] = typer.Option(
@@ -96,7 +96,10 @@ def list_configs(
     sort_key = sort_by.replace("-", "_").lower()
     key_funcs = {
         "slug": lambda c, i: c.slug,
-        "company": lambda c, i: c.company_name.lower(),
+        "name": lambda c, i: (
+            c.company_name.lower(),
+            c.display_name.lower(),
+        ),
         "release_date": lambda c, i: c.release_date or date.min,
         "input_cost": lambda c, i: (i.get("input_cost_per_token") or float("inf")),
         "output_cost": lambda c, i: (i.get("output_cost_per_token") or float("inf")),

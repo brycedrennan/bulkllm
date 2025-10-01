@@ -264,7 +264,12 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
         itpm=2_000_000,
         otpm=400_000,
     ),
-    ModelRateLimit(model_names=["anthropic/claude-sonnet-4-20250514"], rpm=4000, itpm=2_000_000, otpm=400_000),
+    ModelRateLimit(
+        model_names=["anthropic/claude-sonnet-4-20250514", "anthropic/claude-sonnet-4-5-20250929"],
+        rpm=4000,
+        itpm=2_000_000,
+        otpm=400_000,
+    ),
     # OpenRouter Models - use regex to match all models
     ModelRateLimit(
         model_names=["^openrouter/.*$"],
@@ -287,12 +292,20 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
     ),
     # Gemini Models
     ModelRateLimit(
-        model_names=["gemini/gemini-1.5-flash", "gemini/gemini-1.5-flash-002", "gemini/gemini-1.5-flash-001"],
+        model_names=[
+            "gemini/gemini-1.5-flash",
+            "gemini/gemini-1.5-flash-002",
+            "gemini/gemini-1.5-flash-001",
+        ],
         rpm=2000,
         tpm=4_000_000,
     ),
     ModelRateLimit(
-        model_names=["gemini/gemini-1.5-pro", "gemini/gemini-1.5-pro-002", "gemini/gemini-1.5-pro-001"],
+        model_names=[
+            "gemini/gemini-1.5-pro",
+            "gemini/gemini-1.5-pro-002",
+            "gemini/gemini-1.5-pro-001",
+        ],
         rpm=1000,
         tpm=4_000_000,
     ),
@@ -317,6 +330,8 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
     ModelRateLimit(
         model_names=[
             "gemini/gemini-2.5-flash-lite-preview-06-17",
+            "gemini/gemini-2.5-flash-lite",
+            "gemini/gemini-2.5-flash-lite-preview-09-2025",
         ],
         rpm=4000,
         tpm=4_000_000,
@@ -326,6 +341,7 @@ DEFAULT_RATE_LIMITS: RateLimitConfig = [
             "gemini/gemini-2.5-flash-preview-04-17",
             "gemini/gemini-2.5-flash-preview-05-20",
             "gemini/gemini-2.5-flash",
+            "gemini/gemini-2.5-flash-preview-09-2025",
         ],
         rpm=1000,
         tpm=1_000_000,
