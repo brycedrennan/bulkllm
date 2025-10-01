@@ -231,7 +231,9 @@ def get_openai_models(*, use_cached: bool = True) -> dict[str, Any]:
             **converted["model_info"],
         }
 
-    return models
+    # Filter out any models with 'oss-' in the keyname
+    filtered_models = {k: v for k, v in models.items() if "oss-" not in k}
+    return filtered_models
 
 
 @cache

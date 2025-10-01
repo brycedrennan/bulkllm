@@ -34,6 +34,9 @@ def convert_xai_to_litellm(xai_model: dict[str, Any]) -> dict[str, Any] | None:
     if "image" in input_modalities or "image" in output_modalities:
         model_info["supports_vision"] = True
 
+    if "reasoning" in model_id and "non-reasoning" not in model_id:
+        model_info["supports_reasoning"] = True
+
     inp = xai_model.get("prompt_text_token_price")
 
     out = xai_model.get("completion_text_token_price")

@@ -98,7 +98,7 @@ def test_model_resolver_company_filter_unknown(stub_configs):
 
 
 def test_model_resolver_individual_slugs(stub_configs):
-    llm_configs, _, all_cfgs, _ = stub_configs
+    llm_configs, _, _all_cfgs, _ = stub_configs
 
     # Test individual config slugs
     result = llm_configs.model_resolver(["cfg1"])

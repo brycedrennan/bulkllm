@@ -22,7 +22,7 @@ class CiBaseModel(BaseModel):
     @staticmethod
     def _md5(*parts: Iterable[str]) -> str:
         """Return an MD5 hex digest for the joined string parts."""
-        parts = [str(part) for part in parts]
+        parts = [str(part) for part in parts]  # type: ignore
         return _hashlib.md5("|".join(parts).encode()).hexdigest()
 
 
@@ -92,7 +92,10 @@ class LLMConfig(CiBaseModel):
         }
 
         if self.reasoning_effort:
-            completion_kwargs["reasoning_effort"] = self.reasoning_effort
+            if self.litellm_model_name.startswith("openrouter/"):
+                completion_kwargs["reasoning"] = {"effort": self.reasoning_effort, "enabled": True}
+            else:
+                completion_kwargs["reasoning_effort"] = self.reasoning_effort
             # Ensure LiteLLM forwards this param for OpenAI when supported
             if self.litellm_model_name.startswith("openai/"):
                 allowed = completion_kwargs.get("allowed_openai_params") or []
@@ -101,7 +104,10 @@ class LLMConfig(CiBaseModel):
                 completion_kwargs["allowed_openai_params"] = allowed
 
         if self.thinking_config:
-            completion_kwargs["thinking"] = self.thinking_config
+            if self.litellm_model_name.startswith("openrouter/"):
+                completion_kwargs["reasoning"] = self.thinking_config
+            else:
+                completion_kwargs["thinking"] = self.thinking_config
 
         # Forward verbosity when set. We use extra_body universally and additionally
         # allow a top-level param for OpenAI to support early provider handling.
@@ -124,5 +130,9 @@ class LLMConfig(CiBaseModel):
             completion_kwargs["max_completion_tokens"] = self.max_completion_tokens
         else:
             completion_kwargs["max_tokens"] = self.max_tokens
+
+        # litellm doesn't cache `reasoning` param so we stick it in the user key as well so cache works properly
+        if "reasoning" in completion_kwargs:
+            completion_kwargs["user"] = completion_kwargs.get("user", "") + str(completion_kwargs["reasoning"])
 
         return completion_kwargs

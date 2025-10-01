@@ -21,7 +21,7 @@ def test_litellm_cache_bug(monkeypatch):
         key_counts[key] += 1
 
     too_many_keys = [key for key, count in key_counts.items() if count > 1]
-    assert not too_many_keys, f"Too many keys: {too_many_keys}"
+    assert not too_many_keys, f"Duplicate configs found: {too_many_keys}"
 
 
 if __name__ == "__main__":

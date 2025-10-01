@@ -105,7 +105,7 @@ def _primary_provider_model_names():
 
     for model, model_info in text_models().items():
         if model_info.get("litellm_provider") in primary_providers:
-            provider_name, model_name = model.split("/", 1)
+            _provider_name, model_name = model.split("/", 1)
             if model_name in model_names:
                 print(f"ERROR: Duplicate model name: {model_name}")
             model_names.add(model_name)
