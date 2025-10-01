@@ -1037,60 +1037,6 @@
       "type": "base"
     },
     {
-      "id": "mistral-saba-2502",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
-        "completion_fim": false,
-        "fine_tuning": false,
-        "vision": false,
-        "ocr": false,
-        "classification": false,
-        "moderation": false,
-        "audio": false
-      },
-      "name": "mistral-saba-2502",
-      "description": "Official mistral-saba-2502 Mistral AI model",
-      "max_context_length": 32768,
-      "aliases": [
-        "mistral-saba-latest"
-      ],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
-      "type": "base"
-    },
-    {
-      "id": "mistral-saba-latest",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
-        "completion_fim": false,
-        "fine_tuning": false,
-        "vision": false,
-        "ocr": false,
-        "classification": false,
-        "moderation": false,
-        "audio": false
-      },
-      "name": "mistral-saba-2502",
-      "description": "Official mistral-saba-2502 Mistral AI model",
-      "max_context_length": 32768,
-      "aliases": [
-        "mistral-saba-2502"
-      ],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
-      "type": "base"
-    },
-    {
       "id": "magistral-medium-2506",
       "object": "model",
       "created": 1749572058,

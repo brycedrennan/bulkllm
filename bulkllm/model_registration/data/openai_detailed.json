@@ -286,6 +286,7 @@
     {
       "name": "gpt-3.5-turbo-16k-0613",
       "slug": "gpt-3-5-turbo-16k-0613",
+      "icon_name": "gpt-3.5-turbo-16k-0613",
       "current_snapshot": "gpt-3.5-turbo-16k-0613",
       "tagline": "Legacy GPT model for cheaper chat and non-chat tasks",
       "description": "GPT-3.5 Turbo models can understand and generate natural language or code and have been optimized for chat using the Chat Completions API but work well for non-chat tasks as well. As of July 2024, use gpt-4o-mini in place of GPT-3.5 Turbo, as it is cheaper, more capable, multimodal, and just as fast. GPT-3.5 Turbo is still available for use in the API.\n",
@@ -329,6 +330,7 @@
     {
       "name": "gpt-3.5-turbo-instruct",
       "slug": "gpt-3-5-turbo-instruct",
+      "icon_name": "gpt-3.5-turbo-instruct",
       "current_snapshot": "gpt-3.5-turbo-instruct",
       "tagline": "An older model only compatible with the legacy Completions endpoint",
       "description": "Similar capabilities as GPT-3 era models. Compatible with legacy Completions endpoint and not Chat Completions.\n",
@@ -372,6 +374,7 @@
     {
       "name": "gpt-3.5-turbo",
       "slug": "gpt-3-5-turbo",
+      "icon_name": "gpt-3.5-turbo",
       "display_name": "GPT-3.5 Turbo",
       "current_snapshot": "gpt-3.5-turbo-0125",
       "tagline": "Legacy GPT model for cheaper chat and non-chat tasks",
@@ -782,6 +785,7 @@
     {
       "name": "gpt-4.5-preview",
       "slug": "gpt-4-5-preview",
+      "icon_name": "gpt-4.5-preview",
       "display_name": "GPT-4.5 Preview (Deprecated)",
       "current_snapshot": "gpt-4.5-preview-2025-02-27",
       "tagline": "Deprecated large model.",
@@ -1403,6 +1407,54 @@
         "tier_5": {
           "rpm": 15000.0,
           "tpm": 40000000.0,
+          "batch_queue_limit": 15000000000.0
+        }
+      }
+    },
+    {
+      "name": "gpt-5-codex",
+      "slug": "gpt-5-codex",
+      "display_name": "GPT-5-Codex",
+      "current_snapshot": "gpt-5-codex",
+      "tagline": "A version of GPT-5 optimized for agentic coding in Codex",
+      "description": "GPT-5-Codex is a version of GPT-5 optimized for agentic coding tasks in [Codex](https://developers.openai.com/codex) or similar environments.\nIt's available in the [Responses API](/docs/api-reference/responses) only and the underlying model snapshot will be regularly updated.\nIf you want to learn more about prompting GPT-5-Codex, refer to our [dedicated guide](https://cookbook.openai.com/examples/gpt-5-codex_prompting_guide).\n",
+      "type": "reasoning",
+      "playground_url": "none",
+      "snapshots": [
+        "gpt-5-codex"
+      ],
+      "compare_prices": [
+        "gpt-5",
+        "codex-mini-latest"
+      ],
+      "supported_tools": [
+        "function_calling",
+        "web_search"
+      ],
+      "rate_limits": {
+        "tier_1": {
+          "rpm": 500,
+          "tpm": 500000.0,
+          "batch_queue_limit": 1500000.0
+        },
+        "tier_2": {
+          "rpm": 5000.0,
+          "tpm": 1000000.0,
+          "batch_queue_limit": 3000000.0
+        },
+        "tier_3": {
+          "rpm": 5000.0,
+          "tpm": 2000000.0,
+          "batch_queue_limit": 100000000.0
+        },
+        "tier_4": {
+          "rpm": 10000.0,
+          "tpm": 4000000.0,
+          "batch_queue_limit": 200000000.0
+        },
+        "tier_5": {
+          "rpm": 15000.0,
+          "tpm": 10000000.0,
           "batch_queue_limit": 15000000000.0
         }
       }
@@ -3965,6 +4017,43 @@
       "reasoning_tokens": false
     },
     {
+      "name": "gpt-5-codex",
+      "slug": "gpt-5-codex",
+      "performance": 4,
+      "latency": 3,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "context_window": 400000.0,
+      "max_output_tokens": 128000.0,
+      "max_input_tokens": 272000.0,
+      "knowledge_cutoff": 1727654400000.0,
+      "supported_features": [
+        "streaming",
+        "structured_outputs",
+        "function_calling",
+        "image_input",
+        "web_search",
+        "prompt_caching"
+      ],
+      "supported_endpoints": [
+        "responses"
+      ],
+      "reasoning_tokens": true,
+      "price_data": {
+        "main": {
+          "input": 1.25,
+          "output": 10
+        }
+      }
+    },
+    {
       "name": "gpt-5-mini-2025-08-07",
       "slug": "gpt-5-mini-2025-08-07",
       "performance": 3,
@@ -5616,6 +5705,30 @@
           "output": 10
         }
       }
+    },
+    {
+      "name": "gpt-5-codex",
+      "current_snapshot": "gpt-5-codex",
+      "description": "A version of GPT-5 optimized for agentic coding in Codex",
+      "values": {
+        "main": {
+          "input": 1.25,
+          "cached_input": 0.125,
+          "output": 10
+        }
+      },
+      "snapshots": [
+        {
+          "name": "gpt-5-codex",
+          "values": {
+            "main": {
+              "input": 1.25,
+              "cached_input": 0.125,
+              "output": 10
+            }
+          }
+        }
+      ]
     },
     {
       "name": "gpt-5-mini",

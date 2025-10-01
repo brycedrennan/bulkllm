@@ -48,7 +48,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4",
@@ -98,7 +99,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4-0314",
@@ -148,7 +150,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "gryphe/mythomax-l2-13b",
@@ -170,8 +173,8 @@
         "instruct_type": "alpaca"
       },
       "pricing": {
-        "prompt": "0.00000006",
-        "completion": "0.00000006",
+        "prompt": "0.00000005",
+        "completion": "0.00000009",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -179,7 +182,7 @@
       },
       "top_provider": {
         "context_length": 4096,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 4096,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -198,7 +201,8 @@
         "top_a",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "undi95/remm-slerp-l2-13b",
@@ -248,7 +252,8 @@
         "top_a",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mancer/weaver",
@@ -290,13 +295,16 @@
         "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "top_a",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-3.5-turbo-16k",
@@ -346,7 +354,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-7b-instruct-v0.1",
@@ -395,7 +404,10 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "openai/gpt-3.5-turbo-instruct",
@@ -443,7 +455,8 @@
         "temperature",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4-1106-preview",
@@ -493,7 +506,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openrouter/auto",
@@ -501,7 +515,7 @@
       "hugging_face_id": null,
       "name": "Auto Router",
       "created": 1699401600,
-      "description": "Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output.\n\nTo see which model was used, visit [Activity](/activity), or read the `model` attribute of the response. Your response will be priced at the same rate as the routed model.\n\nThe meta-model is powered by [Not Diamond](https://docs.notdiamond.ai/docs/how-not-diamond-works). Learn more in our [docs](/docs/model-routing).\n\nRequests will be routed to the following models:\n- [openai/gpt-4o-2024-08-06](/openai/gpt-4o-2024-08-06)\n- [openai/gpt-4o-2024-05-13](/openai/gpt-4o-2024-05-13)\n- [openai/gpt-4o-mini-2024-07-18](/openai/gpt-4o-mini-2024-07-18)\n- [openai/chatgpt-4o-latest](/openai/chatgpt-4o-latest)\n- [openai/o1-preview-2024-09-12](/openai/o1-preview-2024-09-12)\n- [openai/o1-mini-2024-09-12](/openai/o1-mini-2024-09-12)\n- [anthropic/claude-3.5-sonnet](/anthropic/claude-3.5-sonnet)\n- [anthropic/claude-3.5-haiku](/anthropic/claude-3.5-haiku)\n- [anthropic/claude-3-opus](/anthropic/claude-3-opus)\n- [anthropic/claude-2.1](/anthropic/claude-2.1)\n- [google/gemini-pro-1.5](/google/gemini-pro-1.5)\n- [google/gemini-flash-1.5](/google/gemini-flash-1.5)\n- [mistralai/mistral-large-2407](/mistralai/mistral-large-2407)\n- [mistralai/mistral-nemo](/mistralai/mistral-nemo)\n- [deepseek/deepseek-r1](/deepseek/deepseek-r1)\n- [meta-llama/llama-3.1-70b-instruct](/meta-llama/llama-3.1-70b-instruct)\n- [meta-llama/llama-3.1-405b-instruct](/meta-llama/llama-3.1-405b-instruct)\n- [mistralai/mixtral-8x22b-instruct](/mistralai/mixtral-8x22b-instruct)\n- [cohere/command-r-plus](/cohere/command-r-plus)\n- [cohere/command-r](/cohere/command-r)",
+      "description": "Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output.\n\nTo see which model was used, visit [Activity](/activity), or read the `model` attribute of the response. Your response will be priced at the same rate as the routed model.\n\nThe meta-model is powered by [Not Diamond](https://docs.notdiamond.ai/docs/how-not-diamond-works). Learn more in our [docs](/docs/model-routing).\n\nRequests will be routed to the following models:\n- [openai/gpt-5](/openai/gpt-5)\n- [openai/gpt-5-mini](/openai/gpt-5-mini)\n- [openai/gpt-5-nano](/openai/gpt-5-nano)\n- [openai/gpt-4.1-nano](/openai/gpt-4.1-nano)\n- [openai/gpt-4.1](/openai/gpt-4.1)\n- [openai/gpt-4.1-mini](/openai/gpt-4.1-mini)\n- [openai/gpt-4.1](/openai/gpt-4.1)\n- [openai/gpt-4o-mini](/openai/gpt-4o-mini)\n- [openai/chatgpt-4o-latest](/openai/chatgpt-4o-latest)\n- [anthropic/claude-3.5-haiku](/anthropic/claude-3.5-haiku)\n- [anthropic/claude-opus-4-1](/anthropic/claude-opus-4-1)\n- [anthropic/claude-sonnet-4-0](/anthropic/claude-sonnet-4-0)\n- [anthropic/claude-3-7-sonnet-latest](/anthropic/claude-3-7-sonnet-latest)\n- [google/gemini-pro-1.5](/google/gemini-pro-1.5)\n- [google/gemini-flash-1.5](/google/gemini-flash-1.5)\n- [google/gemini-2.5-pro](/google/gemini-2.5-pro)\n- [google/gemini-2.5-flash](/google/gemini-2.5-flash)\n- [mistralai/mistral-large](/mistralai/mistral-large)\n- [mistralai/mistral-medium](/mistralai/mistral-medium)\n- [mistralai/mistral-small](/mistralai/mistral-small)\n- [mistralai/mistral-nemo](/mistralai/mistral-nemo)\n- [x-ai/grok-3](/x-ai/grok-3)\n- [x-ai/grok-3-mini](/x-ai/grok-3-mini)\n- [x-ai/grok-4](/x-ai/grok-4)\n- [deepseek/deepseek-r1](/deepseek/deepseek-r1)\n- [meta-llama/llama-3.1-70b-instruct](/meta-llama/llama-3.1-70b-instruct)\n- [meta-llama/llama-3.1-405b-instruct](/meta-llama/llama-3.1-405b-instruct)\n- [mistralai/mixtral-8x22b-instruct](/mistralai/mixtral-8x22b-instruct)\n- [perplexity/sonar](/perplexity/sonar)\n- [cohere/command-r-plus](/cohere/command-r-plus)\n- [cohere/command-r](/cohere/command-r)",
       "context_length": 2000000,
       "architecture": {
         "modality": "text->text",
@@ -524,7 +538,8 @@
         "is_moderated": false
       },
       "per_request_limits": null,
-      "supported_parameters": []
+      "supported_parameters": [],
+      "default_parameters": {}
     },
     {
       "id": "alpindale/goliath-120b",
@@ -574,7 +589,8 @@
         "top_a",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "neversleep/noromaid-20b",
@@ -624,7 +640,8 @@
         "top_a",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mixtral-8x7b-instruct",
@@ -674,7 +691,10 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-small",
@@ -721,7 +741,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-tiny",
@@ -768,7 +791,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "openai/gpt-3.5-turbo-0613",
@@ -818,7 +844,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4-turbo-preview",
@@ -868,7 +895,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-large",
@@ -915,54 +943,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
-    },
-    {
-      "id": "cohere/command-r-03-2024",
-      "canonical_slug": "cohere/command-r-03-2024",
-      "hugging_face_id": null,
-      "name": "Cohere: Command R (03-2024)",
-      "created": 1709341200,
-      "description": "Command-R is a 35B parameter model that performs conversational language tasks at a higher quality, more reliably, and with a longer context than previous models. It can be used for complex workflows like code generation, retrieval augmented generation (RAG), tool use, and agents.\n\nRead the launch post [here](https://txt.cohere.com/command-r/).\n\nUse of this model is subject to Cohere's [Usage Policy](https://docs.cohere.com/docs/usage-policy) and [SaaS Agreement](https://cohere.com/saas-agreement).",
-      "context_length": 128000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Cohere",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000005",
-        "completion": "0.0000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": 4000,
-        "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "anthropic/claude-3-opus",
@@ -1008,7 +992,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthropic/claude-3-haiku",
@@ -1054,242 +1039,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
-    },
-    {
-      "id": "cohere/command",
-      "canonical_slug": "cohere/command",
-      "hugging_face_id": null,
-      "name": "Cohere: Command",
-      "created": 1710374400,
-      "description": "Command is an instruction-following conversational model that performs language tasks with high quality, more reliably and with a longer context than our base generative models.\n\nUse of this model is subject to Cohere's [Usage Policy](https://docs.cohere.com/docs/usage-policy) and [SaaS Agreement](https://cohere.com/saas-agreement).",
-      "context_length": 4096,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Cohere",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000001",
-        "completion": "0.000002",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 4096,
-        "max_completion_tokens": 4000,
-        "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "cohere/command-r",
-      "canonical_slug": "cohere/command-r",
-      "hugging_face_id": null,
-      "name": "Cohere: Command R",
-      "created": 1710374400,
-      "description": "Command-R is a 35B parameter model that performs conversational language tasks at a higher quality, more reliably, and with a longer context than previous models. It can be used for complex workflows like code generation, retrieval augmented generation (RAG), tool use, and agents.\n\nRead the launch post [here](https://txt.cohere.com/command-r/).\n\nUse of this model is subject to Cohere's [Usage Policy](https://docs.cohere.com/docs/usage-policy) and [SaaS Agreement](https://cohere.com/saas-agreement).",
-      "context_length": 128000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Cohere",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000005",
-        "completion": "0.0000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": 4000,
-        "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "cohere/command-r-plus-04-2024",
-      "canonical_slug": "cohere/command-r-plus-04-2024",
-      "hugging_face_id": null,
-      "name": "Cohere: Command R+ (04-2024)",
-      "created": 1712016000,
-      "description": "Command R+ is a new, 104B-parameter LLM from Cohere. It's useful for roleplay, general consumer usecases, and Retrieval Augmented Generation (RAG).\n\nIt offers multilingual support for ten key languages to facilitate global business operations. See benchmarks and the launch post [here](https://txt.cohere.com/command-r-plus-microsoft-azure/).\n\nUse of this model is subject to Cohere's [Usage Policy](https://docs.cohere.com/docs/usage-policy) and [SaaS Agreement](https://cohere.com/saas-agreement).",
-      "context_length": 128000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Cohere",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000003",
-        "completion": "0.000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": 4000,
-        "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "cohere/command-r-plus",
-      "canonical_slug": "cohere/command-r-plus",
-      "hugging_face_id": null,
-      "name": "Cohere: Command R+",
-      "created": 1712188800,
-      "description": "Command R+ is a new, 104B-parameter LLM from Cohere. It's useful for roleplay, general consumer usecases, and Retrieval Augmented Generation (RAG).\n\nIt offers multilingual support for ten key languages to facilitate global business operations. See benchmarks and the launch post [here](https://txt.cohere.com/command-r-plus-microsoft-azure/).\n\nUse of this model is subject to Cohere's [Usage Policy](https://docs.cohere.com/docs/usage-policy) and [SaaS Agreement](https://cohere.com/saas-agreement).",
-      "context_length": 128000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Cohere",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000003",
-        "completion": "0.000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": 4000,
-        "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tools",
-        "top_k",
-        "top_p"
-      ]
-    },
-    {
-      "id": "google/gemini-pro-1.5",
-      "canonical_slug": "google/gemini-pro-1.5",
-      "hugging_face_id": null,
-      "name": "Google: Gemini 1.5 Pro",
-      "created": 1712620800,
-      "description": "Google's latest multimodal model, supports image and video[0] in text or chat prompts.\n\nOptimized for language tasks including:\n\n- Code generation\n- Text generation\n- Text editing\n- Problem solving\n- Recommendations\n- Information extraction\n- Data extraction or generation\n- AI agents\n\nUsage of Gemini is subject to Google's [Gemini Terms of Use](https://ai.google.dev/terms).\n\n* [0]: Video input is not available through OpenRouter at this time.",
-      "context_length": 2000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Gemini",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.00000125",
-        "completion": "0.000005",
-        "request": "0",
-        "image": "0.0006575",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 2000000,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4-turbo",
@@ -1340,7 +1091,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "microsoft/wizardlm-2-8x22b",
@@ -1388,7 +1140,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mixtral-8x22b-instruct",
@@ -1440,7 +1193,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "meta-llama/llama-3-70b-instruct",
@@ -1492,7 +1248,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3-8b-instruct",
@@ -1542,7 +1299,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-guard-2-8b",
@@ -1588,7 +1346,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4o",
@@ -1642,7 +1401,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4o-2024-05-13",
@@ -1695,7 +1455,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4o:extended",
@@ -1748,57 +1509,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
-    },
-    {
-      "id": "google/gemini-flash-1.5",
-      "canonical_slug": "google/gemini-flash-1.5",
-      "hugging_face_id": null,
-      "name": "Google: Gemini 1.5 Flash ",
-      "created": 1715644800,
-      "description": "Gemini 1.5 Flash is a foundation model that performs well at a variety of multimodal tasks such as visual understanding, classification, summarization, and creating content from image, audio and video. It's adept at processing visual and text inputs such as photographs, documents, infographics, and screenshots.\n\nGemini 1.5 Flash is designed for high-volume, high-frequency tasks where cost and latency matter. On most common tasks, Flash achieves comparable quality to other Gemini Pro models at a significantly reduced cost. Flash is well-suited for applications like chat assistants and on-demand content generation where speed and scale matter.\n\nUsage of Gemini is subject to Google's [Gemini Terms of Use](https://ai.google.dev/terms).\n\n#multimodal",
-      "context_length": 1000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Gemini",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000000075",
-        "completion": "0.0000003",
-        "request": "0",
-        "image": "0.00004",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000001875",
-        "input_cache_write": "0.0000001583"
-      },
-      "top_provider": {
-        "context_length": 1000000,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "neversleep/llama-3-lumimaid-70b",
@@ -1844,7 +1556,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "microsoft/phi-3-medium-128k-instruct",
@@ -1885,7 +1598,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "microsoft/phi-3-mini-128k-instruct",
@@ -1926,7 +1640,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-7b-instruct",
@@ -1976,7 +1691,10 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-7b-instruct-v0.3",
@@ -2026,7 +1744,10 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-7b-instruct:free",
@@ -2075,7 +1796,10 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "nousresearch/hermes-2-pro-llama-3-8b",
@@ -2084,7 +1808,7 @@
       "name": "NousResearch: Hermes 2 Pro - Llama-3 8B",
       "created": 1716768000,
       "description": "Hermes 2 Pro is an upgraded, retrained version of Nous Hermes 2, consisting of an updated and cleaned version of the OpenHermes 2.5 Dataset, as well as a newly introduced Function Calling and JSON Mode dataset developed in-house.",
-      "context_length": 131072,
+      "context_length": 32768,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -2098,22 +1822,21 @@
       },
       "pricing": {
         "prompt": "0.000000025",
-        "completion": "0.00000004",
+        "completion": "0.00000008",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 131072,
+        "context_length": 32768,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
         "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -2124,9 +1847,9 @@
         "structured_outputs",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "sao10k/l3-euryale-70b",
@@ -2173,7 +1896,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthropic/claude-3.5-sonnet-20240620",
@@ -2220,7 +1944,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-2-9b-it",
@@ -2270,7 +1995,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-2-9b-it:free",
@@ -2319,7 +2045,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-2-27b-it",
@@ -2363,7 +2090,8 @@
         "structured_outputs",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4o-mini",
@@ -2417,7 +2145,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4o-mini-2024-07-18",
@@ -2471,7 +2200,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-nemo",
@@ -2524,7 +2254,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-nemo:free",
@@ -2573,7 +2306,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "meta-llama/llama-3.1-405b-instruct",
@@ -2626,52 +2362,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
-    },
-    {
-      "id": "meta-llama/llama-3.1-405b-instruct:free",
-      "canonical_slug": "meta-llama/llama-3.1-405b-instruct",
-      "hugging_face_id": "meta-llama/Meta-Llama-3.1-405B-Instruct",
-      "name": "Meta: Llama 3.1 405B Instruct (free)",
-      "created": 1721692800,
-      "description": "The highly anticipated 400B class of Llama3 is here! Clocking in at 128k context with impressive eval scores, the Meta AI team continues to push the frontier of open-source LLMs.\n\nMeta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 405B instruct-tuned version is optimized for high quality dialogue usecases.\n\nIt has demonstrated strong performance compared to leading closed-source models including GPT-4o and Claude 3.5 Sonnet in evaluations.\n\nTo read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3-1/). Usage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
-      "context_length": 65536,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "llama3"
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 65536,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "top_k",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.1-70b-instruct",
@@ -2693,8 +2385,8 @@
         "instruct_type": "llama3"
       },
       "pricing": {
-        "prompt": "0.0000001",
-        "completion": "0.00000028",
+        "prompt": "0.0000004",
+        "completion": "0.0000004",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -2702,7 +2394,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 16384,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -2724,7 +2416,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.1-8b-instruct",
@@ -2777,7 +2470,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.1-405b",
@@ -2826,7 +2520,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4o-2024-08-06",
@@ -2880,7 +2575,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "sao10k/l3-lunaris-8b",
@@ -2928,7 +2624,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/chatgpt-4o-latest",
@@ -2977,7 +2674,8 @@
         "temperature",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "nousresearch/hermes-3-llama-3.1-405b",
@@ -2999,8 +2697,8 @@
         "instruct_type": "chatml"
       },
       "pricing": {
-        "prompt": "0.0000008",
-        "completion": "0.0000008",
+        "prompt": "0.000001",
+        "completion": "0.000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -3008,7 +2706,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 131072,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -3027,7 +2725,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "nousresearch/hermes-3-llama-3.1-70b",
@@ -3036,7 +2735,7 @@
       "name": "Nous: Hermes 3 70B Instruct",
       "created": 1723939200,
       "description": "Hermes 3 is a generalist language model with many improvements over [Hermes 2](/models/nousresearch/nous-hermes-2-mistral-7b-dpo), including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.\n\nHermes 3 70B is a competitive, if not superior finetune of the [Llama-3.1 70B foundation model](/models/meta-llama/llama-3.1-70b-instruct), focused on aligning LLMs to the user, with powerful steering capabilities and control given to the end user.\n\nThe Hermes 3 series builds and expands on the Hermes 2 set of capabilities, including more powerful and reliable function calling and structured output capabilities, generalist assistant capabilities, and improved code generation skills.",
-      "context_length": 131072,
+      "context_length": 65000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -3049,7 +2748,7 @@
         "instruct_type": "chatml"
       },
       "pricing": {
-        "prompt": "0.00000012",
+        "prompt": "0.0000003",
         "completion": "0.0000003",
         "request": "0",
         "image": "0",
@@ -3057,8 +2756,8 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 131072,
+        "context_length": 65000,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -3080,7 +2779,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "microsoft/phi-3.5-mini-128k-instruct",
@@ -3121,7 +2821,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-2.5-vl-7b-instruct",
@@ -3173,7 +2874,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "sao10k/l3.1-euryale-70b",
@@ -3222,7 +2924,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cohere/command-r-08-2024",
@@ -3269,7 +2972,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cohere/command-r-plus-08-2024",
@@ -3316,7 +3020,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/pixtral-12b",
@@ -3370,7 +3075,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "openai/o1-mini",
@@ -3409,7 +3117,8 @@
       "supported_parameters": [
         "max_tokens",
         "seed"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/o1-mini-2024-09-12",
@@ -3448,7 +3157,8 @@
       "supported_parameters": [
         "max_tokens",
         "seed"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "neversleep/llama-3.1-lumimaid-8b",
@@ -3498,7 +3208,8 @@
         "top_a",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-2.5-72b-instruct",
@@ -3529,7 +3240,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -3550,7 +3261,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-2.5-72b-instruct:free",
@@ -3599,7 +3311,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.2-11b-vision-instruct",
@@ -3650,7 +3363,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.2-1b-instruct",
@@ -3700,7 +3414,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.2-3b-instruct",
@@ -3753,7 +3468,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.2-3b-instruct:free",
@@ -3796,7 +3512,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.2-90b-vision-instruct",
@@ -3844,7 +3561,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthracite-org/magnum-v2-72b",
@@ -3891,7 +3609,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "thedrummer/rocinante-12b",
@@ -3942,57 +3661,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
-    },
-    {
-      "id": "google/gemini-flash-1.5-8b",
-      "canonical_slug": "google/gemini-flash-1.5-8b",
-      "hugging_face_id": null,
-      "name": "Google: Gemini 1.5 Flash 8B",
-      "created": 1727913600,
-      "description": "Gemini Flash 1.5 8B is optimized for speed and efficiency, offering enhanced performance in small prompt tasks like chat, transcription, and translation. With reduced latency, it is highly effective for real-time and large-scale operations. This model focuses on cost-effective solutions while maintaining high-quality results.\n\n[Click here to learn more about this model](https://developers.googleblog.com/en/gemini-15-flash-8b-is-now-generally-available-for-use/).\n\nUsage of Gemini is subject to Google's [Gemini Terms of Use](https://ai.google.dev/terms).",
-      "context_length": 1000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Gemini",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000000375",
-        "completion": "0.00000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000001",
-        "input_cache_write": "0.0000000583"
-      },
-      "top_provider": {
-        "context_length": 1000000,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "inflection/inflection-3-pi",
@@ -4032,7 +3702,8 @@
         "stop",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "inflection/inflection-3-productivity",
@@ -4072,7 +3743,8 @@
         "stop",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "nvidia/llama-3.1-nemotron-70b-instruct",
@@ -4122,7 +3794,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-2.5-7b-instruct",
@@ -4171,7 +3844,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/ministral-3b",
@@ -4216,7 +3890,10 @@
         "structured_outputs",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/ministral-8b",
@@ -4263,7 +3940,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "anthracite-org/magnum-v4-72b",
@@ -4285,7 +3965,7 @@
         "instruct_type": "chatml"
       },
       "pricing": {
-        "prompt": "0.000002",
+        "prompt": "0.0000025",
         "completion": "0.000005",
         "request": "0",
         "image": "0",
@@ -4305,13 +3985,16 @@
         "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "top_a",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthropic/claude-3.5-sonnet",
@@ -4358,7 +4041,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthropic/claude-3.5-haiku",
@@ -4404,7 +4088,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthropic/claude-3.5-haiku-20241022",
@@ -4451,7 +4136,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "thedrummer/unslopnemo-12b",
@@ -4497,7 +4183,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "raifle/sorcererlm-8x22b",
@@ -4544,7 +4231,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-2.5-coder-32b-instruct",
@@ -4566,8 +4254,8 @@
         "instruct_type": "chatml"
       },
       "pricing": {
-        "prompt": "0.00000006",
-        "completion": "0.00000015",
+        "prompt": "0.00000004",
+        "completion": "0.00000014",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -4575,7 +4263,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": 16384,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -4594,7 +4282,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-2.5-coder-32b-instruct:free",
@@ -4643,7 +4332,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/pixtral-large-2411",
@@ -4691,7 +4381,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-large-2407",
@@ -4738,7 +4431,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-large-2411",
@@ -4785,7 +4481,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "openai/gpt-4o-2024-11-20",
@@ -4839,56 +4538,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
-    },
-    {
-      "id": "qwen/qwq-32b-preview",
-      "canonical_slug": "qwen/qwq-32b-preview",
-      "hugging_face_id": "Qwen/QwQ-32B-Preview",
-      "name": "Qwen: QwQ 32B Preview",
-      "created": 1732754541,
-      "description": "QwQ-32B-Preview is an experimental research model focused on AI reasoning capabilities developed by the Qwen Team. As a preview release, it demonstrates promising analytical abilities while having several important limitations:\n\n1. **Language Mixing and Code-Switching**: The model may mix languages or switch between them unexpectedly, affecting response clarity.\n2. **Recursive Reasoning Loops**: The model may enter circular reasoning patterns, leading to lengthy responses without a conclusive answer.\n3. **Safety and Ethical Considerations**: The model requires enhanced safety measures to ensure reliable and secure performance, and users should exercise caution when deploying it.\n4. **Performance and Benchmark Limitations**: The model excels in math and coding but has room for improvement in other areas, such as common sense reasoning and nuanced language understanding.\n\n",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen",
-        "instruct_type": "deepseek-r1"
-      },
-      "pricing": {
-        "prompt": "0.0000002",
-        "completion": "0.0000002",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "amazon/nova-pro-v1",
@@ -4931,7 +4582,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "amazon/nova-micro-v1",
@@ -4973,7 +4625,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "amazon/nova-lite-v1",
@@ -5016,7 +4669,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.3-70b-instruct",
@@ -5038,8 +4692,8 @@
         "instruct_type": "llama3"
       },
       "pricing": {
-        "prompt": "0.000000012",
-        "completion": "0.000000036",
+        "prompt": "0.00000004",
+        "completion": "0.00000012",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -5069,7 +4723,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.3-70b-instruct:free",
@@ -5117,7 +4772,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.0-flash-exp:free",
@@ -5162,7 +4818,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cohere/command-r7b-12-2024",
@@ -5208,7 +4865,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/o1",
@@ -5253,7 +4911,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "sao10k/l3.3-euryale-70b",
@@ -5301,7 +4960,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-chat",
@@ -5354,7 +5014,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "microsoft/phi-4",
@@ -5402,7 +5063,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/codestral-2501",
@@ -5449,7 +5111,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "minimax/minimax-01",
@@ -5489,7 +5154,8 @@
         "max_tokens",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1",
@@ -5544,7 +5210,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1:free",
@@ -5584,7 +5251,8 @@
         "max_tokens",
         "reasoning",
         "temperature"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1-distill-llama-70b",
@@ -5615,7 +5283,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -5638,7 +5306,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1-distill-llama-70b:free",
@@ -5689,7 +5358,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "liquid/lfm-3b",
@@ -5735,7 +5405,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "liquid/lfm-7b",
@@ -5772,20 +5443,17 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "response_format",
         "seed",
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "perplexity/sonar",
@@ -5829,7 +5497,8 @@
         "top_k",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "perplexity/sonar-reasoning",
@@ -5874,7 +5543,8 @@
         "top_k",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1-distill-qwen-14b",
@@ -5923,7 +5593,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1-distill-qwen-32b",
@@ -5970,10 +5641,12 @@
         "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-small-24b-instruct-2501",
@@ -6004,7 +5677,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6026,7 +5699,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-small-24b-instruct-2501:free",
@@ -6075,7 +5751,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "openai/o3-mini",
@@ -6119,7 +5798,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-max",
@@ -6164,7 +5844,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-plus",
@@ -6209,7 +5890,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen2.5-vl-72b-instruct",
@@ -6241,7 +5923,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6259,7 +5941,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen2.5-vl-72b-instruct:free",
@@ -6268,7 +5951,7 @@
       "name": "Qwen: Qwen2.5 VL 72B Instruct (free)",
       "created": 1738410311,
       "description": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
-      "context_length": 32768,
+      "context_length": 131072,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -6290,23 +5973,20 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": null,
+        "context_length": 131072,
+        "max_completion_tokens": 2048,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
         "max_tokens",
         "presence_penalty",
         "response_format",
         "seed",
-        "stop",
-        "structured_outputs",
         "temperature",
-        "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-turbo",
@@ -6351,7 +6031,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-vl-max",
@@ -6394,7 +6075,8 @@
         "seed",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "aion-labs/aion-rp-llama-3.1-8b",
@@ -6433,7 +6115,8 @@
         "max_tokens",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "aion-labs/aion-1.0-mini",
@@ -6474,7 +6157,8 @@
         "reasoning",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "aion-labs/aion-1.0",
@@ -6515,7 +6199,8 @@
         "reasoning",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-vl-plus",
@@ -6558,7 +6243,8 @@
         "seed",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.0-flash-001",
@@ -6609,7 +6295,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1-distill-llama-8b",
@@ -6658,7 +6345,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/o3-mini-high",
@@ -6702,7 +6390,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-guard-3-8b",
@@ -6752,7 +6441,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cognitivecomputations/dolphin3.0-mistral-24b",
@@ -6783,7 +6473,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6801,7 +6491,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cognitivecomputations/dolphin3.0-mistral-24b:free",
@@ -6850,7 +6541,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b",
@@ -6881,7 +6573,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6901,7 +6593,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b:free",
@@ -6952,7 +6645,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-saba",
@@ -6999,7 +6693,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "perplexity/r1-1776",
@@ -7043,7 +6740,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthropic/claude-3.7-sonnet",
@@ -7092,7 +6790,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthropic/claude-3.7-sonnet:thinking",
@@ -7139,7 +6838,8 @@
         "temperature",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.0-flash-lite-001",
@@ -7187,7 +6887,58 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
+    },
+    {
+      "id": "nousresearch/deephermes-3-llama-3-8b-preview",
+      "canonical_slug": "nousresearch/deephermes-3-llama-3-8b-preview",
+      "hugging_face_id": "NousResearch/DeepHermes-3-Llama-3-8B-Preview",
+      "name": "Nous: DeepHermes 3 Llama 3 8B Preview",
+      "created": 1740719372,
+      "description": "DeepHermes 3 Preview is the latest version of our flagship Hermes series of LLMs by Nous Research, and one of the first models in the world to unify Reasoning (long chains of thought that improve answer accuracy) and normal LLM response modes into one model. We have also improved LLM annotation, judgement, and function calling.\n\nDeepHermes 3 Preview is one of the first LLM models to unify both \"intuitive\", traditional mode responses and long chain of thought reasoning responses into a single model, toggled by a system prompt.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000001",
+        "completion": "0.00000005",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 131072,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {}
     },
     {
       "id": "nousresearch/deephermes-3-llama-3-8b-preview:free",
@@ -7236,7 +6987,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwq-32b",
@@ -7291,52 +7043,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
-    },
-    {
-      "id": "qwen/qwq-32b:free",
-      "canonical_slug": "qwen/qwq-32b",
-      "hugging_face_id": "Qwen/QwQ-32B",
-      "name": "Qwen: QwQ 32B (free)",
-      "created": 1741208814,
-      "description": "QwQ is the reasoning model of the Qwen series. Compared with conventional instruction-tuned models, QwQ, which is capable of thinking and reasoning, can achieve significantly enhanced performance in downstream tasks, especially hard problems. QwQ-32B is the medium-sized reasoning model, which is capable of achieving competitive performance against state-of-the-art reasoning models, e.g., DeepSeek-R1, o1-mini.",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen",
-        "instruct_type": "qwq"
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "top_k",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "perplexity/sonar-deep-research",
@@ -7381,7 +7089,8 @@
         "top_k",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "perplexity/sonar-pro",
@@ -7425,7 +7134,8 @@
         "top_k",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "perplexity/sonar-reasoning-pro",
@@ -7471,7 +7181,8 @@
         "top_k",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "microsoft/phi-4-multimodal-instruct",
@@ -7522,7 +7233,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "thedrummer/skyfall-36b-v2",
@@ -7553,7 +7265,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -7571,54 +7283,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
-    },
-    {
-      "id": "thedrummer/anubis-pro-105b-v1",
-      "canonical_slug": "thedrummer/anubis-pro-105b-v1",
-      "hugging_face_id": "TheDrummer/Anubis-Pro-105B-v1",
-      "name": "TheDrummer: Anubis Pro 105B V1",
-      "created": 1741642290,
-      "description": "Anubis Pro 105B v1 is an expanded and refined variant of Meta\u2019s Llama 3.3 70B, featuring 50% additional layers and further fine-tuning to leverage its increased capacity. Designed for advanced narrative, roleplay, and instructional tasks, it demonstrates enhanced emotional intelligence, creativity, nuanced character portrayal, and superior prompt adherence compared to smaller models. Its larger parameter count allows for deeper contextual understanding and extended reasoning capabilities, optimized for engaging, intelligent, and coherent interactions.",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000005",
-        "completion": "0.000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 131072,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3-27b-it",
@@ -7650,7 +7316,7 @@
       },
       "top_provider": {
         "context_length": 96000,
-        "max_completion_tokens": 8192,
+        "max_completion_tokens": 96000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -7670,7 +7336,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3-27b-it:free",
@@ -7722,7 +7389,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4o-search-preview",
@@ -7762,7 +7430,8 @@
         "response_format",
         "structured_outputs",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4o-mini-search-preview",
@@ -7802,7 +7471,8 @@
         "response_format",
         "structured_outputs",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cohere/command-a",
@@ -7848,7 +7518,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3-12b-it",
@@ -7880,7 +7551,7 @@
       },
       "top_provider": {
         "context_length": 96000,
-        "max_completion_tokens": 8192,
+        "max_completion_tokens": 96000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -7895,11 +7566,13 @@
         "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3-12b-it:free",
@@ -7949,7 +7622,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3-4b-it",
@@ -7997,7 +7671,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3-4b-it:free",
@@ -8040,7 +7715,8 @@
         "structured_outputs",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "allenai/olmo-2-0325-32b-instruct",
@@ -8087,7 +7763,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-small-3.1-24b-instruct",
@@ -8119,7 +7796,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 96000,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -8141,7 +7818,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-small-3.1-24b-instruct:free",
@@ -8195,7 +7875,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "openai/o1-pro",
@@ -8239,7 +7922,8 @@
         "response_format",
         "seed",
         "structured_outputs"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-chat-v3-0324",
@@ -8261,8 +7945,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000024999988",
-        "completion": "0.000000999999888",
+        "prompt": "0.00000024",
+        "completion": "0.00000084",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -8270,7 +7954,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 163840,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -8292,7 +7976,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-chat-v3-0324:free",
@@ -8343,7 +8028,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen2.5-vl-32b-instruct",
@@ -8375,7 +8061,7 @@
       },
       "top_provider": {
         "context_length": 16384,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -8395,7 +8081,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen2.5-vl-32b-instruct:free",
@@ -8446,7 +8133,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "allenai/molmo-7b-d",
@@ -8494,7 +8182,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-4-scout",
@@ -8503,7 +8192,7 @@
       "name": "Meta: Llama 4 Scout",
       "created": 1743881519,
       "description": "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input (text and image) and multilingual output (text and code) across 12 supported languages. Designed for assistant-style interaction and visual reasoning, Scout uses 16 experts per forward pass and features a context length of 10 million tokens, with a training corpus of ~40 trillion tokens.\n\nBuilt for high efficiency and local or commercial deployment, Llama 4 Scout incorporates early fusion for seamless modality integration. It is instruction-tuned for use in multilingual chat, captioning, and image understanding tasks. Released under the Llama 4 Community License, it was last trained on data up to August 2024 and launched publicly on April 5, 2025.",
-      "context_length": 1048576,
+      "context_length": 327680,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -8520,13 +8209,13 @@
         "prompt": "0.00000008",
         "completion": "0.0000003",
         "request": "0",
-        "image": "0",
+        "image": "0.0003342",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 1048576,
-        "max_completion_tokens": 1048576,
+        "context_length": 327680,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -8548,7 +8237,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-4-scout:free",
@@ -8594,7 +8284,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-4-maverick",
@@ -8648,7 +8339,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-4-maverick:free",
@@ -8694,7 +8386,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
@@ -8743,7 +8436,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "x-ai/grok-3-beta",
@@ -8792,7 +8486,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "x-ai/grok-3-mini-beta",
@@ -8841,7 +8536,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "moonshotai/kimi-vl-a3b-thinking",
@@ -8873,7 +8569,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -8893,7 +8589,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "moonshotai/kimi-vl-a3b-thinking:free",
@@ -8945,7 +8642,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "agentica-org/deepcoder-14b-preview",
@@ -8996,7 +8694,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "agentica-org/deepcoder-14b-preview:free",
@@ -9047,7 +8746,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "arliai/qwq-32b-arliai-rpr-v1",
@@ -9078,7 +8778,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -9098,7 +8798,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "arliai/qwq-32b-arliai-rpr-v1:free",
@@ -9149,7 +8850,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "alfredpros/codellama-7b-instruct-solidity",
@@ -9195,7 +8897,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "eleutherai/llemma_7b",
@@ -9241,7 +8944,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4.1-nano",
@@ -9294,7 +8998,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4.1-mini",
@@ -9348,7 +9053,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-4.1",
@@ -9402,7 +9108,8 @@
         "top_logprobs",
         "top_p",
         "web_search_options"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "shisa-ai/shisa-v2-llama3.3-70b",
@@ -9433,7 +9140,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -9451,7 +9158,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "shisa-ai/shisa-v2-llama3.3-70b:free",
@@ -9500,7 +9208,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/o4-mini",
@@ -9547,7 +9256,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/o3",
@@ -9594,7 +9304,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/o4-mini-high",
@@ -9641,7 +9352,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "thudm/glm-z1-32b",
@@ -9672,7 +9384,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -9692,7 +9404,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "microsoft/mai-ds-r1",
@@ -9714,8 +9427,8 @@
         "instruct_type": "deepseek-r1"
       },
       "pricing": {
-        "prompt": "0.00000024999988",
-        "completion": "0.000000999999888",
+        "prompt": "0.00000025",
+        "completion": "0.000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -9723,7 +9436,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 163840,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -9743,7 +9456,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "microsoft/mai-ds-r1:free",
@@ -9794,7 +9508,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "tngtech/deepseek-r1t-chimera",
@@ -9816,8 +9531,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000024999988",
-        "completion": "0.000000999999888",
+        "prompt": "0.00000025",
+        "completion": "0.000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -9825,7 +9540,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 163840,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -9845,7 +9560,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "tngtech/deepseek-r1t-chimera:free",
@@ -9896,7 +9612,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-235b-a22b",
@@ -9951,7 +9668,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-235b-a22b:free",
@@ -10006,7 +9724,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-32b",
@@ -10030,61 +9749,6 @@
       "pricing": {
         "prompt": "0.00000003",
         "completion": "0.00000013",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 40960,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ]
-    },
-    {
-      "id": "qwen/qwen3-14b",
-      "canonical_slug": "qwen/qwen3-14b-04-28",
-      "hugging_face_id": "Qwen/Qwen3-14B",
-      "name": "Qwen: Qwen3 14B",
-      "created": 1745876478,
-      "description": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for tasks like math, programming, and logical inference, and a \"non-thinking\" mode for general-purpose conversation. The model is fine-tuned for instruction-following, agent tool use, creative writing, and multilingual tasks across 100+ languages and dialects. It natively handles 32K token contexts and can extend to 131K tokens using YaRN-based scaling.",
-      "context_length": 40960,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": "qwen3"
-      },
-      "pricing": {
-        "prompt": "0.00000006",
-        "completion": "0.00000024",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -10116,7 +9780,64 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
+    },
+    {
+      "id": "qwen/qwen3-14b",
+      "canonical_slug": "qwen/qwen3-14b-04-28",
+      "hugging_face_id": "Qwen/Qwen3-14B",
+      "name": "Qwen: Qwen3 14B",
+      "created": 1745876478,
+      "description": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for tasks like math, programming, and logical inference, and a \"non-thinking\" mode for general-purpose conversation. The model is fine-tuned for instruction-following, agent tool use, creative writing, and multilingual tasks across 100+ languages and dialects. It natively handles 32K token contexts and can extend to 131K tokens using YaRN-based scaling.",
+      "context_length": 40960,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": "qwen3"
+      },
+      "pricing": {
+        "prompt": "0.00000004",
+        "completion": "0.00000014",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 40960,
+        "max_completion_tokens": 40960,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-14b:free",
@@ -10167,7 +9888,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-8b",
@@ -10216,7 +9938,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-8b:free",
@@ -10267,7 +9990,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-30b-a3b",
@@ -10298,7 +10022,7 @@
       },
       "top_provider": {
         "context_length": 40960,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 40960,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -10322,7 +10046,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-30b-a3b:free",
@@ -10373,7 +10098,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-guard-4-12b",
@@ -10422,7 +10148,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-prover-v2",
@@ -10469,7 +10196,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-4b:free",
@@ -10518,7 +10246,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "inception/mercury-coder",
@@ -10565,7 +10294,12 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "microsoft/phi-4-reasoning-plus",
@@ -10614,7 +10348,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "arcee-ai/coder-large",
@@ -10660,7 +10395,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "arcee-ai/virtuoso-large",
@@ -10708,7 +10444,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "arcee-ai/maestro-reasoning",
@@ -10754,7 +10491,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "arcee-ai/spotlight",
@@ -10801,7 +10539,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.5-pro-preview-05-06",
@@ -10853,7 +10592,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-medium-3",
@@ -10901,7 +10641,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "nousresearch/deephermes-3-mistral-24b-preview",
@@ -10932,7 +10675,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -10952,7 +10695,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meta-llama/llama-3.3-8b-instruct:free",
@@ -10997,7 +10741,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/codex-mini",
@@ -11043,7 +10788,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3n-e4b-it",
@@ -11089,7 +10835,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3n-e4b-it:free",
@@ -11133,7 +10880,8 @@
         "stop",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/devstral-small-2505",
@@ -11164,7 +10912,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -11186,7 +10934,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/devstral-small-2505:free",
@@ -11237,7 +10988,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "anthropic/claude-sonnet-4",
@@ -11286,7 +11040,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "anthropic/claude-opus-4",
@@ -11335,7 +11090,12 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "deepseek/deepseek-r1-0528",
@@ -11366,7 +11126,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 163840,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -11390,7 +11150,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1-0528:free",
@@ -11441,7 +11202,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1-0528-qwen3-8b",
@@ -11450,7 +11212,7 @@
       "name": "DeepSeek: Deepseek R1 0528 Qwen3 8B",
       "created": 1748538543,
       "description": "DeepSeek-R1-0528 is a lightly upgraded release of DeepSeek R1 that taps more compute and smarter post-training tricks, pushing its reasoning and inference to the brink of flagship models like O3 and Gemini 2.5 Pro.\nIt now tops math, programming, and logic leaderboards, showcasing a step-change in depth-of-thought.\nThe distilled variant, DeepSeek-R1-0528-Qwen3-8B, transfers this chain-of-thought into an 8 B-parameter form, beating standard Qwen3 8B by +10 pp and tying the 235 B \u201cthinking\u201d giant on AIME 2024.",
-      "context_length": 131072,
+      "context_length": 32768,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -11471,8 +11233,8 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": null,
+        "context_length": 32768,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -11492,7 +11254,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-r1-0528-qwen3-8b:free",
@@ -11543,7 +11306,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.5-pro-preview",
@@ -11595,7 +11359,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/magistral-medium-2506",
@@ -11644,7 +11409,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/magistral-medium-2506:thinking",
@@ -11693,7 +11461,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/magistral-small-2506",
@@ -11742,7 +11513,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "x-ai/grok-3",
@@ -11792,7 +11566,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "x-ai/grok-3-mini",
@@ -11842,7 +11617,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/o3-pro",
@@ -11888,7 +11664,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "moonshotai/kimi-dev-72b",
@@ -11932,7 +11709,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "moonshotai/kimi-dev-72b:free",
@@ -11983,7 +11761,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.5-pro",
@@ -12035,7 +11814,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.5-flash",
@@ -12087,7 +11867,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.5-flash-lite-preview-06-17",
@@ -12139,7 +11920,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "minimax/minimax-m1",
@@ -12191,7 +11973,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-small-3.2-24b-instruct",
@@ -12200,7 +11983,7 @@
       "name": "Mistral: Mistral Small 3.2 24B",
       "created": 1750443016,
       "description": "Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on WildBench and Arena Hard, reduces infinite generations, and delivers gains in tool use and structured output tasks.\n\nIt supports image and text inputs with structured outputs, function/tool calling, and strong performance across coding (HumanEval+, MBPP), STEM (MMLU, MATH, GPQA), and vision benchmarks (ChartQA, DocVQA).",
-      "context_length": 128000,
+      "context_length": 131072,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -12214,16 +11997,16 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.000000075",
-        "completion": "0.0000002",
+        "prompt": "0.00000006",
+        "completion": "0.00000018",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": null,
+        "context_length": 131072,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -12245,7 +12028,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/mistral-small-3.2-24b-instruct:free",
@@ -12298,7 +12084,10 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "inception/mercury",
@@ -12345,7 +12134,12 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "thedrummer/anubis-70b-v1.1",
@@ -12354,7 +12148,7 @@
       "name": "TheDrummer: Anubis 70B V1.1",
       "created": 1751208347,
       "description": "TheDrummer's Anubis v1.1 is an unaligned, creative Llama 3.3 70B model focused on providing character-driven roleplay & stories. It excels at gritty, visceral prose, unique character adherence, and coherent narratives, while maintaining the instruction following Llama 3.3 70B is known for.",
-      "context_length": 16384,
+      "context_length": 4096,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -12375,7 +12169,7 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 16384,
+        "context_length": 4096,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -12394,7 +12188,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "baidu/ernie-4.5-300b-a47b",
@@ -12443,7 +12238,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "baidu/ernie-4.5-vl-424b-a47b",
@@ -12493,7 +12289,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "morph/morph-v3-fast",
@@ -12501,7 +12298,7 @@
       "hugging_face_id": "",
       "name": "Morph: Morph V3 Fast",
       "created": 1751910002,
-      "description": "Morph's fastest apply model for code edits. 4500+ tokens/sec with 96% accuracy for rapid code transformations.",
+      "description": "Morph's fastest apply model for code edits. ~10,500 tokens/sec with 96% accuracy for rapid code transformations.\n\nThe model requires the prompt to be in the following format: \n<instruction>{instruction}</instruction>\n<code>{initial_code}</code>\n<update>{edit_snippet}</update>\n\nZero Data Retention is enabled for Morph. Learn more about this model in their [documentation](https://docs.morphllm.com/quickstart)",
       "context_length": 81920,
       "architecture": {
         "modality": "text->text",
@@ -12515,8 +12312,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000009",
-        "completion": "0.0000019",
+        "prompt": "0.0000008",
+        "completion": "0.0000012",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -12532,7 +12329,12 @@
         "max_tokens",
         "stop",
         "temperature"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "morph/morph-v3-large",
@@ -12540,7 +12342,7 @@
       "hugging_face_id": "",
       "name": "Morph: Morph V3 Large",
       "created": 1751910858,
-      "description": "Morph's high-accuracy apply model for complex code edits. 2000+ tokens/sec with 98% accuracy for precise code transformations.",
+      "description": "Morph's high-accuracy apply model for complex code edits. ~4,500 tokens/sec with 98% accuracy for precise code transformations.\n\nThe model requires the prompt to be in the following format: \n<instruction>{instruction}</instruction>\n<code>{initial_code}</code>\n<update>{edit_snippet}</update>\n\nZero Data Retention is enabled for Morph. Learn more about this model in their [documentation](https://docs.morphllm.com/quickstart)",
       "context_length": 81920,
       "architecture": {
         "modality": "text->text",
@@ -12571,7 +12373,12 @@
         "max_tokens",
         "stop",
         "temperature"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "tngtech/deepseek-r1t2-chimera:free",
@@ -12622,7 +12429,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "tencent/hunyuan-a13b-instruct",
@@ -12675,7 +12483,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "tencent/hunyuan-a13b-instruct:free",
@@ -12726,7 +12535,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemma-3n-e2b-it:free",
@@ -12770,7 +12580,8 @@
         "stop",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "x-ai/grok-4",
@@ -12820,7 +12631,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
@@ -12865,7 +12677,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/devstral-small",
@@ -12915,7 +12728,10 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "mistralai/devstral-medium",
@@ -12962,7 +12778,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "thudm/glm-4.1v-9b-thinking",
@@ -13012,7 +12831,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "moonshotai/kimi-k2",
@@ -13065,7 +12885,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "moonshotai/kimi-k2:free",
@@ -13097,26 +12918,16 @@
       "top_provider": {
         "context_length": 32768,
         "max_completion_tokens": null,
-        "is_moderated": false
+        "is_moderated": true
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
         "seed",
         "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ]
+        "temperature"
+      ],
+      "default_parameters": {}
     },
     {
       "id": "switchpoint/router",
@@ -13160,7 +12971,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-235b-a22b-2507",
@@ -13182,8 +12994,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000001",
-        "completion": "0.0000001",
+        "prompt": "0.00000008",
+        "completion": "0.00000055",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -13213,7 +13025,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.5-flash-lite",
@@ -13265,7 +13078,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "bytedance/ui-tars-1.5-7b",
@@ -13313,7 +13127,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-coder",
@@ -13344,7 +13159,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -13366,7 +13181,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-coder:free",
@@ -13417,7 +13233,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "z-ai/glm-4-32b",
@@ -13458,7 +13275,12 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.75,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "qwen/qwen3-235b-a22b-thinking-2507",
@@ -13480,8 +13302,8 @@
         "instruct_type": "qwen3"
       },
       "pricing": {
-        "prompt": "0.0000001",
-        "completion": "0.00000039",
+        "prompt": "0.00000011",
+        "completion": "0.0000006",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -13489,7 +13311,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -13513,7 +13335,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "z-ai/glm-4.5-air",
@@ -13559,7 +13382,12 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.75,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "z-ai/glm-4.5-air:free",
@@ -13590,7 +13418,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -13612,7 +13440,12 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.75,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "z-ai/glm-4.5",
@@ -13634,8 +13467,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000041",
-        "completion": "0.00000165",
+        "prompt": "0.00000038",
+        "completion": "0.0000016",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -13668,7 +13501,12 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.75,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "qwen/qwen3-30b-a3b-instruct-2507",
@@ -13699,7 +13537,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -13721,7 +13559,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-coder-30b-a3b-instruct",
@@ -13743,8 +13582,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000007",
-        "completion": "0.00000028",
+        "prompt": "0.00000006",
+        "completion": "0.00000025",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -13752,7 +13591,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -13774,7 +13613,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/codestral-2508",
@@ -13821,7 +13661,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "anthropic/claude-opus-4.1",
@@ -13870,7 +13713,12 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "openai/gpt-oss-20b",
@@ -13893,7 +13741,7 @@
       },
       "pricing": {
         "prompt": "0.00000003",
-        "completion": "0.00000015",
+        "completion": "0.00000014",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -13901,7 +13749,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 32768,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -13925,7 +13773,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-oss-20b:free",
@@ -13968,7 +13817,8 @@
         "structured_outputs",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-oss-120b",
@@ -13990,8 +13840,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000005",
-        "completion": "0.00000025",
+        "prompt": "0.00000004",
+        "completion": "0.0000004",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -13999,7 +13849,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -14023,7 +13873,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": null
     },
     {
       "id": "openai/gpt-oss-120b:free",
@@ -14065,7 +13916,8 @@
         "seed",
         "stop",
         "temperature"
-      ]
+      ],
+      "default_parameters": null
     },
     {
       "id": "openai/gpt-5-nano",
@@ -14112,7 +13964,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-5-mini",
@@ -14159,7 +14012,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "openai/gpt-5",
@@ -14183,13 +14037,13 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.000000625",
-        "completion": "0.000005",
+        "prompt": "0.00000125",
+        "completion": "0.00001",
         "request": "0",
         "image": "0",
-        "web_search": "0.005",
+        "web_search": "0.01",
         "internal_reasoning": "0",
-        "input_cache_read": "0.0000000625"
+        "input_cache_read": "0.000000125"
       },
       "top_provider": {
         "context_length": 400000,
@@ -14206,7 +14060,12 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "openai/gpt-5-chat",
@@ -14249,7 +14108,8 @@
         "response_format",
         "seed",
         "structured_outputs"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "ai21/jamba-large-1.7",
@@ -14292,7 +14152,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "ai21/jamba-mini-1.7",
@@ -14335,7 +14196,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "z-ai/glm-4.5v",
@@ -14358,7 +14220,7 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000005",
+        "prompt": "0.0000006",
         "completion": "0.0000018",
         "request": "0",
         "image": "0",
@@ -14367,7 +14229,7 @@
       },
       "top_provider": {
         "context_length": 65536,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -14387,7 +14249,12 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.75,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "baidu/ernie-4.5-vl-28b-a3b",
@@ -14437,7 +14304,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "baidu/ernie-4.5-21b-a3b",
@@ -14484,7 +14352,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "mistralai/mistral-medium-3.1",
@@ -14532,7 +14401,10 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      }
     },
     {
       "id": "openai/gpt-4o-audio-preview",
@@ -14584,7 +14456,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-v3.1-base",
@@ -14606,8 +14479,8 @@
         "instruct_type": "none"
       },
       "pricing": {
-        "prompt": "0.00000024999988",
-        "completion": "0.000000999999888",
+        "prompt": "0.00000025",
+        "completion": "0.000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -14615,7 +14488,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 163840,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -14633,7 +14506,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-chat-v3.1",
@@ -14655,8 +14529,8 @@
         "instruct_type": "deepseek-v3.1"
       },
       "pricing": {
-        "prompt": "0.00000024999988",
-        "completion": "0.000000999999888",
+        "prompt": "0.0000002",
+        "completion": "0.0000008",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -14664,7 +14538,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 163840,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -14688,7 +14562,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepseek/deepseek-chat-v3.1:free",
@@ -14697,7 +14572,7 @@
       "name": "DeepSeek: DeepSeek V3.1 (free)",
       "created": 1755779628,
       "description": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context training process, reaching up to 128K tokens, and uses FP8 microscaling for efficient inference. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)\n\nThe model improves tool use, code generation, and reasoning efficiency, achieving performance comparable to DeepSeek-R1 on difficult benchmarks while responding more quickly. It supports structured tool calling, code agents, and search agents, making it suitable for research, coding, and agentic workflows. \n\nIt succeeds the [DeepSeek V3-0324](/deepseek/deepseek-chat-v3-0324) model and performs well on a variety of tasks.",
-      "context_length": 163840,
+      "context_length": 163800,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -14718,9 +14593,9 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 163840,
+        "context_length": 163800,
         "max_completion_tokens": null,
-        "is_moderated": false
+        "is_moderated": true
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -14739,15 +14614,16 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "google/gemini-2.5-flash-image-preview",
       "canonical_slug": "google/gemini-2.5-flash-image-preview",
       "hugging_face_id": "",
-      "name": "Google: Gemini 2.5 Flash Image Preview",
+      "name": "Gemini 2.5 Flash Image (Nano Banana)",
       "created": 1756218977,
-      "description": "Gemini 2.5 Flash Image Preview, AKA Nano Banana is a state of the art image generation model with contextual understanding. It is capable of image generation, edits, and multi-turn conversations.",
+      "description": "Gemini 2.5 Flash Image Preview, a.k.a. \"Nano Banana,\" is a state of the art image generation model with contextual understanding. It is capable of image generation, edits, and multi-turn conversations.",
       "context_length": 32768,
       "architecture": {
         "modality": "text+image->text+image",
@@ -14783,7 +14659,12 @@
         "structured_outputs",
         "temperature",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "nousresearch/hermes-4-405b",
@@ -14805,8 +14686,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000024999988",
-        "completion": "0.000000999999888",
+        "prompt": "0.00000025",
+        "completion": "0.000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -14814,7 +14695,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -14836,7 +14717,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "nousresearch/hermes-4-70b",
@@ -14867,7 +14749,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -14889,7 +14771,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "x-ai/grok-code-fast-1",
@@ -14939,7 +14822,8 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-30b-a3b-thinking-2507",
@@ -14994,7 +14878,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "stepfun-ai/step3",
@@ -15041,7 +14926,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepcogito/cogito-v2-preview-deepseek-671b",
@@ -15089,7 +14975,8 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "deepcogito/cogito-v2-preview-llama-109b-moe",
@@ -15140,7 +15027,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "bytedance/seed-oss-36b-instruct",
@@ -15171,7 +15059,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15191,7 +15079,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "moonshotai/kimi-k2-0905",
@@ -15213,8 +15102,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000038",
-        "completion": "0.00000152",
+        "prompt": "0.0000004",
+        "completion": "0.000002",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -15222,7 +15111,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15244,52 +15133,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
-    },
-    {
-      "id": "qwen/qwen3-max",
-      "canonical_slug": "qwen/qwen3-max",
-      "hugging_face_id": "",
-      "name": "Qwen: Qwen3 Max",
-      "created": 1757076567,
-      "description": "Qwen3-Max is an updated release built on the Qwen3 series, offering major improvements in reasoning, instruction following, multilingual support, and long-tail knowledge coverage compared to the January 2025 version. It delivers higher accuracy in math, coding, logic, and science tasks, follows complex instructions in Chinese and English more reliably, reduces hallucinations, and produces higher-quality responses for open-ended Q&A, writing, and conversation. The model supports over 100 languages with stronger translation and commonsense reasoning, and is optimized for retrieval-augmented generation (RAG) and tool calling, though it does not include a dedicated \u201cthinking\u201d mode.",
-      "context_length": 256000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000012",
-        "completion": "0.000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000024"
-      },
-      "top_provider": {
-        "context_length": 256000,
-        "max_completion_tokens": 32768,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "nvidia/nemotron-nano-9b-v2",
@@ -15340,7 +15185,8 @@
         "tools",
         "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",
@@ -15382,7 +15228,8 @@
         "structured_outputs",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-plus-2025-07-28",
@@ -15427,7 +15274,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen-plus-2025-07-28:thinking",
@@ -15474,7 +15322,8 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "meituan/longcat-flash-chat",
@@ -15496,8 +15345,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000012",
-        "completion": "0.0000006",
+        "prompt": "0.00000015",
+        "completion": "0.00000075",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -15505,27 +15354,16 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "seed",
-        "stop",
         "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-next-80b-a3b-instruct",
@@ -15556,7 +15394,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15578,7 +15416,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "qwen/qwen3-next-80b-a3b-thinking",
@@ -15609,7 +15448,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 262144,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15633,7 +15472,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "opengvlab/internvl3-78b",
@@ -15665,7 +15505,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15685,7 +15525,8 @@
         "top_k",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {}
     },
     {
       "id": "arcee-ai/afm-4.5b",
@@ -15733,53 +15574,12 @@
         "temperature",
         "top_k",
         "top_p"
-      ]
-    },
-    {
-      "id": "qwen/qwen3-coder-plus",
-      "canonical_slug": "qwen/qwen3-coder-plus",
-      "hugging_face_id": "",
-      "name": "Qwen: Qwen3 Coder Plus",
-      "created": 1758115194,
-      "description": "Qwen3 Coder Plus is Alibaba's proprietary version of the Open Source Qwen3 Coder 480B A35B. It is a powerful coding agent model specializing in autonomous programming via tool calling and environment interaction, combining coding proficiency with versatile general-purpose abilities.",
-      "context_length": 128000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000001",
-        "completion": "0.000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.0000001"
-      },
-      "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": 65536,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "qwen/qwen3-coder-flash",
@@ -15824,7 +15624,12 @@
         "tool_choice",
         "tools",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "alibaba/tongyi-deepresearch-30b-a3b",
@@ -15847,7 +15652,7 @@
       },
       "pricing": {
         "prompt": "0.00000009",
-        "completion": "0.00000045",
+        "completion": "0.0000004",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -15860,16 +15665,83 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "frequency_penalty",
         "include_reasoning",
         "max_tokens",
+        "min_p",
+        "presence_penalty",
         "reasoning",
+        "repetition_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",
+        "top_k",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "x-ai/grok-4-fast",
+      "canonical_slug": "x-ai/grok-4-fast",
+      "hugging_face_id": "",
+      "name": "xAI: Grok 4 Fast",
+      "created": 1758240090,
+      "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model on xAI's [news post](http://x.ai/news/grok-4-fast). Reasoning can be enabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)\n\nPrompts and completions on Grok 4 Fast Free may be used by xAI or OpenRouter to improve future models.",
+      "context_length": 2000000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Grok",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000002",
+        "completion": "0.0000005",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0",
+        "input_cache_read": "0.00000005"
+      },
+      "top_provider": {
+        "context_length": 2000000,
+        "max_completion_tokens": 30000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "x-ai/grok-4-fast:free",
@@ -15877,7 +15749,7 @@
       "hugging_face_id": "",
       "name": "xAI: Grok 4 Fast (free)",
       "created": 1758240090,
-      "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model on xAI's [news post](http://x.ai/news/grok-4-fast). Reasoning can be enabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)\n\nPrompts and completions may be used by xAI or OpenRouter to improve future models.",
+      "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model on xAI's [news post](http://x.ai/news/grok-4-fast). Reasoning can be enabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)\n\nPrompts and completions on Grok 4 Fast Free may be used by xAI or OpenRouter to improve future models.",
       "context_length": 2000000,
       "architecture": {
         "modality": "text+image->text",
@@ -15901,7 +15773,7 @@
       },
       "top_provider": {
         "context_length": 2000000,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 30000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15918,7 +15790,715 @@
         "tools",
         "top_logprobs",
         "top_p"
-      ]
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v3.1-terminus",
+      "canonical_slug": "deepseek/deepseek-v3.1-terminus",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1-Terminus",
+      "name": "DeepSeek: DeepSeek V3.1 Terminus",
+      "created": 1758548275,
+      "description": "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing the model's performance in coding and search agents. It is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes. It extends the DeepSeek-V3 base with a two-phase long-context training process, reaching up to 128K tokens, and uses FP8 microscaling for efficient inference. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)\n\nThe model improves tool use, code generation, and reasoning efficiency, achieving performance comparable to DeepSeek-R1 on difficult benchmarks while responding more quickly. It supports structured tool calling, code agents, and search agents, making it suitable for research, coding, and agentic workflows. ",
+      "context_length": 163840,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "DeepSeek",
+        "instruct_type": "deepseek-v3.1"
+      },
+      "pricing": {
+        "prompt": "0.00000023",
+        "completion": "0.0000009",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 163840,
+        "max_completion_tokens": 163840,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "openai/gpt-5-codex",
+      "canonical_slug": "openai/gpt-5-codex",
+      "hugging_face_id": "",
+      "name": "OpenAI: GPT-5 Codex",
+      "created": 1758643403,
+      "description": "GPT-5-Codex is a specialized version of GPT-5 optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of complex engineering tasks. The model supports building projects from scratch, feature development, debugging, large-scale refactoring, and code review. Compared to GPT-5, Codex is more steerable, adheres closely to developer instructions, and produces cleaner, higher-quality code outputs. Reasoning effort can be adjusted with the `reasoning.effort` parameter. Read the [docs here](https://openrouter.ai/docs/use-cases/reasoning-tokens#reasoning-effort-level)\n\nCodex integrates into developer environments including the CLI, IDE extensions, GitHub, and cloud tasks. It adapts reasoning effort dynamically\u2014providing fast responses for small tasks while sustaining extended multi-hour runs for large projects. The model is trained to perform structured code reviews, catching critical flaws by reasoning over dependencies and validating behavior against tests. It also supports multimodal inputs such as images or screenshots for UI development and integrates tool use for search, dependency installation, and environment setup. Codex is intended specifically for agentic coding applications.",
+      "context_length": 400000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "GPT",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000125",
+        "completion": "0.00001",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0",
+        "input_cache_read": "0.000000125"
+      },
+      "top_provider": {
+        "context_length": 400000,
+        "max_completion_tokens": 128000,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "qwen/qwen3-coder-plus",
+      "canonical_slug": "qwen/qwen3-coder-plus",
+      "hugging_face_id": "",
+      "name": "Qwen: Qwen3 Coder Plus",
+      "created": 1758662707,
+      "description": "Qwen3 Coder Plus is Alibaba's proprietary version of the Open Source Qwen3 Coder 480B A35B. It is a powerful coding agent model specializing in autonomous programming via tool calling and environment interaction, combining coding proficiency with versatile general-purpose abilities.",
+      "context_length": 128000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.000001",
+        "completion": "0.000005",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0",
+        "input_cache_read": "0.0000001"
+      },
+      "top_provider": {
+        "context_length": 128000,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "qwen/qwen3-max",
+      "canonical_slug": "qwen/qwen3-max",
+      "hugging_face_id": "",
+      "name": "Qwen: Qwen3 Max",
+      "created": 1758662808,
+      "description": "Qwen3-Max is an updated release built on the Qwen3 series, offering major improvements in reasoning, instruction following, multilingual support, and long-tail knowledge coverage compared to the January 2025 version. It delivers higher accuracy in math, coding, logic, and science tasks, follows complex instructions in Chinese and English more reliably, reduces hallucinations, and produces higher-quality responses for open-ended Q&A, writing, and conversation. The model supports over 100 languages with stronger translation and commonsense reasoning, and is optimized for retrieval-augmented generation (RAG) and tool calling, though it does not include a dedicated \u201cthinking\u201d mode.",
+      "context_length": 256000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000012",
+        "completion": "0.000006",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0",
+        "input_cache_read": "0.00000024"
+      },
+      "top_provider": {
+        "context_length": 256000,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {}
+    },
+    {
+      "id": "qwen/qwen3-vl-235b-a22b-instruct",
+      "canonical_slug": "qwen/qwen3-vl-235b-a22b-instruct",
+      "hugging_face_id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "name": "Qwen: Qwen3 VL 235B A22B Instruct",
+      "created": 1758668687,
+      "description": "Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document parsing, chart/table extraction, multilingual OCR). The series emphasizes robust perception (recognition of diverse real-world and synthetic categories), spatial understanding (2D/3D grounding), and long-form visual comprehension, with competitive results on public multimodal benchmarks for both perception and reasoning.\n\nBeyond analysis, Qwen3-VL supports agentic interaction and tool use: it can follow complex instructions over multi-image, multi-turn dialogues; align text to video timelines for precise temporal queries; and operate GUI elements for automation tasks. The models also enable visual coding workflows\u2014turning sketches or mockups into code and assisting with UI debugging\u2014while maintaining strong text-only performance comparable to the flagship Qwen3 language models. This makes Qwen3-VL suitable for production scenarios spanning document AI, multilingual OCR, software/UI assistance, spatial/embodied tasks, and research on vision-language agents.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000003",
+        "completion": "0.0000015",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "qwen/qwen3-vl-235b-a22b-thinking",
+      "canonical_slug": "qwen/qwen3-vl-235b-a22b-thinking",
+      "hugging_face_id": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "name": "Qwen: Qwen3 VL 235B A22B Thinking",
+      "created": 1758668690,
+      "description": "Qwen3-VL-235B-A22B Thinking is a multimodal model that unifies strong text generation with visual understanding across images and video. The Thinking model is optimized for multimodal reasoning in STEM and math. The series emphasizes robust perception (recognition of diverse real-world and synthetic categories), spatial understanding (2D/3D grounding), and long-form visual comprehension, with competitive results on public multimodal benchmarks for both perception and reasoning.\n\nBeyond analysis, Qwen3-VL supports agentic interaction and tool use: it can follow complex instructions over multi-image, multi-turn dialogues; align text to video timelines for precise temporal queries; and operate GUI elements for automation tasks. The models also enable visual coding workflows, turning sketches or mockups into code and assisting with UI debugging, while maintaining strong text-only performance comparable to the flagship Qwen3 language models. This makes Qwen3-VL suitable for production scenarios spanning document AI, multilingual OCR, software/UI assistance, spatial/embodied tasks, and research on vision-language agents.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000003",
+        "completion": "0.000003",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite-preview-09-2025",
+      "canonical_slug": "google/gemini-2.5-flash-lite-preview-09-2025",
+      "hugging_face_id": "",
+      "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
+      "created": 1758819686,
+      "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance across common benchmarks compared to earlier Flash models. By default, \"thinking\" (i.e. multi-pass reasoning) is disabled to prioritize speed, but developers can enable it via the [Reasoning API parameter](https://openrouter.ai/docs/use-cases/reasoning-tokens) to selectively trade off cost for intelligence. ",
+      "context_length": 1048576,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "file",
+          "image",
+          "text",
+          "audio"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.0000004",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "google/gemini-2.5-flash-preview-09-2025",
+      "canonical_slug": "google/gemini-2.5-flash-preview-09-2025",
+      "hugging_face_id": "",
+      "name": "Google: Gemini 2.5 Flash Preview 09-2025",
+      "created": 1758820178,
+      "description": "Gemini 2.5 Flash Preview September 2025 Checkpoint is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in \"thinking\" capabilities, enabling it to provide responses with greater accuracy and nuanced context handling. \n\nAdditionally, Gemini 2.5 Flash is configurable through the \"max tokens for reasoning\" parameter, as described in the documentation (https://openrouter.ai/docs/use-cases/reasoning-tokens#max-tokens-for-reasoning).",
+      "context_length": 1048576,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "image",
+          "file",
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000003",
+        "completion": "0.0000025",
+        "request": "0",
+        "image": "0.001238",
+        "web_search": "0",
+        "internal_reasoning": "0",
+        "input_cache_read": "0.000000075",
+        "input_cache_write": "0.0000003833"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "relace/relace-apply-3",
+      "canonical_slug": "relace/relace-apply-3",
+      "hugging_face_id": "",
+      "name": "Relace: Relace Apply 3",
+      "created": 1758891572,
+      "description": "Relace Apply 3 is a specialized code-patching LLM that merges AI-suggested edits straight into your source files. It can apply updates from GPT-4o, Claude, and others into your files at 7,500 tokens/sec on average.\n\nThe model requires the prompt to be in the following format: \n<instruction>{instruction}</instruction>\n<code>{initial_code}</code>\n<update>{edit_snippet}</update>\n\nZero Data Retention is enabled for Relace. Learn more about this model in their [documentation](https://docs.relace.ai/api-reference/instant-apply/apply)",
+      "context_length": 256000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000085",
+        "completion": "0.00000125",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 256000,
+        "max_completion_tokens": 128000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "seed",
+        "stop"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "thedrummer/cydonia-24b-v4.1",
+      "canonical_slug": "thedrummer/cydonia-24b-v4.1",
+      "hugging_face_id": "thedrummer/cydonia-24b-v4.1",
+      "name": "TheDrummer: Cydonia 24B V4.1",
+      "created": 1758931878,
+      "description": "Uncensored and creative writing model based on Mistral Small 3.2 24B with good recall, prompt adherence, and intelligence.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000015",
+        "completion": "0.0000005",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 131072,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v3.2-exp",
+      "canonical_slug": "deepseek/deepseek-v3.2-exp",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.2-Exp",
+      "name": "DeepSeek: DeepSeek V3.2 Exp",
+      "created": 1759150481,
+      "description": "DeepSeek-V3.2-Exp is an experimental large language model released by DeepSeek as an intermediate step between V3.1 and future architectures. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse attention mechanism designed to improve training and inference efficiency in long-context scenarios while maintaining output quality. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)\n\nThe model was trained under conditions aligned with V3.1-Terminus to enable direct comparison. Benchmarking shows performance roughly on par with V3.1 across reasoning, coding, and agentic tool-use tasks, with minor tradeoffs and gains depending on the domain. This release focuses on validating architectural optimizations for extended context lengths rather than advancing raw task accuracy, making it primarily a research-oriented model for exploring efficient transformer designs.",
+      "context_length": 163840,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "DeepSeek",
+        "instruct_type": "deepseek-v3.1"
+      },
+      "pricing": {
+        "prompt": "0.00000027",
+        "completion": "0.0000004",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 163840,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.5",
+      "canonical_slug": "anthropic/claude-4.5-sonnet-20250929",
+      "hugging_face_id": "",
+      "name": "Anthropic: Claude Sonnet 4.5",
+      "created": 1759161676,
+      "description": "Claude Sonnet 4.5 is Anthropic\u2019s most advanced Sonnet model to date, optimized for real-world agents and coding workflows. It delivers state-of-the-art performance on coding benchmarks such as SWE-bench Verified, with improvements across system design, code security, and specification adherence. The model is designed for extended autonomous operation, maintaining task continuity across sessions and providing fact-based progress tracking.\n\nSonnet 4.5 also introduces stronger agentic capabilities, including improved tool orchestration, speculative parallel execution, and more efficient context and memory management. With enhanced context tracking and awareness of token usage across tool calls, it is particularly well-suited for multi-context and long-running workflows. Use cases span software engineering, cybersecurity, financial analysis, research agents, and other domains requiring sustained reasoning and tool use.",
+      "context_length": 1000000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Claude",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.000003",
+        "completion": "0.000015",
+        "request": "0",
+        "image": "0.0048",
+        "web_search": "0",
+        "internal_reasoning": "0",
+        "input_cache_read": "0.0000003",
+        "input_cache_write": "0.00000375"
+      },
+      "top_provider": {
+        "context_length": 1000000,
+        "max_completion_tokens": 64000,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 1,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "z-ai/glm-4.6",
+      "canonical_slug": "z-ai/glm-4.6",
+      "hugging_face_id": "",
+      "name": "Z.AI: GLM 4.6",
+      "created": 1759235576,
+      "description": "Compared with GLM-4.5, this generation brings several key improvements:\n\nLonger context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex agentic tasks.\nSuperior coding performance: The model achieves higher scores on code benchmarks and demonstrates better real-world performance in applications such as Claude Code\u3001Cline\u3001Roo Code and Kilo Code, including improvements in generating visually polished front-end pages.\nAdvanced reasoning: GLM-4.6 shows a clear improvement in reasoning performance and supports tool use during inference, leading to stronger overall capability.\nMore capable agents: GLM-4.6 exhibits stronger performance in tool using and search-based agents, and integrates more effectively within agent frameworks.\nRefined writing: Better aligns with human preferences in style and readability, and performs more naturally in role-playing scenarios.",
+      "context_length": 202752,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000006",
+        "completion": "0.000002",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 202752,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.6,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     }
   ]
 }
