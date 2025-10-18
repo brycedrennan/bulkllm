@@ -476,6 +476,12 @@
       "owned_by": "system"
     },
     {
+      "id": "gpt-4o-transcribe-diarize",
+      "object": "model",
+      "created": 1750798887,
+      "owned_by": "system"
+    },
+    {
       "id": "o3-deep-research-2025-06-26",
       "object": "model",
       "created": 1750865219,
@@ -557,6 +563,72 @@
       "id": "gpt-5-codex",
       "object": "model",
       "created": 1757527818,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-image-1-mini",
+      "object": "model",
+      "created": 1758845821,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-pro-2025-10-06",
+      "object": "model",
+      "created": 1759469707,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-pro",
+      "object": "model",
+      "created": 1759469822,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-audio-mini",
+      "object": "model",
+      "created": 1759512027,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-audio-mini-2025-10-06",
+      "object": "model",
+      "created": 1759512137,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-search-api",
+      "object": "model",
+      "created": 1759514629,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-realtime-mini",
+      "object": "model",
+      "created": 1759517133,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-realtime-mini-2025-10-06",
+      "object": "model",
+      "created": 1759517175,
+      "owned_by": "system"
+    },
+    {
+      "id": "sora-2",
+      "object": "model",
+      "created": 1759708615,
+      "owned_by": "system"
+    },
+    {
+      "id": "sora-2-pro",
+      "object": "model",
+      "created": 1759708663,
+      "owned_by": "system"
+    },
+    {
+      "id": "gpt-5-search-api-2025-10-14",
+      "object": "model",
+      "created": 1760043960,
       "owned_by": "system"
     }
   ]

@@ -7,10 +7,10 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
-        "fine_tuning": true,
+        "fine_tuning": false,
         "vision": true,
         "ocr": false,
         "classification": false,
@@ -18,12 +18,12 @@
         "audio": false
       },
       "name": "mistral-medium-2505",
-      "description": "Our frontier-class multimodal model released May 2025.",
-      "max_context_length": 131072,
+      "description": "Official mistral-medium-2505 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -305,8 +305,8 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
         "fine_tuning": true,
         "vision": false,
@@ -316,8 +316,8 @@
         "audio": false
       },
       "name": "open-mistral-nemo",
-      "description": "Our best multilingual open source model released July 2024.",
-      "max_context_length": 131072,
+      "description": "Official open-mistral-nemo Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "open-mistral-nemo-2407",
         "mistral-tiny-2407",
@@ -325,7 +325,7 @@
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -334,8 +334,8 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
         "fine_tuning": true,
         "vision": false,
@@ -345,8 +345,8 @@
         "audio": false
       },
       "name": "open-mistral-nemo",
-      "description": "Our best multilingual open source model released July 2024.",
-      "max_context_length": 131072,
+      "description": "Official open-mistral-nemo Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "open-mistral-nemo",
         "mistral-tiny-2407",
@@ -354,7 +354,7 @@
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -363,8 +363,8 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
         "fine_tuning": true,
         "vision": false,
@@ -374,8 +374,8 @@
         "audio": false
       },
       "name": "open-mistral-nemo",
-      "description": "Our best multilingual open source model released July 2024.",
-      "max_context_length": 131072,
+      "description": "Official open-mistral-nemo Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "open-mistral-nemo",
         "open-mistral-nemo-2407",
@@ -383,7 +383,7 @@
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -392,8 +392,8 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
         "fine_tuning": true,
         "vision": false,
@@ -403,8 +403,8 @@
         "audio": false
       },
       "name": "open-mistral-nemo",
-      "description": "Our best multilingual open source model released July 2024.",
-      "max_context_length": 131072,
+      "description": "Official open-mistral-nemo Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "open-mistral-nemo",
         "open-mistral-nemo-2407",
@@ -412,7 +412,7 @@
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -505,8 +505,8 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
         "fine_tuning": false,
         "vision": false,
@@ -516,14 +516,14 @@
         "audio": false
       },
       "name": "open-mixtral-8x22b",
-      "description": "Our best open source model to date released April 2024. ",
-      "max_context_length": 65536,
+      "description": "Official open-mixtral-8x22b Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "open-mixtral-8x22b-2404"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.7,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -532,8 +532,8 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
         "fine_tuning": false,
         "vision": false,
@@ -543,14 +543,14 @@
         "audio": false
       },
       "name": "open-mixtral-8x22b",
-      "description": "Our best open source model to date released April 2024. ",
-      "max_context_length": 65536,
+      "description": "Official open-mixtral-8x22b Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "open-mixtral-8x22b"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.7,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -718,10 +718,10 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": true,
-        "fine_tuning": true,
+        "fine_tuning": false,
         "vision": false,
         "ocr": false,
         "classification": false,
@@ -729,15 +729,15 @@
         "audio": false
       },
       "name": "codestral-2501",
-      "description": "Our cutting-edge language model for coding released December 2024.",
-      "max_context_length": 262144,
+      "description": "Official codestral-2501 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "codestral-2412",
         "codestral-2411-rc5"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -746,10 +746,10 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": true,
-        "fine_tuning": true,
+        "fine_tuning": false,
         "vision": false,
         "ocr": false,
         "classification": false,
@@ -757,15 +757,15 @@
         "audio": false
       },
       "name": "codestral-2501",
-      "description": "Our cutting-edge language model for coding released December 2024.",
-      "max_context_length": 262144,
+      "description": "Official codestral-2501 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "codestral-2501",
         "codestral-2411-rc5"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -774,10 +774,10 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": true,
-        "fine_tuning": true,
+        "fine_tuning": false,
         "vision": false,
         "ocr": false,
         "classification": false,
@@ -785,15 +785,15 @@
         "audio": false
       },
       "name": "codestral-2501",
-      "description": "Our cutting-edge language model for coding released December 2024.",
-      "max_context_length": 262144,
+      "description": "Official codestral-2501 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "codestral-2501",
         "codestral-2412"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -821,31 +821,6 @@
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": 0.3,
-      "type": "base"
-    },
-    {
-      "id": "devstral-small-2505",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
-        "completion_fim": false,
-        "fine_tuning": false,
-        "vision": false,
-        "ocr": false,
-        "classification": false,
-        "moderation": false,
-        "audio": false
-      },
-      "name": "devstral-small-2505",
-      "description": "Our small open-source code-agentic model.",
-      "max_context_length": 131072,
-      "aliases": [],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
-      "default_model_temperature": 0.0,
       "type": "base"
     },
     {
@@ -881,10 +856,10 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
-        "fine_tuning": true,
+        "fine_tuning": false,
         "vision": true,
         "ocr": false,
         "classification": false,
@@ -892,15 +867,15 @@
         "audio": false
       },
       "name": "pixtral-12b-2409",
-      "description": "A 12B model with image understanding capabilities in addition to text.",
-      "max_context_length": 131072,
+      "description": "Official pixtral-12b-2409 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-12b",
         "pixtral-12b-latest"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -909,10 +884,10 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
-        "fine_tuning": true,
+        "fine_tuning": false,
         "vision": true,
         "ocr": false,
         "classification": false,
@@ -920,15 +895,15 @@
         "audio": false
       },
       "name": "pixtral-12b-2409",
-      "description": "A 12B model with image understanding capabilities in addition to text.",
-      "max_context_length": 131072,
+      "description": "Official pixtral-12b-2409 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-12b-2409",
         "pixtral-12b-latest"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -937,10 +912,10 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
-        "fine_tuning": true,
+        "fine_tuning": false,
         "vision": true,
         "ocr": false,
         "classification": false,
@@ -948,15 +923,15 @@
         "audio": false
       },
       "name": "pixtral-12b-2409",
-      "description": "A 12B model with image understanding capabilities in addition to text.",
-      "max_context_length": 131072,
+      "description": "Official pixtral-12b-2409 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "pixtral-12b-2409",
         "pixtral-12b"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -990,8 +965,8 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
         "fine_tuning": false,
         "vision": true,
@@ -1001,12 +976,12 @@
         "audio": false
       },
       "name": "mistral-small-2503",
-      "description": "Our latest enterprise-grade small model with the latest version released March 2025.",
-      "max_context_length": 131072,
+      "description": "Official mistral-small-2503 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.3,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -1034,56 +1009,6 @@
       "deprecation": null,
       "deprecation_replacement_model": null,
       "default_model_temperature": 0.3,
-      "type": "base"
-    },
-    {
-      "id": "magistral-medium-2506",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
-        "completion_fim": false,
-        "fine_tuning": true,
-        "vision": true,
-        "ocr": false,
-        "classification": false,
-        "moderation": false,
-        "audio": false
-      },
-      "name": "magistral-medium-2506",
-      "description": "Our frontier-class reasoning model released June 2025.",
-      "max_context_length": 40960,
-      "aliases": [],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
-      "default_model_temperature": 0.7,
-      "type": "base"
-    },
-    {
-      "id": "magistral-small-2506",
-      "object": "model",
-      "created": 1749572058,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
-        "completion_fim": false,
-        "fine_tuning": true,
-        "vision": true,
-        "ocr": false,
-        "classification": false,
-        "moderation": false,
-        "audio": false
-      },
-      "name": "magistral-small-2506",
-      "description": "Our efficient reasoning model released June 2025.",
-      "max_context_length": 40000,
-      "aliases": [],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
-      "default_model_temperature": 0.7,
       "type": "base"
     },
     {
@@ -1119,6 +1044,58 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
+        "completion_chat": false,
+        "function_calling": false,
+        "completion_fim": false,
+        "fine_tuning": false,
+        "vision": false,
+        "ocr": false,
+        "classification": false,
+        "moderation": false,
+        "audio": false
+      },
+      "name": "magistral-small-2509",
+      "description": "Official magistral-small-2509 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [
+        "magistral-small-2509"
+      ],
+      "deprecation": null,
+      "deprecation_replacement_model": null,
+      "default_model_temperature": null,
+      "type": "base"
+    },
+    {
+      "id": "devstral-small-2505",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": true,
+        "function_calling": true,
+        "completion_fim": false,
+        "fine_tuning": false,
+        "vision": false,
+        "ocr": false,
+        "classification": false,
+        "moderation": false,
+        "audio": false
+      },
+      "name": "devstral-small-2505",
+      "description": "Our small open-source code-agentic model.",
+      "max_context_length": 131072,
+      "aliases": [],
+      "deprecation": "2025-11-30T12:00:00Z",
+      "deprecation_replacement_model": "devstral-small-latest",
+      "default_model_temperature": 0.0,
+      "type": "base"
+    },
+    {
+      "id": "magistral-small-2506",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
         "completion_chat": true,
         "function_calling": true,
         "completion_fim": false,
@@ -1129,15 +1106,38 @@
         "moderation": false,
         "audio": false
       },
-      "name": "magistral-small-2509",
-      "description": "Our efficient reasoning model released September 2025.",
-      "max_context_length": 131072,
-      "aliases": [
-        "magistral-small-2509"
-      ],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
+      "name": "magistral-small-2506",
+      "description": "Our efficient reasoning model released June 2025.",
+      "max_context_length": 40000,
+      "aliases": [],
+      "deprecation": "2025-11-30T12:00:00Z",
+      "deprecation_replacement_model": "magistral-small-latest",
       "default_model_temperature": 0.7,
+      "type": "base"
+    },
+    {
+      "id": "magistral-medium-2506",
+      "object": "model",
+      "created": 1749572058,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": false,
+        "function_calling": false,
+        "completion_fim": false,
+        "fine_tuning": false,
+        "vision": false,
+        "ocr": false,
+        "classification": false,
+        "moderation": false,
+        "audio": false
+      },
+      "name": "magistral-medium-2506",
+      "description": "Official magistral-medium-2506 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [],
+      "deprecation": "2025-11-30T12:00:00Z",
+      "deprecation_replacement_model": "magistral-medium-latest",
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -1233,13 +1233,13 @@
         "fine_tuning": false,
         "vision": false,
         "ocr": false,
-        "classification": true,
-        "moderation": true,
+        "classification": false,
+        "moderation": false,
         "audio": false
       },
       "name": "mistral-moderation-2411",
       "description": "Official mistral-moderation-2411 Mistral AI model",
-      "max_context_length": 8192,
+      "max_context_length": 32768,
       "aliases": [
         "mistral-moderation-latest"
       ],
@@ -1260,13 +1260,13 @@
         "fine_tuning": false,
         "vision": false,
         "ocr": false,
-        "classification": true,
-        "moderation": true,
+        "classification": false,
+        "moderation": false,
         "audio": false
       },
       "name": "mistral-moderation-2411",
       "description": "Official mistral-moderation-2411 Mistral AI model",
-      "max_context_length": 8192,
+      "max_context_length": 32768,
       "aliases": [
         "mistral-moderation-2411"
       ],
@@ -1281,23 +1281,23 @@
       "created": 1749572058,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
         "fine_tuning": false,
-        "vision": true,
-        "ocr": true,
+        "vision": false,
+        "ocr": false,
         "classification": false,
         "moderation": false,
         "audio": false
       },
       "name": "mistral-ocr-2503",
       "description": "Official mistral-ocr-2503 Mistral AI model",
-      "max_context_length": 16384,
+      "max_context_length": 32768,
       "aliases": [],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.0,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
@@ -1654,6 +1654,31 @@
       "type": "base"
     },
     {
+      "id": "magistral-small-2507",
+      "object": "model",
+      "created": 1753904061,
+      "owned_by": "mistralai",
+      "capabilities": {
+        "completion_chat": false,
+        "function_calling": false,
+        "completion_fim": false,
+        "fine_tuning": false,
+        "vision": false,
+        "ocr": false,
+        "classification": false,
+        "moderation": false,
+        "audio": false
+      },
+      "name": "magistral-small-2507",
+      "description": "Official magistral-small-2507 Mistral AI model",
+      "max_context_length": 32768,
+      "aliases": [],
+      "deprecation": "2025-11-30T12:00:00Z",
+      "deprecation_replacement_model": "magistral-small-latest",
+      "default_model_temperature": null,
+      "type": "base"
+    },
+    {
       "id": "magistral-medium-2507",
       "object": "model",
       "created": 1753904061,
@@ -1673,33 +1698,8 @@
       "description": "Our frontier-class reasoning model released July 2025.",
       "max_context_length": 40960,
       "aliases": [],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
-      "default_model_temperature": 0.7,
-      "type": "base"
-    },
-    {
-      "id": "magistral-small-2507",
-      "object": "model",
-      "created": 1753904061,
-      "owned_by": "mistralai",
-      "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
-        "completion_fim": false,
-        "fine_tuning": true,
-        "vision": true,
-        "ocr": false,
-        "classification": false,
-        "moderation": false,
-        "audio": false
-      },
-      "name": "magistral-small-2507",
-      "description": "Our efficient reasoning model released July 2025.",
-      "max_context_length": 40960,
-      "aliases": [],
-      "deprecation": null,
-      "deprecation_replacement_model": null,
+      "deprecation": "2025-11-30T12:00:00Z",
+      "deprecation_replacement_model": "magistral-medium-latest",
       "default_model_temperature": 0.7,
       "type": "base"
     },
@@ -1792,25 +1792,25 @@
       "created": 1758408848,
       "owned_by": "mistralai",
       "capabilities": {
-        "completion_chat": true,
-        "function_calling": true,
+        "completion_chat": false,
+        "function_calling": false,
         "completion_fim": false,
-        "fine_tuning": true,
-        "vision": true,
+        "fine_tuning": false,
+        "vision": false,
         "ocr": false,
         "classification": false,
         "moderation": false,
         "audio": false
       },
       "name": "magistral-small-2509",
-      "description": "Our efficient reasoning model released September 2025.",
-      "max_context_length": 131072,
+      "description": "Official magistral-small-2509 Mistral AI model",
+      "max_context_length": 32768,
       "aliases": [
         "magistral-small-latest"
       ],
       "deprecation": null,
       "deprecation_replacement_model": null,
-      "default_model_temperature": 0.7,
+      "default_model_temperature": null,
       "type": "base"
     },
     {
